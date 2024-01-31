@@ -63,35 +63,35 @@ whenever(
         <AlertDialogTitle class="invisible">Subscribe</AlertDialogTitle>
       </VisuallyHidden>
       <AlertDialogContent>
-        <Card class="max-w-md py-4" :style="themeConfig">
+        <Card class="w-full pt-4 pb-4" :style="themeConfig">
           <CardContent>
             <div class="flex flex-col items-center gap-1">
               <Avatar
-                class="relative mb-4 mt-2 items-center justify-center overflow-visible bg-white p-1 shadow-md"
+                class="relative items-center justify-center p-1 mt-2 mb-4 overflow-visible bg-white shadow-md"
                 size="md"
               >
-                <div class="size-full overflow-hidden rounded-full">
+                <div class="overflow-hidden rounded-full size-full">
                   <AvatarImage :src="config.avatar" />
                 </div>
                 <Avatar
                   shape="square"
-                  class="absolute bottom-0 right-0 translate-x-1 translate-y-1 items-center justify-center bg-white p-1 shadow-md"
+                  class="absolute bottom-0 right-0 items-center justify-center p-1 translate-x-1 translate-y-1 bg-white shadow-md"
                   size="sm"
                 >
-                  <div class="size-full overflow-hidden rounded-md">
+                  <div class="overflow-hidden rounded-md size-full">
                     <AvatarImage :src="config.publicationLogo" />
                   </div>
                 </Avatar>
               </Avatar>
 
-              <h3 class="text-lg font-bold">{{ config.title }}</h3>
+              <h3 class="text-lg font-bold text-center">{{ config.title }}</h3>
 
-              <p class="text-balance text-center text-gray-400">
+              <p class="pb-4 text-sm text-center text-stone-400 text-balance">
                 {{ config.description }}
               </p>
 
               <!-- email form -->
-              <form class="flex w-full flex-col gap-1" @submit="onSubmit">
+              <form class="flex flex-col w-full gap-1" @submit="onSubmit">
                 <FormField v-slot="{ componentField }" name="email">
                   <FormItem v-auto-animate>
                     <FormControl>
@@ -107,7 +107,7 @@ whenever(
                   </FormItem>
                 </FormField>
 
-                <Button type="submit" class="w-full bg-sp_primary text-white">Subscribe</Button>
+                <Button type="submit" class="w-full text-white bg-sp_primary">Subscribe</Button>
 
                 <Separator class="my-2" />
 
