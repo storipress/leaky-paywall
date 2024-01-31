@@ -1,8 +1,27 @@
 <script setup lang="ts">
+import { toTypedSchema } from '@vee-validate/zod'
+import { Field as FormField, useForm } from 'vee-validate'
+import { vAutoAnimate } from '@formkit/auto-animate/vue'
+import * as z from 'zod'
+
 const scrollLock = useScrollLock(window)
 const { y } = useWindowScroll()
 const { height } = useWindowSize()
 const show = ref(false)
+
+const formSchema = toTypedSchema(
+  z.object({
+    email: z.string().email(),
+  }),
+)
+
+const form = useForm({
+  validationSchema: formSchema,
+})
+
+const onSubmit = form.handleSubmit((values) => {
+  console.log('Form submitted!', values)
+})
 
 useEventListener(window, 'wheel', (event) => {
   if (event.deltaY <= -5) {
@@ -30,7 +49,10 @@ whenever(
         <Card class="max-w-md py-4">
           <CardContent>
             <div class="flex flex-col items-center gap-1">
-              <Avatar class="relative items-center justify-center overflow-visible bg-white p-1 shadow-md" size="md">
+              <Avatar
+                class="relative mb-4 mt-2 items-center justify-center overflow-visible bg-white p-1 shadow-md"
+                size="md"
+              >
                 <div class="size-full overflow-hidden rounded-full">
                   <AvatarImage src="https://i.pravatar.cc/300?img=3" />
                 </div>
@@ -49,10 +71,23 @@ whenever(
                 News at the intersection of Artificial Intelligence, technology and business including Op-Eds, research
                 summaries, guest contributions and valuable info about A.I. startups.
               </p>
-              <Input placeholder="Type your email..." class="mb-2 placeholder:text-gray-500" />
-              <Button class="w-full bg-blue-700 text-white">Subscribe</Button>
-              <Separator class="my-2" />
-              <Button class="text-gray-600" variant="ghost">Sign in</Button>
+              <form class="flex w-full flex-col gap-1" @submit="onSubmit">
+                <FormField v-slot="{ componentField }" name="email">
+                  <FormItem v-auto-animate>
+                    <FormControl>
+                      <Input
+                        placeholder="Type your email..."
+                        class="mb-2 placeholder:text-gray-400"
+                        v-bind="componentField"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                </FormField>
+                <Button type="submit" class="w-full bg-blue-700 text-white">Subscribe</Button>
+                <Separator class="my-2" />
+                <Button type="submit" class="text-gray-600" variant="ghost">Sign in</Button>
+              </form>
             </div>
           </CardContent>
         </Card>
