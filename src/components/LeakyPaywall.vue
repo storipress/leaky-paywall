@@ -59,6 +59,7 @@ whenever(
   <div>
     <AlertDialog :open="show">
       <VisuallyHidden>
+        <!-- for accessibility -->
         <AlertDialogTitle class="invisible">Subscribe</AlertDialogTitle>
       </VisuallyHidden>
       <AlertDialogContent>
@@ -82,10 +83,14 @@ whenever(
                   </div>
                 </Avatar>
               </Avatar>
+
               <h3 class="text-lg font-bold">{{ config.title }}</h3>
+
               <p class="text-balance text-center text-gray-400">
                 {{ config.description }}
               </p>
+
+              <!-- email form -->
               <form class="flex w-full flex-col gap-1" @submit="onSubmit">
                 <FormField v-slot="{ componentField }" name="email">
                   <FormItem v-auto-animate>
@@ -100,8 +105,11 @@ whenever(
                     <FormMessage />
                   </FormItem>
                 </FormField>
-                <Button type="submit" class="bg-sp_primary w-full text-white">Subscribe</Button>
+
+                <Button type="submit" class="w-full bg-sp_primary text-white">Subscribe</Button>
+
                 <Separator class="my-2" />
+
                 <Button type="submit" class="text-gray-600" variant="ghost">Sign in</Button>
               </form>
             </div>
