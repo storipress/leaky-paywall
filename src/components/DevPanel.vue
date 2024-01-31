@@ -24,7 +24,7 @@ const onSubmit = form.handleSubmit((values) => {
 
 <template>
   <Popover v-model:open="open">
-    <PopoverTrigger class="fixed left-0 top-0 z-[9999999] ml-1 mt-1">
+    <PopoverTrigger class="fixed left-0 top-0 ml-1 mt-1">
       <Button class="bg-teal-500">Dev Config Panel</Button>
     </PopoverTrigger>
     <PopoverContent side="bottom">
