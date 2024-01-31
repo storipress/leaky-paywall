@@ -23,7 +23,6 @@
               News at the intersection of Artificial Intelligence, technology and business including Op-Eds, research
               summaries, guest contributions and valuable info about A.I. startups.
             </p>
-            <p class="text-gray-500">Over 52,000 subscribers</p>
             <Input placeholder="Type your email..." class="mb-2 placeholder:text-gray-500" />
             <Button class="w-full bg-blue-700 text-white">Subscribe</Button>
             <Separator class="my-2" />

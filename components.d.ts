@@ -27,7 +27,7 @@ declare module 'vue' {
     CardHeader: typeof import('./src/components/ui/card/CardHeader.vue')['default']
     CardTitle: typeof import('./src/components/ui/card/CardTitle.vue')['default']
     Input: typeof import('./src/components/ui/input/Input.vue')['default']
-    LeakyPaywall: typeof import('./src/components/ui/LeakyPaywall.vue')['default']
+    LeakyPaywall: typeof import('./src/components/LeakyPaywall.vue')['default']
     Separator: typeof import('./src/components/ui/separator/Separator.vue')['default']
   }
 }

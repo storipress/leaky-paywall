@@ -11,6 +11,15 @@ export default defineConfig({
       '~': '/src/',
     },
   },
+  build: {
+    lib: {
+      entry: './src/entry.ts',
+      formats: ['es'],
+    },
+    rollupOptions: {
+      external: ['vue'],
+    },
+  },
   plugins: [
     vue(),
     AutoImport({
