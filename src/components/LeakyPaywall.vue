@@ -98,6 +98,7 @@ whenever(
                       <Input
                         autofocus
                         placeholder="Type your email..."
+                        autocomplete="email"
                         class="mb-2 placeholder:text-gray-400"
                         v-bind="componentField"
                       />
