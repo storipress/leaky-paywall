@@ -30,11 +30,13 @@ const themeConfig = computed(() => ({
   '--sp-primary': config.value.primaryColor,
 }))
 
+// TODO: handle submit user email
 const onSubmit = form.handleSubmit((values) => {
   // eslint-disable-next-line no-console
   console.log('Form submitted!', values)
 })
 
+// Unlock scroll if user scroll up
 useEventListener(window, 'wheel', (event) => {
   if (event.deltaY <= -5) {
     show.value = false
@@ -42,6 +44,7 @@ useEventListener(window, 'wheel', (event) => {
   }
 })
 
+// If user scroll over 40%, open the paywall
 whenever(
   () => y.value > height.value * 0.4,
   () => {
