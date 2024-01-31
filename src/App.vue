@@ -1,3 +1,3 @@
 <template>
-  <Button>Hello world</Button>
+  <LeakyPaywall />
 </template>

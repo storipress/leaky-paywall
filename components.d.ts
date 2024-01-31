@@ -7,7 +7,27 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AlertDialog: typeof import('./src/components/ui/alert-dialog/AlertDialog.vue')['default']
+    AlertDialogAction: typeof import('./src/components/ui/alert-dialog/AlertDialogAction.vue')['default']
+    AlertDialogCancel: typeof import('./src/components/ui/alert-dialog/AlertDialogCancel.vue')['default']
+    AlertDialogContent: typeof import('./src/components/ui/alert-dialog/AlertDialogContent.vue')['default']
+    AlertDialogDescription: typeof import('./src/components/ui/alert-dialog/AlertDialogDescription.vue')['default']
+    AlertDialogFooter: typeof import('./src/components/ui/alert-dialog/AlertDialogFooter.vue')['default']
+    AlertDialogHeader: typeof import('./src/components/ui/alert-dialog/AlertDialogHeader.vue')['default']
+    AlertDialogTitle: typeof import('./src/components/ui/alert-dialog/AlertDialogTitle.vue')['default']
+    AlertDialogTrigger: typeof import('./src/components/ui/alert-dialog/AlertDialogTrigger.vue')['default']
+    Avatar: typeof import('./src/components/ui/avatar/Avatar.vue')['default']
+    AvatarFallback: typeof import('./src/components/ui/avatar/AvatarFallback.vue')['default']
+    AvatarImage: typeof import('./src/components/ui/avatar/AvatarImage.vue')['default']
     Button: typeof import('./src/components/ui/button/Button.vue')['default']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    Card: typeof import('./src/components/ui/card/Card.vue')['default']
+    CardContent: typeof import('./src/components/ui/card/CardContent.vue')['default']
+    CardDescription: typeof import('./src/components/ui/card/CardDescription.vue')['default']
+    CardFooter: typeof import('./src/components/ui/card/CardFooter.vue')['default']
+    CardHeader: typeof import('./src/components/ui/card/CardHeader.vue')['default']
+    CardTitle: typeof import('./src/components/ui/card/CardTitle.vue')['default']
+    Input: typeof import('./src/components/ui/input/Input.vue')['default']
+    LeakyPaywall: typeof import('./src/components/ui/LeakyPaywall.vue')['default']
+    Separator: typeof import('./src/components/ui/separator/Separator.vue')['default']
   }
 }
