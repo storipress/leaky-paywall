@@ -16,6 +16,9 @@ declare module 'vue' {
     AlertDialogHeader: typeof import('./src/components/ui/alert-dialog/AlertDialogHeader.vue')['default']
     AlertDialogTitle: typeof import('./src/components/ui/alert-dialog/AlertDialogTitle.vue')['default']
     AlertDialogTrigger: typeof import('./src/components/ui/alert-dialog/AlertDialogTrigger.vue')['default']
+    ArticleLayout1: typeof import('./src/components/ArticleLayout1.vue')['default']
+    ArticleLayout2: typeof import('./src/components/ArticleLayout2.vue')['default']
+    ArticleLayout3: typeof import('./src/components/ArticleLayout3.vue')['default']
     Avatar: typeof import('./src/components/ui/avatar/Avatar.vue')['default']
     AvatarFallback: typeof import('./src/components/ui/avatar/AvatarFallback.vue')['default']
     AvatarImage: typeof import('./src/components/ui/avatar/AvatarImage.vue')['default']
@@ -26,8 +29,10 @@ declare module 'vue' {
     CardFooter: typeof import('./src/components/ui/card/CardFooter.vue')['default']
     CardHeader: typeof import('./src/components/ui/card/CardHeader.vue')['default']
     CardTitle: typeof import('./src/components/ui/card/CardTitle.vue')['default']
+    copy: typeof import('./src/components/ArticleLayout1 copy.vue')['default']
     Input: typeof import('./src/components/ui/input/Input.vue')['default']
     LeakyPaywall: typeof import('./src/components/LeakyPaywall.vue')['default']
     Separator: typeof import('./src/components/ui/separator/Separator.vue')['default']
+    VisuallyHidden: typeof import('radix-vue')['VisuallyHidden']
   }
 }
