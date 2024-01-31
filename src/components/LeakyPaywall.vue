@@ -3,6 +3,8 @@ import { toTypedSchema } from '@vee-validate/zod'
 import { Field as FormField, useForm } from 'vee-validate'
 import { vAutoAnimate } from '@formkit/auto-animate/vue'
 import * as z from 'zod'
+import { useStore } from '@nanostores/vue'
+import { $config, initConfig } from '~/stores/config'
 
 const scrollLock = useScrollLock(window)
 const { y } = useWindowScroll()
@@ -17,9 +19,19 @@ const formSchema = toTypedSchema(
 
 const form = useForm({
   validationSchema: formSchema,
+  validateOnMount: false,
 })
 
+initConfig()
+
+const config = useStore($config)
+
+const themeConfig = computed(() => ({
+  '--sp-primary': config.value.primaryColor,
+}))
+
 const onSubmit = form.handleSubmit((values) => {
+  // eslint-disable-next-line no-console
   console.log('Form submitted!', values)
 })
 
@@ -35,6 +47,7 @@ whenever(
   () => {
     scrollLock.value = true
     show.value = true
+    form.resetForm()
   },
 )
 </script>
@@ -46,7 +59,7 @@ whenever(
         <AlertDialogTitle class="invisible">Subscribe</AlertDialogTitle>
       </VisuallyHidden>
       <AlertDialogContent>
-        <Card class="max-w-md py-4">
+        <Card class="max-w-md py-4" :style="themeConfig">
           <CardContent>
             <div class="flex flex-col items-center gap-1">
               <Avatar
@@ -54,7 +67,7 @@ whenever(
                 size="md"
               >
                 <div class="size-full overflow-hidden rounded-full">
-                  <AvatarImage src="https://i.pravatar.cc/300?img=3" />
+                  <AvatarImage :src="config.avatar" />
                 </div>
                 <Avatar
                   shape="square"
@@ -62,20 +75,20 @@ whenever(
                   size="sm"
                 >
                   <div class="size-full overflow-hidden rounded-md">
-                    <AvatarImage src="https://i.pravatar.cc/300?img=5" />
+                    <AvatarImage :src="config.publicationLogo" />
                   </div>
                 </Avatar>
               </Avatar>
-              <h3 class="text-lg font-bold">Discover more from AI Supremacy</h3>
+              <h3 class="text-lg font-bold">{{ config.title }}</h3>
               <p class="text-balance text-center text-gray-400">
-                News at the intersection of Artificial Intelligence, technology and business including Op-Eds, research
-                summaries, guest contributions and valuable info about A.I. startups.
+                {{ config.description }}
               </p>
               <form class="flex w-full flex-col gap-1" @submit="onSubmit">
                 <FormField v-slot="{ componentField }" name="email">
                   <FormItem v-auto-animate>
                     <FormControl>
                       <Input
+                        autofocus
                         placeholder="Type your email..."
                         class="mb-2 placeholder:text-gray-400"
                         v-bind="componentField"
@@ -84,7 +97,7 @@ whenever(
                     <FormMessage />
                   </FormItem>
                 </FormField>
-                <Button type="submit" class="w-full bg-blue-700 text-white">Subscribe</Button>
+                <Button type="submit" class="bg-sp_primary w-full text-white">Subscribe</Button>
                 <Separator class="my-2" />
                 <Button type="submit" class="text-gray-600" variant="ghost">Sign in</Button>
               </form>
