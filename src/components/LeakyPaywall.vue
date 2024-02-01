@@ -160,14 +160,14 @@ whenever(
                   </FormItem>
                 </FormField>
 
-                <Button type="submit" class="w-full bg-sp_primary text-white">
+                <Button type="submit" tabindex="-1" class="w-full bg-sp_primary text-white">
                   {{ primaryButton }}
                 </Button>
               </form>
 
               <Separator class="my-2" />
 
-              <Button class="text-gray-600" variant="ghost" @click="switchMode">
+              <Button class="text-gray-600" tabindex="-1" variant="ghost" @click="switchMode">
                 {{ secondaryButton }}
               </Button>
             </div>
