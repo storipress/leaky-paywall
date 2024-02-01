@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { toTypedSchema } from '@vee-validate/zod'
 import { Field as FormField, useForm } from 'vee-validate'
-import { vAutoAnimate } from '@formkit/auto-animate/vue'
+import { useAutoAnimate } from '@formkit/auto-animate/vue'
 import * as z from 'zod'
 import { useStore } from '@nanostores/vue'
 import { $config, initConfig } from '~/stores/config'
@@ -57,6 +57,9 @@ async function switchMode() {
   form.setValues({ email })
 }
 
+const [formItem, setAnimate] = useAutoAnimate({ duration: 200 })
+setAnimate(false)
+
 // Unlock scroll if user scroll up
 useEventListener(window, 'wheel', (event) => {
   if (event.deltaY <= -5) {
@@ -85,6 +88,8 @@ whenever(
   async () => {
     scrollLock.value = true
     show.value = true
+    await nextTick()
+    setAnimate(true)
   },
   { immediate: true },
 )
@@ -93,6 +98,7 @@ whenever(
 whenever(
   logicNot(show),
   () => {
+    setAnimate(false)
     form.resetForm()
     mode.value = 'subscribe'
   },
@@ -138,10 +144,12 @@ whenever(
               <!-- email form -->
               <form :key="mode" class="flex w-full flex-col gap-1" @submit="onSubmit">
                 <FormField v-slot="{ componentField }" name="email">
-                  <FormItem v-auto-animate>
+                  <FormItem ref="formItem">
                     <FormControl>
                       <Input
                         ref="input"
+                        autofocus
+                        tabindex="0"
                         placeholder="Type your email..."
                         autocomplete="email"
                         class="mb-2 placeholder:text-gray-400"
@@ -152,14 +160,14 @@ whenever(
                   </FormItem>
                 </FormField>
 
-                <Button type="submit" :autofocus="false" class="w-full bg-sp_primary text-white">
+                <Button type="submit" class="w-full bg-sp_primary text-white">
                   {{ primaryButton }}
                 </Button>
               </form>
 
               <Separator class="my-2" />
 
-              <Button class="text-gray-600" :autofocus="false" variant="ghost" @click="switchMode">
+              <Button class="text-gray-600" variant="ghost" @click="switchMode">
                 {{ secondaryButton }}
               </Button>
             </div>
