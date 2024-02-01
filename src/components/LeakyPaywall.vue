@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import { toTypedSchema } from '@vee-validate/zod'
-import { Field as FormField, useForm } from 'vee-validate'
-import { useAutoAnimate } from '@formkit/auto-animate/vue'
-import * as z from 'zod'
 import { useStore } from '@nanostores/vue'
 import { $config, initConfig } from '~/stores/config'
 
@@ -10,17 +6,6 @@ const scrollLock = useScrollLock(window)
 const { y } = useWindowScroll()
 const { height } = useWindowSize()
 const show = ref(false)
-
-const formSchema = toTypedSchema(
-  z.object({
-    email: z.string().email(),
-  }),
-)
-
-const form = useForm({
-  validationSchema: formSchema,
-  validateOnMount: false,
-})
 
 initConfig()
 
@@ -31,34 +16,16 @@ const mode = ref<'subscribe' | 'signup'>('subscribe')
 const primaryButton = computed(() => (mode.value === 'subscribe' ? 'Subscribe' : 'Sign in'))
 const secondaryButton = computed(() => (mode.value === 'subscribe' ? 'Sign in' : 'Subscribe'))
 
-const input = ref<HTMLElement>()
-
 const themeConfig = computed(() => ({
   '--sp-primary': config.value.primaryColor,
 }))
 
-// TODO: handle submit user email
-const onSubmit = form.handleSubmit((values) => {
-  // eslint-disable-next-line no-console
-  console.log('Form submitted!', values)
-})
+const emailInput = ref('')
 
-async function switchMode() {
-  // Backup user email
-  const email = form.values.email ?? ''
-
+function switchMode() {
   // After this step, the form will be reset
   mode.value = mode.value === 'subscribe' ? 'signup' : 'subscribe'
-
-  await nextTick()
-
-  // re-focus email input
-  unrefElement(input)?.focus()
-  form.setValues({ email })
 }
-
-const [formItem, setAnimate] = useAutoAnimate({ duration: 200 })
-setAnimate(false)
 
 // Unlock scroll if user scroll up
 useEventListener(window, 'wheel', (event) => {
@@ -88,8 +55,6 @@ whenever(
   async () => {
     scrollLock.value = true
     show.value = true
-    await nextTick()
-    setAnimate(true)
   },
   { immediate: true },
 )
@@ -98,8 +63,6 @@ whenever(
 whenever(
   logicNot(show),
   () => {
-    setAnimate(false)
-    form.resetForm()
     mode.value = 'subscribe'
   },
   { flush: 'post' },
@@ -142,28 +105,7 @@ whenever(
               </p>
 
               <!-- email form -->
-              <form v-if="show" :key="mode" class="flex w-full flex-col gap-1" @submit="onSubmit">
-                <FormField v-slot="{ componentField }" name="email">
-                  <FormItem ref="formItem">
-                    <FormControl>
-                      <Input
-                        ref="input"
-                        autofocus
-                        tabindex="0"
-                        placeholder="Type your email..."
-                        autocomplete="email"
-                        class="mb-2 placeholder:text-gray-400"
-                        v-bind="componentField"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                </FormField>
-
-                <Button type="submit" tabindex="-1" class="w-full bg-sp_primary text-white">
-                  {{ primaryButton }}
-                </Button>
-              </form>
+              <EmailForm :key="mode" v-model:email="emailInput" :button-text="primaryButton" />
 
               <Separator class="my-2" />
 

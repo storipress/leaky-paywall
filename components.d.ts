@@ -30,6 +30,7 @@ declare module 'vue' {
     CardHeader: typeof import('./src/components/ui/card/CardHeader.vue')['default']
     CardTitle: typeof import('./src/components/ui/card/CardTitle.vue')['default']
     DevPanel: typeof import('./src/components/DevPanel.vue')['default']
+    EmailForm: typeof import('./src/components/EmailForm.vue')['default']
     FormControl: typeof import('./src/components/ui/form/FormControl.vue')['default']
     FormDescription: typeof import('./src/components/ui/form/FormDescription.vue')['default']
     FormItem: typeof import('./src/components/ui/form/FormItem.vue')['default']
