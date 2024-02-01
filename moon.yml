@@ -1,0 +1,15 @@
+tasks:
+  build:
+    command:
+    - vite
+    - build
+    deps:
+    - ~:typecheck
+    platform: node
+  typecheck:
+    command: vue-tsc
+    platform: node
+  dev:
+    command: vite
+    local: true
+    platform: node

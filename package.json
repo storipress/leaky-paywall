@@ -5,9 +5,8 @@
   "private": true,
   "packageManager": "yarn@4.1.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "dev": "moon run dev",
+    "build": "moon run build"
   },
   "dependencies": {
     "@formkit/auto-animate": "^0.8.1",
@@ -29,6 +28,7 @@
     "@antfu/eslint-config": "^2.6.3",
     "@egoist/tailwindcss-icons": "^1.7.4",
     "@iconify-json/lucide": "^1.1.161",
+    "@moonrepo/cli": "^1.20.1",
     "@nanostores/logger": "^0.2.4",
     "@types/eslint": "^8",
     "@vitejs/plugin-vue": "^5.0.3",
