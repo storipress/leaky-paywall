@@ -1,11 +1,33 @@
+$schema: 'https://moonrepo.dev/schemas/project.json'
+
 tasks:
   build:
     command:
-    - vite
-    - build
+      - vite
+      - build
     deps:
-    - ~:typecheck
+      - ~:typecheck
     platform: node
+  lib:
+    command:
+      - vite
+      - build
+    args:
+      - --mode=lib
+    deps:
+      - ~:typecheck
+    platform: node
+  minify:
+    command:
+      - node
+      - esbuild.build.js
+    deps:
+      - ~:lib
+  size:
+    command:
+      - size-limit
+    deps:
+      - ~:minify
   typecheck:
     command: vue-tsc
     platform: node

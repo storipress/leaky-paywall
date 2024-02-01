@@ -32,6 +32,8 @@ export default defineConfig(({ mode }) => {
     return {
       ...baseConfig,
       build: {
+        outDir: 'lib',
+
         lib: {
           entry: './src/entry.ts',
           formats: ['es'],
