@@ -142,7 +142,7 @@ whenever(
               </p>
 
               <!-- email form -->
-              <form :key="mode" class="flex w-full flex-col gap-1" @submit="onSubmit">
+              <form v-if="show" :key="mode" class="flex w-full flex-col gap-1" @submit="onSubmit">
                 <FormField v-slot="{ componentField }" name="email">
                   <FormItem ref="formItem">
                     <FormControl>
