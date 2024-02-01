@@ -26,6 +26,13 @@ initConfig()
 
 const config = useStore($config)
 
+const mode = ref<'subscribe' | 'signup'>('subscribe')
+
+const primaryButton = computed(() => (mode.value === 'subscribe' ? 'Subscribe' : 'Sign in'))
+const secondaryButton = computed(() => (mode.value === 'subscribe' ? 'Sign in' : 'Subscribe'))
+
+const input = ref<HTMLElement>()
+
 const themeConfig = computed(() => ({
   '--sp-primary': config.value.primaryColor,
 }))
@@ -35,6 +42,20 @@ const onSubmit = form.handleSubmit((values) => {
   // eslint-disable-next-line no-console
   console.log('Form submitted!', values)
 })
+
+async function switchMode() {
+  // Backup user email
+  const email = form.values.email ?? ''
+
+  // After this step, the form will be reset
+  mode.value = mode.value === 'subscribe' ? 'signup' : 'subscribe'
+
+  await nextTick()
+
+  // re-focus email input
+  unrefElement(input)?.focus()
+  form.setValues({ email })
+}
 
 // Unlock scroll if user scroll up
 useEventListener(window, 'wheel', (event) => {
@@ -54,10 +75,12 @@ whenever(
   { immediate: true },
 )
 
+// reset form content after close
 whenever(
   logicNot(show),
   () => {
     form.resetForm()
+    mode.value = 'subscribe'
   },
   { flush: 'post' },
 )
@@ -99,11 +122,12 @@ whenever(
               </p>
 
               <!-- email form -->
-              <form class="flex w-full flex-col gap-1" @submit="onSubmit">
+              <form :key="mode" class="flex w-full flex-col gap-1" @submit="onSubmit">
                 <FormField v-slot="{ componentField }" name="email">
                   <FormItem v-auto-animate>
                     <FormControl>
                       <Input
+                        ref="input"
                         autofocus
                         placeholder="Type your email..."
                         autocomplete="email"
@@ -115,12 +139,16 @@ whenever(
                   </FormItem>
                 </FormField>
 
-                <Button type="submit" class="w-full bg-sp_primary text-white">Subscribe</Button>
-
-                <Separator class="my-2" />
-
-                <Button type="submit" class="text-gray-600" variant="ghost">Sign in</Button>
+                <Button type="submit" :autofocus="false" class="w-full bg-sp_primary text-white">
+                  {{ primaryButton }}
+                </Button>
               </form>
+
+              <Separator class="my-2" />
+
+              <Button class="text-gray-600" :autofocus="false" variant="ghost" @click="switchMode">
+                {{ secondaryButton }}
+              </Button>
             </div>
           </CardContent>
         </Card>
