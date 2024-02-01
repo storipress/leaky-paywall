@@ -15,7 +15,7 @@ const baseConfig = defineConfig({
   plugins: [
     vue(),
     AutoImport({
-      imports: ['vue', '@vueuse/core'],
+      imports: ['vue', '@vueuse/core', '@vueuse/math'],
       dirs: ['src/utils', 'src/composables'],
     }),
     Components({

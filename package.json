@@ -13,6 +13,7 @@
     "@formkit/auto-animate": "^0.8.1",
     "@nanostores/vue": "^0.10.0",
     "@vee-validate/zod": "^4.12.5",
+    "@vueuse/math": "^10.7.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "lucide-vue-next": "^0.320.0",

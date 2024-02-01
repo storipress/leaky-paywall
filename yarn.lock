@@ -1178,6 +1178,7 @@ __metadata:
     "@vitejs/plugin-vue": "npm:^5.0.3"
     "@vue/devtools-api": "npm:^6.5.1"
     "@vueuse/core": "npm:^10.7.2"
+    "@vueuse/math": "npm:^10.7.2"
     autoprefixer: "npm:^10.4.17"
     class-variance-authority: "npm:^0.7.0"
     clsx: "npm:^2.1.0"
@@ -1774,6 +1775,16 @@ __metadata:
     "@vueuse/shared": "npm:10.7.2"
     vue-demi: "npm:>=0.14.6"
   checksum: 10c0/ec9f0f4980058ced484c047db2a6c88c051bb0f3081588390269f2be14c42cd8cae842188d38b7294195d84f93d98c7c62d3822550010279c5eb4c4bdafdd2f2
+  languageName: node
+  linkType: hard
+
+"@vueuse/math@npm:^10.7.2":
+  version: 10.7.2
+  resolution: "@vueuse/math@npm:10.7.2"
+  dependencies:
+    "@vueuse/shared": "npm:10.7.2"
+    vue-demi: "npm:>=0.14.6"
+  checksum: 10c0/fcec2a021c45f5a9721a91176d75c05e85eb40314757aa921efd03b4a7f47dfefd6aab0764a01f3cca97c36c44d0dd6d710c5ffe0e2d6d955ba8367a3eef41a3
   languageName: node
   linkType: hard
 
