@@ -17,7 +17,7 @@ export function getFakeArticle() {
     headline: 'https://picsum.photos/800/600',
     excerpt: lorem.generateSentences(2),
     content: lorem
-      .generateParagraphs(10)
+      .generateParagraphs(20)
       .split('\n')
       .map((x) => `<p>${x}</p>`)
       .join(''),
