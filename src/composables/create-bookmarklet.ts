@@ -10,7 +10,7 @@ export function useCreateBookmarklet() {
   const injectScript = computed(
     () => javascript`
     var c=document.createElement('script'),s=document.createElement('script');
-    c.innerHTML='window.STORIPRESS_PAYWALL=${JSON.stringify(config.value)}';
+    c.innerHTML='window.SP_PAYWALL=${JSON.stringify(config.value)}';
     s.type='module';
     s.src='https://leaky-paywall.pages.dev/leaky-paywall.min.js';
     document.head.append(c);
