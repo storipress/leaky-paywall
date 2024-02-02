@@ -35,23 +35,12 @@ useEventListener(window, 'wheel', (event) => {
   }
 })
 
-const { idle } = useIdle(1000, {
-  events: ['mousedown', 'resize', 'keydown', 'wheel'],
-})
-
-const everIdle = ref(false)
-
-// Detect whenever user idle over 1s
-whenever(idle, () => {
-  everIdle.value = true
-})
-
 // If user scroll over 40%, we will need paywall
 const isNeedPaywall = computed(() => y.value > height.value * 0.4)
 
 whenever(
-  // Only if user idle, and over 40% will open paywall
-  logicAnd(everIdle, isNeedPaywall),
+  // When user scroll over 40% will open paywall
+  isNeedPaywall,
   async () => {
     scrollLock.value = true
     show.value = true
