@@ -4,3 +4,6 @@ import PaywallRoot from './PaywallRoot.ce.vue'
 export const PaywallRootElement = defineCustomElement(PaywallRoot)
 
 customElements.define('storipress-paywall', PaywallRootElement)
+
+const el = document.createElement('storipress-paywall')
+document.body.append(el)
