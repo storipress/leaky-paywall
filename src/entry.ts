@@ -1,3 +1,6 @@
-import './assets/index.css'
+import { defineCustomElement } from 'vue'
+import PaywallRoot from './PaywallRoot.ce.vue'
 
-export { default as LeakyPaywall } from './components/LeakyPaywall.vue'
+export const PaywallRootElement = defineCustomElement(PaywallRoot)
+
+customElements.define('storipress-paywall', PaywallRootElement)

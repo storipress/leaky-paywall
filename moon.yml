@@ -32,7 +32,7 @@ tasks:
   minify:
     command:
       - node
-      - esbuild.build.js
+      - esbuild.config.js
     inputs: 
       - lib/leaky-paywall.js
     outputs:

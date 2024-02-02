@@ -1451,6 +1451,7 @@ __metadata:
     polished: "npm:^4.2.2"
     prettier: "npm:^3.2.4"
     prettier-plugin-tailwindcss: "npm:^0.5.11"
+    proper-tags: "npm:^2.0.2"
     radix-vue: "npm:^1.3.2"
     remeda: "npm:^1.39.0"
     shadcn-vue: "npm:^0.8.7"
@@ -1458,6 +1459,7 @@ __metadata:
     tailwind-merge: "npm:^2.2.1"
     tailwindcss: "npm:^3.4.1"
     tailwindcss-animate: "npm:^1.0.7"
+    tsx: "npm:^4.7.0"
     typescript: "npm:^5.3.3"
     unplugin-auto-import: "npm:^0.17.5"
     unplugin-vue-components: "npm:^0.26.0"
@@ -1465,6 +1467,7 @@ __metadata:
     vite: "npm:^5.0.12"
     vite-plugin-vue-devtools: "npm:^7.0.13"
     vue: "npm:^3.4.15"
+    vue-sonner: "npm:^1.0.3"
     vue-tsc: "npm:^1.8.27"
     zod: "npm:^3.22.4"
     zx: "npm:^7.2.3"
@@ -3032,7 +3035,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild@npm:^0.19.3":
+"esbuild@npm:^0.19.3, esbuild@npm:~0.19.10":
   version: 0.19.12
   resolution: "esbuild@npm:0.19.12"
   dependencies:
@@ -5911,6 +5914,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"proper-tags@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "proper-tags@npm:2.0.2"
+  checksum: 10c0/1de8943b3304295fc6bec297b7ff7aa2f9ec40cdb2d6634725a0bd311ad1ae382f9769d7bd188c6ec7f49ca9dfb346fa1c79dd8cbff1453680097c3afbab5d4b
+  languageName: node
+  linkType: hard
+
 "ps-tree@npm:^1.2.0":
   version: 1.2.0
   resolution: "ps-tree@npm:1.2.0"
@@ -6880,6 +6890,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tsx@npm:^4.7.0":
+  version: 4.7.0
+  resolution: "tsx@npm:4.7.0"
+  dependencies:
+    esbuild: "npm:~0.19.10"
+    fsevents: "npm:~2.3.3"
+    get-tsconfig: "npm:^4.7.2"
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  bin:
+    tsx: dist/cli.mjs
+  checksum: 10c0/ac522a3017aedea31ff468dc161b6408d16a273bd23556716b550d1c08395d7e2568009c8927131481f0a8980ddda84999ac4bc2c00659b08a19b45bec31ef23
+  languageName: node
+  linkType: hard
+
 "type-check@npm:^0.4.0, type-check@npm:~0.4.0":
   version: 0.4.0
   resolution: "type-check@npm:0.4.0"
@@ -7307,6 +7333,13 @@ __metadata:
   peerDependencies:
     eslint: ">=6.0.0"
   checksum: 10c0/79593073adbce8971565133c70a203f12f0be0f8c5e3a4063796fd56e5de64f1f3ad7f91be5a787a7a3fe751306ed22086ee8369d52725be95f452827ce670de
+  languageName: node
+  linkType: hard
+
+"vue-sonner@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "vue-sonner@npm:1.0.3"
+  checksum: 10c0/4a1f0a4deca32f6216ee27263c0755d6c63ae16d91aa2d21bcfa50ea164cd24be2aa44634426cfbd58dffb4543c984cb3d596debf0825f7546cbdde2e5c9e36e
   languageName: node
   linkType: hard
 

@@ -13,7 +13,7 @@ const baseConfig = defineConfig({
     },
   },
   plugins: [
-    vue(),
+    vue({ customElement: true }),
     AutoImport({
       imports: ['vue', '@vueuse/core', '@vueuse/math'],
       dirs: ['src/utils', 'src/composables'],

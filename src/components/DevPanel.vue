@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { toTypedSchema } from '@vee-validate/zod'
+import { toast } from 'vue-sonner'
 import { Field as FormField, useForm } from 'vee-validate'
 import { $config, configSchema } from '~/stores/config'
 
@@ -20,6 +21,16 @@ const onSubmit = form.handleSubmit((values) => {
   $config.set(values)
   open.value = false
 })
+
+const { bookmarklet } = useCreateBookmarklet()
+const { copy } = useClipboard({
+  source: bookmarklet,
+})
+
+async function copyBookmarklet() {
+  await copy()
+  toast('Copied!')
+}
 </script>
 
 <template>
@@ -80,6 +91,9 @@ const onSubmit = form.handleSubmit((values) => {
             <Button type="submit">Update</Button>
           </form>
         </CardContent>
+        <CardFooter class="mt-2">
+          <Button @click="copyBookmarklet">Copy bookmarklet code</Button>
+        </CardFooter>
       </Card>
     </PopoverContent>
   </Popover>
