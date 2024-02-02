@@ -31,8 +31,10 @@ declare global {
   }
 }
 
+export const CONFIG_VAR_NAME = 'SP_PAYWALL'
+
 export function initConfig() {
   try {
-    setConfig(configSchema.parse(window.SP_PAYWALL))
+    setConfig(configSchema.parse(window[CONFIG_VAR_NAME]))
   } catch {}
 }

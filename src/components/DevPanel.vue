@@ -22,9 +22,9 @@ const onSubmit = form.handleSubmit((values) => {
   open.value = false
 })
 
-const { bookmarklet } = useCreateBookmarklet()
+const { injectScript } = useCreateBookmarklet()
 const { copy } = useClipboard({
-  source: bookmarklet,
+  source: injectScript,
 })
 
 async function copyBookmarklet() {
