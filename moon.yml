@@ -5,6 +5,12 @@ tasks:
     command:
       - vite
       - build
+    inputs: 
+      - '@globs(sources)'
+      - package.json
+      - yarn.lock
+    outputs:
+      - dist
     deps:
       - ~:typecheck
     platform: node
@@ -12,6 +18,12 @@ tasks:
     command:
       - vite
       - build
+    inputs: 
+      - '@globs(sources)'
+      - package.json
+      - yarn.lock
+    outputs:
+      - lib
     args:
       - --mode=lib
     deps:
@@ -21,6 +33,10 @@ tasks:
     command:
       - node
       - esbuild.build.js
+    inputs: 
+      - lib/leaky-paywall.js
+    outputs:
+      - lib/leaky-paywall.min.js
     deps:
       - ~:lib
   size:
@@ -31,6 +47,11 @@ tasks:
   typecheck:
     command: vue-tsc
     platform: node
+    inputs: 
+      - '@globs(sources)'
+      - tsconfig.json
+      - package.json
+      - yarn.lock
   dev:
     command: vite
     local: true
