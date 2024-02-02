@@ -42,6 +42,7 @@ declare module 'vue' {
     Popover: typeof import('./src/components/ui/popover/Popover.vue')['default']
     PopoverContent: typeof import('./src/components/ui/popover/PopoverContent.vue')['default']
     PopoverTrigger: typeof import('./src/components/ui/popover/PopoverTrigger.vue')['default']
+    PortalTarget: typeof import('./src/components/PortalTarget.vue')['default']
     Separator: typeof import('./src/components/ui/separator/Separator.vue')['default']
     Sonner: typeof import('./src/components/ui/sonner/Sonner.vue')['default']
     Textarea: typeof import('./src/components/ui/textarea/Textarea.vue')['default']
