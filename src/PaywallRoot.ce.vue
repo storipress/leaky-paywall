@@ -1,7 +1,11 @@
+<script setup lang="ts">
+const target = ref<ComponentPublicInstance | null>(null)
+provideRoot(target)
+</script>
 <template>
   <div>
     <LeakyPaywall />
-    <PortalTarget />
+    <PortalTarget ref="target" />
   </div>
 </template>
 

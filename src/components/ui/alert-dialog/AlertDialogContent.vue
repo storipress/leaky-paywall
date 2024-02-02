@@ -14,14 +14,12 @@ const emits = defineEmits<AlertDialogContentEmits>()
 
 const emitsAsProps = useEmitAsProps(emits)
 
-const portalTarget = ref('body')
-const portalSelector = '#storipress-paywall-portal'
+const portalTarget = ref<HTMLElement | string>('body')
+const injectedPortal = injectRoot() ?? ref('body')
 
 onMounted(async () => {
   await nextTick()
-  if (document.querySelector(portalSelector)) {
-    portalTarget.value = portalSelector
-  }
+  portalTarget.value = injectedPortal.value ?? 'body'
 })
 </script>
 
