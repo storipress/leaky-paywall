@@ -6,6 +6,12 @@ import App from './App.vue'
 import { $config } from './stores/config'
 
 window.SP_PAYWALL = {
+  all: true,
+  flags: {
+    paywall: true,
+    tracking: true,
+  },
+  pathPattern: undefined,
   avatar: 'https://i.pravatar.cc/300?img=3',
   publicationLogo: 'https://i.pravatar.cc/300?img=5',
   title: 'Discover more from AI Supremacy',
