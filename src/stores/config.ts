@@ -1,7 +1,18 @@
-import { atom } from 'nanostores'
 import * as z from 'zod'
+import { defu } from 'defu'
+
+const flagsSchema = z.object({
+  paywall: z.boolean().optional().default(true),
+  tracking: z.boolean().optional().default(true),
+})
 
 export const configSchema = z.object({
+  flags: flagsSchema.optional().default({
+    paywall: true,
+    tracking: true,
+  }),
+  all: z.boolean().optional().default(false),
+  pathPattern: z.instanceof(RegExp).nullish(),
   avatar: z.string(),
   publicationLogo: z.string(),
   title: z.string(),
@@ -12,6 +23,12 @@ export const configSchema = z.object({
 export type Config = z.infer<typeof configSchema>
 
 const DEFAULT_CONFIG: Config = {
+  flags: {
+    paywall: true,
+    tracking: true,
+  },
+  pathPattern: null,
+  all: false,
   avatar: '',
   publicationLogo: '',
   title: 'Title',
@@ -22,7 +39,7 @@ const DEFAULT_CONFIG: Config = {
 export const $config = atom(DEFAULT_CONFIG)
 
 export function setConfig(config: Partial<Config>) {
-  $config.set({ ...$config.get(), ...config })
+  $config.set(defu(config as Config, $config.get()))
 }
 
 declare global {

@@ -1,6 +1,4 @@
-import { useStore } from '@nanostores/vue'
 import { oneLineTrim } from 'proper-tags'
-import { $config, CONFIG_VAR_NAME } from '~/stores/config'
 
 const javascript = oneLineTrim
 

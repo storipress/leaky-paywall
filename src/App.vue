@@ -3,7 +3,11 @@ import type { ComponentPublicInstance } from 'vue'
 
 const target = ref<ComponentPublicInstance | null>(null)
 provideRoot(target)
+
+// For dev
+setConfig({ all: true })
 </script>
+
 <template>
   <ArticleLayout1 />
   <LeakyPaywall />

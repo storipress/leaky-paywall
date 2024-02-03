@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { toTypedSchema } from '@vee-validate/zod'
 import { Field as FormField, useForm } from 'vee-validate'
-import { useAutoAnimate, vAutoAnimate } from '@formkit/auto-animate/vue'
+import { useAutoAnimate } from '@formkit/auto-animate/vue'
 import * as z from 'zod'
 import { useModel } from 'vue'
 

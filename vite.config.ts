@@ -15,8 +15,20 @@ const baseConfig = defineConfig({
   plugins: [
     vue({ customElement: true }),
     AutoImport({
-      imports: ['vue', '@vueuse/core', '@vueuse/math'],
-      dirs: ['src/utils', 'src/composables'],
+      imports: [
+        'vue',
+        '@vueuse/core',
+        '@vueuse/math',
+        {
+          from: '@nanostores/vue',
+          imports: ['useStore'],
+        },
+        {
+          from: 'nanostores',
+          imports: ['atom'],
+        },
+      ],
+      dirs: ['src/utils', 'src/composables', 'src/stores'],
     }),
     Components({
       dirs: ['src/components', 'src/components/ui'],

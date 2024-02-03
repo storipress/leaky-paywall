@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { useStore } from '@nanostores/vue'
-import { $config, initConfig } from '~/stores/config'
-
 const scrollLock = useScrollLock(window)
 const { y } = useWindowScroll()
 const { height } = useWindowSize()
