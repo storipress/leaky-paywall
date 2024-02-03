@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { sendTrack } from '~/lib/tracking'
+
 const scrollLock = useScrollLock(window)
 const { y } = useWindowScroll()
 const { height } = useWindowSize()
@@ -39,6 +41,11 @@ whenever(
   // When user scroll over 40% will open paywall
   isNeedPaywall,
   async () => {
+    sendTrack('paywall_triggered', {
+      articleId: '0',
+      clientId: 'client_id',
+      isExceedFreeLimit: true,
+    })
     scrollLock.value = true
     show.value = true
   },

@@ -173,4 +173,4 @@ dist
 .moon/cache
 .moon/docker
 
-lib
+/lib

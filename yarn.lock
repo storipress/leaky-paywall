@@ -1242,6 +1242,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nanostores/persistent@npm:^0.9.1":
+  version: 0.9.1
+  resolution: "@nanostores/persistent@npm:0.9.1"
+  peerDependencies:
+    nanostores: ^0.9.0
+  checksum: 10c0/16b289c697d5a04319d5d85e04f0d03f039795a8ba2ef6e331fe936c90f13b79b6940cd34950cadf86799c1a8477966eb752d1d38066a14a3ed181d3e2c2486b
+  languageName: node
+  linkType: hard
+
 "@nanostores/vue@npm:^0.10.0":
   version: 0.10.0
   resolution: "@nanostores/vue@npm:0.10.0"
@@ -1462,6 +1471,7 @@ __metadata:
     "@iconify-json/lucide": "npm:^1.1.161"
     "@moonrepo/cli": "npm:^1.20.1"
     "@nanostores/logger": "npm:^0.2.4"
+    "@nanostores/persistent": "npm:^0.9.1"
     "@nanostores/vue": "npm:^0.10.0"
     "@size-limit/file": "npm:^11.0.2"
     "@types/eslint": "npm:^8"
@@ -1476,6 +1486,7 @@ __metadata:
     class-variance-authority: "npm:^0.7.0"
     clsx: "npm:^2.1.0"
     defu: "npm:^6.1.4"
+    destr: "npm:^2.0.2"
     esbuild: "npm:^0.20.0"
     eslint: "npm:^8.56.0"
     lorem-ipsum: "npm:^2.0.8"
@@ -3082,6 +3093,13 @@ __metadata:
   version: 6.1.4
   resolution: "defu@npm:6.1.4"
   checksum: 10c0/2d6cc366262dc0cb8096e429368e44052fdf43ed48e53ad84cc7c9407f890301aa5fcb80d0995abaaf842b3949f154d060be4160f7a46cb2bc2f7726c81526f5
+  languageName: node
+  linkType: hard
+
+"destr@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "destr@npm:2.0.2"
+  checksum: 10c0/28bd8793c0507489efeb4b86c471fe9578e25439c1f7e4a4e4db9b69fe37689b68b9b205b7c317ca31590120e9c5364a31fec2eb6ec73bb425ede8f993c771d6
   languageName: node
   linkType: hard
 
