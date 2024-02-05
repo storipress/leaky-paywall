@@ -19,7 +19,7 @@ export interface BufferedEvent {
   t: number
 }
 
-export const trackAtom = persistentMap(
+export const $paywall = persistentMap(
   'storipress-paywall:',
   {
     lastSynced: 0,
@@ -33,8 +33,8 @@ export const trackAtom = persistentMap(
 )
 
 export function pushEvent(record: TrackEvent) {
-  trackAtom.set({
-    ...trackAtom.get(),
-    records: [...trackAtom.get().records, { e: record.event, p: record.properties ?? {}, t: Date.now() }],
+  $paywall.set({
+    ...$paywall.get(),
+    records: [...$paywall.get().records, { e: record.event, p: record.properties ?? {}, t: Date.now() }],
   })
 }

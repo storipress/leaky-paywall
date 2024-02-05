@@ -14,6 +14,6 @@ export default antfu(
     },
   },
   {
-    ignores: ['src/vite-env.d.ts'],
+    ignores: ['src/vite-env.d.ts', 'auto-imports.d.ts', 'components.d.ts', 'src/gql/**'],
   },
 )

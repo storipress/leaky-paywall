@@ -7,6 +7,7 @@ import { $config } from './stores/config'
 
 window.SP_PAYWALL = {
   all: true,
+  clientId: 'D6RX98VXN',
   flags: {
     paywall: true,
     tracking: true,

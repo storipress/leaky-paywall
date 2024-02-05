@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import Codegen from 'vite-plugin-graphql-codegen'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import VueDevTools from 'vite-plugin-vue-devtools'
@@ -10,10 +11,12 @@ const baseConfig = defineConfig({
   resolve: {
     alias: {
       '~': '/src/',
+      graphql: 'graphql-web-lite',
     },
   },
   plugins: [
     vue({ customElement: true }),
+    Codegen(),
     AutoImport({
       imports: [
         'vue',
@@ -26,6 +29,10 @@ const baseConfig = defineConfig({
         {
           from: 'nanostores',
           imports: ['atom'],
+        },
+        {
+          from: '~/gql/gql',
+          imports: ['graphql'],
         },
       ],
       dirs: ['src/utils', 'src/composables', 'src/stores'],

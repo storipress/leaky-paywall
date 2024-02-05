@@ -1,5 +1,6 @@
-import { pushEvent } from '~/stores/track-events'
-import { ExtractProperties, TrackEvent, trackEventSchema } from './tracking-schema'
+import type { ExtractProperties, TrackEvent} from './tracking-schema';
+import { trackEventSchema } from './tracking-schema'
+import { pushEvent } from '~/stores/paywall-events'
 
 export function sendTrack<
   EventName extends TrackEvent['event'],
