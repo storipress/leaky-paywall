@@ -19,6 +19,12 @@ const themeConfig = computed(() => ({
   '--sp-primary': config.value.primaryColor,
 }))
 
+const checkQuery = useQueryAction()
+
+onMounted(() => {
+  checkQuery()
+})
+
 const emailInput = ref('')
 
 function switchMode() {

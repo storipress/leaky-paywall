@@ -1,7 +1,5 @@
-import { CombinedError, useMutation } from '@urql/vue'
 import type { GraphQLError } from 'graphql-web-lite'
-
-export type AuthAPI = ReturnType<typeof useAuth>
+import { CombinedError } from '@urql/vue'
 
 const BAD_REQUEST_MESSAGE = 'Bad Request.'
 
@@ -113,78 +111,5 @@ export function useSubscribe(mode: Ref<'subscribe' | 'login'>) {
         }),
       }
     },
-  }
-}
-
-export function useAuth() {
-  const paywallStore = useStore($paywall)
-  const { executeMutation: signOutSubscriberMutate } = useMutation(
-    graphql(`
-      mutation SignOutSubscriber {
-        signOutSubscriber
-      }
-    `),
-  )
-  const { executeMutation: verifySubscriberEmailMutate } = useMutation(
-    graphql(`
-      mutation VerifySubscriberEmail($token: String!) {
-        verifySubscriberEmail(token: $token)
-      }
-    `),
-  )
-  const { executeMutation: signInSubscriberMutate } = useMutation(
-    graphql(`
-      mutation SignInSubscriber($token: String!) {
-        signInSubscriber(token: $token)
-      }
-    `),
-  )
-
-  const onSignOut = async () => {
-    try {
-      const result = await signOutSubscriberMutate({})
-      if (result.data?.signOutSubscriber) {
-        $paywall.setKey('token', '')
-      }
-      return result.data?.signOutSubscriber
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.log('e: ', e)
-    }
-    return false
-  }
-  const onVerifyEmail = async (token: string) => {
-    try {
-      const result = await verifySubscriberEmailMutate({ token })
-      if (result.data?.verifySubscriberEmail) {
-        return true
-      }
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.log('e: ', e)
-    }
-    return false
-  }
-  const onSignInSubscriber = async (token: string) => {
-    try {
-      const result = await signInSubscriberMutate({ token })
-      if (result.data?.signInSubscriber) {
-        $paywall.setKey('token', result.data.signInSubscriber)
-        return true
-      }
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.log('e: ', e)
-    }
-    return false
-  }
-
-  const isAuth = computed(() => Boolean(paywallStore.value.token))
-
-  return {
-    isAuth,
-    onSignOut,
-    onVerifyEmail,
-    onSignInSubscriber,
   }
 }

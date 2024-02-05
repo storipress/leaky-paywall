@@ -34,6 +34,10 @@ const baseConfig = defineConfig({
           imports: ['atom'],
         },
         {
+          from: '@urql/vue',
+          imports: ['useQuery', 'useMutation'],
+        },
+        {
           from: '~/gql/gql',
           imports: ['graphql'],
         },
