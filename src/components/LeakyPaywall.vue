@@ -9,6 +9,7 @@ const show = ref(false)
 initConfig()
 
 const config = useStore($config)
+const paywall = useStore($paywall)
 
 const mode = ref<'subscribe' | 'login'>('subscribe')
 
@@ -21,8 +22,41 @@ const themeConfig = computed(() => ({
 
 const checkQuery = useQueryAction()
 
-onMounted(() => {
-  checkQuery()
+const foundArticle = useFindArticle()
+
+const paywallEnabled = usePaywallEnabled()
+const location = useBrowserLocation()
+const isArticle = logicOr(foundArticle, paywallEnabled)
+
+const isOverFreeLimit = computed(() => paywall.value.read.length >= config.value.freeLimit)
+
+watch(
+  location,
+  (loc) => {
+    if (!isArticle.value) {
+      return
+    }
+    // Don't record as read article or it will be free to read
+    if (isOverFreeLimit.value) {
+      return
+    }
+    pushRead(loc.pathname ?? '')
+  },
+  { immediate: true },
+)
+
+onMounted(async () => {
+  const res = await checkQuery()
+  if (!res) {
+    return
+  }
+  if (res.result && res.action === SIGN_IN) {
+    sendTrack('subscriber_sign_in', {
+      clientId: config.value.clientId,
+      articleId: foundArticle.value?.id ?? '',
+      path: window.location.pathname,
+    })
+  }
 })
 
 const emailInput = ref('')
@@ -40,16 +74,31 @@ useEventListener(window, 'wheel', (event) => {
   }
 })
 
-// If user scroll over 40%, we will need paywall
-const isNeedPaywall = computed(() => y.value > height.value * 0.4)
+const isAllowFree = computed(() => !isOverFreeLimit.value || paywall.value.read.includes(location.value.pathname ?? ''))
+const isScrollOverThreshold = computedEager(() => y.value > height.value * 0.4)
+watch(isScrollOverThreshold, (val) => {
+  console.log(val)
+})
+
+// We need paywall if meet the follow conditions
+// 1. current page is article
+// 2. user is run out of free read limit and current article is not read before
+// 3. user scroll over 40%
+// We need to measure scroll top first, or paywall will not appear because of cache in Vue
+const isNeedPaywall = computed(() => isScrollOverThreshold.value && isArticle.value && !isAllowFree.value)
 
 whenever(
   // When user scroll over 40% will open paywall
   isNeedPaywall,
   async () => {
+    // Don't show paywall if user is logged in
+    if (paywall.value.token) {
+      return
+    }
+
     sendTrack('paywall_triggered', {
-      articleId: '0',
-      clientId: 'client_id',
+      articleId: foundArticle.value?.id ?? '',
+      clientId: config.value.clientId,
       isExceedFreeLimit: true,
     })
     scrollLock.value = true

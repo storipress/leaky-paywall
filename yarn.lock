@@ -2711,6 +2711,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sindresorhus/slugify@npm:^2.2.1":
+  version: 2.2.1
+  resolution: "@sindresorhus/slugify@npm:2.2.1"
+  dependencies:
+    "@sindresorhus/transliterate": "npm:^1.0.0"
+    escape-string-regexp: "npm:^5.0.0"
+  checksum: 10c0/c3fe41d917347f0e2a1e25a48225afffde8ef379a26217e749d5267e965f564c6a555fa17475b637d6fd84645f42e1e4b530477b57110fa80428024a0fadba25
+  languageName: node
+  linkType: hard
+
+"@sindresorhus/transliterate@npm:^1.0.0":
+  version: 1.6.0
+  resolution: "@sindresorhus/transliterate@npm:1.6.0"
+  dependencies:
+    escape-string-regexp: "npm:^5.0.0"
+  checksum: 10c0/c5552abd98eb4ab3a8653ccb7addf24e0b6f2aa2a4c420689033f8c9d292abb2222fc08e330adf4055580ac78fe810b7467ed012cdf38f4d64175c42571b8b15
+  languageName: node
+  linkType: hard
+
 "@size-limit/file@npm:^11.0.2":
   version: 11.0.2
   resolution: "@size-limit/file@npm:11.0.2"
@@ -2736,6 +2755,7 @@ __metadata:
     "@nanostores/persistent": "npm:^0.9.1"
     "@nanostores/vue": "npm:^0.10.0"
     "@parcel/watcher": "npm:^2.4.0"
+    "@sindresorhus/slugify": "npm:^2.2.1"
     "@size-limit/file": "npm:^11.0.2"
     "@types/eslint": "npm:^8"
     "@urql/vue": "npm:^1.1.2"
@@ -2781,6 +2801,7 @@ __metadata:
     vite-plugin-vue-devtools: "npm:^7.0.13"
     vitest: "npm:^1.2.2"
     vue: "npm:^3.4.15"
+    vue-router: "npm:^4.2.5"
     vue-sonner: "npm:^1.0.3"
     vue-tsc: "npm:^1.8.27"
     zod: "npm:^3.22.4"
@@ -3410,7 +3431,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/devtools-api@npm:^6.5.1":
+"@vue/devtools-api@npm:^6.5.0, @vue/devtools-api@npm:^6.5.1":
   version: 6.5.1
   resolution: "@vue/devtools-api@npm:6.5.1"
   checksum: 10c0/d28b00a64df2c5b3351f74ad28ec7fe65e9ee6e20e585c0130ae6ab74b7e616d4eda3b3e82d39ad391e959be4bbb7aa7221d8253bbca1f3021ad07d4430095f9
@@ -10683,6 +10704,17 @@ __metadata:
   peerDependencies:
     eslint: ">=6.0.0"
   checksum: 10c0/79593073adbce8971565133c70a203f12f0be0f8c5e3a4063796fd56e5de64f1f3ad7f91be5a787a7a3fe751306ed22086ee8369d52725be95f452827ce670de
+  languageName: node
+  linkType: hard
+
+"vue-router@npm:^4.2.5":
+  version: 4.2.5
+  resolution: "vue-router@npm:4.2.5"
+  dependencies:
+    "@vue/devtools-api": "npm:^6.5.0"
+  peerDependencies:
+    vue: ^3.2.0
+  checksum: 10c0/63e51f437a1f10a97fce97c04cde3f87958049c5e20f8b238b66b9a9080c99db0124e680ed0e9921af1f6d81c00bf181e280e36e2370cafea581539334d895ef
   languageName: node
   linkType: hard
 

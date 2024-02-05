@@ -1,6 +1,6 @@
 import { LoremIpsum } from 'lorem-ipsum'
 
-const lorem = new LoremIpsum({
+export const lorem = new LoremIpsum({
   sentencesPerParagraph: {
     max: 8,
     min: 4,

@@ -38,14 +38,17 @@ const locationRouter: RouterLike = {
   },
 }
 
+export const VERIFY_EMAIL = 'verify-email'
+export const SIGN_IN = 'sign-in'
+
 export function useQueryAction({
   auth: { isAuth, onVerifyEmail, onSignInSubscriber } = useAuth(),
   router = locationRouter,
 }: UseQueryActionInput = {}) {
   const cache: { [key: string]: Promise<{ result: boolean; action: string | null }> | undefined } = {}
   const actions: Record<string, (token: string) => Promise<boolean>> = {
-    'verify-email': onVerifyEmail,
-    'sign-in': onSignInSubscriber,
+    [VERIFY_EMAIL]: onVerifyEmail,
+    [SIGN_IN]: onSignInSubscriber,
   }
   const callAction = async (action: string, token: string) => {
     if (action && token && !Array.isArray(action) && !Array.isArray(token)) {

@@ -24,6 +24,7 @@ export const $paywall = persistentMap(
   {
     lastSynced: 0,
     records: [] as BufferedEvent[],
+    read: [] as string[],
     token: '',
   },
   {
@@ -33,8 +34,18 @@ export const $paywall = persistentMap(
 )
 
 export function pushEvent(record: TrackEvent) {
+  const paywall = $paywall.get()
   $paywall.set({
-    ...$paywall.get(),
-    records: [...$paywall.get().records, { e: record.event, p: record.properties ?? {}, t: Date.now() }],
+    ...paywall,
+    records: [...paywall.records, { e: record.event, p: record.properties ?? {}, t: Date.now() }],
+  })
+}
+
+export function pushRead(read: string) {
+  const paywall = $paywall.get()
+
+  $paywall.set({
+    ...paywall,
+    read: [...new Set([...paywall.read, read])],
   })
 }

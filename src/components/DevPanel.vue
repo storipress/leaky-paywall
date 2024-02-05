@@ -2,6 +2,7 @@
 import { toTypedSchema } from '@vee-validate/zod'
 import { toast } from 'vue-sonner'
 import { Field as FormField, useForm } from 'vee-validate'
+import { slugifyWithCounter } from '@sindresorhus/slugify'
 import { $config, configSchema } from '~/stores/config'
 
 const open = ref(false)
@@ -31,6 +32,28 @@ async function copyBookmarklet() {
   await copy()
   toast('Copied!')
 }
+
+const slugify = slugifyWithCounter()
+const route = useRoute()
+const router = useRouter()
+function goToArticle() {
+  const words = lorem.generateWords(5)
+  const slug = slugify(words)
+  router.push(`/${slug}`)
+}
+
+const paywall = useStore($paywall)
+
+function logout() {
+  $paywall.setKey('token', '')
+}
+
+function resetRead() {
+  $paywall.set({
+    ...$paywall.get(),
+    read: [],
+  })
+}
 </script>
 
 <template>
@@ -41,6 +64,17 @@ async function copyBookmarklet() {
     <PopoverContent side="bottom">
       <Card>
         <CardContent>
+          <div class="mb-1 flex gap-1">
+            <Button :disabled="!paywall.token" @click="logout">Logout</Button>
+            <Button @click="resetRead">Reset read</Button>
+          </div>
+          <Button @click="goToArticle">Go to random article</Button>
+          <div>
+            <ul>
+              <li>Amount of read articles: {{ paywall.read.length }}</li>
+              <li>Is current article read before? : {{ paywall.read.includes(route.path) }}</li>
+            </ul>
+          </div>
           <form class="flex w-full flex-col gap-1" @submit="onSubmit">
             <FormField v-slot="{ componentField }" name="title">
               <FormItem>
@@ -92,7 +126,7 @@ async function copyBookmarklet() {
           </form>
         </CardContent>
         <CardFooter class="mt-2">
-          <Button @click="copyBookmarklet">Copy bookmarklet code</Button>
+          <Button @click="copyBookmarklet">Copy embed javascript code</Button>
         </CardFooter>
       </Card>
     </PopoverContent>

@@ -48,6 +48,7 @@
     "@moonrepo/cli": "^1.20.1",
     "@nanostores/logger": "^0.2.4",
     "@parcel/watcher": "^2.4.0",
+    "@sindresorhus/slugify": "^2.2.1",
     "@size-limit/file": "^11.0.2",
     "@types/eslint": "^8",
     "@vitejs/plugin-vue": "^5.0.3",
@@ -78,6 +79,7 @@
     "vite-plugin-graphql-codegen": "^3.3.6",
     "vite-plugin-vue-devtools": "^7.0.13",
     "vitest": "^1.2.2",
+    "vue-router": "^4.2.5",
     "vue-tsc": "^1.8.27",
     "zx": "^7.2.3"
   }
