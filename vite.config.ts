@@ -1,9 +1,11 @@
+import process from 'node:process'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Codegen from 'vite-plugin-graphql-codegen'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import VueDevTools from 'vite-plugin-vue-devtools'
+import { visualizer } from 'rollup-plugin-visualizer'
 // @ts-expect-error no type
 import RadixVueResolver from 'radix-vue/resolver'
 
@@ -17,6 +19,7 @@ const baseConfig = defineConfig({
   plugins: [
     vue({ customElement: true }),
     Codegen(),
+    Boolean(process.env.ANALYZE) && visualizer(),
     AutoImport({
       imports: [
         'vue',
@@ -50,6 +53,9 @@ export default defineConfig(({ mode }) => {
   if (mode === 'lib') {
     return {
       ...baseConfig,
+      define: {
+        'process.env.NODE_ENV': JSON.stringify('production'),
+      },
       build: {
         outDir: 'lib',
 

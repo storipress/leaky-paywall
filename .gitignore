@@ -174,3 +174,4 @@ dist
 .moon/docker
 
 /lib
+stats.html

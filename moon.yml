@@ -22,6 +22,7 @@ tasks:
       - '@globs(sources)'
       - package.json
       - yarn.lock
+      - vite.config.ts
     outputs:
       - lib
     args:
@@ -29,6 +30,13 @@ tasks:
     deps:
       - ~:typecheck
     platform: node
+  lib-analyze:
+    extends: lib
+    outputs:
+      - lib
+      - stats.html
+    env:
+      ANALYZE: 'true'
   minify:
     command:
       - node
@@ -38,12 +46,24 @@ tasks:
     outputs:
       - lib/leaky-paywall.min.js
     deps:
-      - ~:lib
+      - ~:lib-analyze
+  show-analyze:
+    command:
+      - open
+      - stats.html
+    inputs:
+      - stats.html
+    options:
+      runInCI: false
+    deps:
+      - ~:lib-analyze
+    platform: node
   size:
     command:
       - size-limit
     deps:
       - ~:minify
+      - ~:show-analyze
   typecheck:
     command: vue-tsc
     platform: node
