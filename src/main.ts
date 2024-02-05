@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import './assets/index.css'
 import { devtools } from '@nanostores/vue/devtools'
+import urql from '@urql/vue'
 import { parseToRgb, toColorString } from 'polished'
 import App from './App.vue'
 import { $config } from './stores/config'
@@ -24,5 +25,6 @@ window.SP_PAYWALL = {
 const app = createApp(App)
 
 app.use(devtools, { $config })
+app.use(urql, createClientOptions(window.SP_PAYWALL.clientId))
 
 app.mount('#app')

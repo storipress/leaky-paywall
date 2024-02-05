@@ -10,7 +10,7 @@ initConfig()
 
 const config = useStore($config)
 
-const mode = ref<'subscribe' | 'signup'>('subscribe')
+const mode = ref<'subscribe' | 'login'>('subscribe')
 
 const primaryButton = computed(() => (mode.value === 'subscribe' ? 'Subscribe' : 'Sign in'))
 const secondaryButton = computed(() => (mode.value === 'subscribe' ? 'Sign in' : 'Subscribe'))
@@ -23,7 +23,7 @@ const emailInput = ref('')
 
 function switchMode() {
   // After this step, the form will be reset
-  mode.value = mode.value === 'subscribe' ? 'signup' : 'subscribe'
+  mode.value = mode.value === 'subscribe' ? 'login' : 'subscribe'
 }
 
 // Unlock scroll if user scroll up
@@ -98,7 +98,7 @@ whenever(
               </p>
 
               <!-- email form -->
-              <EmailForm :key="mode" v-model:email="emailInput" :button-text="primaryButton" />
+              <EmailForm :key="mode" v-model:email="emailInput" :mode="mode" :button-text="primaryButton" />
 
               <Separator class="my-2" />
 

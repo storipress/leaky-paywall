@@ -6,6 +6,7 @@ import * as z from 'zod'
 import { useModel } from 'vue'
 
 const props = defineProps<{
+  mode: 'subscribe' | 'login'
   email: string
   buttonText: string
 }>()
@@ -32,11 +33,15 @@ const form = useForm({
 })
 
 const emailInput = useModel(props, 'email')
+const { subscribe } = useSubscribe(toRef(props, 'mode'))
 
-// TODO: handle submit user email
-const onSubmit = form.handleSubmit((values) => {
-  // eslint-disable-next-line no-console
-  console.log('Form submitted!', values)
+const showLoginDialog = ref(false)
+
+const onSubmit = form.handleSubmit(async (values) => {
+  const res = await subscribe(values)
+  if (res.ok && !res.token) {
+    showLoginDialog.value = true
+  }
 })
 
 const [formItem, setAnimate] = useAutoAnimate({ duration: 200 })
@@ -65,12 +70,14 @@ onMounted(async () => {
             v-bind="componentField"
           />
         </FormControl>
-        <FormMessage v-if="(console.log(meta), meta.touched)" />
+        <FormMessage v-if="meta.touched" />
       </FormItem>
     </FormField>
 
     <Button type="submit" tabindex="-1" class="w-full bg-sp_primary text-white">
       {{ buttonText }}
     </Button>
+
+    <LoginDialog v-model:open="showLoginDialog" />
   </form>
 </template>

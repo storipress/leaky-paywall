@@ -74,5 +74,7 @@ tasks:
       - yarn.lock
   dev:
     command: vite
+    args:
+      - --open
     local: true
     platform: node

@@ -1,13 +1,10 @@
 <script setup lang="ts">
-import {  cacheExchange, fetchExchange, provideClient } from '@urql/vue'
+import { provideClient } from '@urql/vue'
 
 const target = ref<ComponentPublicInstance | null>(null)
 provideRoot(target)
 
-provideClient({
-  url: `https://api.storipress.dev/${window.SP_PAYWALL.clientId}/graphql`,
-  exchanges: [cacheExchange, fetchExchange],
-})
+provideClient(createClientOptions(window.SP_PAYWALL.clientId))
 </script>
 <template>
   <div>
