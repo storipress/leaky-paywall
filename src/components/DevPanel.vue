@@ -57,12 +57,12 @@ function resetRead() {
 </script>
 
 <template>
-  <Popover v-model:open="open">
-    <PopoverTrigger class="fixed left-0 top-0 ml-1 mt-1">
+  <Sheet v-model:open="open">
+    <SheetTrigger class="fixed left-0 top-0 ml-1 mt-1">
       <Button class="bg-teal-500">Dev Config Panel</Button>
-    </PopoverTrigger>
-    <PopoverContent side="bottom">
-      <Card>
+    </SheetTrigger>
+    <SheetContent class="p-2" side="left">
+      <Card class="pt-2">
         <CardContent>
           <div class="mb-1 flex gap-1">
             <Button :disabled="!paywall.token" @click="logout">Logout</Button>
@@ -76,6 +76,15 @@ function resetRead() {
             </ul>
           </div>
           <form class="flex w-full flex-col gap-1" @submit="onSubmit">
+            <FormField v-slot="{ componentField }" name="freeLimit">
+              <FormItem>
+                <FormLabel>Free limit</FormLabel>
+                <FormControl>
+                  <Input v-bind="componentField" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            </FormField>
             <FormField v-slot="{ componentField }" name="title">
               <FormItem>
                 <FormLabel>Title</FormLabel>
@@ -129,6 +138,6 @@ function resetRead() {
           <Button @click="copyBookmarklet">Copy embed javascript code</Button>
         </CardFooter>
       </Card>
-    </PopoverContent>
-  </Popover>
+    </SheetContent>
+  </Sheet>
 </template>

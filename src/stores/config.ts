@@ -11,7 +11,7 @@ export const configSchema = z.object({
     paywall: true,
     tracking: true,
   }),
-  freeLimit: z.number().optional().default(3),
+  freeLimit: z.coerce.number().optional().default(3),
   clientId: z.string(),
   all: z.boolean().optional().default(false),
   pathPattern: z.instanceof(RegExp).nullish(),
