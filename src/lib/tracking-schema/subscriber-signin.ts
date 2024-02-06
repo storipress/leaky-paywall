@@ -5,6 +5,6 @@ export const subscriberSignIn = defineTrackEvent({
   properties: {
     path: z.string(),
     clientId: z.string(),
-    articleId: z.string().optional(),
+    articleId: z.string().nullable(),
   },
 })

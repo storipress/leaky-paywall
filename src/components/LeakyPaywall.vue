@@ -30,6 +30,10 @@ const isOverFreeLimit = computed(() => paywall.value.read.length >= config.value
 watch(
   location,
   (loc) => {
+    sendTrack('page', {
+      pathname: loc.pathname ?? '',
+    })
+
     if (!isArticle.value) {
       return
     }
@@ -50,7 +54,7 @@ onMounted(async () => {
   if (res.result && res.action === SIGN_IN) {
     sendTrack('subscriber_sign_in', {
       clientId: config.value.clientId,
-      articleId: foundArticle.value?.id ?? '',
+      articleId: foundArticle.value?.id ?? null,
       path: window.location.pathname,
     })
   }
@@ -66,6 +70,10 @@ function switchMode() {
 // Unlock scroll if user scroll up
 useEventListener(window, 'wheel', (event) => {
   if (event.deltaY <= -5) {
+    sendTrack('article_scroll_back', {
+      articleId: foundArticle.value?.id ?? null,
+      clientId: config.value.clientId,
+    })
     show.value = false
     scrollLock.value = false
   }
@@ -91,7 +99,7 @@ whenever(
     }
 
     sendTrack('paywall_triggered', {
-      articleId: foundArticle.value?.id ?? '',
+      articleId: foundArticle.value?.id ?? null,
       clientId: config.value.clientId,
       isExceedFreeLimit: true,
     })

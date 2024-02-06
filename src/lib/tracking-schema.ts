@@ -3,7 +3,7 @@ import { articleScrollBack } from './tracking-schema/article-scroll-back'
 import { articleView } from './tracking-schema/article-view'
 import { page } from './tracking-schema/page'
 import { paywallTriggered } from './tracking-schema/paywall-triggered'
-import { subscriberSignIn } from './tracking-schema/subscriber_signin'
+import { subscriberSignIn } from './tracking-schema/subscriber-signin'
 
 // We must import 1 by 1 or we will lost the type info here
 export const trackEventSchema = z.discriminatedUnion('event', [
