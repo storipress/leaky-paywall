@@ -27,6 +27,19 @@ const isArticle = logicAnd(() => config.value.flags.paywall, logicOr(foundArticl
 
 const isOverFreeLimit = computed(() => paywall.value.read.length >= config.value.freeLimit)
 
+useTrackLink(
+  computed(() => foundArticle.value?.element),
+  (href) => ({
+    event: 'article_link_clicked',
+    properties: {
+      articleId: foundArticle.value?.id ?? null,
+      clientId: config.value.clientId,
+      href,
+      pathname: location.value.pathname ?? '',
+    },
+  }),
+)
+
 watch(
   location,
   (loc) => {

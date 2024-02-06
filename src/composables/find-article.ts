@@ -1,4 +1,5 @@
 export interface FoundedArticle {
+  element: Element
   client: string
   id: string
 }
@@ -8,6 +9,20 @@ export function useFindArticle(): Ref<FoundedArticle | undefined> {
 
   const location = useBrowserLocation()
 
+  function trySaveArticle(el?: Element) {
+    if (!el) {
+      return
+    }
+    const articleContainer = el.parentElement
+    const article = parseArticle((el as HTMLElement).dataset['sp-article'])
+    if (article && articleContainer) {
+      foundArticle.value = {
+        element: articleContainer,
+        ...article,
+      }
+    }
+  }
+
   watch(
     location,
     () => {
@@ -15,8 +30,7 @@ export function useFindArticle(): Ref<FoundedArticle | undefined> {
       if (!lastArticle) {
         return
       }
-      const article = parseArticle((lastArticle as HTMLElement).dataset['sp-article'])
-      foundArticle.value = article
+      trySaveArticle(lastArticle)
     },
     { immediate: true },
   )
@@ -28,8 +42,7 @@ export function useFindArticle(): Ref<FoundedArticle | undefined> {
       if (!lastArticle) {
         return
       }
-      const article = parseArticle((lastArticle.target as HTMLElement).dataset['sp-article'])
-      foundArticle.value = article
+      trySaveArticle(lastArticle.target as Element)
     },
     {
       subtree: true,
@@ -41,7 +54,7 @@ export function useFindArticle(): Ref<FoundedArticle | undefined> {
   return foundArticle
 }
 
-function parseArticle(mark: string | undefined): FoundedArticle | undefined {
+function parseArticle(mark: string | undefined): Pick<FoundedArticle, 'client' | 'id'> | undefined {
   if (!mark) {
     return undefined
   }
