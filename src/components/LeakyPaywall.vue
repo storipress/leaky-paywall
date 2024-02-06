@@ -34,6 +34,14 @@ watch(
       pathname: loc.pathname ?? '',
     })
 
+    if (paywallEnabled.value || foundArticle.value) {
+      sendTrack('article_view', {
+        pathname: location.value.pathname ?? '',
+        clientId: config.value.clientId,
+        articleId: foundArticle.value?.id ?? null,
+      })
+    }
+
     if (!isArticle.value) {
       return
     }
@@ -55,7 +63,7 @@ onMounted(async () => {
     sendTrack('subscriber_sign_in', {
       clientId: config.value.clientId,
       articleId: foundArticle.value?.id ?? null,
-      path: window.location.pathname,
+      pathname: window.location.pathname,
     })
   }
 })
@@ -72,6 +80,7 @@ useEventListener(window, 'wheel', (event) => {
   if (event.deltaY <= -5) {
     sendTrack('article_scroll_back', {
       articleId: foundArticle.value?.id ?? null,
+      pathname: location.value.pathname ?? '',
       clientId: config.value.clientId,
     })
     show.value = false
@@ -99,6 +108,7 @@ whenever(
     }
 
     sendTrack('paywall_triggered', {
+      pathname: location.value.pathname ?? '',
       articleId: foundArticle.value?.id ?? null,
       clientId: config.value.clientId,
       isExceedFreeLimit: true,
