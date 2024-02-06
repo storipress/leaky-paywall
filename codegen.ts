@@ -9,6 +9,12 @@ const config: CodegenConfig = {
       preset: 'client',
       config: {
         useTypeImports: true,
+        scalars: {
+          JSON: 'string',
+          EmailString: 'string',
+          DateTime: 'string',
+          Date: 'string',
+        },
       },
     },
   },
