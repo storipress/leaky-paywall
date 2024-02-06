@@ -1,5 +1,6 @@
 const animate = require('tailwindcss-animate')
 const { iconsPlugin } = require('@egoist/tailwindcss-icons')
+const typography = require('@tailwindcss/typography')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -89,5 +90,5 @@ module.exports = {
       },
     },
   },
-  plugins: [animate, iconsPlugin()],
+  plugins: [animate, iconsPlugin(), typography()],
 }

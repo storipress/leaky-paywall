@@ -44,6 +44,8 @@ function goToArticle() {
 
 const paywall = useStore($paywall)
 
+const events = computed(() => paywall.value.records)
+
 function logout() {
   $paywall.setKey('token', '')
 }
@@ -54,6 +56,9 @@ function resetRead() {
     read: [],
   })
 }
+function resetEvents() {
+  $paywall.setKey('records', [])
+}
 </script>
 
 <template>
@@ -61,12 +66,13 @@ function resetRead() {
     <SheetTrigger class="fixed left-0 top-0 ml-1 mt-1">
       <Button class="bg-teal-500">Dev Config Panel</Button>
     </SheetTrigger>
-    <SheetContent class="p-2" side="left">
-      <Card class="pt-2">
+    <SheetContent class="flex h-full flex-col p-2" side="left">
+      <Card class="flex h-full flex-col pt-2">
         <CardContent>
           <div class="mb-1 flex gap-1">
             <Button :disabled="!paywall.token" @click="logout">Logout</Button>
             <Button @click="resetRead">Reset read</Button>
+            <Button @click="resetEvents">Reset tracking</Button>
           </div>
           <Button @click="goToArticle">Go to random article</Button>
           <div>
@@ -134,8 +140,13 @@ function resetRead() {
             <Button type="submit">Update</Button>
           </form>
         </CardContent>
-        <CardFooter class="mt-2">
+        <CardFooter class="mt-2 flex h-full flex-col">
           <Button @click="copyBookmarklet">Copy embed javascript code</Button>
+          <ScrollArea class="size-full">
+            <ul>
+              <li v-for="(item, index) of events" :key="index">{{ item.e }}: {{ JSON.stringify(item.p) }}</li>
+            </ul>
+          </ScrollArea>
         </CardFooter>
       </Card>
     </SheetContent>
