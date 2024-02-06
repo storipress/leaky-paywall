@@ -122,14 +122,22 @@ whenever(
       return
     }
 
+    scrollLock.value = true
+    show.value = true
+  },
+  { immediate: true },
+)
+
+// Track scroll over threshold
+whenever(
+  isScrollOverThreshold,
+  () => {
     sendTrack('paywall_triggered', {
       pathname: location.value.pathname ?? '',
       articleId: foundArticle.value?.id ?? null,
       clientId: config.value.clientId,
-      isExceedFreeLimit: true,
+      isExceedFreeLimit: !isAllowFree.value,
     })
-    scrollLock.value = true
-    show.value = true
   },
   { immediate: true },
 )
