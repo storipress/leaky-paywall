@@ -17,6 +17,7 @@ const themeConfig = computed(() => ({
   '--sp-primary': config.value.primaryColor,
 }))
 
+useTrackManager()
 const checkQuery = useQueryAction()
 
 const foundArticle = useFindArticle()
