@@ -14,7 +14,7 @@ export function useFindArticle(): Ref<FoundedArticle | undefined> {
       return
     }
     const articleContainer = el.parentElement
-    const article = parseArticle((el as HTMLElement).dataset['sp-article'])
+    const article = parseArticle((el as HTMLElement).dataset.spArticle)
     if (article && articleContainer) {
       foundArticle.value = {
         element: articleContainer,
