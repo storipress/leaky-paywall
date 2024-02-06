@@ -91,11 +91,13 @@ function switchMode() {
 // Unlock scroll if user scroll up
 useEventListener(window, 'wheel', (event) => {
   if (event.deltaY <= -5) {
-    sendTrack('article_scroll_back', {
-      articleId: foundArticle.value?.id ?? null,
-      pathname: location.value.pathname ?? '',
-      clientId: config.value.clientId,
-    })
+    if (show.value) {
+      sendTrack('article_scroll_back', {
+        articleId: foundArticle.value?.id ?? null,
+        pathname: location.value.pathname ?? '',
+        clientId: config.value.clientId,
+      })
+    }
     show.value = false
     scrollLock.value = false
   }
