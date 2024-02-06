@@ -142,10 +142,23 @@ function resetEvents() {
         </CardContent>
         <CardFooter class="mt-2 flex h-full flex-col">
           <Button @click="copyBookmarklet">Copy embed javascript code</Button>
-          <ScrollArea class="size-full">
-            <ul>
-              <li v-for="(item, index) of events" :key="index">{{ item.e }}: {{ JSON.stringify(item.p) }}</li>
+          <ScrollArea class="flex size-full">
+            <ul class="w-full">
+              <li v-for="(item, index) of events" :key="index" class="w-full text-wrap">
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger class="text-left">
+                      <p>{{ item.e }}: {{ JSON.stringify(item.p) }}</p>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      {{ JSON.stringify(item.p) }}
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </li>
             </ul>
+            <ScrollBar orientation="vertical" />
+            <ScrollBar orientation="horizontal" />
           </ScrollArea>
         </CardFooter>
       </Card>

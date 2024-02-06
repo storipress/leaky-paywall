@@ -68,6 +68,10 @@ declare module 'vue' {
     SheetTrigger: typeof import('./src/components/ui/sheet/SheetTrigger.vue')['default']
     Sonner: typeof import('./src/components/ui/sonner/Sonner.vue')['default']
     Textarea: typeof import('./src/components/ui/textarea/Textarea.vue')['default']
+    Tooltip: typeof import('./src/components/ui/tooltip/Tooltip.vue')['default']
+    TooltipContent: typeof import('./src/components/ui/tooltip/TooltipContent.vue')['default']
+    TooltipProvider: typeof import('./src/components/ui/tooltip/TooltipProvider.vue')['default']
+    TooltipTrigger: typeof import('./src/components/ui/tooltip/TooltipTrigger.vue')['default']
     VisuallyHidden: typeof import('radix-vue')['VisuallyHidden']
   }
 }
