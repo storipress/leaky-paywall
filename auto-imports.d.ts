@@ -242,6 +242,7 @@ declare global {
   const useParallax: typeof import('@vueuse/core')['useParallax']
   const useParentElement: typeof import('@vueuse/core')['useParentElement']
   const usePaywallEnabled: typeof import('./src/composables/paywall-enable')['usePaywallEnabled']
+  const usePaywallMode: typeof import('./src/composables/paywall-mode')['usePaywallMode']
   const usePerformanceObserver: typeof import('@vueuse/core')['usePerformanceObserver']
   const usePermission: typeof import('@vueuse/core')['usePermission']
   const usePointer: typeof import('@vueuse/core')['usePointer']

@@ -11,10 +11,7 @@ initConfig()
 const config = useStore($config)
 const paywall = useStore($paywall)
 
-const mode = ref<'subscribe' | 'login'>('subscribe')
-
-const primaryButton = computed(() => (mode.value === 'subscribe' ? 'Subscribe' : 'Sign in'))
-const secondaryButton = computed(() => (mode.value === 'subscribe' ? 'Sign in' : 'Subscribe'))
+const { mode, primaryButton, reset, secondaryButton, toggleMode } = usePaywallMode()
 
 const themeConfig = computed(() => ({
   '--sp-primary': config.value.primaryColor,
@@ -26,7 +23,7 @@ const foundArticle = useFindArticle()
 
 const paywallEnabled = usePaywallEnabled()
 const location = useBrowserLocation()
-const isArticle = logicOr(foundArticle, paywallEnabled)
+const isArticle = logicAnd(() => config.value.flags.paywall, logicOr(foundArticle, paywallEnabled))
 
 const isOverFreeLimit = computed(() => paywall.value.read.length >= config.value.freeLimit)
 
@@ -63,7 +60,7 @@ const emailInput = ref('')
 
 function switchMode() {
   // After this step, the form will be reset
-  mode.value = mode.value === 'subscribe' ? 'login' : 'subscribe'
+  toggleMode()
 }
 
 // Unlock scroll if user scroll up
@@ -108,7 +105,7 @@ whenever(
 whenever(
   logicNot(show),
   () => {
-    mode.value = 'subscribe'
+    reset()
   },
   { flush: 'post' },
 )

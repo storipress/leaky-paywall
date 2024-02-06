@@ -4,9 +4,10 @@ import { Field as FormField, useForm } from 'vee-validate'
 import { useAutoAnimate } from '@formkit/auto-animate/vue'
 import * as z from 'zod'
 import { useModel } from 'vue'
+import type { Mode } from '~/composables/paywall-mode'
 
 const props = defineProps<{
-  mode: 'subscribe' | 'login'
+  mode: Mode
   email: string
   buttonText: string
 }>()

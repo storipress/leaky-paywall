@@ -7,6 +7,7 @@ export function usePaywallEnabled() {
     if (!config.flags.paywall) {
       return false
     }
+
     if (config.all) {
       return true
     }
