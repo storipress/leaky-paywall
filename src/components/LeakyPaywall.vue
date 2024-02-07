@@ -30,7 +30,7 @@ const isOverFreeLimit = computed(() => paywall.value.read.length >= config.value
 useTrackLink(
   computed(() => foundArticle.value?.element),
   (href) => ({
-    event: 'article.link_clicked',
+    event: 'article.link_click',
     properties: {
       // Impossible to be null
       article_id: foundArticle.value?.id ?? '',
@@ -136,7 +136,7 @@ whenever(
 whenever(
   isScrollOverThreshold,
   () => {
-    sendTrack('paywall.reached', {
+    sendTrack('paywall.reach', {
       pathname: location.value.pathname ?? '',
       article_id: foundArticle.value?.id ?? null,
       client_id: config.value.clientId,
