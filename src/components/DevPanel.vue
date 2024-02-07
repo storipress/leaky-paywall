@@ -63,8 +63,8 @@ function resetEvents() {
 
 <template>
   <Sheet v-model:open="open">
-    <SheetTrigger class="fixed left-0 top-0 ml-1 mt-1">
-      <Button class="bg-teal-500">Dev Config Panel</Button>
+    <SheetTrigger class="fixed left-0 top-0 z-50 ml-1 mt-1">
+      <Button class="pointer-events-auto bg-teal-500">Dev Config Panel</Button>
     </SheetTrigger>
     <SheetContent class="flex h-full flex-col p-2" side="left">
       <Card class="flex h-full flex-col pt-2">
