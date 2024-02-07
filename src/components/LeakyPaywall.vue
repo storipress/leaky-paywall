@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { sendTrack } from '~/lib/tracking'
 
-const scrollLock = useScrollLock(window)
 const { y } = useWindowScroll()
 const { height } = useWindowSize()
 const show = ref(false)
@@ -100,7 +99,6 @@ useEventListener(window, 'wheel', (event) => {
       })
     }
     show.value = false
-    scrollLock.value = false
   }
 })
 
@@ -123,7 +121,6 @@ whenever(
       return
     }
 
-    scrollLock.value = true
     show.value = true
   },
   { immediate: true },
