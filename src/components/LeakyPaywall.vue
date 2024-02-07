@@ -30,10 +30,11 @@ const isOverFreeLimit = computed(() => paywall.value.read.length >= config.value
 useTrackLink(
   computed(() => foundArticle.value?.element),
   (href) => ({
-    event: 'article_link_clicked',
+    event: 'article.link_clicked',
     properties: {
-      articleId: foundArticle.value?.id ?? null,
-      clientId: config.value.clientId,
+      // Impossible to be null
+      article_id: foundArticle.value?.id ?? '',
+      client_id: config.value.clientId,
       href,
       pathname: location.value.pathname ?? '',
     },
@@ -43,15 +44,15 @@ useTrackLink(
 watch(
   location,
   (loc) => {
-    sendTrack('page', {
+    sendTrack('page.view', {
       pathname: loc.pathname ?? '',
     })
 
     if (paywallEnabled.value || foundArticle.value) {
-      sendTrack('article_view', {
+      sendTrack('article.view', {
         pathname: location.value.pathname ?? '',
-        clientId: config.value.clientId,
-        articleId: foundArticle.value?.id ?? null,
+        client_id: config.value.clientId,
+        article_id: foundArticle.value?.id ?? null,
       })
     }
 
@@ -73,9 +74,9 @@ onMounted(async () => {
     return
   }
   if (res.result && res.action === SIGN_IN) {
-    sendTrack('subscriber_sign_in', {
-      clientId: config.value.clientId,
-      articleId: foundArticle.value?.id ?? null,
+    sendTrack('user.sign_in', {
+      client_id: config.value.clientId,
+      article_id: foundArticle.value?.id ?? null,
       pathname: window.location.pathname,
     })
   }
@@ -92,10 +93,10 @@ function switchMode() {
 useEventListener(window, 'wheel', (event) => {
   if (event.deltaY <= -5) {
     if (show.value) {
-      sendTrack('article_scroll_back', {
-        articleId: foundArticle.value?.id ?? null,
+      sendTrack('article.scroll_back', {
+        article_id: foundArticle.value?.id ?? null,
+        client_id: config.value.clientId,
         pathname: location.value.pathname ?? '',
-        clientId: config.value.clientId,
       })
     }
     show.value = false
@@ -121,6 +122,11 @@ whenever(
       return
     }
 
+    sendTrack('paywall.display', {
+      pathname: location.value.pathname ?? '',
+      article_id: foundArticle.value?.id ?? null,
+      client_id: config.value.clientId,
+    })
     show.value = true
   },
   { immediate: true },
@@ -130,11 +136,10 @@ whenever(
 whenever(
   isScrollOverThreshold,
   () => {
-    sendTrack('paywall_triggered', {
+    sendTrack('paywall.reached', {
       pathname: location.value.pathname ?? '',
-      articleId: foundArticle.value?.id ?? null,
-      clientId: config.value.clientId,
-      isExceedFreeLimit: !isAllowFree.value,
+      article_id: foundArticle.value?.id ?? null,
+      client_id: config.value.clientId,
     })
   },
   { immediate: true },

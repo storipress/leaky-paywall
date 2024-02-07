@@ -1,10 +1,10 @@
 import * as z from 'zod'
 
-export const subscriberSignIn = defineTrackEvent({
-  event: 'subscriber_sign_in',
+export const userSignIn = defineTrackEvent({
+  event: 'user.sign_in',
   properties: {
     pathname: z.string(),
-    clientId: z.string(),
-    articleId: z.string().nullable(),
+    client_id: z.string(),
+    article_id: z.string().nullable(),
   },
 })
