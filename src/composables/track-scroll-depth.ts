@@ -7,7 +7,7 @@ export function useTrackScrollDepth(articleEl: ComputedRef<HTMLElement | undefin
 
   const lastPercentage = computed(() => {
     const el = articleEl.value
-    if (!el) return
+    if (!el) return null
 
     return Math.min(100, Math.round(((y.value + height.value - el.offsetTop) / el.offsetHeight) * 100))
   })
