@@ -41,6 +41,17 @@ useTrackLink(
   }),
 )
 
+const { percentage } = useTrackScrollDepth(computed(() => foundArticle.value?.element as HTMLElement))
+
+whenever(percentage, (percentage) => {
+  sendTrack('article.scroll_depth', {
+    pathname: location.value.pathname ?? '',
+    client_id: config.value.clientId,
+    article_id: foundArticle.value?.id ?? null,
+    percentage,
+  })
+})
+
 watch(
   location,
   (loc) => {

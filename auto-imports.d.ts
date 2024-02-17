@@ -303,6 +303,7 @@ declare global {
   const useToggle: typeof import('@vueuse/core')['useToggle']
   const useTrackLink: typeof import('./src/composables/track-link')['useTrackLink']
   const useTrackManager: typeof import('./src/composables/track-manager')['useTrackManager']
+  const useTrackScrollDepth: typeof import('./src/composables/track-scroll-depth')['useTrackScrollDepth']
   const useTransition: typeof import('@vueuse/core')['useTransition']
   const useTrunc: typeof import('@vueuse/math')['useTrunc']
   const useUrlSearchParams: typeof import('@vueuse/core')['useUrlSearchParams']
