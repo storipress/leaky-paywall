@@ -23,14 +23,18 @@ export function useFindArticle(): Ref<FoundedArticle | undefined> {
     }
   }
 
+  function searchArticle() {
+    const lastArticle = Array.from(document.querySelectorAll('[data-sp-article]')).at(-1)
+    if (!lastArticle) {
+      return
+    }
+    trySaveArticle(lastArticle)
+  }
+
   watch(
     location,
     () => {
-      const lastArticle = Array.from(document.querySelectorAll('[data-sp-article]')).at(-1)
-      if (!lastArticle) {
-        return
-      }
-      trySaveArticle(lastArticle)
+      searchArticle()
     },
     { immediate: true },
   )
@@ -50,6 +54,11 @@ export function useFindArticle(): Ref<FoundedArticle | undefined> {
       attributeFilter: ['data-sp-article'],
     },
   )
+
+  onMounted(async () => {
+    await nextTick()
+    searchArticle()
+  })
 
   return foundArticle
 }
