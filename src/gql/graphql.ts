@@ -640,7 +640,7 @@ export type CreateLinkInput = {
 
 export type CreateLinterInput = {
   /** linter description */
-  description: Scalars['String']['input'];
+  description?: InputMaybe<Scalars['String']['input']>;
   /** linter prompt */
   prompt: Scalars['String']['input'];
   /** linter title */
