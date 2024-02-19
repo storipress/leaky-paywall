@@ -11,6 +11,6 @@ const article = computed(() => getFakeArticle(`${config.value.clientId}.${id}`))
     </div>
     <h1 class="mb-2 py-4 text-2xl font-semibold">{{ article.title }}</h1>
     <p class="text-md mb-4">{{ article.excerpt }}</p>
-    <div class="prose flex flex-col gap-1 text-gray-700" v-html="article.content" />
+    <div v-if="config.clientId" class="prose flex flex-col gap-1 text-gray-700" v-html="article.content" />
   </div>
 </template>

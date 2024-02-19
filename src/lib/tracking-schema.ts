@@ -6,6 +6,7 @@ import { paywallReached } from './tracking-schema/paywall-reach'
 import { userSignIn } from './tracking-schema/subscriber-signin'
 import { articleLinkClicked } from './tracking-schema/article-link-click'
 import { paywallDisplay } from './tracking-schema/paywall-display'
+import { articleScrollDepth } from './tracking-schema/article-scroll-depth'
 
 // We must import 1 by 1 or we will lost the type info here
 export const trackEventSchema = z.discriminatedUnion('event', [
@@ -16,6 +17,7 @@ export const trackEventSchema = z.discriminatedUnion('event', [
   paywallReached,
   userSignIn,
   articleLinkClicked,
+  articleScrollDepth,
 ])
 
 export type TrackEvent = z.infer<typeof trackEventSchema>
