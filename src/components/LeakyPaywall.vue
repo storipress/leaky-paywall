@@ -184,15 +184,6 @@ whenever(
                 <div class="size-full">
                   <AvatarImage :src="config.avatar" />
                 </div>
-                <Avatar
-                  shape="square"
-                  class="absolute bottom-0 right-0 items-center justify-center p-1 translate-x-1 translate-y-1 bg-white shadow-md"
-                  size="sm"
-                >
-                  <div class="rounded-md size-full">
-                    <AvatarImage :src="config.publicationLogo" />
-                  </div>
-                </Avatar>
               </Avatar>
 
               <h3 class="text-lg font-bold text-center">{{ config.title }}</h3>
