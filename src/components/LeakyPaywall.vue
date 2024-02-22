@@ -174,30 +174,30 @@ whenever(
         <AlertDialogTitle class="invisible">Subscribe</AlertDialogTitle>
       </VisuallyHidden>
       <AlertDialogContent>
-        <Card class="w-full pb-4 pt-4" :style="themeConfig">
+        <Card class="w-full pt-4 pb-4" :style="themeConfig">
           <CardContent>
             <div class="flex flex-col items-center gap-1">
               <Avatar
-                class="relative mb-4 mt-2 items-center justify-center overflow-visible bg-white p-1 shadow-md"
+                class="relative items-center justify-center p-1 mt-2 mb-4"
                 size="md"
               >
-                <div class="size-full overflow-hidden rounded-full">
+                <div class="size-full">
                   <AvatarImage :src="config.avatar" />
                 </div>
                 <Avatar
                   shape="square"
-                  class="absolute bottom-0 right-0 translate-x-1 translate-y-1 items-center justify-center bg-white p-1 shadow-md"
+                  class="absolute bottom-0 right-0 items-center justify-center p-1 translate-x-1 translate-y-1 bg-white shadow-md"
                   size="sm"
                 >
-                  <div class="size-full overflow-hidden rounded-md">
+                  <div class="rounded-md size-full">
                     <AvatarImage :src="config.publicationLogo" />
                   </div>
                 </Avatar>
               </Avatar>
 
-              <h3 class="text-center text-lg font-bold">{{ config.title }}</h3>
+              <h3 class="text-lg font-bold text-center">{{ config.title }}</h3>
 
-              <p class="text-balance pb-4 text-center text-sm text-stone-400">
+              <p class="pb-4 text-sm text-center text-balance text-stone-400">
                 {{ config.description }}
               </p>
 
