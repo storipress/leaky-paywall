@@ -177,10 +177,7 @@ whenever(
         <Card class="w-full pt-4 pb-4" :style="themeConfig">
           <CardContent>
             <div class="flex flex-col items-center gap-1">
-              <Avatar
-                class="relative items-center justify-center p-1 mt-2 mb-4"
-                size="md"
-              >
+              <Avatar class="relative items-center justify-center p-1 mt-2 mb-4" size="md">
                 <div class="size-full">
                   <AvatarImage :src="config.avatar" />
                 </div>
