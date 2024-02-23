@@ -178,7 +178,7 @@ whenever(
           <CardContent>
             <div class="flex flex-col items-center gap-1">
               <Avatar
-                class="relative items-center justify-center p-1 mt-2 mb-4"
+                class="relative items-center justify-center p-1 mt-2 mb-3"
                 size="md"
               >
                 <div class="size-full">
