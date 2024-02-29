@@ -8,6 +8,7 @@
     "dev": "moon run dev",
     "build": "moon run build",
     "size": "moon run size",
+    "minify": "moon run minify",
     "build:lib": "moon run minify",
     "deploy": "tsx scripts/deploy.ts"
   },
