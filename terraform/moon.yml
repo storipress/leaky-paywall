@@ -16,6 +16,13 @@ tasks:
     command:
       - terraform
       - plan
+    inputs:
+      - /lib/leaky-paywall.min.js
+      - $TF_VAR_aws_access_key
+      - $TF_VAR_aws_secret_key
+      - '*.tfvars'
+      - .terraform.lock.hcl
+      - '*.tf'
     deps:
       - ^:deploy
   deploy:
@@ -23,5 +30,12 @@ tasks:
       - terraform
       - apply
       - -auto-approve
+    inputs:
+      - /lib/leaky-paywall.min.js
+      - $TF_VAR_aws_access_key
+      - $TF_VAR_aws_secret_key
+      - '*.tfvars'
+      - .terraform.lock.hcl
+      - '*.tf'
     deps:
       - ^:deploy
