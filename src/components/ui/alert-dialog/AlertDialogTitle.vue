@@ -6,10 +6,7 @@ const props = defineProps<AlertDialogTitleProps & { class?: string }>()
 </script>
 
 <template>
-  <AlertDialogTitle
-    :as-child="props.asChild"
-    :class="cn('text-lg text-foreground font-semibold', props.class)"
-  >
+  <AlertDialogTitle :as-child="props.asChild" :class="cn('text-lg font-semibold text-foreground', props.class)">
     <slot />
   </AlertDialogTitle>
 </template>

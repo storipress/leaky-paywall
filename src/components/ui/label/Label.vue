@@ -6,15 +6,7 @@ const props = defineProps<LabelProps & { class?: string }>()
 </script>
 
 <template>
-  <Label
-    v-bind="props"
-    :class="
-      cn(
-        'block text-sm tracking-tight font-medium text-foreground text-left',
-        props.class,
-      )
-    "
-  >
+  <Label v-bind="props" :class="cn('block text-left text-sm font-medium tracking-tight text-foreground', props.class)">
     <slot />
   </Label>
 </template>
