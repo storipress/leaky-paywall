@@ -1,14 +1,13 @@
 import { html, oneLineTrim } from 'proper-tags'
-import type { Config } from '~/stores/config'
 
 const PRODUCTION_URL = 'https://assets.stori.press/storipress/leaky-paywall.min.js'
 const TEST_URL = 'https://leaky-paywall.pages.dev/leaky-paywall.min.js'
 const javascript = oneLineTrim
 
 export function useCreateBookmarklet() {
-  // const config = useStore($config)
+  const config = useStore($config)
 
-  const serializedConfig = computed(() => JSON.stringify(toRaw($config.get())))
+  const serializedConfig = computed(() => JSON.stringify(toRaw(config.value)))
 
   const productionHTML = computed(() => {
     return html`
