@@ -8,7 +8,13 @@ dependsOn:
   - leaky-paywall
 
 tasks:
+  init:
+    command:
+      - terraform
+      - init
   fmt:
+    deps:
+      - init
     command:
       - terraform
       - fmt
@@ -24,6 +30,7 @@ tasks:
       - .terraform.lock.hcl
       - '*.tf'
     deps:
+      - init
       - ^:deploy
   deploy:
     command:
@@ -38,4 +45,5 @@ tasks:
       - .terraform.lock.hcl
       - '*.tf'
     deps:
+      - init
       - ^:deploy
