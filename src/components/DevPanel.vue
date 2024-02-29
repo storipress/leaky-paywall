@@ -109,18 +109,9 @@ function resetEvents() {
                 <FormMessage />
               </FormItem>
             </FormField>
-            <FormField v-slot="{ componentField }" name="avatar">
+            <FormField v-slot="{ componentField }" name="logo">
               <FormItem>
-                <FormLabel>Avatar</FormLabel>
-                <FormControl>
-                  <Input v-bind="componentField" />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            </FormField>
-            <FormField v-slot="{ componentField }" name="publicationLogo">
-              <FormItem>
-                <FormLabel>Publication Logo</FormLabel>
+                <FormLabel>Logo</FormLabel>
                 <FormControl>
                   <Input v-bind="componentField" />
                 </FormControl>
