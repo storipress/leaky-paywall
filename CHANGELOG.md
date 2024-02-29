@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/storipress/leaky-paywall/compare/v1.0.0...v1.0.1) (2024-02-29)
+
+
+### Bug Fixes
+
+* add terraform init ([e2f5977](https://github.com/storipress/leaky-paywall/commit/e2f5977b562a24c2090862b48b1d583a72ca8e02))
+
 ## 1.0.0 (2024-02-29)
 
 ### Features
