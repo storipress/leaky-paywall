@@ -6,7 +6,6 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import { visualizer } from 'rollup-plugin-visualizer'
-// @ts-expect-error no type
 import RadixVueResolver from 'radix-vue/resolver'
 
 const baseConfig = defineConfig({
@@ -47,6 +46,7 @@ const baseConfig = defineConfig({
     }),
     Components({
       dirs: ['src/components', 'src/components/ui'],
+      // @ts-expect-error type incorrect
       resolvers: [RadixVueResolver()],
     }),
     VueDevTools(),
