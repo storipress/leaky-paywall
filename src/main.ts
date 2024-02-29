@@ -1,11 +1,9 @@
 import { createApp } from 'vue'
 import './assets/index.css'
-import { devtools } from '@nanostores/vue/devtools'
 import urql from '@urql/vue'
 import { parseToRgb, toColorString } from 'polished'
 import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
-import { $config } from './stores/config'
 import NoopVue from './components/Noop.vue'
 
 window.SP_PAYWALL = {
@@ -39,7 +37,6 @@ const router = createRouter({
   ],
 })
 
-app.use(devtools, { $config })
 app.use(router)
 app.use(urql, createClientOptions(window.SP_PAYWALL.clientId))
 
