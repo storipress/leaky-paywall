@@ -15,8 +15,7 @@ import type { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-
 const documents = {
     "\n      mutation VerifySubscriberEmail($token: String!) {\n        verifySubscriberEmail(token: $token)\n      }\n    ": types.VerifySubscriberEmailDocument,
     "\n      mutation SignInSubscriber($token: String!) {\n        signInSubscriber(token: $token)\n      }\n    ": types.SignInSubscriberDocument,
-    "\n      mutation RequestSignInSubscriber($email: EmailString!, $referer: String!, $from: String!) {\n        requestSignInSubscriber(input: { email: $email, referer: $referer, from: $from })\n      }\n    ": types.RequestSignInSubscriberDocument,
-    "\n      mutation SignUpSubscriber($email: EmailString!, $referer: String!, $from: String!) {\n        signUpSubscriber(input: { email: $email, referer: $referer, from: $from })\n      }\n    ": types.SignUpSubscriberDocument,
+    "\n      mutation SignInPaywall($email: EmailString!) {\n        signInLeakySubscriber(input: { email: $email })\n      }\n    ": types.SignInPaywallDocument,
     "\n      mutation TrackSubscriberActivity($input: TrackSubscriberActivityInput!) {\n        trackSubscriberActivity(input: $input)\n      }\n    ": types.TrackSubscriberActivityDocument,
 };
 
@@ -45,11 +44,7 @@ export function graphql(source: "\n      mutation SignInSubscriber($token: Strin
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n      mutation RequestSignInSubscriber($email: EmailString!, $referer: String!, $from: String!) {\n        requestSignInSubscriber(input: { email: $email, referer: $referer, from: $from })\n      }\n    "): (typeof documents)["\n      mutation RequestSignInSubscriber($email: EmailString!, $referer: String!, $from: String!) {\n        requestSignInSubscriber(input: { email: $email, referer: $referer, from: $from })\n      }\n    "];
-/**
- * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function graphql(source: "\n      mutation SignUpSubscriber($email: EmailString!, $referer: String!, $from: String!) {\n        signUpSubscriber(input: { email: $email, referer: $referer, from: $from })\n      }\n    "): (typeof documents)["\n      mutation SignUpSubscriber($email: EmailString!, $referer: String!, $from: String!) {\n        signUpSubscriber(input: { email: $email, referer: $referer, from: $from })\n      }\n    "];
+export function graphql(source: "\n      mutation SignInPaywall($email: EmailString!) {\n        signInLeakySubscriber(input: { email: $email })\n      }\n    "): (typeof documents)["\n      mutation SignInPaywall($email: EmailString!) {\n        signInLeakySubscriber(input: { email: $email })\n      }\n    "];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

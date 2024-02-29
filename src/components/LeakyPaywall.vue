@@ -10,8 +10,6 @@ initConfig()
 const config = useStore($config)
 const paywall = useStore($paywall)
 
-const { mode, primaryButton, reset, secondaryButton, toggleMode } = usePaywallMode()
-
 const themeConfig = computed(() => ({
   '--sp-primary': config.value.primaryColor,
 }))
@@ -95,11 +93,6 @@ onMounted(async () => {
 
 const emailInput = ref('')
 
-function switchMode() {
-  // After this step, the form will be reset
-  toggleMode()
-}
-
 // Unlock scroll if user scroll up
 useEventListener(window, 'wheel', (event) => {
   if (event.deltaY <= -5) {
@@ -155,15 +148,6 @@ whenever(
   },
   { immediate: true },
 )
-
-// reset form content after close
-whenever(
-  logicNot(show),
-  () => {
-    reset()
-  },
-  { flush: 'post' },
-)
 </script>
 
 <template>
@@ -193,13 +177,7 @@ whenever(
               </p>
 
               <!-- email form -->
-              <EmailForm :key="mode" v-model:email="emailInput" :mode="mode" :button-text="primaryButton" />
-
-              <Separator class="my-2" />
-
-              <Button class="text-gray-600" tabindex="-1" variant="ghost" @click="switchMode">
-                {{ secondaryButton }}
-              </Button>
+              <EmailForm v-model:email="emailInput" />
             </div>
           </CardContent>
         </Card>

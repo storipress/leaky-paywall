@@ -1248,6 +1248,12 @@ export type FacebookSearchPage = {
   name: Scalars['String']['output'];
 };
 
+export type HubSpotInfo = {
+  __typename?: 'HubSpotInfo';
+  /** whether the integration is activated or not */
+  activated_at?: Maybe<Scalars['DateTime']['output']>;
+};
+
 export type IframelyIframelyInput = {
   /**
    * iframely params,
@@ -1627,6 +1633,8 @@ export type Mutation = {
   confirmCustomDomain: Scalars['Boolean']['output'];
   /** confirm account email */
   confirmEmail: Scalars['Boolean']['output'];
+  /** initiate OAuth for HubSpot and return the redirect URL */
+  connectHubSpot: Scalars['String']['output'];
   /** initiate OAuth for Webflow and return the redirect URL */
   connectWebflow: Scalars['String']['output'];
   createAppSubscription: Scalars['Boolean']['output'];
@@ -1733,6 +1741,8 @@ export type Mutation = {
    * @deprecated No longer supported
    */
   disableSubscription: Site;
+  /** disconnect HubSpot integration */
+  disconnectHubSpot: Scalars['Boolean']['output'];
   /** disconnect specific integration */
   disconnectIntegration: Integration;
   /** disconnect stripe connect */
@@ -1864,6 +1874,8 @@ export type Mutation = {
   signIframelySignature: Scalars['String']['output'];
   /** sign in to the app */
   signIn: AuthToken;
+  /** sign up/in to customer site */
+  signInLeakySubscriber: Scalars['String']['output'];
   /** sign in to customer site */
   signInSubscriber: Scalars['String']['output'];
   /** sign out of the app */
@@ -2539,6 +2551,11 @@ export type MutationSignInArgs = {
 };
 
 
+export type MutationSignInLeakySubscriberArgs = {
+  input: SignInLeakySubscriberInput;
+};
+
+
 export type MutationSignInSubscriberArgs = {
   token: Scalars['String']['input'];
 };
@@ -2843,6 +2860,18 @@ export type MutationVerifySubscriberEmailArgs = {
   token: Scalars['String']['input'];
 };
 
+export type Notification = {
+  __typename?: 'Notification';
+  /** notification meta data */
+  data?: Maybe<Scalars['JSON']['output']>;
+  /** notification id */
+  id: Scalars['ID']['output'];
+  /** notification create time */
+  occurred_at: Scalars['DateTime']['output'];
+  /** notification state */
+  type: Scalars['String']['output'];
+};
+
 export type OptInWordPressFeatureInput = {
   /** feature Type */
   key: WordPressOptionalFeatureType;
@@ -3039,6 +3068,10 @@ export type Query = {
   /** get specific email */
   email?: Maybe<Email>;
   facebookPages: Array<FacebookSearchPage>;
+  /** whether the HubSpot OAuth has been completed or not */
+  hubSpotAuthorized: Scalars['Boolean']['output'];
+  /** get HubSpot information */
+  hubSpotInfo: HubSpotInfo;
   /**
    * make a iframely request for specific url
    * @deprecated use signIframelySignature mutation
@@ -3061,6 +3094,8 @@ export type Query = {
   me: User;
   /** media info */
   media: Media;
+  /** fetch notifications */
+  notifications: Array<Notification>;
   /** get specific page */
   page?: Maybe<Page>;
   /** fetch pages */
@@ -3758,6 +3793,11 @@ export type ShopifyProductVariant = {
   price: Scalars['String']['output'];
   sku: Scalars['String']['output'];
   title: Scalars['String']['output'];
+};
+
+export type SignInLeakySubscriberInput = {
+  /** subscriber email */
+  email: Scalars['EmailString']['input'];
 };
 
 export type SignUpInput = {
@@ -5233,23 +5273,12 @@ export type SignInSubscriberMutationVariables = Exact<{
 
 export type SignInSubscriberMutation = { __typename?: 'Mutation', signInSubscriber: string };
 
-export type RequestSignInSubscriberMutationVariables = Exact<{
+export type SignInPaywallMutationVariables = Exact<{
   email: Scalars['EmailString']['input'];
-  referer: Scalars['String']['input'];
-  from: Scalars['String']['input'];
 }>;
 
 
-export type RequestSignInSubscriberMutation = { __typename?: 'Mutation', requestSignInSubscriber: boolean };
-
-export type SignUpSubscriberMutationVariables = Exact<{
-  email: Scalars['EmailString']['input'];
-  referer: Scalars['String']['input'];
-  from: Scalars['String']['input'];
-}>;
-
-
-export type SignUpSubscriberMutation = { __typename?: 'Mutation', signUpSubscriber: string };
+export type SignInPaywallMutation = { __typename?: 'Mutation', signInLeakySubscriber: string };
 
 export type TrackSubscriberActivityMutationVariables = Exact<{
   input: TrackSubscriberActivityInput;
@@ -5261,6 +5290,5 @@ export type TrackSubscriberActivityMutation = { __typename?: 'Mutation', trackSu
 
 export const VerifySubscriberEmailDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"VerifySubscriberEmail"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"token"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"verifySubscriberEmail"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"token"},"value":{"kind":"Variable","name":{"kind":"Name","value":"token"}}}]}]}}]} as unknown as DocumentNode<VerifySubscriberEmailMutation, VerifySubscriberEmailMutationVariables>;
 export const SignInSubscriberDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"SignInSubscriber"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"token"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"signInSubscriber"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"token"},"value":{"kind":"Variable","name":{"kind":"Name","value":"token"}}}]}]}}]} as unknown as DocumentNode<SignInSubscriberMutation, SignInSubscriberMutationVariables>;
-export const RequestSignInSubscriberDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"RequestSignInSubscriber"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"email"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"EmailString"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"referer"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"from"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"requestSignInSubscriber"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"input"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"email"},"value":{"kind":"Variable","name":{"kind":"Name","value":"email"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"referer"},"value":{"kind":"Variable","name":{"kind":"Name","value":"referer"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"from"},"value":{"kind":"Variable","name":{"kind":"Name","value":"from"}}}]}}]}]}}]} as unknown as DocumentNode<RequestSignInSubscriberMutation, RequestSignInSubscriberMutationVariables>;
-export const SignUpSubscriberDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"SignUpSubscriber"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"email"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"EmailString"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"referer"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"from"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"signUpSubscriber"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"input"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"email"},"value":{"kind":"Variable","name":{"kind":"Name","value":"email"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"referer"},"value":{"kind":"Variable","name":{"kind":"Name","value":"referer"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"from"},"value":{"kind":"Variable","name":{"kind":"Name","value":"from"}}}]}}]}]}}]} as unknown as DocumentNode<SignUpSubscriberMutation, SignUpSubscriberMutationVariables>;
+export const SignInPaywallDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"SignInPaywall"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"email"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"EmailString"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"signInLeakySubscriber"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"input"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"email"},"value":{"kind":"Variable","name":{"kind":"Name","value":"email"}}}]}}]}]}}]} as unknown as DocumentNode<SignInPaywallMutation, SignInPaywallMutationVariables>;
 export const TrackSubscriberActivityDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"TrackSubscriberActivity"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"input"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"TrackSubscriberActivityInput"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"trackSubscriberActivity"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"input"},"value":{"kind":"Variable","name":{"kind":"Name","value":"input"}}}]}]}}]} as unknown as DocumentNode<TrackSubscriberActivityMutation, TrackSubscriberActivityMutationVariables>;

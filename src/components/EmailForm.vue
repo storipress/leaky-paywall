@@ -4,12 +4,9 @@ import { Field as FormField, useForm } from 'vee-validate'
 import { useAutoAnimate } from '@formkit/auto-animate/vue'
 import * as z from 'zod'
 import { useModel } from 'vue'
-import type { Mode } from '~/composables/paywall-mode'
 
 const props = defineProps<{
-  mode: Mode
   email: string
-  buttonText: string
 }>()
 
 defineEmits<{
@@ -34,15 +31,14 @@ const form = useForm({
 })
 
 const emailInput = useModel(props, 'email')
-const { subscribe } = useSubscribe(toRef(props, 'mode'))
-
-const showLoginDialog = ref(false)
+const { subscribe } = useSubscribe()
 
 const onSubmit = form.handleSubmit(async (values) => {
   const res = await subscribe(values)
-  if (res.ok && !res.token) {
-    showLoginDialog.value = true
+  if (res.ok && res.token) {
+    $paywall.setKey('token', res.token)
   }
+  // TODO: error handling
 })
 
 const [formItem, setAnimate] = useAutoAnimate({ duration: 200 })
@@ -75,10 +71,6 @@ onMounted(async () => {
       </FormItem>
     </FormField>
 
-    <Button type="submit" tabindex="-1" class="w-full bg-sp_primary text-white">
-      {{ buttonText }}
-    </Button>
-
-    <LoginDialog v-model:open="showLoginDialog" />
+    <Button type="submit" tabindex="-1" class="w-full bg-sp_primary text-white">Submit</Button>
   </form>
 </template>
