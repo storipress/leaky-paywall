@@ -15,7 +15,6 @@ const themeConfig = computed(() => ({
 }))
 
 useTrackManager()
-const checkQuery = useQueryAction()
 
 const foundArticle = useFindArticle()
 
@@ -76,20 +75,6 @@ watch(
   },
   { immediate: true },
 )
-
-onMounted(async () => {
-  const res = await checkQuery()
-  if (!res) {
-    return
-  }
-  if (res.result && res.action === SIGN_IN) {
-    sendTrack('user.sign_in', {
-      client_id: config.value.clientId,
-      article_id: foundArticle.value?.id ?? null,
-      pathname: window.location.pathname,
-    })
-  }
-})
 
 const emailInput = ref('')
 

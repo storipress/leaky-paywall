@@ -13,8 +13,6 @@ import type { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "\n      mutation VerifySubscriberEmail($token: String!) {\n        verifySubscriberEmail(token: $token)\n      }\n    ": types.VerifySubscriberEmailDocument,
-    "\n      mutation SignInSubscriber($token: String!) {\n        signInSubscriber(token: $token)\n      }\n    ": types.SignInSubscriberDocument,
     "\n      mutation SignInPaywall($email: EmailString!) {\n        signInLeakySubscriber(input: { email: $email })\n      }\n    ": types.SignInPaywallDocument,
     "\n      mutation TrackSubscriberActivity($input: TrackSubscriberActivityInput!) {\n        trackSubscriberActivity(input: $input)\n      }\n    ": types.TrackSubscriberActivityDocument,
 };
@@ -33,14 +31,6 @@ const documents = {
  */
 export function graphql(source: string): unknown;
 
-/**
- * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function graphql(source: "\n      mutation VerifySubscriberEmail($token: String!) {\n        verifySubscriberEmail(token: $token)\n      }\n    "): (typeof documents)["\n      mutation VerifySubscriberEmail($token: String!) {\n        verifySubscriberEmail(token: $token)\n      }\n    "];
-/**
- * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function graphql(source: "\n      mutation SignInSubscriber($token: String!) {\n        signInSubscriber(token: $token)\n      }\n    "): (typeof documents)["\n      mutation SignInSubscriber($token: String!) {\n        signInSubscriber(token: $token)\n      }\n    "];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
