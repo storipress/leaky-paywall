@@ -38,6 +38,9 @@ export function useTrackManager() {
   watch(
     () => paywall.value.records,
     () => {
+      if (paywall.value.records.length === 0) {
+        return
+      }
       flushAll()
     },
     { immediate: true, deep: true },
