@@ -17,9 +17,8 @@ window.SP_PAYWALL = {
     tracking: true,
   },
   pathPattern: undefined,
-  avatar: 'https://i.pravatar.cc/300?img=3',
-  publicationLogo: 'https://i.pravatar.cc/300?img=5',
-  title: 'You\'ve reached your weekly article limit',
+  logo: 'https://i.pravatar.cc/300?img=3',
+  title: "You've reached your weekly article limit",
   description:
     'Read one article per week. Submit your email to discover more news covering the intersection of Artificial Intelligence, technology and business.',
   primaryColor: toColorString(parseToRgb('rgb(29 78 216)')),
