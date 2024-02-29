@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.2](https://github.com/storipress/leaky-paywall/compare/v1.0.1...v1.0.2) (2024-02-29)
+
+
+### Bug Fixes
+
+* fix infinite recursive ([119e629](https://github.com/storipress/leaky-paywall/commit/119e62947231e1c125b7baf07f78574030906746))
+* remove unused query action ([55cac62](https://github.com/storipress/leaky-paywall/commit/55cac62cb4513687b7747f33523bbc4daaac9e72))
+
 ## [1.0.1](https://github.com/storipress/leaky-paywall/compare/v1.0.0...v1.0.1) (2024-02-29)
 
 
