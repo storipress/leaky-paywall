@@ -23,14 +23,37 @@ const onSubmit = form.handleSubmit((values) => {
   open.value = false
 })
 
-const { injectScript } = useCreateBookmarklet()
-const { copy } = useClipboard({
-  source: injectScript,
+const { devScript, productionHTML, productionTestScript } = useCreateBookmarklet()
+const { copy: copyDevScript } = useClipboard({
+  source: devScript,
 })
 
-async function copyBookmarklet() {
-  await copy()
+const { copy: copyProductionHTML } = useClipboard({
+  source: productionHTML,
+})
+const { copy: copyProductionTestScript } = useClipboard({
+  source: productionTestScript,
+})
+
+async function onCopyDevScript() {
+  await copyDevScript()
   toast('Copied!')
+}
+
+async function onCopyProductionHTML() {
+  const all = $config.get().all
+  setConfig({ all: false })
+  await copyProductionHTML()
+  toast('Copied!')
+  setConfig({ all })
+}
+
+async function onCopyProductionScript() {
+  const all = $config.get().all
+  setConfig({ all: false })
+  await copyProductionTestScript()
+  toast('Copied!')
+  setConfig({ all })
 }
 
 const slugify = slugifyWithCounter()
@@ -128,11 +151,26 @@ function resetEvents() {
                 <FormDescription>PS: Color field has a bug cause it can't display the current color</FormDescription>
               </FormItem>
             </FormField>
+            <FormField v-slot="{ componentField }" name="all">
+              <FormItem>
+                <FormLabel>Treat every page as article</FormLabel>
+                <FormControl>
+                  <Switch
+                    v-bind="componentField"
+                    :checked="componentField.modelValue"
+                    @update:checked="componentField['onUpdate:modelValue']"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            </FormField>
             <Button type="submit">Update</Button>
           </form>
         </CardContent>
         <CardFooter class="mt-2 flex h-full flex-col">
-          <Button @click="copyBookmarklet">Copy embed javascript code</Button>
+          <Button @click="onCopyDevScript">Copy dev javascript</Button>
+          <Button @click="onCopyProductionHTML">Copy production html</Button>
+          <Button @click="onCopyProductionScript">Copy production javascript</Button>
           <ScrollArea class="flex size-full">
             <ul class="w-full">
               <li v-for="(item, index) of events" :key="index" class="w-full text-wrap">
