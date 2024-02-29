@@ -1,0 +1,27 @@
+project:
+  name: terraform
+  description: Deploy leaky-paywall to CDN
+
+type: automation
+
+dependsOn:
+  - leaky-paywall
+
+tasks:
+  fmt:
+    command:
+      - terraform
+      - fmt
+  plan:
+    command:
+      - terraform
+      - plan
+    deps:
+      - ^:deploy
+  deploy:
+    command:
+      - terraform
+      - apply
+      - -auto-approve
+    deps:
+      - ^:deploy

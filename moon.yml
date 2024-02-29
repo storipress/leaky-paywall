@@ -1,5 +1,12 @@
 # yaml-language-server: $schema=https://moonrepo.dev/schemas/project.json
 
+project:
+  name: leaky-paywall
+  description: Storipress Leaky Paywall
+
+type: library
+language: typescript
+
 tasks:
   build:
     command:
@@ -58,6 +65,10 @@ tasks:
     deps:
       - ~:lib-analyze
     platform: node
+  deploy:
+    command: noop
+    deps:
+      - ~:minify
   size:
     command:
       - size-limit
