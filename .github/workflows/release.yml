@@ -23,6 +23,8 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
         with:
           fetch-depth: 0
+      - run: corepack enable
+        if: ${{ steps.release.outputs.release_created }}
       - uses: actions/setup-node@v4
         if: ${{ steps.release.outputs.release_created }}
         with:
