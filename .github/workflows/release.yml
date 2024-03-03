@@ -23,7 +23,7 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
         with:
           fetch-depth: 0
-      - run: corepack enable
+      - uses: moonrepo/setup-toolchain@v0
         if: ${{ steps.release.outputs.release_created }}
       - uses: actions/setup-node@v4
         if: ${{ steps.release.outputs.release_created }}
@@ -35,8 +35,6 @@ jobs:
         with:
           terraform_version: '1.5.7'
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
-      - uses: moonrepo/setup-toolchain@v0
-        if: ${{ steps.release.outputs.release_created }}
       - name: deploy to CDN
         if: ${{ steps.release.outputs.release_created }}
         run: moon ci :deploy
