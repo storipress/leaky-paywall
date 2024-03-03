@@ -4,6 +4,9 @@
   "version": "1.0.2",
   "private": true,
   "packageManager": "yarn@4.1.0",
+  "engines": {
+    "node": "20.11.1"
+  },
   "scripts": {
     "dev": "moon run dev",
     "build": "moon run build",
@@ -82,8 +85,5 @@
     "vue-router": "4.3.0",
     "vue-tsc": "1.8.27",
     "zx": "7.2.3"
-  },
-  "engines": {
-    "node": "20.11.1"
   }
 }
