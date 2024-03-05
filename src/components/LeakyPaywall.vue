@@ -93,7 +93,7 @@ useEventListener(window, 'wheel', (event) => {
 })
 
 const isAllowFree = computed(() => !isOverFreeLimit.value || paywall.value.read.includes(location.value.pathname ?? ''))
-const isScrollOverThreshold = computedEager(() => y.value > height.value * 0.4)
+const isScrollOverThreshold = computedEager(() => y.value > height.value * 0.45)
 
 // We need paywall if meet the follow conditions
 // 1. current page is article
@@ -143,18 +143,18 @@ whenever(
         <AlertDialogTitle class="invisible">Subscribe</AlertDialogTitle>
       </VisuallyHidden>
       <AlertDialogContent>
-        <Card class="w-full pb-4 pt-4" :style="themeConfig">
+        <Card class="pt-4 pb-4 w-full" :style="themeConfig">
           <CardContent>
-            <div class="flex flex-col items-center gap-1">
-              <Avatar class="relative mb-3 mt-2 items-center justify-center p-1" size="md">
+            <div class="flex flex-col gap-1 items-center">
+              <Avatar class="relative justify-center items-center p-1 mt-2 mb-3" size="md">
                 <div class="size-full">
                   <AvatarImage :src="config.logo" />
                 </div>
               </Avatar>
 
-              <h3 class="text-center text-lg font-bold">{{ config.title }}</h3>
+              <h3 class="text-lg font-bold text-center">{{ config.title }}</h3>
 
-              <p class="text-balance pb-4 text-center text-sm text-stone-400">
+              <p class="pb-4 text-sm text-center text-balance text-stone-400">
                 {{ config.description }}
               </p>
 
