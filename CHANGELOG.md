@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.3](https://github.com/storipress/leaky-paywall/compare/v1.0.2...v1.0.3) (2024-03-05)
+
+
+### Bug Fixes
+
+* fetch scroll height instead of viewport height ([f91d5a3](https://github.com/storipress/leaky-paywall/commit/f91d5a366a397eeda8893bf36bca4744293cf81b))
+* remove dark mode ([96b3b38](https://github.com/storipress/leaky-paywall/commit/96b3b385873d9cc9a9a48feb2f21ea09d7782cfa))
+
 ## [1.0.2](https://github.com/storipress/leaky-paywall/compare/v1.0.1...v1.0.2) (2024-02-29)
 
 
