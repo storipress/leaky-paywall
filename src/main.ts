@@ -15,7 +15,7 @@ window.SP_PAYWALL = {
     tracking: true,
   },
   pathPattern: undefined,
-  logo: 'https://i.pravatar.cc/300?img=3',
+  logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/IDEO_2021_logo.svg/799px-IDEO_2021_logo.svg.png',
   title: "You've reached your weekly article limit",
   description:
     'Read one article per week. Submit your email to discover more news covering the intersection of Artificial Intelligence, technology and business.',
