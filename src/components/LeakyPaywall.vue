@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { sendTrack } from '~/lib/tracking'
 
+const { height } = useScrollHeight()
 const { y } = useWindowScroll()
-const { height } = useWindowSize()
 const show = ref(false)
 
 initConfig()
