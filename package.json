@@ -51,7 +51,7 @@
     "@moonrepo/cli": "1.22.6",
     "@parcel/watcher": "2.4.1",
     "@sindresorhus/slugify": "2.2.1",
-    "@size-limit/file": "11.0.2",
+    "@size-limit/file": "11.0.3",
     "@tailwindcss/typography": "0.5.10",
     "@types/eslint": "8.56.5",
     "@vitejs/plugin-vue": "5.0.4",
