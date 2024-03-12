@@ -2113,17 +2113,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@moonrepo/cli@npm:1.22.6":
-  version: 1.22.6
-  resolution: "@moonrepo/cli@npm:1.22.6"
+"@moonrepo/cli@npm:1.22.7":
+  version: 1.22.7
+  resolution: "@moonrepo/cli@npm:1.22.7"
   dependencies:
-    "@moonrepo/core-linux-arm64-gnu": "npm:1.22.6"
-    "@moonrepo/core-linux-arm64-musl": "npm:1.22.6"
-    "@moonrepo/core-linux-x64-gnu": "npm:1.22.6"
-    "@moonrepo/core-linux-x64-musl": "npm:1.22.6"
-    "@moonrepo/core-macos-arm64": "npm:1.22.6"
-    "@moonrepo/core-macos-x64": "npm:1.22.6"
-    "@moonrepo/core-windows-x64-msvc": "npm:1.22.6"
+    "@moonrepo/core-linux-arm64-gnu": "npm:1.22.7"
+    "@moonrepo/core-linux-arm64-musl": "npm:1.22.7"
+    "@moonrepo/core-linux-x64-gnu": "npm:1.22.7"
+    "@moonrepo/core-linux-x64-musl": "npm:1.22.7"
+    "@moonrepo/core-macos-arm64": "npm:1.22.7"
+    "@moonrepo/core-macos-x64": "npm:1.22.7"
+    "@moonrepo/core-windows-x64-msvc": "npm:1.22.7"
     detect-libc: "npm:^2.0.2"
   dependenciesMeta:
     "@moonrepo/core-linux-arm64-gnu":
@@ -2142,55 +2142,55 @@ __metadata:
       optional: true
   bin:
     moon: moon
-  checksum: 10c0/b867d752005b62ab9ac96f12043928a6ab570bd0beed7112f52a24bd86b7d39188499f79189b7bddf80e13d0c42bbaa4b3d2ac4fc13cd144784779f96adea632
+  checksum: 10c0/88c1a7cd40922e544ee0a4d2bb3b98ec27015a018bc7be03878165475f3f8470f70c6f9a40d2f00ff4d9efe3317bf7ad4d830d4d9650553b5dd9b5c4d09900ee
   languageName: node
   linkType: hard
 
-"@moonrepo/core-linux-arm64-gnu@npm:1.22.6":
-  version: 1.22.6
-  resolution: "@moonrepo/core-linux-arm64-gnu@npm:1.22.6"
+"@moonrepo/core-linux-arm64-gnu@npm:1.22.7":
+  version: 1.22.7
+  resolution: "@moonrepo/core-linux-arm64-gnu@npm:1.22.7"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@moonrepo/core-linux-arm64-musl@npm:1.22.6":
-  version: 1.22.6
-  resolution: "@moonrepo/core-linux-arm64-musl@npm:1.22.6"
+"@moonrepo/core-linux-arm64-musl@npm:1.22.7":
+  version: 1.22.7
+  resolution: "@moonrepo/core-linux-arm64-musl@npm:1.22.7"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@moonrepo/core-linux-x64-gnu@npm:1.22.6":
-  version: 1.22.6
-  resolution: "@moonrepo/core-linux-x64-gnu@npm:1.22.6"
+"@moonrepo/core-linux-x64-gnu@npm:1.22.7":
+  version: 1.22.7
+  resolution: "@moonrepo/core-linux-x64-gnu@npm:1.22.7"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@moonrepo/core-linux-x64-musl@npm:1.22.6":
-  version: 1.22.6
-  resolution: "@moonrepo/core-linux-x64-musl@npm:1.22.6"
+"@moonrepo/core-linux-x64-musl@npm:1.22.7":
+  version: 1.22.7
+  resolution: "@moonrepo/core-linux-x64-musl@npm:1.22.7"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@moonrepo/core-macos-arm64@npm:1.22.6":
-  version: 1.22.6
-  resolution: "@moonrepo/core-macos-arm64@npm:1.22.6"
+"@moonrepo/core-macos-arm64@npm:1.22.7":
+  version: 1.22.7
+  resolution: "@moonrepo/core-macos-arm64@npm:1.22.7"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@moonrepo/core-macos-x64@npm:1.22.6":
-  version: 1.22.6
-  resolution: "@moonrepo/core-macos-x64@npm:1.22.6"
+"@moonrepo/core-macos-x64@npm:1.22.7":
+  version: 1.22.7
+  resolution: "@moonrepo/core-macos-x64@npm:1.22.7"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@moonrepo/core-windows-x64-msvc@npm:1.22.6":
-  version: 1.22.6
-  resolution: "@moonrepo/core-windows-x64-msvc@npm:1.22.6"
+"@moonrepo/core-windows-x64-msvc@npm:1.22.7":
+  version: 1.22.7
+  resolution: "@moonrepo/core-windows-x64-msvc@npm:1.22.7"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -2618,7 +2618,7 @@ __metadata:
     "@graphql-codegen/cli": "npm:5.0.2"
     "@graphql-codegen/client-preset": "npm:4.2.4"
     "@iconify-json/lucide": "npm:1.1.173"
-    "@moonrepo/cli": "npm:1.22.6"
+    "@moonrepo/cli": "npm:1.22.7"
     "@nanostores/persistent": "npm:^0.10.1"
     "@nanostores/vue": "npm:^0.10.0"
     "@parcel/watcher": "npm:2.4.1"
