@@ -22,6 +22,8 @@ tasks:
       - ~:typecheck
     platform: node
   lib:
+    env:
+      MODE: lib
     command:
       - vite
       - build

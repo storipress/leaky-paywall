@@ -90,5 +90,5 @@ module.exports = {
       },
     },
   },
-  plugins: [animate, iconsPlugin(), typography()],
+  plugins: [animate, iconsPlugin(), process.env.MODE === 'lib' ? null : typography()].filter(Boolean),
 }
