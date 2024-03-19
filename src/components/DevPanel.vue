@@ -57,7 +57,6 @@ async function onCopyProductionScript() {
 }
 
 const slugify = slugifyWithCounter()
-const route = useRoute()
 const router = useRouter()
 function goToArticle() {
   const words = lorem.generateWords(5)
@@ -101,7 +100,6 @@ function resetEvents() {
           <div>
             <ul>
               <li>Amount of read articles: {{ paywall.read.length }}</li>
-              <li>Is current article read before? : {{ paywall.read.includes(route.path) }}</li>
             </ul>
           </div>
           <form class="flex w-full flex-col gap-1" @submit="onSubmit">

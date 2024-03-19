@@ -22,6 +22,9 @@ const paywallEnabled = usePaywallEnabled()
 const location = useBrowserLocation()
 const isArticle = logicAnd(() => config.value.flags.paywall, logicOr(foundArticle, paywallEnabled))
 
+const now = Date.now()
+const currentReadIdentifier = computed(() => `${location.value.pathname ?? ''}:${now}`)
+
 const isOverFreeLimit = computed(() => paywall.value.read.length >= config.value.freeLimit)
 
 useTrackLink(
@@ -71,7 +74,7 @@ watch(
     if (isOverFreeLimit.value) {
       return
     }
-    pushRead(loc.pathname ?? '')
+    pushRead(currentReadIdentifier.value)
   },
   { immediate: true },
 )
@@ -92,7 +95,7 @@ useEventListener(window, 'wheel', (event) => {
   }
 })
 
-const isAllowFree = computed(() => !isOverFreeLimit.value || paywall.value.read.includes(location.value.pathname ?? ''))
+const isAllowFree = computed(() => !isOverFreeLimit.value || paywall.value.read.includes(currentReadIdentifier.value))
 const isScrollOverThreshold = computedEager(() => y.value > height.value * 0.45)
 
 // We need paywall if meet the follow conditions
@@ -143,18 +146,18 @@ whenever(
         <AlertDialogTitle class="invisible">Subscribe</AlertDialogTitle>
       </VisuallyHidden>
       <AlertDialogContent>
-        <Card class="pt-4 pb-4 w-full" :style="themeConfig">
+        <Card class="w-full pb-4 pt-4" :style="themeConfig">
           <CardContent>
-            <div class="flex flex-col gap-1 items-center">
-              <Avatar class="relative justify-center items-center p-1 mt-2 mb-3" size="md">
+            <div class="flex flex-col items-center gap-1">
+              <Avatar class="relative mb-3 mt-2 items-center justify-center p-1" size="md">
                 <div class="size-full">
                   <AvatarImage :src="config.logo" />
                 </div>
               </Avatar>
 
-              <h3 class="text-lg font-bold text-center">{{ config.title }}</h3>
+              <h3 class="text-center text-lg font-bold">{{ config.title }}</h3>
 
-              <p class="pb-4 text-sm text-center text-balance text-stone-400">
+              <p class="text-balance pb-4 text-center text-sm text-stone-400">
                 {{ config.description }}
               </p>
 
