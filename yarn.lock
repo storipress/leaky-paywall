@@ -17,13 +17,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@0no-co/graphqlsp@npm:1.6.0":
-  version: 1.6.0
-  resolution: "@0no-co/graphqlsp@npm:1.6.0"
+"@0no-co/graphqlsp@npm:1.6.1":
+  version: 1.6.1
+  resolution: "@0no-co/graphqlsp@npm:1.6.1"
   dependencies:
     json5: "npm:^2.2.3"
     node-fetch: "npm:^2.0.0"
-  checksum: 10c0/7a3b4847a4daffaf2d4a86bd1079362fc6b70718828a4a1cc818b62422276c36efb9ce0795b5efc6a6c7d97c8f3b6214032142c9d04ee2430d539c4e63162a0e
+  checksum: 10c0/ced9cf279406e7e6ebe725ca18c13efb1cf7790661a2c14a01890a4e6b314f7c45ea3adbf89a031df63ebc9a757ece23dab0a2f8e541bbe01f9152d555f3c213
   languageName: node
   linkType: hard
 
@@ -2633,7 +2633,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@storipress/leaky-paywall@workspace:."
   dependencies:
-    "@0no-co/graphqlsp": "npm:1.6.0"
+    "@0no-co/graphqlsp": "npm:1.6.1"
     "@antfu/eslint-config": "npm:2.8.3"
     "@egoist/tailwindcss-icons": "npm:1.7.4"
     "@formkit/auto-animate": "npm:^0.8.1"
