@@ -17,13 +17,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@0no-co/graphqlsp@npm:1.6.1":
-  version: 1.6.1
-  resolution: "@0no-co/graphqlsp@npm:1.6.1"
+"@0no-co/graphqlsp@npm:1.7.0":
+  version: 1.7.0
+  resolution: "@0no-co/graphqlsp@npm:1.7.0"
   dependencies:
-    json5: "npm:^2.2.3"
+    "@gql.tada/internal": "npm:^0.1.0"
     node-fetch: "npm:^2.0.0"
-  checksum: 10c0/ced9cf279406e7e6ebe725ca18c13efb1cf7790661a2c14a01890a4e6b314f7c45ea3adbf89a031df63ebc9a757ece23dab0a2f8e541bbe01f9152d555f3c213
+  checksum: 10c0/b7af5e287bad66a322e6d31dc80c365fb12c77c0510922709de4b2e8f68daae82758416fe119849e437e2bd2b18200799cadf702bdac1c29f89c81c0a122bd24
   languageName: node
   linkType: hard
 
@@ -1401,6 +1401,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@gql.tada/internal@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "@gql.tada/internal@npm:0.1.0"
+  dependencies:
+    graphql: "npm:^16.8.1"
+    typescript: "npm:^5.3.3"
+  checksum: 10c0/49962b402ef7aaa8975d71cb6182ecbba431e07cd4753f1961e51fa3daf90cb739e4bf60cc3959c7b87389de1c17f3138970421d9829f7bf54e771e97554cada
+  languageName: node
+  linkType: hard
+
 "@graphql-codegen/add@npm:^5.0.2":
   version: 5.0.2
   resolution: "@graphql-codegen/add@npm:5.0.2"
@@ -2633,7 +2643,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@storipress/leaky-paywall@workspace:."
   dependencies:
-    "@0no-co/graphqlsp": "npm:1.6.1"
+    "@0no-co/graphqlsp": "npm:1.7.0"
     "@antfu/eslint-config": "npm:2.8.3"
     "@egoist/tailwindcss-icons": "npm:1.7.4"
     "@formkit/auto-animate": "npm:^0.8.1"
@@ -6311,7 +6321,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql@npm:16.8.1":
+"graphql@npm:16.8.1, graphql@npm:^16.8.1":
   version: 16.8.1
   resolution: "graphql@npm:16.8.1"
   checksum: 10c0/129c318156b466f440914de80dbf7bc67d17f776f2a088a40cb0da611d19a97c224b1c6d2b13cbcbc6e5776e45ed7468b8432f9c3536724e079b44f1a3d57a8a
@@ -10102,7 +10112,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:5.4.3, typescript@npm:^5.2.2":
+"typescript@npm:5.4.3, typescript@npm:^5.2.2, typescript@npm:^5.3.3":
   version: 5.4.3
   resolution: "typescript@npm:5.4.3"
   bin:
@@ -10112,7 +10122,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A5.4.3#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.2.2#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A5.4.3#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.2.2#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.3.3#optional!builtin<compat/typescript>":
   version: 5.4.3
   resolution: "typescript@patch:typescript@npm%3A5.4.3#optional!builtin<compat/typescript>::version=5.4.3&hash=5adc0c"
   bin:
