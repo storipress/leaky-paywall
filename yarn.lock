@@ -2029,12 +2029,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iconify-json/lucide@npm:1.1.176":
-  version: 1.1.176
-  resolution: "@iconify-json/lucide@npm:1.1.176"
+"@iconify-json/lucide@npm:1.1.177":
+  version: 1.1.177
+  resolution: "@iconify-json/lucide@npm:1.1.177"
   dependencies:
     "@iconify/types": "npm:*"
-  checksum: 10c0/5ed0385cf1a1c5a7e12ef6fd487ae8780d62337021fa63f5cd880cfafcca4be17c77a095f190a14b67ee67c07f23c3da4d918190608544544809b7d3d71c1ae1
+  checksum: 10c0/afe2ee0c0cd9804c076bf598ebe51418aa41a431a138388932cb006126e2532de9b8c256a6f3fcd0c9e02a11c1c73e5d141b2865a6b8f231bb319bc35dcbbb83
   languageName: node
   linkType: hard
 
@@ -2651,7 +2651,7 @@ __metadata:
     "@formkit/auto-animate": "npm:^0.8.1"
     "@graphql-codegen/cli": "npm:5.0.2"
     "@graphql-codegen/client-preset": "npm:4.2.4"
-    "@iconify-json/lucide": "npm:1.1.176"
+    "@iconify-json/lucide": "npm:1.1.177"
     "@moonrepo/cli": "npm:1.22.10"
     "@nanostores/persistent": "npm:^0.10.1"
     "@nanostores/vue": "npm:^0.10.0"
