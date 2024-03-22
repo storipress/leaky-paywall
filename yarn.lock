@@ -2686,7 +2686,7 @@ __metadata:
     remeda: "npm:1.55.0"
     rollup-plugin-visualizer: "npm:5.12.0"
     shadcn-vue: "npm:0.10.2"
-    size-limit: "npm:11.1.1"
+    size-limit: "npm:11.1.2"
     tailwind-merge: "npm:^2.2.1"
     tailwindcss: "npm:3.4.1"
     tailwindcss-animate: "npm:^1.0.7"
@@ -9406,9 +9406,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"size-limit@npm:11.1.1":
-  version: 11.1.1
-  resolution: "size-limit@npm:11.1.1"
+"size-limit@npm:11.1.2":
+  version: 11.1.2
+  resolution: "size-limit@npm:11.1.2"
   dependencies:
     bytes-iec: "npm:^3.1.1"
     chokidar: "npm:^3.6.0"
@@ -9419,7 +9419,7 @@ __metadata:
     picocolors: "npm:^1.0.0"
   bin:
     size-limit: bin.js
-  checksum: 10c0/506fd993d11b95ec69d942873adae83c0b75cba2242948a7ed23fff23a5a1c13d011565cffcd281a6a9d98329feb87d1fc9df3f72ba3730f6828bfaf2e985891
+  checksum: 10c0/5fa72499674c6f693055c30cbc22433f940a5d5b05152c32d0094b19a7a40930ba75da8345c7357e8c72a895e8aee1d8974fb28ce3368329ba83214aa9b5466e
   languageName: node
   linkType: hard
 
