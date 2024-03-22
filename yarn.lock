@@ -2683,7 +2683,7 @@ __metadata:
     prettier-plugin-tailwindcss: "npm:0.5.12"
     proper-tags: "npm:2.0.2"
     radix-vue: "npm:^1.5.1"
-    remeda: "npm:1.55.0"
+    remeda: "npm:1.56.0"
     rollup-plugin-visualizer: "npm:5.12.0"
     shadcn-vue: "npm:0.10.2"
     size-limit: "npm:11.1.2"
@@ -8965,10 +8965,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"remeda@npm:1.55.0":
-  version: 1.55.0
-  resolution: "remeda@npm:1.55.0"
-  checksum: 10c0/7aef5c86988e45cb7398c50a738f774bd3ccd407492ac4c0d6117fceba8e1d2dd5aeffaf0da4c2c4af9f88acaee9e744d412157b361e773e80fd01b63b962e5e
+"remeda@npm:1.56.0":
+  version: 1.56.0
+  resolution: "remeda@npm:1.56.0"
+  checksum: 10c0/ef063d52efe989cc346d4d9926b5ac30f272c0669c7210841bda204c3ca2ed2737b93e023a6cf033118e0b9e5ac131451469cc92dfe1802e2f85d47943db9aef
   languageName: node
   linkType: hard
 
