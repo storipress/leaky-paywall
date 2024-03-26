@@ -2665,7 +2665,7 @@ __metadata:
     "@vitejs/plugin-vue": "npm:5.0.4"
     "@vitest/coverage-v8": "npm:1.4.0"
     "@vitest/ui": "npm:1.4.0"
-    "@vue/devtools-api": "npm:7.0.22"
+    "@vue/devtools-api": "npm:7.0.23"
     "@vueuse/core": "npm:10.9.0"
     "@vueuse/math": "npm:^10.9.0"
     autoprefixer: "npm:10.4.19"
@@ -3488,12 +3488,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/devtools-api@npm:7.0.22":
-  version: 7.0.22
-  resolution: "@vue/devtools-api@npm:7.0.22"
+"@vue/devtools-api@npm:7.0.23":
+  version: 7.0.23
+  resolution: "@vue/devtools-api@npm:7.0.23"
   dependencies:
-    "@vue/devtools-kit": "npm:^7.0.22"
-  checksum: 10c0/26b18e93b0c307b6e21d7973d299aea55d3cceea125a230f58514f2952e0088a238efb2971ae3a08a44f8dbb20ff16800449f7d4765c240514b93cf30201cacc
+    "@vue/devtools-kit": "npm:^7.0.23"
+  checksum: 10c0/b5062d2e191c2f1639ccdd4a0ebf4cc030c31861e97cd31d9bf33a174029cd21c692a2dc30e97fc98361675863735d044c9ef494ae14b0154057dee5be6af659
   languageName: node
   linkType: hard
 
@@ -3518,27 +3518,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/devtools-kit@npm:^7.0.21, @vue/devtools-kit@npm:^7.0.22":
-  version: 7.0.22
-  resolution: "@vue/devtools-kit@npm:7.0.22"
+"@vue/devtools-kit@npm:^7.0.21, @vue/devtools-kit@npm:^7.0.23":
+  version: 7.0.23
+  resolution: "@vue/devtools-kit@npm:7.0.23"
   dependencies:
-    "@vue/devtools-shared": "npm:^7.0.22"
+    "@vue/devtools-shared": "npm:^7.0.23"
     hookable: "npm:^5.5.3"
     mitt: "npm:^3.0.1"
     perfect-debounce: "npm:^1.0.0"
     speakingurl: "npm:^14.0.1"
   peerDependencies:
     vue: ^3.0.0
-  checksum: 10c0/7d1aa5d4dacf4e3037845caad3a31ac8765abe00cfe8418d0fcd01cd08cea23b3317d24dba9f4c3e5b32020dc08a03f2e17b6a0e6ebeb2f920b568dca3c6121b
+  checksum: 10c0/0409dd3f3479fdc84f43e45e32e4f87af4e253435086c0e254353d6906f349701cc78ffef8df033418d943b68eb687181ff0096643dbc0315360ef278262e62b
   languageName: node
   linkType: hard
 
-"@vue/devtools-shared@npm:^7.0.21, @vue/devtools-shared@npm:^7.0.22":
-  version: 7.0.22
-  resolution: "@vue/devtools-shared@npm:7.0.22"
+"@vue/devtools-shared@npm:^7.0.21, @vue/devtools-shared@npm:^7.0.23":
+  version: 7.0.23
+  resolution: "@vue/devtools-shared@npm:7.0.23"
   dependencies:
     rfdc: "npm:^1.3.1"
-  checksum: 10c0/7eb0d1112b865ad3fe19563f46b6e724c904ca645431906bafcc48a7143c88eee3778fa331fd100d441776e3ffb5a7437d14e5126d911c0ccd8c45079dd29a5e
+  checksum: 10c0/95ca0a8d67b4192108daed16720510d93e31cd4d796bb537e31dacaefb6e954eb293c44930a89df2314f4f2a799a2669ec0553662e95d0cf68f6380b8983db9f
   languageName: node
   linkType: hard
 
