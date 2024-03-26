@@ -530,6 +530,17 @@ export type ConfirmEmailInput = {
   signature: Scalars['String']['input'];
 };
 
+export type ConfirmProphetCheckoutInput = {
+  checkout_id: Scalars['String']['input'];
+};
+
+export type ConfirmProphetCheckoutResponse = {
+  __typename?: 'ConfirmProphetCheckoutResponse';
+  email: Scalars['String']['output'];
+  first_name?: Maybe<Scalars['String']['output']>;
+  last_name?: Maybe<Scalars['String']['output']>;
+};
+
 export type CreateAppSubscriptionInput = {
   price_id: Scalars['String']['input'];
   promotion_code?: InputMaybe<Scalars['String']['input']>;
@@ -1633,6 +1644,7 @@ export type Mutation = {
   confirmCustomDomain: Scalars['Boolean']['output'];
   /** confirm account email */
   confirmEmail: Scalars['Boolean']['output'];
+  confirmProphetCheckout: ConfirmProphetCheckoutResponse;
   /** initiate OAuth for HubSpot and return the redirect URL */
   connectHubSpot: Scalars['String']['output'];
   /** initiate OAuth for Webflow and return the redirect URL */
@@ -2111,6 +2123,11 @@ export type MutationCheckEmailExistArgs = {
 
 export type MutationConfirmEmailArgs = {
   input: ConfirmEmailInput;
+};
+
+
+export type MutationConfirmProphetCheckoutArgs = {
+  input?: InputMaybe<ConfirmProphetCheckoutInput>;
 };
 
 
@@ -3803,6 +3820,7 @@ export type SignInLeakySubscriberInput = {
 export type SignUpInput = {
   appsumo_code?: InputMaybe<Scalars['String']['input']>;
   campaign?: InputMaybe<Scalars['JSON']['input']>;
+  checkout_id?: InputMaybe<Scalars['String']['input']>;
   /** account email */
   email: Scalars['EmailString']['input'];
   /**
