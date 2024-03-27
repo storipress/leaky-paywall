@@ -48,7 +48,7 @@
     "@graphql-codegen/cli": "5.0.2",
     "@graphql-codegen/client-preset": "4.2.5",
     "@iconify-json/lucide": "1.1.178",
-    "@moonrepo/cli": "1.23.0",
+    "@moonrepo/cli": "1.23.1",
     "@parcel/watcher": "2.4.1",
     "@sindresorhus/slugify": "2.2.1",
     "@size-limit/file": "11.1.2",
