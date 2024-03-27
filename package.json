@@ -52,7 +52,7 @@
     "@parcel/watcher": "2.4.1",
     "@sindresorhus/slugify": "2.2.1",
     "@size-limit/file": "11.1.2",
-    "@tailwindcss/typography": "0.5.11",
+    "@tailwindcss/typography": "0.5.12",
     "@types/eslint": "8.56.6",
     "@vitejs/plugin-vue": "5.0.4",
     "@vitest/coverage-v8": "1.4.0",
