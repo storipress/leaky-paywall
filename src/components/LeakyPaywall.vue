@@ -52,6 +52,29 @@ whenever(percentage, (percentage) => {
   })
 })
 
+const { trackTextCopy, trackTextSelection } = useTrackTextAction(
+  computed(() => foundArticle.value?.element as HTMLElement),
+)
+
+trackTextSelection((selectedText) => ({
+  event: 'article.text_selection',
+  properties: {
+    pathname: location.value.pathname ?? '',
+    client_id: config.value.clientId,
+    article_id: foundArticle.value?.id ?? null,
+    text_selection: selectedText,
+  },
+}))
+trackTextCopy((copiedText) => ({
+  event: 'article.text_copy',
+  properties: {
+    pathname: location.value.pathname ?? '',
+    client_id: config.value.clientId,
+    article_id: foundArticle.value?.id ?? null,
+    text_copy: copiedText,
+  },
+}))
+
 watch(
   location,
   (loc) => {

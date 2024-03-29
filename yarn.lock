@@ -2629,6 +2629,7 @@ __metadata:
     "@size-limit/file": "npm:11.1.2"
     "@tailwindcss/typography": "npm:0.5.12"
     "@types/eslint": "npm:8.56.6"
+    "@types/lodash-es": "npm:^4"
     "@urql/vue": "npm:^1.1.2"
     "@vee-validate/zod": "npm:^4.12.6"
     "@vitejs/plugin-vue": "npm:5.0.4"
@@ -2646,6 +2647,7 @@ __metadata:
     eslint: "npm:8.57.0"
     graphql: "npm:16.8.1"
     graphql-web-lite: "npm:^16.6.0-4"
+    lodash-es: "npm:^4.17.21"
     lorem-ipsum: "npm:2.0.8"
     nanostores: "npm:^0.10.0"
     open-cli: "npm:8.0.0"
@@ -2851,6 +2853,22 @@ __metadata:
   dependencies:
     "@types/node": "npm:*"
   checksum: 10c0/b12d068b021e4078f6ac4441353965769be87acf15326173e2aea9f3bf8ead41bd0ad29421df5bbeb0123ec3fc02eb0a734481d52903704a1454a1845896b9eb
+  languageName: node
+  linkType: hard
+
+"@types/lodash-es@npm:^4":
+  version: 4.17.12
+  resolution: "@types/lodash-es@npm:4.17.12"
+  dependencies:
+    "@types/lodash": "npm:*"
+  checksum: 10c0/5d12d2cede07f07ab067541371ed1b838a33edb3c35cb81b73284e93c6fd0c4bbeaefee984e69294bffb53f62d7272c5d679fdba8e595ff71e11d00f2601dde0
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:*":
+  version: 4.17.0
+  resolution: "@types/lodash@npm:4.17.0"
+  checksum: 10c0/4c5b41c9a6c41e2c05d08499e96f7940bcf194dcfa84356235b630da920c2a5e05f193618cea76006719bec61c76617dff02defa9d29934f9f6a76a49291bd8f
   languageName: node
   linkType: hard
 
@@ -7267,6 +7285,13 @@ __metadata:
   dependencies:
     p-locate: "npm:^6.0.0"
   checksum: 10c0/139e8a7fe11cfbd7f20db03923cacfa5db9e14fa14887ea121345597472b4a63c1a42a8a5187defeeff6acf98fd568da7382aa39682d38f0af27433953a97751
+  languageName: node
+  linkType: hard
+
+"lodash-es@npm:^4.17.21":
+  version: 4.17.21
+  resolution: "lodash-es@npm:4.17.21"
+  checksum: 10c0/fb407355f7e6cd523a9383e76e6b455321f0f153a6c9625e21a8827d10c54c2a2341bd2ae8d034358b60e07325e1330c14c224ff582d04612a46a4f0479ff2f2
   languageName: node
   linkType: hard
 
