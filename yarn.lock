@@ -53,9 +53,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@antfu/eslint-config@npm:2.11.5":
-  version: 2.11.5
-  resolution: "@antfu/eslint-config@npm:2.11.5"
+"@antfu/eslint-config@npm:2.11.6":
+  version: 2.11.6
+  resolution: "@antfu/eslint-config@npm:2.11.6"
   dependencies:
     "@antfu/install-pkg": "npm:^0.3.2"
     "@clack/prompts": "npm:^0.7.0"
@@ -128,7 +128,7 @@ __metadata:
       optional: true
   bin:
     eslint-config: bin/index.js
-  checksum: 10c0/7c8e62f4e493ad25e1032ffd26b4550867e2096d1ac3afafbe75f5f24686a9cb4fabd3a0ad078a57ed70e232c579fb529050534b5c827c0e9f450fe277708df0
+  checksum: 10c0/3ab19a99da4c46b5370a5522af091d14bfc3d877b0b1f2c7e10c292a6b9078f693098b583934c45fba239613d89f3f324885884a57e85e56df60bfa0ffdbc449
   languageName: node
   linkType: hard
 
@@ -2615,7 +2615,7 @@ __metadata:
   resolution: "@storipress/leaky-paywall@workspace:."
   dependencies:
     "@0no-co/graphqlsp": "npm:1.7.1"
-    "@antfu/eslint-config": "npm:2.11.5"
+    "@antfu/eslint-config": "npm:2.11.6"
     "@egoist/tailwindcss-icons": "npm:1.7.4"
     "@formkit/auto-animate": "npm:^0.8.1"
     "@graphql-codegen/cli": "npm:5.0.2"
