@@ -6,16 +6,16 @@ export function useTrackTextAction(articleEl: ComputedRef<HTMLElement | undefine
   const state = useTextSelection()
   const selectedText = computed(() => state.text.value)
 
-  function trackTextSelection(trackEvent: (selectedText: string) => TrackEvent | undefined) {
+  function trackTextSelection(eventFactory: (selectedText: string) => TrackEvent | undefined) {
     useEventListener(articleEl, 'mouseup', () => {
-      trackTextEvent(trackEvent)
+      trackTextEvent(eventFactory)
     })
   }
 
-  function trackTextCopy(trackEvent: (copiedText: string) => TrackEvent | undefined) {
+  function trackTextCopy(eventFactory: (copiedText: string) => TrackEvent | undefined) {
     const trigger = debounce(
       () => {
-        trackTextEvent(trackEvent)
+        trackTextEvent(eventFactory)
       },
       { waitMs: 200 },
     )
@@ -25,9 +25,9 @@ export function useTrackTextAction(articleEl: ComputedRef<HTMLElement | undefine
     })
   }
 
-  function trackTextEvent(eventHandler: (text: string) => TrackEvent | undefined) {
+  function trackTextEvent(eventFactory: (text: string) => TrackEvent | undefined) {
     if (selectedText.value) {
-      const trackEvent = eventHandler(selectedText.value)
+      const trackEvent = eventFactory(selectedText.value)
       if (!trackEvent) return
       sendTrack(trackEvent.event, trackEvent.properties)
     }
