@@ -1,4 +1,4 @@
-import { debounce } from 'lodash-es'
+import { debounce } from 'remeda'
 import { sendTrack } from '~/lib/tracking'
 import type { TrackEvent } from '~/lib/tracking-schema'
 
@@ -13,12 +13,15 @@ export function useTrackTextAction(articleEl: ComputedRef<HTMLElement | undefine
   }
 
   function trackTextCopy(trackEvent: (copiedText: string) => TrackEvent | undefined) {
-    const trigger = debounce(() => {
-      trackTextEvent(trackEvent)
-    }, 200)
+    const trigger = debounce(
+      () => {
+        trackTextEvent(trackEvent)
+      },
+      { waitMs: 200 },
+    )
 
     useEventListener(articleEl, 'copy', () => {
-      trigger()
+      trigger.call()
     })
   }
 
