@@ -1,0 +1,17 @@
+{
+  "name": "script-provider",
+  "scripts": {
+    "dev": "moon run dev",
+    "deploy": "moon run deploy"
+  },
+  "dependencies": {
+    "effect": "^2.4.17",
+    "esbuild-wasm": "^0.20.2",
+    "hono": "^4.2.0",
+    "proper-tags": "^2.0.2"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240208.0",
+    "wrangler": "^3.32.0"
+  }
+}

@@ -383,6 +383,9 @@ export type Billing = {
    * - storipress_bf_tier1(appsumo)
    * - storipress_bf_tier2(appsumo)
    * - storipress_bf_tier3(appsumo)
+   * - storipress_bf_tier3(viededingue)
+   * - storipress_bf_tier3(dealfuel)
+   * - prophet
    */
   plan?: Maybe<Scalars['String']['output']>;
   /** subscription plan id */
@@ -397,7 +400,7 @@ export type Billing = {
   publications_quota: Scalars['Int']['output'];
   /** subscription editor seats */
   quantity?: Maybe<Scalars['Int']['output']>;
-  /** possible values: viededingue, appsumo, stripe */
+  /** possible values: prophet, viededingue, dealfuel, appsumo, stripe */
   referer?: Maybe<Scalars['String']['output']>;
   /** in used editors number */
   seats_in_use: Scalars['Int']['output'];
@@ -1637,6 +1640,7 @@ export type Mutation = {
   checkCustomDomainDnsStatus: CustomDomainDnsStatus;
   /** Checks whether an email is being used by an existing user in Storipress */
   checkEmailExist: Scalars['Boolean']['output'];
+  checkProphetRemaining: Scalars['Int']['output'];
   /** check whether Stripe Connect is connected */
   checkStripeConnectConnected: Scalars['Boolean']['output'];
   /** clear static site cache */
@@ -1644,7 +1648,7 @@ export type Mutation = {
   confirmCustomDomain: Scalars['Boolean']['output'];
   /** confirm account email */
   confirmEmail: Scalars['Boolean']['output'];
-  confirmProphetCheckout: ConfirmProphetCheckoutResponse;
+  confirmProphetCheckout?: Maybe<ConfirmProphetCheckoutResponse>;
   /** initiate OAuth for HubSpot and return the redirect URL */
   connectHubSpot: Scalars['String']['output'];
   /** initiate OAuth for Webflow and return the redirect URL */
@@ -2489,6 +2493,11 @@ export type MutationRemoveAuthorFromArticleArgs = {
 
 export type MutationRemoveTagFromArticleArgs = {
   input: RemoveTagFromArticleInput;
+};
+
+
+export type MutationRequestAppSetupIntentArgs = {
+  input?: InputMaybe<RequestAppSetupIntentInput>;
 };
 
 
@@ -3562,6 +3571,10 @@ export type RemoveTagFromArticleInput = {
   tag_id: Scalars['ID']['input'];
 };
 
+export type RequestAppSetupIntentInput = {
+  payment?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type RequestSignInSubscriberInput = {
   /** subscriber email */
   email: Scalars['EmailString']['input'];
@@ -4395,6 +4408,8 @@ export type UpdateAccountPasswordInput = {
 };
 
 export type UpdateAppPaymentMethodInput = {
+  country?: InputMaybe<Scalars['String']['input']>;
+  postal_code?: InputMaybe<Scalars['String']['input']>;
   token: Scalars['String']['input'];
 };
 

@@ -7,6 +7,10 @@
   "engines": {
     "node": "20.12.1"
   },
+  "workspaces": [
+    ".",
+    "packages/*"
+  ],
   "scripts": {
     "dev": "moon run dev",
     "build": "moon run build",
