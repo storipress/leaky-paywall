@@ -5304,6 +5304,11 @@ export type SignInPaywallMutationVariables = Exact<{
 
 export type SignInPaywallMutation = { __typename?: 'Mutation', signInLeakySubscriber: string };
 
+export type SiteSubscriptionInfoQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SiteSubscriptionInfoQuery = { __typename?: 'Query', siteSubscriptionInfo: { __typename?: 'SiteSubscriptionInfo', name: string, description?: string | null, logo?: { __typename?: 'Image', url: string } | null } };
+
 export type TrackSubscriberActivityMutationVariables = Exact<{
   input: TrackSubscriberActivityInput;
 }>;
@@ -5313,4 +5318,5 @@ export type TrackSubscriberActivityMutation = { __typename?: 'Mutation', trackSu
 
 
 export const SignInPaywallDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"SignInPaywall"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"email"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"EmailString"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"signInLeakySubscriber"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"input"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"email"},"value":{"kind":"Variable","name":{"kind":"Name","value":"email"}}}]}}]}]}}]} as unknown as DocumentNode<SignInPaywallMutation, SignInPaywallMutationVariables>;
+export const SiteSubscriptionInfoDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"SiteSubscriptionInfo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"siteSubscriptionInfo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"logo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]} as unknown as DocumentNode<SiteSubscriptionInfoQuery, SiteSubscriptionInfoQueryVariables>;
 export const TrackSubscriberActivityDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"TrackSubscriberActivity"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"input"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"TrackSubscriberActivityInput"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"trackSubscriberActivity"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"input"},"value":{"kind":"Variable","name":{"kind":"Name","value":"input"}}}]}]}}]} as unknown as DocumentNode<TrackSubscriberActivityMutation, TrackSubscriberActivityMutationVariables>;
