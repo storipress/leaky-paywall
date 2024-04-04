@@ -1,0 +1,13 @@
+tasks:
+  generate:
+    command: gql-gen
+    platform: node
+    inputs:
+      - queries/*.gql.ts
+      - codegen.ts
+    outputs:
+      - gql/**
+  generate-watch:
+    extends: generate
+    args: --watch
+    local: true

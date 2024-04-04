@@ -20,6 +20,8 @@ app.get('/', (c) => {
 let initialized = false
 
 app.get('/:clientId/prophet.js', async (c) => {
+  const clientId = c.req.param('clientId')
+
   if (!initialized) {
     await esbuild.initialize({
       wasmModule: wasm,
@@ -35,7 +37,7 @@ app.get('/:clientId/prophet.js', async (c) => {
     freeLimit: 3,
     pathPattern: null,
     all: false,
-    clientId: c.req.param('clientId'),
+    clientId,
     logo: '',
     // TODO: find a way to read these config
     title: 'Title',

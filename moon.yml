@@ -20,6 +20,7 @@ tasks:
       - dist
     deps:
       - ~:typecheck
+      - storipress-client:generate
     platform: node
   lib:
     env:
@@ -38,6 +39,7 @@ tasks:
       - --mode=lib
     deps:
       - ~:typecheck
+      - storipress-client:generate
     platform: node
   lib-analyze:
     extends: lib
@@ -85,9 +87,13 @@ tasks:
       - tsconfig.json
       - package.json
       - yarn.lock
+    deps:
+      - storipress-client:generate
   dev:
     command: vite
     args:
       - --open
     local: true
     platform: node
+    deps:
+      - storipress-client:generate-watch

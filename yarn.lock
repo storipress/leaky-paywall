@@ -2261,12 +2261,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iconify-json/lucide@npm:1.1.180":
-  version: 1.1.180
-  resolution: "@iconify-json/lucide@npm:1.1.180"
+"@iconify-json/lucide@npm:1.1.179":
+  version: 1.1.179
+  resolution: "@iconify-json/lucide@npm:1.1.179"
   dependencies:
     "@iconify/types": "npm:*"
-  checksum: 10c0/5e5357578e9360ee8838d5f5e05521194a90b18f44f681e3a1e93796f58a21c61cee53378d46ae5c4f66285c96558a5c65da54374e8795785b213a63bdfe0f63
+  checksum: 10c0/778b2f30d38b2d3c644ff60ed70cd1b72cff6821680ffba4dc6190a1e1522d58176391de2b4aa81abb1b87ce36d97d63f387522e02443d5ab4f3314335233fe9
   languageName: node
   linkType: hard
 
@@ -2898,13 +2898,10 @@ __metadata:
     "@antfu/eslint-config": "npm:2.12.2"
     "@egoist/tailwindcss-icons": "npm:1.7.4"
     "@formkit/auto-animate": "npm:^0.8.1"
-    "@graphql-codegen/cli": "npm:5.0.2"
-    "@graphql-codegen/client-preset": "npm:4.2.5"
-    "@iconify-json/lucide": "npm:1.1.180"
+    "@iconify-json/lucide": "npm:1.1.179"
     "@moonrepo/cli": "npm:1.23.3"
     "@nanostores/persistent": "npm:^0.10.1"
     "@nanostores/vue": "npm:^0.10.0"
-    "@parcel/watcher": "npm:2.4.1"
     "@sindresorhus/slugify": "npm:2.2.1"
     "@size-limit/file": "npm:11.1.2"
     "@tailwindcss/typography": "npm:0.5.12"
@@ -2924,7 +2921,6 @@ __metadata:
     destr: "npm:^2.0.3"
     esbuild: "npm:0.20.2"
     eslint: "npm:9.0.0"
-    graphql: "npm:16.8.1"
     graphql-web-lite: "npm:^16.6.0-4"
     lorem-ipsum: "npm:2.0.8"
     nanostores: "npm:^0.10.0"
@@ -2938,6 +2934,7 @@ __metadata:
     rollup-plugin-visualizer: "npm:5.12.0"
     shadcn-vue: "npm:0.10.3"
     size-limit: "npm:11.1.2"
+    storipress-client: "workspace:^"
     tailwind-merge: "npm:^2.2.1"
     tailwindcss: "npm:3.4.3"
     tailwindcss-animate: "npm:^1.0.7"
@@ -6669,7 +6666,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql@npm:16.8.1, graphql@npm:^16.8.1":
+"graphql@npm:^16.8.1":
   version: 16.8.1
   resolution: "graphql@npm:16.8.1"
   checksum: 10c0/129c318156b466f440914de80dbf7bc67d17f776f2a088a40cb0da611d19a97c224b1c6d2b13cbcbc6e5776e45ed7468b8432f9c3536724e079b44f1a3d57a8a
@@ -9998,6 +9995,17 @@ __metadata:
   checksum: 10c0/ba91b65e6442bf6f01ce837a727ece597a977ed92a05cb9aea6bf446c5e0dcbccc28f31b793afa8aedd8f34baaf3335398d35f903938d5493f7fbe386a1e090e
   languageName: node
   linkType: hard
+
+"storipress-client@workspace:^, storipress-client@workspace:packages/storipress-client":
+  version: 0.0.0-use.local
+  resolution: "storipress-client@workspace:packages/storipress-client"
+  dependencies:
+    "@graphql-codegen/cli": "npm:5.0.2"
+    "@graphql-codegen/client-preset": "npm:4.2.5"
+    "@parcel/watcher": "npm:2.4.1"
+    graphql: "npm:^16.8.1"
+  languageName: unknown
+  linkType: soft
 
 "streamsearch@npm:^1.1.0":
   version: 1.1.0

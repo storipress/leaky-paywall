@@ -1,13 +1,9 @@
+import { TrackSubscriberActivity } from 'storipress-client'
+
 export function useTrackManager() {
   const paywall = useStore($paywall)
 
-  const { executeMutation: recordTrack } = useMutation(
-    graphql(`
-      mutation TrackSubscriberActivity($input: TrackSubscriberActivityInput!) {
-        trackSubscriberActivity(input: $input)
-      }
-    `),
-  )
+  const { executeMutation: recordTrack } = useMutation(TrackSubscriberActivity)
 
   async function flushAll() {
     if (!paywall.value.token) {
