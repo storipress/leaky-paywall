@@ -5,27 +5,28 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"@0no-co/graphql.web@npm:^1.0.0, @0no-co/graphql.web@npm:^1.0.1":
-  version: 1.0.4
-  resolution: "@0no-co/graphql.web@npm:1.0.4"
+"@0no-co/graphql.web@npm:^1.0.0, @0no-co/graphql.web@npm:^1.0.1, @0no-co/graphql.web@npm:^1.0.5":
+  version: 1.0.6
+  resolution: "@0no-co/graphql.web@npm:1.0.6"
   peerDependencies:
     graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
   peerDependenciesMeta:
     graphql:
       optional: true
-  checksum: 10c0/bf63cb5b017063363c9a9e06dc17532abc1c2da402c7ebcbc7b5ab2a0601ec93b02de93af9e50d9daffb3b747eddcf0b1e5418a46d1182c5b8087b7d7a1768ad
+  checksum: 10c0/10103e9b30df14d351d098871a4a35d38c9a478763faa667eb1409bfb27bf06c8f8d2bb3c33dd6a4250a5d866d7d301afe0090dacc409a38831674b087cc78cd
   languageName: node
   linkType: hard
 
-"@0no-co/graphqlsp@npm:1.7.1":
-  version: 1.7.1
-  resolution: "@0no-co/graphqlsp@npm:1.7.1"
+"@0no-co/graphqlsp@npm:1.8.0":
+  version: 1.8.0
+  resolution: "@0no-co/graphqlsp@npm:1.8.0"
   dependencies:
-    "@gql.tada/internal": "npm:^0.1.0"
+    "@gql.tada/internal": "npm:^0.1.2"
+    graphql: "npm:^16.8.1"
     node-fetch: "npm:^2.0.0"
   peerDependencies:
     typescript: ^5.0.0
-  checksum: 10c0/8a3d211b7fd1ecd8e73297e57d042eb3aa8f1071c3e3bcdd461ccd537ab225e2f57b0a0c34466cd5d1299a0f4c2d68ae9ee191a03078b00c50396b8b9f28a689
+  checksum: 10c0/39a16333753b9e99864004ed396ea53753a327f466c429603fdd5b9b2bb5e6038a6bb2337c8bfdab0440eff3c48d0130a2ea4ec469c2a28b69e07a1abc1f0fd2
   languageName: node
   linkType: hard
 
@@ -1372,13 +1373,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gql.tada/internal@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "@gql.tada/internal@npm:0.1.0"
+"@gql.tada/internal@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "@gql.tada/internal@npm:0.1.2"
   dependencies:
-    graphql: "npm:^16.8.1"
-    typescript: "npm:^5.3.3"
-  checksum: 10c0/49962b402ef7aaa8975d71cb6182ecbba431e07cd4753f1961e51fa3daf90cb739e4bf60cc3959c7b87389de1c17f3138970421d9829f7bf54e771e97554cada
+    "@0no-co/graphql.web": "npm:^1.0.5"
+  peerDependencies:
+    graphql: ^16.8.1
+    typescript: ^5.0.0
+  checksum: 10c0/ca0622e1935b2894e62faf355ae9588a3ade2d4bf808efb55cd3362ece3853fb11c3c596e3ddb8d1023c77ef8dd7ceb1c0a4c6dc6f984f63193e6172adf6ef3d
   languageName: node
   linkType: hard
 
@@ -2614,7 +2617,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@storipress/leaky-paywall@workspace:."
   dependencies:
-    "@0no-co/graphqlsp": "npm:1.7.1"
+    "@0no-co/graphqlsp": "npm:1.8.0"
     "@antfu/eslint-config": "npm:2.12.1"
     "@egoist/tailwindcss-icons": "npm:1.7.4"
     "@formkit/auto-animate": "npm:^0.8.1"
@@ -10083,7 +10086,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:5.4.3, typescript@npm:^5.2.2, typescript@npm:^5.3.3":
+"typescript@npm:5.4.3, typescript@npm:^5.2.2":
   version: 5.4.3
   resolution: "typescript@npm:5.4.3"
   bin:
@@ -10093,7 +10096,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A5.4.3#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.2.2#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.3.3#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A5.4.3#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.2.2#optional!builtin<compat/typescript>":
   version: 5.4.3
   resolution: "typescript@patch:typescript@npm%3A5.4.3#optional!builtin<compat/typescript>::version=5.4.3&hash=5adc0c"
   bin:
