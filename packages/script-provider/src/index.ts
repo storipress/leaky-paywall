@@ -3,6 +3,8 @@ import { oneLineTrim } from 'proper-tags'
 import { Effect, SynchronizedRef, pipe } from 'effect'
 import esbuild from 'esbuild-wasm'
 import { SiteSubscriptionInfo } from 'storipress-client'
+// @ts-expect-error no type
+// eslint-disable-next-line antfu/no-import-node-modules-by-path
 import wasm from '../../../node_modules/esbuild-wasm/esbuild.wasm'
 import { GraphqlService } from './services/GraphqlService'
 
@@ -41,9 +43,6 @@ app.get('/:clientId/prophet.js', async (c) => {
       pipe(
         GraphqlService,
         Effect.flatMap(({ query }) => query(SiteSubscriptionInfo, {})),
-        Effect.tap((res) => {
-          console.log(res.error)
-        }),
         Effect.flatMap((res) => {
           const config = JSON.stringify({
             flags: {
@@ -73,6 +72,11 @@ app.get('/:clientId/prophet.js', async (c) => {
     ),
     Effect.provide(GraphqlService.layer(clientId)),
     Effect.catchTag('NotFoundError', () => Effect.succeed(c.text('Not Found', 404))),
+    Effect.catchAll((error) => {
+      // eslint-disable-next-line no-console
+      console.log(error)
+      return Effect.succeed(c.text('Internal Server Error', 500))
+    }),
     Effect.runPromise,
   )
 })
