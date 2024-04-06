@@ -1,4 +1,4 @@
-import { Context, Effect, Layer, pipe } from 'effect'
+import { Context, Effect, Inspectable, Layer, pipe } from 'effect'
 import type { AnyVariables, CombinedError, OperationResult, TypedDocumentNode } from '@urql/core'
 import { Client, cacheExchange, fetchExchange } from '@urql/core'
 import { joinURL } from 'ufo'
@@ -22,7 +22,7 @@ export class GraphqlService extends Context.Tag('@app/GraphqlService')<GraphqlSe
       this,
       pipe(
         Effect.promise(() => restClient.getTenantState({ params: { clientId } })),
-        Effect.tap((res) => Effect.log(`check ${clientId} state: ${JSON.stringify(res.body)}`)),
+        Effect.tap((res) => Effect.log(`check ${clientId} state: ${Inspectable.format(res.body)}`)),
         Effect.filterOrFail(
           (res) => res.status === 200 && res.body.state === 'online',
           () => new NotFoundError(),

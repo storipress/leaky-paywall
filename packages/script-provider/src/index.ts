@@ -20,7 +20,7 @@ const javascript = oneLineTrim
 const app = new Hono()
 
 app.get('/', (c) => {
-  return c.text('Hello Hono!')
+  return c.text('Not found', 404)
 })
 
 const initializedRef = SynchronizedRef.unsafeMake(false)
@@ -57,6 +57,7 @@ app.get('/:clientId/prophet.js', async (c) => {
             logo: '',
             title: res.data?.siteSubscriptionInfo.name ?? 'Title',
             description: res.data?.siteSubscriptionInfo.description ?? 'Description',
+            // TODO: need primary color config
             primaryColor: 'rgb(29 78 216)',
           })
           const code = javascript`
