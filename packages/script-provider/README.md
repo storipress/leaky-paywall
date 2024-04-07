@@ -1,8 +1,8 @@
 ```
-npm install
-npm run dev
+yarn install
+yarn run dev
 ```
 
 ```
-npm run deploy
+yarn run deploy
 ```
