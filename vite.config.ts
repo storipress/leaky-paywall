@@ -1,7 +1,6 @@
 import process from 'node:process'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-// import Codegen from 'vite-plugin-graphql-codegen'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import VueDevTools from 'vite-plugin-vue-devtools'
@@ -17,7 +16,6 @@ const baseConfig = defineConfig({
   },
   plugins: [
     vue({ customElement: true }),
-    // Codegen(),
     Boolean(process.env.ANALYZE) && visualizer(),
     AutoImport({
       imports: [
