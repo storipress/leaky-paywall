@@ -55,8 +55,8 @@ app.get('/:clientId/prophet.js', async (c) => {
             all: false,
             clientId,
             logo: '',
-            title: res.data?.siteSubscriptionInfo.name ?? 'Title',
-            description: res.data?.siteSubscriptionInfo.description ?? 'Description',
+            title: res.data?.siteSubscriptionInfo.name ?? 'Welcome',
+            description: res.data?.siteSubscriptionInfo.description ?? '',
             // TODO: need primary color config
             primaryColor: 'rgb(29 78 216)',
           })
