@@ -47,7 +47,7 @@
     "@egoist/tailwindcss-icons": "1.7.4",
     "@graphql-codegen/cli": "5.0.2",
     "@graphql-codegen/client-preset": "4.2.5",
-    "@iconify-json/lucide": "1.1.179",
+    "@iconify-json/lucide": "1.1.180",
     "@moonrepo/cli": "1.23.3",
     "@parcel/watcher": "2.4.1",
     "@sindresorhus/slugify": "2.2.1",
