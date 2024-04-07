@@ -25,7 +25,7 @@ app.get('/', (c) => {
 
 const initializedRef = SynchronizedRef.unsafeMake(false)
 
-app.get('/:clientId/prophet.js', async (c) => {
+app.get('/:clientId/prophet.js', (c) => {
   const clientId = c.req.param('clientId')
 
   return pipe(
