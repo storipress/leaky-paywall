@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.3.0](https://github.com/storipress/leaky-paywall/compare/v1.2.0...v1.3.0) (2024-04-08)
+
+
+### Features
+
+* add debug info ([cd01a8c](https://github.com/storipress/leaky-paywall/commit/cd01a8c08282158ee9aa9a63ecb97c883808c4eb))
+* insert debug script ([02f8396](https://github.com/storipress/leaky-paywall/commit/02f839687d686f4f36cf929c36948ee012c45bb2))
+
+
+### Bug Fixes
+
+* use reactive ([5c645a8](https://github.com/storipress/leaky-paywall/commit/5c645a8040bb17ae54e1a38cb309522310f9a160))
+
 ## [1.2.0](https://github.com/storipress/leaky-paywall/compare/v1.1.0...v1.2.0) (2024-04-08)
 
 
