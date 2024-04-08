@@ -1,4 +1,4 @@
 auto-imports.d.ts
 components.d.ts
-/src/gql/**
+/packages/storipress-client/src/gql/**
 .yarn/**
