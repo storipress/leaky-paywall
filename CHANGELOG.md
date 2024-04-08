@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0](https://github.com/storipress/leaky-paywall/compare/v1.0.3...v1.1.0) (2024-04-08)
+
+
+### Features
+
+* add worker to provide Prophet script ([#143](https://github.com/storipress/leaky-paywall/issues/143)) ([ab2b0d5](https://github.com/storipress/leaky-paywall/commit/ab2b0d5dc818de7dc0630672514de766b425ad75))
+* track text action [SPMVP-7161] ([#120](https://github.com/storipress/leaky-paywall/issues/120)) ([26021c3](https://github.com/storipress/leaky-paywall/commit/26021c31202d9aee3ee46636eaee8742a47fbfc8))
+
+
+### Bug Fixes
+
+* add timestamp to read record ([fcc9607](https://github.com/storipress/leaky-paywall/commit/fcc9607f9f47cf6dafd1a7a52bf1d8e7ba18a334))
+
 ## [1.0.3](https://github.com/storipress/leaky-paywall/compare/v1.0.2...v1.0.3) (2024-03-05)
 
 
