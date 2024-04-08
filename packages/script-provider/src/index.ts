@@ -33,14 +33,16 @@ app.get('/:clientId/prophet.js', (c) => {
   const clientId = c.req.param('clientId')
 
   return pipe(
-    SynchronizedRef.updateEffect(initializedRef, () =>
+    SynchronizedRef.updateEffect(initializedRef, (initialized) =>
       pipe(
-        Effect.promise(() =>
-          esbuild.initialize({
-            wasmModule: wasm,
-            worker: false,
-          }),
-        ),
+        initialized
+          ? Effect.unit
+          : Effect.promise(() =>
+              esbuild.initialize({
+                wasmModule: wasm,
+                worker: false,
+              }),
+            ),
         Effect.as(true),
         Effect.catchAllDefect((error) => {
           // eslint-disable-next-line no-console
