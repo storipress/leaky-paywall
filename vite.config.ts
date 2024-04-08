@@ -59,6 +59,7 @@ export default defineConfig(({ mode }) => {
       },
       build: {
         outDir: 'lib',
+        emptyOutDir: false,
 
         lib: {
           entry: {
@@ -81,6 +82,7 @@ export default defineConfig(({ mode }) => {
       },
       build: {
         outDir: 'lib',
+        emptyOutDir: false,
 
         lib: {
           entry: {
