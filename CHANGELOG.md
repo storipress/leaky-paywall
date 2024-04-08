@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.2.0](https://github.com/storipress/leaky-paywall/compare/v1.1.0...v1.2.0) (2024-04-08)
+
+
+### Features
+
+* add tracing ([a1b1714](https://github.com/storipress/leaky-paywall/commit/a1b171467138f6b939e4974c190e8ac0c4537dfe))
+
+
+### Bug Fixes
+
+* add cors and other headers ([3e91211](https://github.com/storipress/leaky-paywall/commit/3e912118ccfa199a92cf37a4a8a878cbb4276d0e))
+* add debug info ([20f6bb4](https://github.com/storipress/leaky-paywall/commit/20f6bb4b936a281e8219a387c1489eae546315d7))
+* fix check init ([04e5336](https://github.com/storipress/leaky-paywall/commit/04e5336dd43941f93b4fc142762dbf4c3c67893d))
+* more log ([e6ecca4](https://github.com/storipress/leaky-paywall/commit/e6ecca45e6c6c0ddf388bdb60d01a99053cc5d35))
+
 ## [1.1.0](https://github.com/storipress/leaky-paywall/compare/v1.0.3...v1.1.0) (2024-04-08)
 
 
