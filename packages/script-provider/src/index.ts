@@ -97,6 +97,11 @@ app.get('/:clientId/prophet.js', (c) => {
         attributes: {},
       }),
     ),
+    Effect.catchAllDefect((error) => {
+      // eslint-disable-next-line no-console
+      console.log(error)
+      return Effect.die(error)
+    }),
     Effect.runPromise,
   )
 })
