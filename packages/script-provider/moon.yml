@@ -1,0 +1,15 @@
+tasks:
+  deploy:
+    command:
+      - wrangler
+      - deploy
+      - --minify
+      - src/index.ts
+    platform: node
+  dev:
+    command:
+      - wrangler
+      - dev
+      - src/index.ts
+    local: true
+    platform: node

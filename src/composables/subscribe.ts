@@ -1,5 +1,6 @@
 import type { GraphQLError } from 'graphql-web-lite'
 import { CombinedError } from '@urql/vue'
+import { SignInPaywall } from 'storipress-client'
 
 const BAD_REQUEST_MESSAGE = 'Bad Request.'
 
@@ -28,13 +29,7 @@ interface FailSubscribeReturn {
 type SubscribeReturn = SuccessSubscribeReturn | FailSubscribeReturn
 
 export function useSubscribe() {
-  const { executeMutation: signInPaywall } = useMutation(
-    graphql(`
-      mutation SignInPaywall($email: EmailString!) {
-        signInLeakySubscriber(input: { email: $email })
-      }
-    `),
-  )
+  const { executeMutation: signInPaywall } = useMutation(SignInPaywall)
 
   async function doLogin(input: SubscribeInput): Promise<SubscribeReturn> {
     const res = await signInPaywall({

@@ -1,0 +1,21 @@
+{
+  "name": "script-provider",
+  "scripts": {
+    "dev": "moon run dev",
+    "deploy": "moon run deploy"
+  },
+  "dependencies": {
+    "@ts-rest/core": "^3.41.0",
+    "@urql/core": "^5.0.0",
+    "effect": "^2.4.18",
+    "esbuild-wasm": "^0.20.2",
+    "hono": "^4.2.2",
+    "proper-tags": "^2.0.2",
+    "ts-pattern": "^5.1.0",
+    "ufo": "^1.5.3"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240404.0",
+    "wrangler": "^3.47.1"
+  }
+}
