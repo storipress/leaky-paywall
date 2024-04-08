@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/storipress/leaky-paywall/compare/v1.3.0...v1.3.1) (2024-04-08)
+
+
+### Bug Fixes
+
+* add more debug info ([9ede527](https://github.com/storipress/leaky-paywall/commit/9ede5270ae20cc1fe38f40f3da5c86658e7493be))
+
 ## [1.3.0](https://github.com/storipress/leaky-paywall/compare/v1.2.0...v1.3.0) (2024-04-08)
 
 
