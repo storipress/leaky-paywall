@@ -50,7 +50,7 @@
     "@0no-co/graphqlsp": "1.9.1",
     "@antfu/eslint-config": "2.12.2",
     "@egoist/tailwindcss-icons": "1.7.4",
-    "@iconify-json/lucide": "1.1.179",
+    "@iconify-json/lucide": "1.1.180",
     "@moonrepo/cli": "1.23.3",
     "@sindresorhus/slugify": "2.2.1",
     "@size-limit/file": "11.1.2",
