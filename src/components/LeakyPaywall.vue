@@ -131,7 +131,7 @@ const isNeedPaywall = computed(() => isScrollOverThreshold.value && isArticle.va
 whenever(
   // When user scroll over 40% will open paywall
   isNeedPaywall,
-  async () => {
+  () => {
     // Don't show paywall if user is logged in
     if (paywall.value.token) {
       return
@@ -142,6 +142,7 @@ whenever(
       article_id: foundArticle.value?.id ?? null,
       client_id: config.value.clientId,
     })
+
     show.value = true
   },
   { immediate: true },
@@ -159,16 +160,33 @@ whenever(
   },
   { immediate: true },
 )
+
+onMounted(() => {
+  // @ts-expect-error inject global
+  window.__spph = {
+    _y: y,
+    _s: isScrollOverThreshold,
+    _h: height,
+    _d: isNeedPaywall,
+    _i: currentReadIdentifier,
+    _c: config,
+    _p: paywall,
+    _o: isOverFreeLimit,
+    _v: show,
+    _t: sendTrack,
+    show: (v = true) => (show.value = v),
+  }
+})
 </script>
 
 <template>
   <div>
     <AlertDialog :open="show">
-      <VisuallyHidden>
-        <!-- for accessibility -->
-        <AlertDialogTitle class="invisible">Subscribe</AlertDialogTitle>
-      </VisuallyHidden>
       <AlertDialogContent>
+        <VisuallyHidden>
+          <!-- for accessibility -->
+          <AlertDialogTitle class="invisible">Subscribe</AlertDialogTitle>
+        </VisuallyHidden>
         <Card class="w-full pb-4 pt-4" :style="themeConfig">
           <CardContent>
             <div class="flex flex-col items-center gap-1">
