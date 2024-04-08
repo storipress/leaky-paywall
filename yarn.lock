@@ -3171,7 +3171,7 @@ __metadata:
     tsx: "npm:4.7.2"
     typescript: "npm:5.4.4"
     unplugin-auto-import: "npm:0.17.5"
-    unplugin-macros: "npm:^0.11.0"
+    unplugin-macros: "npm:0.11.0"
     unplugin-vue-components: "npm:0.26.0"
     vee-validate: "npm:^4.12.6"
     vite: "npm:5.2.8"
@@ -11024,7 +11024,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unplugin-macros@npm:^0.11.0":
+"unplugin-macros@npm:0.11.0":
   version: 0.11.0
   resolution: "unplugin-macros@npm:0.11.0"
   dependencies:
