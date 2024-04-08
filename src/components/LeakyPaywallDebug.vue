@@ -2,6 +2,8 @@
 import { useDebugInfo } from '~/utils/debug-info'
 
 const { isLoading, state: debugInfo } = useDebugInfo()
+
+const hasArticle = computed(() => !!debugInfo.value._a)
 </script>
 
 <template>
@@ -11,6 +13,18 @@ const { isLoading, state: debugInfo } = useDebugInfo()
     <template v-else>
       <div>Found version: {{ debugInfo._z }}</div>
       <Button size="sm" @click="debugInfo.show()">Test</Button>
+      <details>
+        <summary>Debug Info</summary>
+        <div>
+          <div>
+            Article
+            <span :class="hasArticle ? 'text-green-500' : 'text-red-500'">{{
+              hasArticle ? 'found' : 'not found'
+            }}</span>
+          </div>
+          <div>Read articles/limit {{ debugInfo._p.read.length }}/{{ debugInfo._c.freeLimit }}</div>
+        </div>
+      </details>
     </template>
   </div>
 </template>

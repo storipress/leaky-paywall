@@ -167,6 +167,7 @@ onMounted(() => {
   window.__spph = reactive({
     _y: y,
     _s: isScrollOverThreshold,
+    _a: foundArticle,
     _h: height,
     _d: isNeedPaywall,
     _i: currentReadIdentifier,
