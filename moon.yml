@@ -34,9 +34,28 @@ tasks:
       - yarn.lock
       - vite.config.ts
     outputs:
-      - lib
+      - lib/leaky-paywall.js
     args:
       - --mode=lib
+    deps:
+      - ~:typecheck
+      - storipress-client:generate
+    platform: node
+  debug-lib:
+    env:
+      MODE: lib-debug
+    command:
+      - vite
+      - build
+    inputs: 
+      - '@globs(sources)'
+      - package.json
+      - yarn.lock
+      - vite.config.ts
+    outputs:
+      - lib/leaky-paywall-debug.js
+    args:
+      - --mode=lib-debug
     deps:
       - ~:typecheck
       - storipress-client:generate
@@ -49,6 +68,13 @@ tasks:
     env:
       ANALYZE: 'true'
   minify:
+    command: noop
+    deps:
+      - minify-lib
+      - minify-debug-lib
+  minify-lib:
+    env:
+      MODE: lib
     command:
       - node
       - esbuild.config.js
@@ -58,6 +84,18 @@ tasks:
       - lib/leaky-paywall.min.js
     deps:
       - ~:lib-analyze
+  minify-debug-lib:
+    env:
+      MODE: lib-debug
+    command:
+      - node
+      - esbuild.config.js
+    inputs: 
+      - lib/leaky-paywall-debug.js
+    outputs:
+      - lib/leaky-paywall-debug.min.js
+    deps:
+      - ~:debug-lib
   show-analyze:
     command:
       - open

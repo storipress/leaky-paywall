@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { sendTrack } from '~/lib/tracking'
+import { version } from '~/utils/version'
 
 const { height } = useScrollHeight()
 const { y } = useWindowScroll()
@@ -174,6 +175,7 @@ onMounted(() => {
     _o: isOverFreeLimit,
     _v: show,
     _t: sendTrack,
+    _z: version,
     show: (v = true) => (show.value = v),
   })
 })

@@ -3154,7 +3154,7 @@ export type Query = {
   stages: Array<Stage>;
   /** get specific subscriber */
   subscriber?: Maybe<Subscriber>;
-  subscriberPainPoints: Array<Scalars['String']['output']>;
+  subscriberPainPoints: Array<SubscriberPainPoint>;
   /** get subscriber profile for current request user */
   subscriberProfile?: Maybe<Subscriber>;
   /** fetch subscribers */
@@ -4218,6 +4218,12 @@ export type SubscriberPaginator = {
   data: Array<Subscriber>;
   /** Pagination information about the list of items. */
   paginatorInfo: PaginatorInfo;
+};
+
+export type SubscriberPainPoint = {
+  __typename?: 'SubscriberPainPoint';
+  value: Scalars['String']['output'];
+  weight: Scalars['Int']['output'];
 };
 
 export type SubscribersGraph = {

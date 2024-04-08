@@ -19,7 +19,14 @@ export interface BufferedEvent {
   t: number
 }
 
-export const $paywall = persistentMap(
+export interface PaywallState {
+  lastSynced: number
+  records: BufferedEvent[]
+  read: string[]
+  token: string
+}
+
+export const $paywall = persistentMap<PaywallState>(
   'storipress-paywall:',
   {
     lastSynced: 0,

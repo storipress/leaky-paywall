@@ -4,6 +4,7 @@ import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import VueDevTools from 'vite-plugin-vue-devtools'
+import Macros from 'unplugin-macros/vite'
 import { visualizer } from 'rollup-plugin-visualizer'
 import RadixVueResolver from 'radix-vue/resolver'
 
@@ -15,6 +16,7 @@ const baseConfig = defineConfig({
     },
   },
   plugins: [
+    Macros(),
     vue({ customElement: true }),
     Boolean(process.env.ANALYZE) && visualizer(),
     AutoImport({
@@ -59,7 +61,31 @@ export default defineConfig(({ mode }) => {
         outDir: 'lib',
 
         lib: {
-          entry: './src/entry.ts',
+          entry: {
+            'leaky-paywall': './src/entry.ts',
+          },
+          formats: ['es'],
+        },
+        rollupOptions: {
+          external: ['vue'],
+        },
+      },
+    }
+  }
+
+  if (mode === 'lib-debug') {
+    return {
+      ...baseConfig,
+      define: {
+        'process.env.NODE_ENV': JSON.stringify('production'),
+      },
+      build: {
+        outDir: 'lib',
+
+        lib: {
+          entry: {
+            'leaky-paywall-debug': './src/entry-debug.ts',
+          },
           formats: ['es'],
         },
         rollupOptions: {

@@ -24,6 +24,7 @@ tasks:
       - plan
     inputs:
       - /lib/leaky-paywall.min.js
+      - /lib/leaky-paywall-debug.min.js
       - $TF_VAR_aws_access_key
       - $TF_VAR_aws_secret_key
       - '*.tfvars'
@@ -39,6 +40,7 @@ tasks:
       - -auto-approve
     inputs:
       - /lib/leaky-paywall.min.js
+      - /lib/leaky-paywall-debug.min.js
       - $TF_VAR_aws_access_key
       - $TF_VAR_aws_secret_key
       - '*.tfvars'
