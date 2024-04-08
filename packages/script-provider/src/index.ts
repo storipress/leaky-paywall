@@ -1,5 +1,9 @@
 import { Hono } from 'hono'
 import { oneLineTrim } from 'proper-tags'
+import type { ResolveConfigFn } from '@microlabs/otel-cf-workers'
+import { instrument } from '@microlabs/otel-cf-workers'
+import * as Tracer from '@effect/opentelemetry/Tracer'
+import * as Resource from '@effect/opentelemetry/Resource'
 import { Effect, SynchronizedRef, pipe } from 'effect'
 import esbuild from 'esbuild-wasm'
 import { SiteSubscriptionInfo } from 'storipress-client'
@@ -38,6 +42,12 @@ app.get('/:clientId/prophet.js', (c) => {
           }),
         ),
         Effect.as(true),
+        Effect.catchAllDefect((error) => {
+          // eslint-disable-next-line no-console
+          console.log('Fail to init esbuild', error)
+          return Effect.die(error)
+        }),
+        Effect.withSpan('init esbuild'),
       ),
     ),
     Effect.flatMap(() =>
@@ -79,8 +89,31 @@ app.get('/:clientId/prophet.js', (c) => {
       console.log(error)
       return Effect.succeed(c.text('Internal Server Error', 500))
     }),
+    Effect.provide(Tracer.layerGlobalTracer),
+    Effect.provide(
+      Resource.layer({
+        serviceName: 'prophet_worker',
+        serviceVersion: '1.0.0',
+        attributes: {},
+      }),
+    ),
     Effect.runPromise,
   )
 })
 
-export default app
+const config: ResolveConfigFn = () => {
+  return {
+    exporter: {
+      url: 'https://api.axiom.co/v1/traces',
+      headers: {
+        Authorization: 'Bearer xaat-e048c648-6eab-47ff-bf01-2b7d1af47842',
+        'x-axiom-dataset': 'storipress_services',
+      },
+    },
+    service: {
+      name: 'prophet_worker',
+    },
+  }
+}
+
+export default instrument(app, config)
