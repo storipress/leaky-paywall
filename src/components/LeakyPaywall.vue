@@ -163,7 +163,7 @@ whenever(
 
 onMounted(() => {
   // @ts-expect-error inject global
-  window.__spph = {
+  window.__spph = reactive({
     _y: y,
     _s: isScrollOverThreshold,
     _h: height,
@@ -175,7 +175,7 @@ onMounted(() => {
     _v: show,
     _t: sendTrack,
     show: (v = true) => (show.value = v),
-  }
+  })
 })
 </script>
 
