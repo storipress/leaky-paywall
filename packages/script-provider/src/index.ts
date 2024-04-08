@@ -14,6 +14,7 @@ import { GraphqlService } from './services/GraphqlService'
 import { initEsbuild } from './utils/esbuild-init'
 
 const PRODUCTION_URL = 'https://assets.stori.press/storipress/leaky-paywall.min.js'
+const PRODUCTION_DEBUG_URL = 'https://assets.stori.press/storipress/leaky-paywall-debug.min.js'
 const CONFIG_VAR_NAME = 'SP_PAYWALL'
 
 // @ts-expect-error polyfill
@@ -73,10 +74,16 @@ app.get(
             })
             const code = javascript`
             window.${CONFIG_VAR_NAME} = ${config};
-            let s=document.createElement('script');
-            s.type='module';
-            s.src='${PRODUCTION_URL}';
-            document.head.append(s);
+            function insertScript(u) {
+              let s=document.createElement('script');
+              s.type='module';
+              s.src=u;
+              document.head.append(s);
+            }
+            insertScript('${PRODUCTION_URL}');
+            if (window.location.search.includes('sp_debug=true')) {
+              insertScript('${PRODUCTION_DEBUG_URL}');
+            }
           `
             return Effect.promise(() => esbuild.transform(code, { loader: 'js', minify: true }))
           }),
