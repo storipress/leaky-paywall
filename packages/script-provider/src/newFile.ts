@@ -1,36 +1,16 @@
-import { Hono } from 'hono'
-import { oneLineTrim } from 'proper-tags'
-import type { ResolveConfigFn } from '@microlabs/otel-cf-workers'
-import { instrument } from '@microlabs/otel-cf-workers'
 import { cors } from 'hono/cors'
 import * as Tracer from '@effect/opentelemetry/Tracer'
 import * as Resource from '@effect/opentelemetry/Resource'
-import { secureHeaders } from 'hono/secure-headers'
-import { etag } from 'hono/etag'
-import { Effect, pipe } from 'effect'
+import { Effect, SynchronizedRef, pipe } from 'effect'
 import esbuild from 'esbuild-wasm'
 import { SiteSubscriptionInfo } from 'storipress-client'
+import wasm from '../../../node_modules/esbuild-wasm/esbuild.wasm'
 import { GraphqlService } from './services/GraphqlService'
-import { initEsbuild } from './utils/esbuild-init'
-
-const PRODUCTION_URL = 'https://assets.stori.press/storipress/leaky-paywall.min.js'
-const CONFIG_VAR_NAME = 'SP_PAYWALL'
-
-// @ts-expect-error polyfill
-globalThis.performance = Date
-
-const javascript = oneLineTrim
-
-const app = new Hono()
-
-app.get('/', (c) => {
-  return c.text('Not found', 404)
-})
+import { app, initializedRef, javascript, CONFIG_VAR_NAME, PRODUCTION_URL } from '.'
 
 app.get(
   '/:clientId/prophet.js',
 
-  // https://hono.dev/middleware/builtin/cors
   cors({
     origin: '*',
     allowHeaders: ['Upgrade-Insecure-Requests'],
@@ -40,17 +20,29 @@ app.get(
     credentials: true,
   }),
 
-  // https://hono.dev/middleware/builtin/etag
-  etag(),
-
-  // https://hono.dev/middleware/builtin/secure-headers
-  secureHeaders(),
-
   (c) => {
     const clientId = c.req.param('clientId')
 
     return pipe(
-      initEsbuild,
+      SynchronizedRef.updateEffect(initializedRef, (initialized) =>
+        pipe(
+          initialized
+            ? Effect.unit
+            : Effect.promise(() =>
+                esbuild.initialize({
+                  wasmModule: wasm,
+                  worker: false,
+                }),
+              ),
+          Effect.as(true),
+          Effect.catchAllDefect((error) => {
+            // eslint-disable-next-line no-console
+            console.log('Fail to init esbuild', error)
+            return Effect.die(error)
+          }),
+          Effect.withSpan('init esbuild'),
+        ),
+      ),
       Effect.flatMap(() =>
         pipe(
           GraphqlService,
@@ -107,20 +99,3 @@ app.get(
     )
   },
 )
-
-const config: ResolveConfigFn = () => {
-  return {
-    exporter: {
-      url: 'https://api.axiom.co/v1/traces',
-      headers: {
-        Authorization: 'Bearer xaat-e048c648-6eab-47ff-bf01-2b7d1af47842',
-        'x-axiom-dataset': 'storipress_services',
-      },
-    },
-    service: {
-      name: 'prophet_worker',
-    },
-  }
-}
-
-export default instrument(app, config)
