@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.4.0](https://github.com/storipress/leaky-paywall/compare/v1.3.1...v1.4.0) (2024-04-09)
+
+
+### Features
+
+* add version query to script provider ([#162](https://github.com/storipress/leaky-paywall/issues/162)) ([75dd02b](https://github.com/storipress/leaky-paywall/commit/75dd02b329bee64d8052c7b4a83ebde7ef24f823))
+
+
+### Bug Fixes
+
+* fix debug and ui size issue ([a5fb999](https://github.com/storipress/leaky-paywall/commit/a5fb9998ce2000a1e41267d1da108f173f19ce07))
+
 ## [1.3.1](https://github.com/storipress/leaky-paywall/compare/v1.3.0...v1.3.1) (2024-04-08)
 
 
