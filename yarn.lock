@@ -9909,7 +9909,8 @@ __metadata:
     hono: "npm:^4.2.2"
     proper-tags: "npm:^2.0.2"
     ts-pattern: "npm:^5.1.1"
-    ufo: "npm:^1.5.3"
+    ufo: "npm:1.5.3"
+    version-proxy: "workspace:*"
     wrangler: "npm:3.48.0"
   languageName: unknown
   linkType: soft
@@ -11010,7 +11011,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ufo@npm:^1.3.0, ufo@npm:^1.3.2, ufo@npm:^1.4.0, ufo@npm:^1.5.3":
+"ufo@npm:1.5.3, ufo@npm:^1.3.0, ufo@npm:^1.3.2, ufo@npm:^1.4.0":
   version: 1.5.3
   resolution: "ufo@npm:1.5.3"
   checksum: 10c0/1df10702582aa74f4deac4486ecdfd660e74be057355f1afb6adfa14243476cf3d3acff734ccc3d0b74e9bfdefe91d578f3edbbb0a5b2430fe93cd672370e024
@@ -11299,7 +11300,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"version-proxy@workspace:packages/version-proxy":
+"version-proxy@workspace:*, version-proxy@workspace:packages/version-proxy":
   version: 0.0.0-use.local
   resolution: "version-proxy@workspace:packages/version-proxy"
   dependencies:
