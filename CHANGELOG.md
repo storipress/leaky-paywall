@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/storipress/leaky-paywall/compare/v1.4.0...v1.4.1) (2024-04-09)
+
+
+### Bug Fixes
+
+* release ([c87c8ec](https://github.com/storipress/leaky-paywall/commit/c87c8ec3e724f0de7af046353d7503debe5844ae))
+
 ## [1.4.0](https://github.com/storipress/leaky-paywall/compare/v1.3.1...v1.4.0) (2024-04-09)
 
 
