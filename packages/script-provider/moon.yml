@@ -1,3 +1,5 @@
+dependsOn:
+  - version-proxy
 tasks:
   deploy:
     command:
@@ -6,6 +8,8 @@ tasks:
       - --minify
       - src/index.ts
     platform: node
+    deps:
+      - ^:build
   dev:
     command:
       - wrangler
@@ -13,3 +17,5 @@ tasks:
       - src/index.ts
     local: true
     platform: node
+    deps:
+      - ^:build

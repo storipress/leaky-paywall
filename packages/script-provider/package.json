@@ -17,7 +17,8 @@
     "hono": "^4.2.2",
     "proper-tags": "^2.0.2",
     "ts-pattern": "^5.1.1",
-    "ufo": "^1.5.3"
+    "ufo": "1.5.3",
+    "version-proxy": "workspace:*"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20240405.0",

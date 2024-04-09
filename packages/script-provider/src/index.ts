@@ -6,6 +6,8 @@ import { cors } from 'hono/cors'
 import * as Tracer from '@effect/opentelemetry/Tracer'
 import * as Resource from '@effect/opentelemetry/Resource'
 import { secureHeaders } from 'hono/secure-headers'
+import { withQuery } from 'ufo'
+import { version } from 'version-proxy'
 import { etag } from 'hono/etag'
 import { Effect, pipe } from 'effect'
 import esbuild from 'esbuild-wasm'
@@ -13,8 +15,10 @@ import { SiteSubscriptionInfo } from 'storipress-client'
 import { GraphqlService } from './services/GraphqlService'
 import { initEsbuild } from './utils/esbuild-init'
 
-const PRODUCTION_URL = 'https://assets.stori.press/storipress/leaky-paywall.min.js'
-const PRODUCTION_DEBUG_URL = 'https://assets.stori.press/storipress/leaky-paywall-debug.min.js'
+const PRODUCTION_URL = withQuery('https://assets.stori.press/storipress/leaky-paywall.min.js', { v: version })
+const PRODUCTION_DEBUG_URL = withQuery('https://assets.stori.press/storipress/leaky-paywall-debug.min.js', {
+  v: version,
+})
 const CONFIG_VAR_NAME = 'SP_PAYWALL'
 
 // @ts-expect-error polyfill
