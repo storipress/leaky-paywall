@@ -350,6 +350,7 @@ export type Billing = {
   has_historical_subscriptions: Scalars['Boolean']['output'];
   /** user has a payment method or not */
   has_pm: Scalars['Boolean']['output'];
+  has_prophet: Scalars['Boolean']['output'];
   /** user id */
   id: Scalars['ID']['output'];
   /**
@@ -1881,6 +1882,8 @@ export type Mutation = {
   runScraper: Scraper;
   /** manually send article newsletter */
   sendArticleNewsletter: Article;
+  /** send cold email to subscriber */
+  sendColdEmailToSubscriber: Scalars['Boolean']['output'];
   /** setup shopify oauth */
   setupShopifyOauth: Scalars['Boolean']['output'];
   /** setup shopify redirections */
@@ -2554,6 +2557,11 @@ export type MutationRunScraperArgs = {
 
 export type MutationSendArticleNewsletterArgs = {
   id: Scalars['ID']['input'];
+};
+
+
+export type MutationSendColdEmailToSubscriberArgs = {
+  input: SendColdEmailToSubscriberInput;
 };
 
 
@@ -3784,6 +3792,17 @@ export enum ScraperType {
   Preview = 'preview'
 }
 
+export type SendColdEmailToSubscriberInput = {
+  /** email content */
+  content: Scalars['String']['input'];
+  /** subscriber id */
+  id: Scalars['String']['input'];
+  /** reply to for the email */
+  reply_to?: InputMaybe<Scalars['EmailString']['input']>;
+  /** email subject */
+  subject: Scalars['String']['input'];
+};
+
 export type ShopifyCollection = {
   __typename?: 'ShopifyCollection';
   page_info?: Maybe<Scalars['String']['output']>;
@@ -3907,6 +3926,7 @@ export type Site = {
   enabled: Scalars['Boolean']['output'];
   /** publication favicon, base64 type */
   favicon?: Maybe<Scalars['String']['output']>;
+  has_prophet: Scalars['Boolean']['output'];
   /** main hosting site */
   hosting?: Maybe<SiteHosting>;
   /** publication id */
@@ -3928,6 +3948,8 @@ export type Site = {
   newsletter: Scalars['Boolean']['output'];
   /** newstand api key */
   newstand_key?: Maybe<Scalars['String']['output']>;
+  /** leaky paywall configurations */
+  paywall_config?: Maybe<Scalars['JSON']['output']>;
   /** static site url structures */
   permalinks?: Maybe<Scalars['JSON']['output']>;
   /**
@@ -3999,6 +4021,8 @@ export type SiteSubscriptionInfo = {
   name: Scalars['String']['output'];
   /** publication has enabled newsletter or not */
   newsletter: Scalars['Boolean']['output'];
+  /** leaky paywall configurations */
+  paywall_config?: Maybe<Scalars['JSON']['output']>;
   /** stripe account id */
   stripe_account_id?: Maybe<Scalars['String']['output']>;
   /** publication has enabled subscription or not */
@@ -4697,6 +4721,8 @@ export type UpdateSiteInput = {
   lang?: InputMaybe<Scalars['String']['input']>;
   /** publication name */
   name?: InputMaybe<Scalars['String']['input']>;
+  /** leaky paywall configurations */
+  paywall_config?: InputMaybe<Scalars['JSON']['input']>;
   /** static site url structures */
   permalinks?: InputMaybe<Scalars['JSON']['input']>;
   /** customized sitemap */

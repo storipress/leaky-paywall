@@ -7,7 +7,7 @@ const hasArticle = computed(() => !!debugInfo.value._a)
 </script>
 
 <template>
-  <div class="fixed right-0 top-0 p-1 text-sm shadow-lg">
+  <div class="fixed right-0 top-0 z-[99999] bg-white p-1 text-sm shadow-lg">
     <h3 class="text-bold text-lg">Storipress Prophet</h3>
     <div v-if="isLoading && !debugInfo">Connecting to Prophet...</div>
     <template v-else>

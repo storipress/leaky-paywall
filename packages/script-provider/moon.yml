@@ -8,6 +8,8 @@ tasks:
       - --minify
       - src/index.ts
     platform: node
+    options:
+      runInCI: false
     deps:
       - ^:build
   dev:
