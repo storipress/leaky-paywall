@@ -6,6 +6,13 @@
   "prettier.enable": true,
   "editor.formatOnSave": true,
 
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    ".moon/templates": true
+  },
+
   // Auto fix
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always",
