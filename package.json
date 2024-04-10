@@ -87,7 +87,7 @@
     "vite-plugin-vue-devtools": "7.0.25",
     "vitest": "1.4.0",
     "vue-router": "4.3.0",
-    "vue-tsc": "2.0.11",
+    "vue-tsc": "2.0.12",
     "zx": "8.0.1"
   }
 }
