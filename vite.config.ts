@@ -54,6 +54,20 @@ export default defineConfig(({ mode }) => {
   if (mode === 'lib') {
     return {
       ...baseConfig,
+      plugins: [
+        ...baseConfig.plugins,
+        {
+          name: 'forbid-effect',
+          enforce: 'pre',
+          async resolveId(importee, importer) {
+            const resolved = await this.resolve(importee, importer)
+            if (resolved?.id.includes('node_modules/effect')) {
+              throw new Error('using effect in leaky paywall is forbidden')
+            }
+            return null
+          },
+        },
+      ],
       define: {
         'process.env.NODE_ENV': JSON.stringify('production'),
       },
