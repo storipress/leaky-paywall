@@ -54,9 +54,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@antfu/eslint-config@npm:2.13.2":
-  version: 2.13.2
-  resolution: "@antfu/eslint-config@npm:2.13.2"
+"@antfu/eslint-config@npm:2.13.3":
+  version: 2.13.3
+  resolution: "@antfu/eslint-config@npm:2.13.3"
   dependencies:
     "@antfu/install-pkg": "npm:^0.3.2"
     "@clack/prompts": "npm:^0.7.0"
@@ -78,7 +78,7 @@ __metadata:
     eslint-plugin-toml: "npm:^0.11.0"
     eslint-plugin-unicorn: "npm:^52.0.0"
     eslint-plugin-unused-imports: "npm:^3.1.0"
-    eslint-plugin-vitest: "npm:^0.5.0"
+    eslint-plugin-vitest: "npm:^0.5.1"
     eslint-plugin-vue: "npm:^9.24.1"
     eslint-plugin-yml: "npm:^1.14.0"
     eslint-processor-vue-blocks: "npm:^0.1.1"
@@ -132,7 +132,7 @@ __metadata:
       optional: true
   bin:
     eslint-config: bin/index.js
-  checksum: 10c0/bf4149ef19b55a4f3653fb96544ee865827a793e8a7a8bf22802ef9b8b01c776f480e25e1db92d69dafd6393f52538741ef39a410d2cfa0c576747ca25413052
+  checksum: 10c0/9b7e842c8eb73f6e8f139784c04a5e60a9329802e383325a2e42929c8c9e269a796348e61a8fffa4089ae1cb88241c16b67fddbd522bcbd0deaf8c891c178440
   languageName: node
   linkType: hard
 
@@ -3141,7 +3141,7 @@ __metadata:
   resolution: "@storipress/leaky-paywall@workspace:."
   dependencies:
     "@0no-co/graphqlsp": "npm:1.9.1"
-    "@antfu/eslint-config": "npm:2.13.2"
+    "@antfu/eslint-config": "npm:2.13.3"
     "@egoist/tailwindcss-icons": "npm:1.7.4"
     "@formkit/auto-animate": "npm:^0.8.1"
     "@iconify-json/lucide": "npm:1.1.180"
@@ -6095,9 +6095,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-vitest@npm:^0.5.0":
-  version: 0.5.0
-  resolution: "eslint-plugin-vitest@npm:0.5.0"
+"eslint-plugin-vitest@npm:^0.5.1":
+  version: 0.5.1
+  resolution: "eslint-plugin-vitest@npm:0.5.1"
   dependencies:
     "@typescript-eslint/utils": "npm:^7.6.0"
   peerDependencies:
@@ -6108,7 +6108,7 @@ __metadata:
       optional: true
     vitest:
       optional: true
-  checksum: 10c0/e0caf467ea6d34ae988f8a7079631ba2a0ce7858c1283df5f027769fb273d9a33ac26960295e547f4caf9cda9823b20284cdb0e18c100bfb50cd12cd1b5d23dd
+  checksum: 10c0/e8fda6a877b2d1a7c65819445339a64e8c96cb31d347095a4b548ebc667231e37ff43a062782d2ca370b8b6fef22403ab7c96bf1528ebc488a9202354a915a9d
   languageName: node
   linkType: hard
 
