@@ -8,8 +8,12 @@ import NoopVue from './components/Noop.vue'
 
 window.SP_PAYWALL = {
   all: true,
+  dismissible: false,
   clientId: 'D6RX98VXN',
-  freeLimit: 3,
+  freeLimit: {
+    interval: 7,
+    quota: 3,
+  },
   flags: {
     paywall: true,
     tracking: true,

@@ -6,13 +6,35 @@ const flagsSchema = z.object({
   tracking: z.boolean().optional().default(true),
 })
 
+export const freeLimitSchema = z.object({
+  quota: z.coerce.number().optional().default(3),
+  interval: z
+    .union([z.literal('inf'), z.coerce.number()])
+    .optional()
+    .default(7),
+})
+
+export type FreeLimit = z.infer<typeof freeLimitSchema>
+
 export const configSchema = z.object({
   flags: flagsSchema.optional().default({
     paywall: true,
     tracking: true,
   }),
-  freeLimit: z.coerce.number().optional().default(3),
+  freeLimit: z.union([
+    freeLimitSchema,
+    z.coerce
+      .number()
+      .optional()
+      .default(3)
+      .transform((quota) => ({
+        quota,
+        interval: 7,
+      }))
+      .pipe(freeLimitSchema),
+  ]),
   clientId: z.string(),
+  dismissible: z.boolean().optional().default(false),
   all: z.boolean().optional().default(false),
   pathPattern: z.instanceof(RegExp).nullish(),
   logo: z.string(),
@@ -23,14 +45,18 @@ export const configSchema = z.object({
 
 export type Config = z.infer<typeof configSchema>
 
-const DEFAULT_CONFIG: Config = {
+export const DEFAULT_CONFIG: Config = {
   flags: {
     paywall: true,
     tracking: true,
   },
-  freeLimit: 3,
+  freeLimit: {
+    quota: 3,
+    interval: 7,
+  },
   pathPattern: null,
   all: false,
+  dismissible: false,
   clientId: '',
   logo: '',
   title: 'Title',

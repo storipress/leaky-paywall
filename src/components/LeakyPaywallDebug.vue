@@ -4,6 +4,13 @@ import { useDebugInfo } from '~/utils/debug-info'
 const { isLoading, state: debugInfo } = useDebugInfo()
 
 const hasArticle = computed(() => !!debugInfo.value._a)
+const readInfo = computed(() => {
+  if (!debugInfo.value) {
+    return ''
+  }
+  const { _p, _c } = debugInfo.value
+  return `${_p.read.length}/${_c.freeLimit.quota}/${_c.freeLimit.interval}`
+})
 </script>
 
 <template>
@@ -22,7 +29,7 @@ const hasArticle = computed(() => !!debugInfo.value._a)
               hasArticle ? 'found' : 'not found'
             }}</span>
           </div>
-          <div>Read articles/limit {{ debugInfo._p.read.length }}/{{ debugInfo._c.freeLimit }}</div>
+          <div>Read articles/limit/interval {{ readInfo }}</div>
         </div>
       </details>
     </template>

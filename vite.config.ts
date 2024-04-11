@@ -24,8 +24,10 @@ const baseConfig = defineConfig({
       imports: [
         'vue',
         'vue-router',
+        'vitest',
         '@vueuse/core',
         '@vueuse/math',
+        'date-fns',
         {
           from: '@nanostores/vue',
           imports: ['useStore'],
@@ -37,6 +39,10 @@ const baseConfig = defineConfig({
         {
           from: '@urql/vue',
           imports: ['useQuery', 'useMutation'],
+        },
+        {
+          from: '@testing-library/vue',
+          imports: ['render', 'fireEvent'],
         },
       ],
       dirs: ['src/utils', 'src/composables', 'src/stores'],
@@ -50,6 +56,8 @@ const baseConfig = defineConfig({
   ],
   test: {
     passWithNoTests: true,
+    setupFiles: ['./vitest.setup.ts'],
+    environmentMatchGlobs: [['**/*.dom.spec.ts', 'happy-dom']],
     coverage: {
       provider: 'v8',
       reporter: ['lcov', 'html'],
