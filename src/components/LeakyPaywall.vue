@@ -26,7 +26,7 @@ const isArticle = logicAnd(() => config.value.flags.paywall, logicOr(foundArticl
 const now = Date.now()
 const currentReadIdentifier = computed(() => `${location.value.pathname ?? ''}:${now}`)
 
-const isOverFreeLimit = computed(() => paywall.value.read.length >= config.value.freeLimit)
+const isOverFreeLimit = useOverFreeLimit()
 
 useTrackLink(
   computed(() => foundArticle.value?.element),

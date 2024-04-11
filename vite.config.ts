@@ -26,6 +26,7 @@ const baseConfig = defineConfig({
         'vue-router',
         '@vueuse/core',
         '@vueuse/math',
+        'date-fns',
         {
           from: '@nanostores/vue',
           imports: ['useStore'],
