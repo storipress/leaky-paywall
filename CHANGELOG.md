@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/storipress/leaky-paywall/compare/v1.4.1...v1.5.0) (2024-04-11)
+
+
+### Features
+
+* support check free limit with interval ([#176](https://github.com/storipress/leaky-paywall/issues/176)) ([c61010a](https://github.com/storipress/leaky-paywall/commit/c61010aa8fd781a961790ead9f4d27b5c33e78b5))
+
 ## [1.4.1](https://github.com/storipress/leaky-paywall/compare/v1.4.0...v1.4.1) (2024-04-09)
 
 
