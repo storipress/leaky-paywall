@@ -16,11 +16,10 @@ export function useOverFreeLimit() {
     if (config.value.freeLimit.interval === 'inf') {
       return readWithTimestamp.value
     }
-    const interval = config.value.freeLimit.interval
 
-    const t = new Date(now)
-    t.setDate(t.getDate() - 7)
+    const interval = config.value.freeLimit.interval
     const nowMinusInterval = subDays(now, interval)
+
     return readWithTimestamp.value.filter((item) => {
       return isAfter(item.t, nowMinusInterval)
     })
