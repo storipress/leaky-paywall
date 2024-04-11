@@ -8,6 +8,7 @@ import NoopVue from './components/Noop.vue'
 
 window.SP_PAYWALL = {
   all: true,
+  dismissible: false,
   clientId: 'D6RX98VXN',
   freeLimit: {
     interval: 7,
