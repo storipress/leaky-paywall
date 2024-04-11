@@ -10,6 +10,7 @@ declare module 'vue' {
     AlertDialog: typeof import('./src/components/ui/alert-dialog/AlertDialog.vue')['default']
     AlertDialogAction: typeof import('./src/components/ui/alert-dialog/AlertDialogAction.vue')['default']
     AlertDialogCancel: typeof import('./src/components/ui/alert-dialog/AlertDialogCancel.vue')['default']
+    AlertDialogClose: typeof import('./src/components/ui/alert-dialog/AlertDialogClose.vue')['default']
     AlertDialogContent: typeof import('./src/components/ui/alert-dialog/AlertDialogContent.vue')['default']
     AlertDialogDescription: typeof import('./src/components/ui/alert-dialog/AlertDialogDescription.vue')['default']
     AlertDialogFooter: typeof import('./src/components/ui/alert-dialog/AlertDialogFooter.vue')['default']

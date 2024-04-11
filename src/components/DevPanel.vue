@@ -162,6 +162,19 @@ function resetEvents() {
                 <FormMessage />
               </FormItem>
             </FormField>
+            <FormField v-slot="{ componentField }" name="dismissible">
+              <FormItem>
+                <FormLabel>Allow dismiss paywall</FormLabel>
+                <FormControl>
+                  <Switch
+                    v-bind="componentField"
+                    :checked="componentField.modelValue"
+                    @update:checked="componentField['onUpdate:modelValue']"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            </FormField>
             <Button type="submit">Update</Button>
           </form>
         </CardContent>

@@ -149,6 +149,14 @@ whenever(
   { immediate: true },
 )
 
+// Close dialog if user login
+whenever(
+  () => paywall.value.token,
+  () => {
+    show.value = false
+  },
+)
+
 // Track scroll over threshold
 whenever(
   isScrollOverThreshold,
@@ -162,6 +170,7 @@ whenever(
   { immediate: true },
 )
 
+// Provide global debug info
 onMounted(() => {
   // @ts-expect-error inject global
   window.__spph = reactive({
@@ -184,7 +193,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <AlertDialog :open="show">
+    <AlertDialog v-model:open="show">
       <AlertDialogContent>
         <VisuallyHidden>
           <!-- for accessibility -->
@@ -192,6 +201,9 @@ onMounted(() => {
         </VisuallyHidden>
         <Card class="w-full pb-4 pt-4" :style="themeConfig">
           <CardContent>
+            <div v-if="config.dismissible" class="flex justify-end">
+              <AlertDialogClose><span class="i-lucide-x" /></AlertDialogClose>
+            </div>
             <div class="flex flex-col items-center gap-1">
               <Avatar class="relative mb-3 mt-2 items-center justify-center p-1" size="md">
                 <div class="size-full">
@@ -212,5 +224,9 @@ onMounted(() => {
         </Card>
       </AlertDialogContent>
     </AlertDialog>
+    <VisuallyHidden>
+      <!-- preload logo file -->
+      <img :src="config.logo" />
+    </VisuallyHidden>
   </div>
 </template>
