@@ -135,10 +135,13 @@ tasks:
     inputs:
       - '@globs(sources)'
       - vite.config.ts
+<<<<<<< HEAD
   test-coverage:
     extends: test
     args:
       --coverage
+=======
+>>>>>>> 2220b77 (chore: update config)
   dev:
     command: vite
     args:
