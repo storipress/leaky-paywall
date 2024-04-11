@@ -49,6 +49,7 @@ const baseConfig = defineConfig({
     VueDevTools(),
   ],
   test: {
+    passWithNoTests: true,
     coverage: {
       provider: 'v8',
       include: ['src/**'],
