@@ -52,6 +52,7 @@ const baseConfig = defineConfig({
     passWithNoTests: true,
     coverage: {
       provider: 'v8',
+      reporter: ['lcov', 'html'],
       include: ['src/**'],
       exclude: ['src/components/ui/**', '**/*.ce.vue'],
     },
