@@ -17,11 +17,28 @@ jobs:
         with:
           node-version: '20'
           cache: 'yarn'
-      - run: moon ci :build
+      - run: moon ci :build :test-coverage
       - uses: moonrepo/run-report-action@v1
         if: success() || failure()
         with:
           access-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/cache/restore@v4
+        with:
+          key: base-coverage-${{ github.run_id }}
+          path: |
+            ./coverage/base.info
+          restore-keys: |
+            base-coverage-
+            base-coverage
+      - name: Generate Code Coverage report
+        id: code-coverage
+        uses: barecheck/code-coverage-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          lcov-file: ./coverage/lcov.info
+          base-lcov-file: ./coverage/base.info
+          send-summary-comment: true
+          show-annotations: warning
       - run: yarn install
       - uses: andresz1/size-limit-action@v1
         with:

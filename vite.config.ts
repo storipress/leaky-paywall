@@ -1,3 +1,4 @@
+import type {} from 'vitest'
 import process from 'node:process'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -47,6 +48,13 @@ const baseConfig = defineConfig({
     }),
     VueDevTools(),
   ],
+  test: {
+    coverage: {
+      provider: 'v8',
+      include: ['src/**'],
+      exclude: ['src/components/ui/**', '**/*.ce.vue'],
+    },
+  },
 })
 
 // https://vitejs.dev/config/

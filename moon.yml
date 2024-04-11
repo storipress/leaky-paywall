@@ -127,6 +127,18 @@ tasks:
       - yarn.lock
     deps:
       - storipress-client:generate
+  test:
+    command: vitest
+    platform: node
+    deps:
+      - storipress-client:generate
+    inputs:
+      - '@globs(sources)'
+      - vite.config.ts
+  test-coverage:
+    extends: test
+    args:
+      --coverage
   dev:
     command: vite
     args:

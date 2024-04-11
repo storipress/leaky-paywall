@@ -17,6 +17,8 @@
     "size": "moon run size",
     "minify": "moon run minify",
     "build:lib": "moon run minify",
+    "test": "moon run test --",
+    "test:coverage": "moon run test-coverage --",
     "deploy": "tsx scripts/deploy.ts"
   },
   "size-limit": [
