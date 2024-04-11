@@ -55,9 +55,9 @@ const baseConfig = defineConfig({
     VueDevTools(),
   ],
   test: {
-    environment: 'happy-dom',
     passWithNoTests: true,
     setupFiles: ['./vitest.setup.ts'],
+    environmentMatchGlobs: [['**/*.dom.spec.ts', 'happy-dom']],
     coverage: {
       provider: 'v8',
       reporter: ['lcov', 'html'],
