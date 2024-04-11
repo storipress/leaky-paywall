@@ -62,7 +62,7 @@
     "@testing-library/jest-dom": "6.4.2",
     "@testing-library/vue": "8.0.3",
     "@thedutchcoder/postcss-rem-to-px": "0.0.2",
-    "@types/eslint": "8.56.7",
+    "@types/eslint": "8.56.8",
     "@vitejs/plugin-vue": "5.0.4",
     "@vitest/coverage-v8": "1.4.0",
     "@vitest/ui": "1.4.0",
