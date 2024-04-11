@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '20'
           cache: 'yarn'
-      - run: moon ci :build :test-coverage
+      - run: moon run :test-coverage
       - uses: moonrepo/run-report-action@v1
         if: success() || failure()
         with:
