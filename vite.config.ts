@@ -24,6 +24,7 @@ const baseConfig = defineConfig({
       imports: [
         'vue',
         'vue-router',
+        'vitest',
         '@vueuse/core',
         '@vueuse/math',
         'date-fns',
@@ -39,6 +40,10 @@ const baseConfig = defineConfig({
           from: '@urql/vue',
           imports: ['useQuery', 'useMutation'],
         },
+        {
+          from: '@testing-library/vue',
+          imports: ['render', 'fireEvent'],
+        },
       ],
       dirs: ['src/utils', 'src/composables', 'src/stores'],
     }),
@@ -50,7 +55,9 @@ const baseConfig = defineConfig({
     VueDevTools(),
   ],
   test: {
+    environment: 'happy-dom',
     passWithNoTests: true,
+    setupFiles: ['./vitest.setup.ts'],
     coverage: {
       provider: 'v8',
       reporter: ['lcov', 'html'],
