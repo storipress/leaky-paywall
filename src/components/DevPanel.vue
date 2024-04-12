@@ -3,12 +3,24 @@ import { toTypedSchema } from '@vee-validate/zod'
 import { toast } from 'vue-sonner'
 import { Field as FormField, useForm } from 'vee-validate'
 import { slugifyWithCounter } from '@sindresorhus/slugify'
+import { z } from 'zod'
+import { values } from 'remeda'
 import { $config, configSchema } from '~/stores/config'
 
 const open = ref(false)
-const typedSchema = toTypedSchema(configSchema)
+const typedSchema = toTypedSchema(
+  configSchema.omit({ freeLimit: true }).extend({
+    freeLimitQuota: z.coerce.number(),
+    freeLimitInterval: z.union([z.literal('inf'), z.coerce.number()]),
+  }),
+)
+const initConfig = $config.get()
 const form = useForm({
-  initialValues: $config.get(),
+  initialValues: {
+    ...initConfig,
+    freeLimitInterval: initConfig.freeLimit.interval,
+    freeLimitQuota: initConfig.freeLimit.quota,
+  },
   validationSchema: typedSchema,
 })
 
@@ -19,7 +31,14 @@ whenever(open, () => {
 const onSubmit = form.handleSubmit((values) => {
   // eslint-disable-next-line no-console
   console.log(values)
-  $config.set(values)
+  const { freeLimitInterval, freeLimitQuota, ...rest } = values
+  $config.set({
+    ...rest,
+    freeLimit: {
+      quota: freeLimitQuota,
+      interval: freeLimitInterval,
+    },
+  })
   open.value = false
 })
 
@@ -103,9 +122,18 @@ function resetEvents() {
             </ul>
           </div>
           <form class="flex w-full flex-col gap-1" @submit="onSubmit">
-            <FormField v-slot="{ componentField }" name="freeLimit">
+            <FormField v-slot="{ componentField }" name="freeLimitQuota">
               <FormItem>
-                <FormLabel>Free limit</FormLabel>
+                <FormLabel>Free N article in interval</FormLabel>
+                <FormControl>
+                  <Input v-bind="componentField" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            </FormField>
+            <FormField v-slot="{ componentField }" name="freeLimitInterval">
+              <FormItem>
+                <FormLabel>Days to reset free limit</FormLabel>
                 <FormControl>
                   <Input v-bind="componentField" />
                 </FormControl>
