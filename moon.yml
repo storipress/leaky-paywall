@@ -139,6 +139,8 @@ tasks:
     extends: test
     args:
       --coverage
+    outputs:
+      - coverage/**/*
   dev:
     command: vite
     args:
