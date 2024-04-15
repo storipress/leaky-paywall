@@ -3,7 +3,6 @@ import type { SiteSubscriptionInfo } from 'storipress-client'
 import type { Config } from 'shared/schema'
 import { Effect, pipe } from 'effect'
 import { destr } from 'destr'
-import type { PaywallConfig } from '../schema/paywall-config'
 import { paywallConfig } from '../schema/paywall-config'
 
 type RawAPIInput = DocumentType<typeof SiteSubscriptionInfo>
