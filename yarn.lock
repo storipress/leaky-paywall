@@ -11276,6 +11276,7 @@ __metadata:
     ts-pattern: "npm:^5.1.1"
     ufo: "npm:1.5.3"
     version-proxy: "workspace:*"
+    vitest: "npm:1.5.0"
     wrangler: "npm:3.50.0"
   languageName: unknown
   linkType: soft

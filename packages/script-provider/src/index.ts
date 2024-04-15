@@ -2,7 +2,6 @@ import { Hono } from 'hono'
 import { oneLineTrim } from 'proper-tags'
 import type { ResolveConfigFn } from '@microlabs/otel-cf-workers'
 import { instrument } from '@microlabs/otel-cf-workers'
-import invariant from 'tiny-invariant'
 import { cors } from 'hono/cors'
 import * as Tracer from '@effect/opentelemetry/Tracer'
 import * as Resource from '@effect/opentelemetry/Resource'
@@ -12,10 +11,9 @@ import { version } from 'version-proxy'
 import { etag } from 'hono/etag'
 import { Effect, pipe } from 'effect'
 import esbuild from 'esbuild-wasm'
-import { SiteSubscriptionInfo } from 'storipress-client'
 import { GraphqlService } from './services/GraphqlService'
 import { initEsbuild } from './utils/esbuild-init'
-import { fromAPIFormat } from './utils/extract-config'
+import { getPaywallConfig } from './utils/get-paywall-config'
 
 const PRODUCTION_URL = withQuery('https://assets.stori.press/storipress/leaky-paywall.min.js', { v: version })
 const PRODUCTION_DEBUG_URL = withQuery('https://assets.stori.press/storipress/leaky-paywall-debug.min.js', {
@@ -60,12 +58,7 @@ app.get(
       initEsbuild,
       Effect.flatMap(() =>
         pipe(
-          GraphqlService,
-          Effect.flatMap(({ query }) => query(SiteSubscriptionInfo, {})),
-          Effect.flatMap((res) => {
-            invariant(res.data, 'no data')
-            return fromAPIFormat(clientId, res.data)
-          }),
+          getPaywallConfig(clientId),
           Effect.flatMap((configValues) => {
             const config = JSON.stringify(configValues)
             const code = javascript`
@@ -110,6 +103,38 @@ app.get(
     )
   },
 )
+
+app.get('/:clientId/_prophet-config', (c) => {
+  const clientId = c.req.param('clientId')
+
+  return pipe(
+    getPaywallConfig(clientId),
+    Effect.map((config) => {
+      return c.json(config)
+    }),
+    Effect.provide(GraphqlService.layer(clientId)),
+    Effect.catchTag('NotFoundError', () => Effect.succeed(c.text('Not Found', 404))),
+    Effect.catchAll((error) => {
+      // eslint-disable-next-line no-console
+      console.log(error)
+      return Effect.succeed(c.text('Internal Server Error', 500))
+    }),
+    Effect.provide(Tracer.layerGlobalTracer),
+    Effect.provide(
+      Resource.layer({
+        serviceName: 'prophet_worker',
+        serviceVersion: '1.0.0',
+        attributes: {},
+      }),
+    ),
+    Effect.catchAllDefect((error) => {
+      // eslint-disable-next-line no-console
+      console.log(error)
+      return Effect.die(error)
+    }),
+    Effect.runPromise,
+  )
+})
 
 const config: ResolveConfigFn = () => {
   return {
