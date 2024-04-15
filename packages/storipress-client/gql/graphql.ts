@@ -5171,6 +5171,7 @@ export type SiteSubscriptionInfoQuery = {
     __typename?: 'SiteSubscriptionInfo'
     name: string
     description?: string | null
+    paywall_config?: string | null
     logo?: { __typename?: 'Image'; url: string } | null
   }
 }
@@ -5241,6 +5242,7 @@ export const SiteSubscriptionInfoDocument = {
               selections: [
                 { kind: 'Field', name: { kind: 'Name', value: 'name' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'description' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'paywall_config' } },
                 {
                   kind: 'Field',
                   name: { kind: 'Name', value: 'logo' },
