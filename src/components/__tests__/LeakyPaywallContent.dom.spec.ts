@@ -6,7 +6,7 @@ vi.mock('@urql/vue', () => ({
   useMutation: () => ({ executeMutation: vi.fn() }),
 }))
 
-it('renders correctly', async () => {
+it('renders correctly', () => {
   const { getByText, getAllByRole } = render(LeakyPaywallContent, {
     props: {
       config: {
