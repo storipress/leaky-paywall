@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import LeakyPaywallContent from './LeakyPaywallContent.vue'
 import { sendTrack } from '~/lib/tracking'
 import { version } from '~/utils/version'
 
@@ -10,10 +11,6 @@ initConfig()
 
 const config = useStore($config)
 const paywall = useStore($paywall)
-
-const themeConfig = computed(() => ({
-  '--sp-primary': config.value.primaryColor,
-}))
 
 useTrackManager()
 
@@ -199,29 +196,7 @@ onMounted(() => {
           <!-- for accessibility -->
           <AlertDialogTitle class="invisible">Subscribe</AlertDialogTitle>
         </VisuallyHidden>
-        <Card class="w-full pb-4 pt-4" :style="themeConfig">
-          <CardContent>
-            <div v-if="config.dismissible" class="flex justify-end">
-              <AlertDialogClose><span class="i-lucide-x" /></AlertDialogClose>
-            </div>
-            <div class="flex flex-col items-center gap-1">
-              <Avatar class="relative mb-3 mt-2 items-center justify-center p-1" size="md">
-                <div class="size-full">
-                  <AvatarImage :src="config.logo" />
-                </div>
-              </Avatar>
-
-              <h3 class="text-center text-lg font-bold">{{ config.title }}</h3>
-
-              <p class="text-balance pb-4 text-center text-sm text-stone-400">
-                {{ config.description }}
-              </p>
-
-              <!-- email form -->
-              <EmailForm v-model:email="emailInput" />
-            </div>
-          </CardContent>
-        </Card>
+        <LeakyPaywallContent v-model:email="emailInput" :config="config" />
       </AlertDialogContent>
     </AlertDialog>
     <VisuallyHidden>

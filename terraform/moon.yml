@@ -25,6 +25,7 @@ tasks:
     inputs:
       - /lib/leaky-paywall.min.js
       - /lib/leaky-paywall-debug.min.js
+      - /lib/leaky-paywall-preview.min.js
       - $TF_VAR_aws_access_key
       - $TF_VAR_aws_secret_key
       - '*.tfvars'
@@ -41,6 +42,7 @@ tasks:
     inputs:
       - /lib/leaky-paywall.min.js
       - /lib/leaky-paywall-debug.min.js
+      - /lib/leaky-paywall-preview.min.js
       - $TF_VAR_aws_access_key
       - $TF_VAR_aws_secret_key
       - '*.tfvars'
