@@ -3966,6 +3966,8 @@ export type Site = {
    * - storipress_bf_tier3(appsumo)
    */
   plan: Scalars['String']['output'];
+  /** prophet configurations */
+  prophet_config?: Maybe<Scalars['JSON']['output']>;
   /** site custom domain */
   site_domain?: Maybe<Scalars['String']['output']>;
   /** customized sitemap */
@@ -4725,6 +4727,8 @@ export type UpdateSiteInput = {
   paywall_config?: InputMaybe<Scalars['JSON']['input']>;
   /** static site url structures */
   permalinks?: InputMaybe<Scalars['JSON']['input']>;
+  /** prophet configurations */
+  prophet_config?: InputMaybe<Scalars['JSON']['input']>;
   /** customized sitemap */
   sitemap?: InputMaybe<Scalars['JSON']['input']>;
   /** social network links */
@@ -5283,6 +5287,10 @@ export type WordPressInfo = {
 export enum WordPressOptionalFeatureType {
   /** Acf */
   Acf = 'acf',
+  /** Acf pro */
+  AcfPro = 'acfPro',
+  /** Rank math */
+  RankMath = 'rankMath',
   /** Site */
   Site = 'site',
   /** Yoast seo */

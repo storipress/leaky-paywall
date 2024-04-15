@@ -1,8 +1,20 @@
 import process from 'node:process'
 import esbuild from 'esbuild'
+import { Match } from 'effect'
 
-const entry = process.env.MODE === 'lib-debug' ? './lib/leaky-paywall-debug.js' : './lib/leaky-paywall.js'
-const output = process.env.MODE === 'lib-debug' ? './lib/leaky-paywall-debug.min.js' : './lib/leaky-paywall.min.js'
+const MODE = process.env.MODE ?? 'lib'
+
+const entry = Match.value(MODE).pipe(
+  Match.when('lib-debug', () => './lib/leaky-paywall-debug.js'),
+  Match.when('lib-preview', () => './lib/leaky-paywall-preview.js'),
+  Match.orElse(() => './lib/leaky-paywall.js'),
+)
+
+const output = Match.value(MODE).pipe(
+  Match.when('lib-debug', () => './lib/leaky-paywall-debug.min.js'),
+  Match.when('lib-preview', () => './lib/leaky-paywall-preview.min.js'),
+  Match.orElse(() => './lib/leaky-paywall.min.js'),
+)
 
 esbuild
   .build({

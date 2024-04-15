@@ -35,3 +35,10 @@ resource "aws_s3_object" "leaky_paywall_debug" {
   source      = "../lib/leaky-paywall-debug.min.js"
   source_hash = filemd5("../lib/leaky-paywall-debug.min.js")
 }
+
+resource "aws_s3_object" "leaky_paywall_preview" {
+  bucket      = "storipress"
+  key         = "assets/storipress/leaky-paywall-preview.min.js"
+  source      = "../lib/leaky-paywall-preview.min.js"
+  source_hash = filemd5("../lib/leaky-paywall-preview.min.js")
+}

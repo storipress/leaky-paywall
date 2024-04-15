@@ -46,6 +46,7 @@ declare module 'vue' {
     Input: typeof import('./src/components/ui/input/Input.vue')['default']
     Label: typeof import('./src/components/ui/label/Label.vue')['default']
     LeakyPaywall: typeof import('./src/components/LeakyPaywall.vue')['default']
+    LeakyPaywallContent: typeof import('./src/components/LeakyPaywallContent.vue')['default']
     LeakyPaywallDebug: typeof import('./src/components/LeakyPaywallDebug.vue')['default']
     Noop: typeof import('./src/components/Noop.vue')['default']
     Popover: typeof import('./src/components/ui/popover/Popover.vue')['default']

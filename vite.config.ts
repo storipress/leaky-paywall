@@ -129,5 +129,28 @@ export default defineConfig(({ mode }) => {
     }
   }
 
+  if (mode === 'lib-preview') {
+    return {
+      ...baseConfig,
+      define: {
+        'process.env.NODE_ENV': JSON.stringify('production'),
+      },
+      build: {
+        outDir: 'lib',
+        emptyOutDir: false,
+
+        lib: {
+          entry: {
+            'leaky-paywall-preview': './src/entry-preview.ts',
+          },
+          formats: ['es'],
+        },
+        rollupOptions: {
+          external: ['vue'],
+        },
+      },
+    }
+  }
+
   return baseConfig
 })
