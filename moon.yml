@@ -49,6 +49,8 @@ tasks:
       - lib/leaky-paywall-debug.js
     args:
       - --mode=lib-debug
+    deps:
+      - ~:lib
   preview-lib:
     extends: lib
     env:
@@ -57,6 +59,8 @@ tasks:
       - lib/leaky-paywall-preview.js
     args:
       - --mode=lib-preview
+    deps:
+      - ~:lib
   lib-analyze:
     extends: lib
     outputs:
