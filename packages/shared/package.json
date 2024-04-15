@@ -1,0 +1,21 @@
+{
+  "name": "shared",
+  "type": "module",
+  "packageManager": "yarn@4.1.1",
+  "exports": {
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.mjs"
+    }
+  },
+  "scripts": {
+    "build": "moon run build"
+  },
+  "dependencies": {
+    "zod": "3.22.4"
+  },
+  "devDependencies": {
+    "@moonrepo/cli": "1.23.4",
+    "unbuild": "2.0.0"
+  }
+}

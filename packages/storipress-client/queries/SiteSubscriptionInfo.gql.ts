@@ -5,6 +5,7 @@ export const SiteSubscriptionInfo = graphql(`
     siteSubscriptionInfo {
       name
       description
+      paywall_config
       logo {
         url
       }

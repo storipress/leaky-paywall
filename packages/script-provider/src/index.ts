@@ -2,6 +2,7 @@ import { Hono } from 'hono'
 import { oneLineTrim } from 'proper-tags'
 import type { ResolveConfigFn } from '@microlabs/otel-cf-workers'
 import { instrument } from '@microlabs/otel-cf-workers'
+import invariant from 'tiny-invariant'
 import { cors } from 'hono/cors'
 import * as Tracer from '@effect/opentelemetry/Tracer'
 import * as Resource from '@effect/opentelemetry/Resource'
@@ -14,6 +15,7 @@ import esbuild from 'esbuild-wasm'
 import { SiteSubscriptionInfo } from 'storipress-client'
 import { GraphqlService } from './services/GraphqlService'
 import { initEsbuild } from './utils/esbuild-init'
+import { fromAPIFormat } from './utils/extract-config'
 
 const PRODUCTION_URL = withQuery('https://assets.stori.press/storipress/leaky-paywall.min.js', { v: version })
 const PRODUCTION_DEBUG_URL = withQuery('https://assets.stori.press/storipress/leaky-paywall-debug.min.js', {
@@ -61,21 +63,11 @@ app.get(
           GraphqlService,
           Effect.flatMap(({ query }) => query(SiteSubscriptionInfo, {})),
           Effect.flatMap((res) => {
-            const config = JSON.stringify({
-              flags: {
-                paywall: true,
-                tracking: true,
-              },
-              freeLimit: 3,
-              pathPattern: null,
-              all: false,
-              clientId,
-              logo: '',
-              title: res.data?.siteSubscriptionInfo.name ?? 'Welcome',
-              description: res.data?.siteSubscriptionInfo.description ?? '',
-              // TODO: need primary color config
-              primaryColor: 'rgb(29 78 216)',
-            })
+            invariant(res.data, 'no data')
+            return fromAPIFormat(clientId, res.data)
+          }),
+          Effect.flatMap((configValues) => {
+            const config = JSON.stringify(configValues)
             const code = javascript`
             window.${CONFIG_VAR_NAME} = ${config};
             function insertScript(u) {
