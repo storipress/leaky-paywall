@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.1](https://github.com/storipress/leaky-paywall/compare/v1.7.0...v1.7.1) (2024-04-15)
+
+
+### Bug Fixes
+
+* fix build error ([506c6f5](https://github.com/storipress/leaky-paywall/commit/506c6f5cc5f069a5e674e1be05caebca98aba4ef))
+
 ## [1.7.0](https://github.com/storipress/leaky-paywall/compare/v1.6.0...v1.7.0) (2024-04-15)
 
 
