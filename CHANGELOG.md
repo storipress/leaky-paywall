@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/storipress/leaky-paywall/compare/v1.5.0...v1.6.0) (2024-04-15)
+
+
+### Features
+
+* add preview paywall ([#189](https://github.com/storipress/leaky-paywall/issues/189)) ([c03c95d](https://github.com/storipress/leaky-paywall/commit/c03c95da886ca629a205cb602e136f4dc35ac893))
+
 ## [1.5.0](https://github.com/storipress/leaky-paywall/compare/v1.4.1...v1.5.0) (2024-04-11)
 
 
