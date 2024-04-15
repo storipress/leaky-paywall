@@ -1,6 +1,6 @@
 import process from 'node:process'
 import esbuild from 'esbuild'
-import { Match } from 'effect'
+import { Effect, Match, pipe } from 'effect'
 
 const MODE = process.env.MODE ?? 'lib'
 
@@ -16,17 +16,27 @@ const output = Match.value(MODE).pipe(
   Match.orElse(() => './lib/leaky-paywall.min.js'),
 )
 
-esbuild
-  .build({
-    logLevel: 'info',
-    entryPoints: [entry],
-    bundle: true,
-    minify: true,
-    define: {
-      'process.env.NODE_ENV': JSON.stringify('production'),
-      __VUE_OPTIONS_API__: 'false',
-      __VUE_PROD_DEVTOOLS__: 'false',
-    },
-    outfile: output,
-  })
-  .catch(() => process.exit(1))
+await pipe(
+  Effect.log(`Minify ${entry} -> ${output}`),
+  Effect.flatMap(() =>
+    Effect.promise(() =>
+      esbuild.build({
+        logLevel: 'info',
+        entryPoints: [entry],
+        bundle: true,
+        minify: true,
+        define: {
+          'process.env.NODE_ENV': JSON.stringify('production'),
+          __VUE_OPTIONS_API__: 'false',
+          __VUE_PROD_DEVTOOLS__: 'false',
+        },
+        outfile: output,
+      }),
+    ),
+  ),
+  Effect.catchAllDefect((error) => {
+    console.error(error)
+    process.exit(1)
+  }),
+  Effect.runPromise,
+)
