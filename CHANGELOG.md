@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/storipress/leaky-paywall/compare/v1.6.0...v1.7.0) (2024-04-15)
+
+
+### Features
+
+* support provide config ([#191](https://github.com/storipress/leaky-paywall/issues/191)) ([d94ef01](https://github.com/storipress/leaky-paywall/commit/d94ef017ea17811e2fff4d001b19863a390ced2b))
+
 ## [1.6.0](https://github.com/storipress/leaky-paywall/compare/v1.5.0...v1.6.0) (2024-04-15)
 
 
