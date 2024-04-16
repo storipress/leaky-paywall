@@ -38,7 +38,7 @@
     "date-fns": "3.6.0",
     "defu": "^6.1.4",
     "destr": "^2.0.3",
-    "effect": "^2.4.18",
+    "effect": "^3.0.0",
     "graphql-web-lite": "^16.6.0-4",
     "nanostores": "^0.10.3",
     "radix-vue": "^1.6.2",
