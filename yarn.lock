@@ -3295,7 +3295,7 @@ __metadata:
     tsx: "npm:4.7.2"
     typescript: "npm:5.4.5"
     unplugin-auto-import: "npm:0.17.5"
-    unplugin-macros: "npm:0.12.1"
+    unplugin-macros: "npm:0.13.0"
     unplugin-vue-components: "npm:0.26.0"
     vee-validate: "npm:^4.12.6"
     vite: "npm:5.2.9"
@@ -12654,9 +12654,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unplugin-macros@npm:0.12.1":
-  version: 0.12.1
-  resolution: "unplugin-macros@npm:0.12.1"
+"unplugin-macros@npm:0.13.0":
+  version: 0.13.0
+  resolution: "unplugin-macros@npm:0.13.0"
   dependencies:
     "@rollup/pluginutils": "npm:^5.1.0"
     ast-kit: "npm:^0.12.1"
@@ -12664,7 +12664,7 @@ __metadata:
     unplugin: "npm:^1.10.1"
     vite: "npm:^5.2.9"
     vite-node: "npm:^1.5.0"
-  checksum: 10c0/74ebffef4b56ca7cff4ac019a623ed0703ec4b56b581cf0206079fcd5cfe2333cb783fe844c53647c95e93b4795d6bc5be3979d8b910a7d586d2fa0a3746ad21
+  checksum: 10c0/c6ee093b59a798b7658b8e9db8ee5e21c1b1adf09f3004617f9457baae898c2370c369ddb0c1a5fc9b80960a06d6673d4b637ef409cd480b1c215fad9d459116
   languageName: node
   linkType: hard
 
@@ -12821,7 +12821,7 @@ __metadata:
   dependencies:
     "@moonrepo/cli": "npm:1.23.4"
     tsup: "npm:8.0.2"
-    unplugin-macros: "npm:0.12.1"
+    unplugin-macros: "npm:0.13.0"
   languageName: unknown
   linkType: soft
 
