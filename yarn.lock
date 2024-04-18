@@ -2465,17 +2465,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@moonrepo/cli@npm:1.23.4":
-  version: 1.23.4
-  resolution: "@moonrepo/cli@npm:1.23.4"
+"@moonrepo/cli@npm:1.24.0":
+  version: 1.24.0
+  resolution: "@moonrepo/cli@npm:1.24.0"
   dependencies:
-    "@moonrepo/core-linux-arm64-gnu": "npm:1.23.4"
-    "@moonrepo/core-linux-arm64-musl": "npm:1.23.4"
-    "@moonrepo/core-linux-x64-gnu": "npm:1.23.4"
-    "@moonrepo/core-linux-x64-musl": "npm:1.23.4"
-    "@moonrepo/core-macos-arm64": "npm:1.23.4"
-    "@moonrepo/core-macos-x64": "npm:1.23.4"
-    "@moonrepo/core-windows-x64-msvc": "npm:1.23.4"
+    "@moonrepo/core-linux-arm64-gnu": "npm:1.24.0"
+    "@moonrepo/core-linux-arm64-musl": "npm:1.24.0"
+    "@moonrepo/core-linux-x64-gnu": "npm:1.24.0"
+    "@moonrepo/core-linux-x64-musl": "npm:1.24.0"
+    "@moonrepo/core-macos-arm64": "npm:1.24.0"
+    "@moonrepo/core-macos-x64": "npm:1.24.0"
+    "@moonrepo/core-windows-x64-msvc": "npm:1.24.0"
     detect-libc: "npm:^2.0.2"
   dependenciesMeta:
     "@moonrepo/core-linux-arm64-gnu":
@@ -2494,55 +2494,55 @@ __metadata:
       optional: true
   bin:
     moon: moon
-  checksum: 10c0/751942406240705a2497587606c46c6db3cfba575c296a60c4a840a753c4fb7680eb92dd94e0e8c90ac947a50b73ce44b61cf9ab683fcb4a48a1f17941c4918b
+  checksum: 10c0/2bc73a75dffeb624c80e547fd9feedf0a4ad5d71f9c046776c935eb0f2eccd41b37697663c1033bfeb5308b80f9d79161b96eb6504c3d19e04b9663b0c3900c2
   languageName: node
   linkType: hard
 
-"@moonrepo/core-linux-arm64-gnu@npm:1.23.4":
-  version: 1.23.4
-  resolution: "@moonrepo/core-linux-arm64-gnu@npm:1.23.4"
+"@moonrepo/core-linux-arm64-gnu@npm:1.24.0":
+  version: 1.24.0
+  resolution: "@moonrepo/core-linux-arm64-gnu@npm:1.24.0"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@moonrepo/core-linux-arm64-musl@npm:1.23.4":
-  version: 1.23.4
-  resolution: "@moonrepo/core-linux-arm64-musl@npm:1.23.4"
+"@moonrepo/core-linux-arm64-musl@npm:1.24.0":
+  version: 1.24.0
+  resolution: "@moonrepo/core-linux-arm64-musl@npm:1.24.0"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@moonrepo/core-linux-x64-gnu@npm:1.23.4":
-  version: 1.23.4
-  resolution: "@moonrepo/core-linux-x64-gnu@npm:1.23.4"
+"@moonrepo/core-linux-x64-gnu@npm:1.24.0":
+  version: 1.24.0
+  resolution: "@moonrepo/core-linux-x64-gnu@npm:1.24.0"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@moonrepo/core-linux-x64-musl@npm:1.23.4":
-  version: 1.23.4
-  resolution: "@moonrepo/core-linux-x64-musl@npm:1.23.4"
+"@moonrepo/core-linux-x64-musl@npm:1.24.0":
+  version: 1.24.0
+  resolution: "@moonrepo/core-linux-x64-musl@npm:1.24.0"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@moonrepo/core-macos-arm64@npm:1.23.4":
-  version: 1.23.4
-  resolution: "@moonrepo/core-macos-arm64@npm:1.23.4"
+"@moonrepo/core-macos-arm64@npm:1.24.0":
+  version: 1.24.0
+  resolution: "@moonrepo/core-macos-arm64@npm:1.24.0"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@moonrepo/core-macos-x64@npm:1.23.4":
-  version: 1.23.4
-  resolution: "@moonrepo/core-macos-x64@npm:1.23.4"
+"@moonrepo/core-macos-x64@npm:1.24.0":
+  version: 1.24.0
+  resolution: "@moonrepo/core-macos-x64@npm:1.24.0"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@moonrepo/core-windows-x64-msvc@npm:1.23.4":
-  version: 1.23.4
-  resolution: "@moonrepo/core-windows-x64-msvc@npm:1.23.4"
+"@moonrepo/core-windows-x64-msvc@npm:1.24.0":
+  version: 1.24.0
+  resolution: "@moonrepo/core-windows-x64-msvc@npm:1.24.0"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -3247,7 +3247,7 @@ __metadata:
     "@egoist/tailwindcss-icons": "npm:1.7.4"
     "@formkit/auto-animate": "npm:^0.8.1"
     "@iconify-json/lucide": "npm:1.1.182"
-    "@moonrepo/cli": "npm:1.23.4"
+    "@moonrepo/cli": "npm:1.24.0"
     "@nanostores/persistent": "npm:^0.10.1"
     "@nanostores/vue": "npm:^0.10.0"
     "@sindresorhus/slugify": "npm:2.2.1"
@@ -11420,7 +11420,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "shared@workspace:packages/shared"
   dependencies:
-    "@moonrepo/cli": "npm:1.23.4"
+    "@moonrepo/cli": "npm:1.24.0"
     unbuild: "npm:2.0.0"
     zod: "npm:3.22.4"
   languageName: unknown
@@ -12819,7 +12819,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "version-proxy@workspace:packages/version-proxy"
   dependencies:
-    "@moonrepo/cli": "npm:1.23.4"
+    "@moonrepo/cli": "npm:1.24.0"
     tsup: "npm:8.0.2"
     unplugin-macros: "npm:0.13.0"
   languageName: unknown
