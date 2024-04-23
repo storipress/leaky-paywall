@@ -17,6 +17,15 @@ jobs:
         with:
           node-version: '20'
           cache: 'yarn'
+      - name: Cache Moonrepo
+        uses: actions/cache@v4
+        with:
+          path: |
+            .moon/cache/hashes
+            .moon/cache/outputs
+          key: cache-moon-${{ github.sha }}
+          restore-keys: |
+            cache-moon-
       - run: moon ci :build
       - uses: moonrepo/run-report-action@v1
         if: success() || failure()
