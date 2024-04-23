@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-export const articleLinkClicked = defineTrackEvent({
+export const articleHyperlinkClicked = defineTrackEvent({
   event: 'article.hyperlink.clicked',
   properties: {
     pathname: z.string(),

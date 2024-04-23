@@ -1,11 +1,11 @@
 import { z } from 'zod'
 
-export const articleScrollDepth = defineTrackEvent({
-  event: 'article.read',
+export const paywallCanceled = defineTrackEvent({
+  event: 'paywall.canceled',
   properties: {
     pathname: z.string(),
     client_id: z.string(),
     article_id: z.string().nullable(),
-    percentage: z.number(),
+    type: z.enum(['scroll_back', 'dismissed']),
   },
 })

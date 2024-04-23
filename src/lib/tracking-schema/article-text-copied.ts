@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-export const articleTextCopy = defineTrackEvent({
+export const articleTextCopied = defineTrackEvent({
   event: 'article.text.copied',
   properties: {
     pathname: z.string(),
