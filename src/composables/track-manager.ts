@@ -14,6 +14,7 @@ export function useTrackManager() {
     const lastSynced = paywall.value.lastSynced
     $paywall.setKey('lastSynced', Date.now())
     $paywall.setKey('records', [])
+    const config = $config.get()
 
     for (const record of records) {
       if (record.t < lastSynced) {
@@ -24,7 +25,7 @@ export function useTrackManager() {
       await recordTrack({
         input: {
           name: record.e,
-          target_id: record.p.articleId ?? '',
+          target_id: record.p.article_id ?? config.clientId,
           data: JSON.stringify(record.p),
         },
       })
