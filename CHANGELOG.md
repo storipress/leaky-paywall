@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.6](https://github.com/storipress/leaky-paywall/compare/v1.7.5...v1.7.6) (2024-04-23)
+
+
+### Bug Fixes
+
+* ensure use same version of @opentelemetry/api ([2f5f63e](https://github.com/storipress/leaky-paywall/commit/2f5f63e649bb3d0769976ad7a4c46776aa5ae047))
+
 ## [1.7.5](https://github.com/storipress/leaky-paywall/compare/v1.7.4...v1.7.5) (2024-04-23)
 
 
