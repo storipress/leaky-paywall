@@ -1,4 +1,4 @@
-import { Effect, pipe } from 'effect'
+import { Effect, Function, Tuple, pipe } from 'effect'
 import { oneLineTrim } from 'proper-tags'
 import type { Context } from 'hono'
 import esbuild from 'esbuild-wasm'
@@ -11,7 +11,9 @@ const javascript = oneLineTrim
 export function generateScript(c: Context, clientId: string) {
   return pipe(
     initEsbuild,
-    Effect.andThen(getPaywallConfig(clientId)),
+    Effect.zipWith(getPaywallConfig(clientId), Function.untupled(Tuple.getSecond), {
+      concurrent: true,
+    }),
     Effect.flatMap((configValues) => {
       const config = JSON.stringify(configValues)
       const code = javascript`
@@ -27,7 +29,10 @@ export function generateScript(c: Context, clientId: string) {
               insertScript('${PRODUCTION_DEBUG_URL}');
             }
           `
-      return Effect.promise(() => esbuild.transform(code, { loader: 'js', minify: true, format: 'esm' }))
+      return pipe(
+        Effect.promise(() => esbuild.transform(code, { loader: 'js', minify: true, format: 'esm' })),
+        Effect.withSpan('minifyScript'),
+      )
     }),
     Effect.map((minified) => c.text(minified.code, 200, { 'content-type': 'text/javascript' })),
     Effect.provide(GraphqlService.layer(clientId)),
