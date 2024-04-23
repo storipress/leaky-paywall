@@ -19,6 +19,12 @@ vi.mock('../esbuild-init', async () => {
   }
 })
 
+vi.mock('version-proxy', async () => {
+  return {
+    version: '0.0.0-test',
+  }
+})
+
 const server = setupServer(
   http.get('https://api.storipress.dev/client/client_id/rest/v1/publication/state', () => {
     return HttpResponse.json({ state: 'online' })
