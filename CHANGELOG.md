@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.7.2](https://github.com/storipress/leaky-paywall/compare/v1.7.1...v1.7.2) (2024-04-23)
+
+
+### Bug Fixes
+
+* add more debug info ([9937eb2](https://github.com/storipress/leaky-paywall/commit/9937eb2485945f3fec8db1fe620fb522d33ffa2b))
+* **deps:** update dependency zod to v3.22.5 ([e47bc81](https://github.com/storipress/leaky-paywall/commit/e47bc819033660e8a9cff40c4ed6b2f11bc1ac00))
+* **deps:** update dependency zod to v3.23.0 ([9507681](https://github.com/storipress/leaky-paywall/commit/95076811e96a14d50051d1f7a0dd69eaf9d52034))
+* **deps:** update dependency zod to v3.23.3 ([743d7a7](https://github.com/storipress/leaky-paywall/commit/743d7a7442feac74366f82a082f165555c36af88))
+* fix api host url ([cacbd2b](https://github.com/storipress/leaky-paywall/commit/cacbd2ba5d782a251a1edf5ddc852a5a37561a19))
+
 ## [1.7.1](https://github.com/storipress/leaky-paywall/compare/v1.7.0...v1.7.1) (2024-04-15)
 
 
