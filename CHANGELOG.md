@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.3](https://github.com/storipress/leaky-paywall/compare/v1.7.2...v1.7.3) (2024-04-23)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @effect/opentelemetry to ^0.33.0 ([#200](https://github.com/storipress/leaky-paywall/issues/200)) ([01cc7bf](https://github.com/storipress/leaky-paywall/commit/01cc7bf122e579a5c099ed22b0084dddcb947b8d))
+
 ## [1.7.2](https://github.com/storipress/leaky-paywall/compare/v1.7.1...v1.7.2) (2024-04-23)
 
 
