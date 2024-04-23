@@ -98,6 +98,6 @@
     "zx": "8.0.2"
   },
   "resolutions": {
-    "@opentelemetry/api": "~1.6.0"
+    "@opentelemetry/api": "~1.8.0"
   }
 }
