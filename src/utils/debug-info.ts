@@ -1,4 +1,5 @@
 import { Duration, Effect, Option, Schedule, pipe } from 'effect'
+import type { ClientHandle } from '@urql/vue'
 import type { FoundedArticle } from '~/composables/find-article'
 import type { Config } from '~/stores/config'
 import type { PaywallState } from '~/stores/paywall-events'
@@ -52,6 +53,11 @@ interface DebugInfo {
    * version
    */
   _z: string
+
+  /**
+   * urql client
+   */
+  _u: ClientHandle
 
   /**
    * show

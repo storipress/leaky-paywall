@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { SiteSubscriptionInfo } from 'storipress-client'
 import { useDebugInfo } from '~/utils/debug-info'
 
 const { isLoading, state: debugInfo } = useDebugInfo()
@@ -10,6 +11,15 @@ const readInfo = computed(() => {
   }
   const { _p, _c } = debugInfo.value
   return `${_p.read.length}/${_c.freeLimit.quota}/${_c.freeLimit.interval}`
+})
+
+const apiInfo = computedAsync(async () => {
+  if (debugInfo.value?._u) {
+    const { client } = debugInfo.value._u
+    const res = await client.query(SiteSubscriptionInfo, {})
+    return res.data?.siteSubscriptionInfo
+  }
+  return null
 })
 </script>
 
@@ -30,6 +40,12 @@ const readInfo = computed(() => {
             }}</span>
           </div>
           <div>Read articles/limit/interval {{ readInfo }}</div>
+          <div>
+            API info:
+            <ul class="list-disc pl-4">
+              <li>name: {{ apiInfo?.name }}</li>
+            </ul>
+          </div>
         </div>
       </details>
     </template>

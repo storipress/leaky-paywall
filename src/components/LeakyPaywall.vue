@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useClientHandle } from '@urql/vue'
 import LeakyPaywallContent from './LeakyPaywallContent.vue'
 import { sendTrack } from '~/lib/tracking'
 import { version } from '~/utils/version'
@@ -183,6 +184,7 @@ onMounted(() => {
     _v: show,
     _t: sendTrack,
     _z: version,
+    _u: useClientHandle(),
     show: (v = true) => (show.value = v),
   })
 })
