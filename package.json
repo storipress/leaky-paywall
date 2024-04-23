@@ -45,6 +45,7 @@
     "storipress-client": "workspace:^",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
+    "ts-pattern": "5.1.1",
     "vee-validate": "^4.12.6",
     "vue": "^3.4.21",
     "vue-sonner": "^1.1.2",

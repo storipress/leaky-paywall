@@ -3299,6 +3299,7 @@ __metadata:
     tailwind-merge: "npm:^2.2.2"
     tailwindcss: "npm:3.4.3"
     tailwindcss-animate: "npm:^1.0.7"
+    ts-pattern: "npm:5.1.1"
     tsx: "npm:4.7.2"
     typescript: "npm:5.4.5"
     unplugin-auto-import: "npm:0.17.5"
@@ -12316,7 +12317,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-pattern@npm:^5.1.1":
+"ts-pattern@npm:5.1.1, ts-pattern@npm:^5.1.1":
   version: 5.1.1
   resolution: "ts-pattern@npm:5.1.1"
   checksum: 10c0/20ec96d1d07b074585082c0378abdc1ecd0d9aaa3d4c2bf2d668f645693daad7b65734292704d90a8472a79080dfe8f2b36d8bdb01f6145d1f4351a51516e307

@@ -1006,7 +1006,7 @@ export type CustomFieldReferenceOptions = {
   placeholder?: Maybe<Scalars['String']['output']>
   repeat?: Maybe<Scalars['Boolean']['output']>
   required?: Maybe<Scalars['Boolean']['output']>
-  target: CustomFieldReferenceTarget
+  target?: Maybe<CustomFieldReferenceTarget>
   type: CustomFieldType
 }
 

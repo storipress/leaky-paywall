@@ -1,8 +1,9 @@
 import { type ClientOptions, cacheExchange, fetchExchange } from '@urql/vue'
+import { getApiHostUrl, getEnvironmentFromClientId } from './api-host-url'
 
 export function createClientOptions(clientId: string): ClientOptions {
   return {
-    url: `https://api.storipress.dev/client/${clientId}/graphql`,
+    url: `${getApiHostUrl(getEnvironmentFromClientId(clientId))}/client/${clientId}/graphql`,
     exchanges: [cacheExchange, fetchExchange],
     fetchOptions: () => {
       const paywall = $paywall.get()
