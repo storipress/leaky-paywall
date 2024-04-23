@@ -25,3 +25,11 @@ tasks:
     deps:
       - ^:build
       - storipress-client:generate
+
+  test:
+    command:
+      - vitest
+    platform: node
+    deps:
+      - ^:build
+      - storipress-client:generate

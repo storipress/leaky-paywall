@@ -27,7 +27,7 @@ export function generateScript(c: Context, clientId: string) {
               insertScript('${PRODUCTION_DEBUG_URL}');
             }
           `
-      return Effect.promise(() => esbuild.transform(code, { loader: 'js', minify: true }))
+      return Effect.promise(() => esbuild.transform(code, { loader: 'js', minify: true, format: 'esm' }))
     }),
     Effect.map((minified) => c.text(minified.code, 200, { 'content-type': 'text/javascript' })),
     Effect.provide(GraphqlService.layer(clientId)),

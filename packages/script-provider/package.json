@@ -2,7 +2,8 @@
   "name": "script-provider",
   "scripts": {
     "dev": "moon run dev",
-    "deploy": "moon run deploy"
+    "deploy": "moon run deploy",
+    "test": "moon run test"
   },
   "dependencies": {
     "@effect/opentelemetry": "^0.33.0",
