@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const pageView = defineTrackEvent({
-  event: 'page.view',
+  event: 'page.viewed',
   properties: {
     pathname: z.string(),
   },

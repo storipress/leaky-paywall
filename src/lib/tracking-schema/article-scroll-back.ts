@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const articleScrollBack = defineTrackEvent({
-  event: 'article.scroll_back',
+  event: 'paywall.canceled',
   properties: {
     pathname: z.string(),
     client_id: z.string(),

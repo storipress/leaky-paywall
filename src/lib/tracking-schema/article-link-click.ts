@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const articleLinkClicked = defineTrackEvent({
-  event: 'article.link_click',
+  event: 'article.hyperlink.clicked',
   properties: {
     pathname: z.string(),
     client_id: z.string(),

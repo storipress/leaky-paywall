@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const articleTextCopy = defineTrackEvent({
-  event: 'article.text_copy',
+  event: 'article.text.copied',
   properties: {
     pathname: z.string(),
     client_id: z.string(),

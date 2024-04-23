@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const paywallDisplay = defineTrackEvent({
-  event: 'paywall.display',
+  event: 'paywall.activated',
   properties: {
     pathname: z.string(),
     client_id: z.string(),

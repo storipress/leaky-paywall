@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const articleView = defineTrackEvent({
-  event: 'article.view',
+  event: 'article.viewed',
   properties: {
     pathname: z.string(),
     client_id: z.string(),

@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const articleTextSelection = defineTrackEvent({
-  event: 'article.text_selection',
+  event: 'article.text.selected',
   properties: {
     pathname: z.string(),
     client_id: z.string(),
