@@ -10,7 +10,7 @@ export const initializedRef = SynchronizedRef.unsafeMake(false)
 export const initEsbuild = SynchronizedRef.updateEffect(initializedRef, (initialized) =>
   pipe(
     initialized
-      ? Effect.unit
+      ? Effect.void
       : Effect.promise(() =>
           esbuild.initialize({
             wasmModule: wasm,

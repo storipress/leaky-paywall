@@ -1,30 +1,18 @@
 import { Hono } from 'hono'
-import { oneLineTrim } from 'proper-tags'
 import type { ResolveConfigFn } from '@microlabs/otel-cf-workers'
 import { instrument } from '@microlabs/otel-cf-workers'
 import { cors } from 'hono/cors'
 import * as Tracer from '@effect/opentelemetry/Tracer'
 import * as Resource from '@effect/opentelemetry/Resource'
 import { secureHeaders } from 'hono/secure-headers'
-import { withQuery } from 'ufo'
-import { version } from 'version-proxy'
 import { etag } from 'hono/etag'
-import { Effect, pipe } from 'effect'
-import esbuild from 'esbuild-wasm'
+import { Effect, Logger, pipe } from 'effect'
 import { GraphqlService } from './services/GraphqlService'
-import { initEsbuild } from './utils/esbuild-init'
 import { getPaywallConfig } from './utils/get-paywall-config'
-
-const PRODUCTION_URL = withQuery('https://assets.stori.press/storipress/leaky-paywall.min.js', { v: version })
-const PRODUCTION_DEBUG_URL = withQuery('https://assets.stori.press/storipress/leaky-paywall-debug.min.js', {
-  v: version,
-})
-const CONFIG_VAR_NAME = 'SP_PAYWALL'
+import { generateScript } from './utils/generate-script'
 
 // @ts-expect-error polyfill
 globalThis.performance = Date
-
-const javascript = oneLineTrim
 
 const app = new Hono()
 
@@ -55,37 +43,7 @@ app.get(
     const clientId = c.req.param('clientId')
 
     return pipe(
-      initEsbuild,
-      Effect.flatMap(() =>
-        pipe(
-          getPaywallConfig(clientId),
-          Effect.flatMap((configValues) => {
-            const config = JSON.stringify(configValues)
-            const code = javascript`
-            window.${CONFIG_VAR_NAME} = ${config};
-            function insertScript(u) {
-              let s=document.createElement('script');
-              s.type='module';
-              s.src=u;
-              document.head.append(s);
-            }
-            insertScript('${PRODUCTION_URL}');
-            if (window.location.search.includes('sp_debug=true')) {
-              insertScript('${PRODUCTION_DEBUG_URL}');
-            }
-          `
-            return Effect.promise(() => esbuild.transform(code, { loader: 'js', minify: true }))
-          }),
-          Effect.map((minified) => c.text(minified.code, 200, { 'content-type': 'text/javascript' })),
-        ),
-      ),
-      Effect.provide(GraphqlService.layer(clientId)),
-      Effect.catchTag('NotFoundError', () => Effect.succeed(c.text('Not Found', 404))),
-      Effect.catchAll((error) => {
-        // eslint-disable-next-line no-console
-        console.log(error)
-        return Effect.succeed(c.text('Internal Server Error', 500))
-      }),
+      generateScript(c, clientId),
       Effect.provide(Tracer.layerGlobalTracer),
       Effect.provide(
         Resource.layer({
@@ -94,6 +52,7 @@ app.get(
           attributes: {},
         }),
       ),
+      Effect.provide(Logger.add(Logger.tracerLogger)),
       Effect.catchAllDefect((error) => {
         // eslint-disable-next-line no-console
         console.log(error)

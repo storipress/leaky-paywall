@@ -14,7 +14,7 @@ interface GraphqlServiceImpl {
 }
 
 export class GraphqlService extends Context.Tag('@app/GraphqlService')<GraphqlService, GraphqlServiceImpl>() {
-  static layer = (clientId: string) => {
+  static layer = (clientId: string): Layer.Layer<GraphqlService, NotFoundError> => {
     const env = getEnvironmentFromClientId(clientId)
     const restClient = createClient(env)
 
