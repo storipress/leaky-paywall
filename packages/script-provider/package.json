@@ -15,7 +15,7 @@
     "@urql/core": "^5.0.0",
     "effect": "^3.0.3",
     "esbuild-wasm": "^0.20.2",
-    "hono": "^4.2.2",
+    "hono": "^4.2.7",
     "proper-tags": "^2.0.2",
     "shared": "workspace:*",
     "storipress-client": "workspace:*",
