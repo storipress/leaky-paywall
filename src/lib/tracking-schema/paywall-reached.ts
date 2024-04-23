@@ -1,11 +1,10 @@
 import { z } from 'zod'
 
-export const articleTextCopy = defineTrackEvent({
-  event: 'article.text_copy',
+export const paywallReached = defineTrackEvent({
+  event: 'paywall.reached',
   properties: {
     pathname: z.string(),
     client_id: z.string(),
     article_id: z.string().nullable(),
-    text_copy: z.string(),
   },
 })

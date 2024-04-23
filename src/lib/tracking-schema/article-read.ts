@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
-export const articleScrollDepth = defineTrackEvent({
-  event: 'article.scroll_depth',
+export const articleRead = defineTrackEvent({
+  event: 'article.read',
   properties: {
     pathname: z.string(),
     client_id: z.string(),

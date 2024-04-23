@@ -1,7 +1,7 @@
-import * as z from 'zod'
+import { z } from 'zod'
 
-export const userSignIn = defineTrackEvent({
-  event: 'user.sign_in',
+export const articleViewed = defineTrackEvent({
+  event: 'article.viewed',
   properties: {
     pathname: z.string(),
     client_id: z.string(),

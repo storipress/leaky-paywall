@@ -1,27 +1,27 @@
 import * as z from 'zod'
-import { articleScrollBack } from './tracking-schema/article-scroll-back'
-import { articleView } from './tracking-schema/article-view'
-import { pageView } from './tracking-schema/page-view'
-import { paywallReached } from './tracking-schema/paywall-reach'
-import { userSignIn } from './tracking-schema/subscriber-signin'
-import { articleLinkClicked } from './tracking-schema/article-link-click'
-import { paywallDisplay } from './tracking-schema/paywall-display'
-import { articleScrollDepth } from './tracking-schema/article-scroll-depth'
-import { articleTextSelection } from './tracking-schema/article-text-selection'
-import { articleTextCopy } from './tracking-schema/article-text-copy'
+import { paywallCanceled } from './tracking-schema/paywall-canceled'
+import { articleViewed } from './tracking-schema/article-viewed'
+import { pageViewed } from './tracking-schema/page-viewed'
+import { paywallReached } from './tracking-schema/paywall-reached'
+import { subscriberSignedIn } from './tracking-schema/subscriber-signed-in'
+import { articleHyperlinkClicked } from './tracking-schema/article-hyperlink-clicked'
+import { paywallActivated } from './tracking-schema/paywall-activated'
+import { articleRead } from './tracking-schema/article-read'
+import { articleTextSelected } from './tracking-schema/article-text-selected'
+import { articleTextCopied } from './tracking-schema/article-text-copied'
 
 // We must import 1 by 1 or we will lost the type info here
 export const trackEventSchema = z.discriminatedUnion('event', [
-  articleScrollBack,
-  articleView,
-  pageView,
-  paywallDisplay,
+  paywallCanceled,
+  articleViewed,
+  pageViewed,
+  paywallActivated,
   paywallReached,
-  userSignIn,
-  articleLinkClicked,
-  articleScrollDepth,
-  articleTextSelection,
-  articleTextCopy,
+  subscriberSignedIn,
+  articleHyperlinkClicked,
+  articleRead,
+  articleTextSelected,
+  articleTextCopied,
 ])
 
 export type TrackEvent = z.infer<typeof trackEventSchema>

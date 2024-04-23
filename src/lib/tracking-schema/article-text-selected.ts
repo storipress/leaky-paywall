@@ -1,10 +1,11 @@
 import { z } from 'zod'
 
-export const articleView = defineTrackEvent({
-  event: 'article.view',
+export const articleTextSelected = defineTrackEvent({
+  event: 'article.text.selected',
   properties: {
     pathname: z.string(),
     client_id: z.string(),
     article_id: z.string().nullable(),
+    text_selection: z.string(),
   },
 })

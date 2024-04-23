@@ -29,7 +29,7 @@ const isOverFreeLimit = useOverFreeLimit()
 useTrackLink(
   computed(() => foundArticle.value?.element),
   (href) => ({
-    event: 'article.link_click',
+    event: 'article.hyperlink.clicked',
     properties: {
       // Impossible to be null
       article_id: foundArticle.value?.id ?? '',
@@ -43,7 +43,7 @@ useTrackLink(
 const { percentage } = useTrackScrollDepth(computed(() => foundArticle.value?.element as HTMLElement))
 
 whenever(percentage, (percentage) => {
-  sendTrack('article.scroll_depth', {
+  sendTrack('article.read', {
     pathname: location.value.pathname ?? '',
     client_id: config.value.clientId,
     article_id: foundArticle.value?.id ?? null,
@@ -56,7 +56,7 @@ const { trackTextCopy, trackTextSelection } = useTrackTextAction(
 )
 
 trackTextSelection((selectedText) => ({
-  event: 'article.text_selection',
+  event: 'article.text.selected',
   properties: {
     pathname: location.value.pathname ?? '',
     client_id: config.value.clientId,
@@ -65,7 +65,7 @@ trackTextSelection((selectedText) => ({
   },
 }))
 trackTextCopy((copiedText) => ({
-  event: 'article.text_copy',
+  event: 'article.text.copied',
   properties: {
     pathname: location.value.pathname ?? '',
     client_id: config.value.clientId,
@@ -77,12 +77,12 @@ trackTextCopy((copiedText) => ({
 watch(
   location,
   (loc) => {
-    sendTrack('page.view', {
+    sendTrack('page.viewed', {
       pathname: loc.pathname ?? '',
     })
 
     if (paywallEnabled.value || foundArticle.value) {
-      sendTrack('article.view', {
+      sendTrack('article.viewed', {
         pathname: location.value.pathname ?? '',
         client_id: config.value.clientId,
         article_id: foundArticle.value?.id ?? null,
@@ -107,10 +107,11 @@ const emailInput = ref('')
 useEventListener(window, 'wheel', (event) => {
   if (event.deltaY <= -5) {
     if (show.value) {
-      sendTrack('article.scroll_back', {
+      sendTrack('paywall.canceled', {
         article_id: foundArticle.value?.id ?? null,
         client_id: config.value.clientId,
         pathname: location.value.pathname ?? '',
+        type: 'scroll_back',
       })
     }
     show.value = false
@@ -136,7 +137,7 @@ whenever(
       return
     }
 
-    sendTrack('paywall.display', {
+    sendTrack('paywall.activated', {
       pathname: location.value.pathname ?? '',
       article_id: foundArticle.value?.id ?? null,
       client_id: config.value.clientId,
@@ -159,7 +160,7 @@ whenever(
 whenever(
   isScrollOverThreshold,
   () => {
-    sendTrack('paywall.reach', {
+    sendTrack('paywall.reached', {
       pathname: location.value.pathname ?? '',
       article_id: foundArticle.value?.id ?? null,
       client_id: config.value.clientId,
