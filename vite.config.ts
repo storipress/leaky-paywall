@@ -58,6 +58,7 @@ const baseConfig = defineConfig({
     passWithNoTests: true,
     setupFiles: ['./vitest.setup.ts'],
     environmentMatchGlobs: [['**/*.dom.spec.ts', 'happy-dom']],
+    exclude: ['packages/**/*', '**/node_modules/**/*'],
     coverage: {
       provider: 'v8',
       reporter: ['lcov', 'html'],
