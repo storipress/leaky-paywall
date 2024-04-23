@@ -78,7 +78,7 @@ app.get('/:clientId/_prophet-config', (c) => {
       console.log(error)
       return Effect.succeed(c.text('Internal Server Error', 500))
     }),
-    Effect.provide(Tracer.layerGlobalTracer),
+    Effect.provide(Tracer.layerGlobal),
     Effect.provide(
       Resource.layer({
         serviceName: 'prophet_worker',
