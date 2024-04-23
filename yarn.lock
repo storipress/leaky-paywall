@@ -1021,9 +1021,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@effect/opentelemetry@npm:^0.31.28":
-  version: 0.31.28
-  resolution: "@effect/opentelemetry@npm:0.31.28"
+"@effect/opentelemetry@npm:^0.31.29":
+  version: 0.31.29
+  resolution: "@effect/opentelemetry@npm:0.31.29"
   peerDependencies:
     "@opentelemetry/api": ^1.6
     "@opentelemetry/resources": ^1.17
@@ -1032,7 +1032,7 @@ __metadata:
     "@opentelemetry/sdk-trace-node": ^1.17
     "@opentelemetry/sdk-trace-web": ^1.17
     "@opentelemetry/semantic-conventions": ^1.17
-    effect: ^2.4.18
+    effect: ^2.4.19
   peerDependenciesMeta:
     "@opentelemetry/sdk-metrics":
       optional: true
@@ -1042,7 +1042,7 @@ __metadata:
       optional: true
     "@opentelemetry/sdk-trace-web":
       optional: true
-  checksum: 10c0/8f3136cb43367ca22ab45fe7d1f0ab5b365a204dd357651255a441de90d96a61eca3e6dd09c973ee699d69a228a371a22ada57a18e667a7e231d0242013dbead
+  checksum: 10c0/15929e15d462b64287f2a8c4b2af94634b9561f9d6b98a892a95709cd69bffb0c918279cf8c40bf64e4f0d0efe083e2c2d43a3085752c748ed560b52a1ef28ea
   languageName: node
   linkType: hard
 
@@ -3278,7 +3278,7 @@ __metadata:
     date-fns: "npm:3.6.0"
     defu: "npm:^6.1.4"
     destr: "npm:^2.0.3"
-    effect: "npm:^2.4.18"
+    effect: "npm:^3.0.3"
     esbuild: "npm:0.20.2"
     eslint: "npm:9.1.1"
     graphql-web-lite: "npm:^16.6.0-4"
@@ -6010,10 +6010,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"effect@npm:^2.4.18":
-  version: 2.4.18
-  resolution: "effect@npm:2.4.18"
-  checksum: 10c0/030920e905bcc655296d9e17e3936b734cee2ff9070d59938d2fae731bb445171b861065bd728198db935124522a16a6d837060a4344c06d2fe467d49f8ee150
+"effect@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "effect@npm:3.0.3"
+  checksum: 10c0/521a323551cc95df5900c43b7e80b30b56527b4e7d5f182d995490967e934b875bf21184b1f3b3f4d309164278d07cca2947ec0709297a48ae5669a6b226b6a9
   languageName: node
   linkType: hard
 
@@ -11267,14 +11267,14 @@ __metadata:
   resolution: "script-provider@workspace:packages/script-provider"
   dependencies:
     "@cloudflare/workers-types": "npm:4.20240419.0"
-    "@effect/opentelemetry": "npm:^0.31.28"
+    "@effect/opentelemetry": "npm:^0.31.29"
     "@microlabs/otel-cf-workers": "npm:^1.0.0-rc.35"
     "@opentelemetry/api": "npm:^1.8.0"
     "@opentelemetry/resources": "npm:^1.23.0"
     "@opentelemetry/semantic-conventions": "npm:^1.23.0"
     "@ts-rest/core": "npm:^3.41.2"
     "@urql/core": "npm:^5.0.0"
-    effect: "npm:^2.4.18"
+    effect: "npm:^3.0.3"
     esbuild-wasm: "npm:^0.20.2"
     hono: "npm:^4.2.2"
     proper-tags: "npm:^2.0.2"
