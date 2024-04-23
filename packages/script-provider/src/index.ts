@@ -7,6 +7,7 @@ import * as Resource from '@effect/opentelemetry/Resource'
 import { secureHeaders } from 'hono/secure-headers'
 import { etag } from 'hono/etag'
 import { Effect, Logger, pipe } from 'effect'
+import { trace } from '@opentelemetry/api'
 import { GraphqlService } from './services/GraphqlService'
 import { getPaywallConfig } from './utils/get-paywall-config'
 import { generateScript } from './utils/generate-script'
@@ -41,10 +42,22 @@ app.get(
 
   (c) => {
     const clientId = c.req.param('clientId')
+    const activeSpan = trace.getActiveSpan()
 
     return pipe(
       generateScript(c, clientId),
-      Effect.provide(Tracer.layerGlobalTracer),
+      Effect.withSpan('generateScript', {
+        attributes: {
+          clientId,
+        },
+        parent:
+          activeSpan &&
+          Tracer.makeExternalSpan({
+            spanId: activeSpan.spanContext().spanId,
+            traceId: activeSpan.spanContext().traceId,
+          }),
+      }),
+      Effect.provide(Tracer.layerGlobal),
       Effect.provide(
         Resource.layer({
           serviceName: 'prophet_worker',
