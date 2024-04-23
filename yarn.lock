@@ -2511,7 +2511,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microlabs/otel-cf-workers@npm:^1.0.0-rc.35":
+"@microlabs/otel-cf-workers@npm:^1.0.0-rc.36":
   version: 1.0.0-rc.36
   resolution: "@microlabs/otel-cf-workers@npm:1.0.0-rc.36"
   dependencies:
@@ -2743,13 +2743,6 @@ __metadata:
   dependencies:
     "@opentelemetry/api": "npm:^1.0.0"
   checksum: 10c0/71520f3eb2b1440a0cfa59fc450555b75ffde2d80bf5b0602ea6b4bd68dceb28df0442e60b148ce60c2727e3fa87ad59352fd6099378b972663026488f0fe45a
-  languageName: node
-  linkType: hard
-
-"@opentelemetry/api@npm:^1.0.0, @opentelemetry/api@npm:^1.8.0":
-  version: 1.8.0
-  resolution: "@opentelemetry/api@npm:1.8.0"
-  checksum: 10c0/66d5504bfbf9c19a14ea549f5fca975a73a5e1e8a1e40a6dc2d662893c942b9ba66c009262816dee2b9ffd0267acd707ec692eba20db11a09d4ee114c00dc161
   languageName: node
   linkType: hard
 
@@ -11479,8 +11472,8 @@ __metadata:
   dependencies:
     "@cloudflare/workers-types": "npm:4.20240419.0"
     "@effect/opentelemetry": "npm:^0.33.0"
-    "@microlabs/otel-cf-workers": "npm:^1.0.0-rc.35"
-    "@opentelemetry/api": "npm:^1.8.0"
+    "@microlabs/otel-cf-workers": "npm:^1.0.0-rc.36"
+    "@opentelemetry/api": "npm:~1.6.0"
     "@opentelemetry/resources": "npm:^1.23.0"
     "@opentelemetry/semantic-conventions": "npm:^1.23.0"
     "@ts-rest/core": "npm:^3.41.2"

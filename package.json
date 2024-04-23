@@ -96,5 +96,8 @@
     "vue-router": "4.3.2",
     "vue-tsc": "2.0.14",
     "zx": "8.0.2"
+  },
+  "resolutions": {
+    "@opentelemetry/api": "~1.6.0"
   }
 }

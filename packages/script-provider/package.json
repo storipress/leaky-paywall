@@ -7,8 +7,8 @@
   },
   "dependencies": {
     "@effect/opentelemetry": "^0.33.0",
-    "@microlabs/otel-cf-workers": "^1.0.0-rc.35",
-    "@opentelemetry/api": "^1.8.0",
+    "@microlabs/otel-cf-workers": "^1.0.0-rc.36",
+    "@opentelemetry/api": "~1.6.0",
     "@opentelemetry/resources": "^1.23.0",
     "@opentelemetry/semantic-conventions": "^1.23.0",
     "@ts-rest/core": "^3.41.2",

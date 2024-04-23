@@ -6,7 +6,7 @@ import * as Tracer from '@effect/opentelemetry/Tracer'
 import * as Resource from '@effect/opentelemetry/Resource'
 import { secureHeaders } from 'hono/secure-headers'
 import { etag } from 'hono/etag'
-import { Effect, Logger, pipe } from 'effect'
+import { Effect, Layer, Logger, pipe } from 'effect'
 import { trace } from '@opentelemetry/api'
 import { GraphqlService } from './services/GraphqlService'
 import { getPaywallConfig } from './utils/get-paywall-config'
@@ -20,6 +20,18 @@ const app = new Hono()
 app.get('/', (c) => {
   return c.text('Not found', 404)
 })
+
+const TracerLive = pipe(
+  Tracer.layerGlobal,
+  Layer.provide(
+    Resource.layer({
+      serviceName: 'prophet_worker',
+      serviceVersion: '1.0.0',
+      attributes: {},
+    }),
+  ),
+  Layer.provide(Logger.add(Logger.tracerLogger)),
+)
 
 app.get(
   '/:clientId/prophet.js',
@@ -57,15 +69,7 @@ app.get(
             traceId: activeSpan.spanContext().traceId,
           }),
       }),
-      Effect.provide(Tracer.layerGlobal),
-      Effect.provide(
-        Resource.layer({
-          serviceName: 'prophet_worker',
-          serviceVersion: '1.0.0',
-          attributes: {},
-        }),
-      ),
-      Effect.provide(Logger.add(Logger.tracerLogger)),
+      Effect.provide(TracerLive),
       Effect.catchAllDefect((error) => {
         // eslint-disable-next-line no-console
         console.log(error)
