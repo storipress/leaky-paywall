@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.7](https://github.com/storipress/leaky-paywall/compare/v1.7.6...v1.7.7) (2024-04-23)
+
+
+### Bug Fixes
+
+* concurrent init ([813d6e7](https://github.com/storipress/leaky-paywall/commit/813d6e76dc54aa01535cf7c52a1ddd5749b63f10))
+
 ## [1.7.6](https://github.com/storipress/leaky-paywall/compare/v1.7.5...v1.7.6) (2024-04-23)
 
 
