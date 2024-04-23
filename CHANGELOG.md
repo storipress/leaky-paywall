@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.7.5](https://github.com/storipress/leaky-paywall/compare/v1.7.4...v1.7.5) (2024-04-23)
+
+
+### Bug Fixes
+
+* attach parent span ([8faf2bd](https://github.com/storipress/leaky-paywall/commit/8faf2bdc4bc640e368c1621247cb61cb9b386071))
+* update minify config ([ae5c721](https://github.com/storipress/leaky-paywall/commit/ae5c7218bd7a896a26140d385b2c8ce2d6715e8d))
+
 ## [1.7.4](https://github.com/storipress/leaky-paywall/compare/v1.7.3...v1.7.4) (2024-04-23)
 
 
