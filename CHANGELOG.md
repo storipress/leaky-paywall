@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.7.4](https://github.com/storipress/leaky-paywall/compare/v1.7.3...v1.7.4) (2024-04-23)
+
+
+### Bug Fixes
+
+* add article id as target id ([a5c1fbc](https://github.com/storipress/leaky-paywall/commit/a5c1fbcd069e5c4fe30a7bb2e7845eb1e49da4ad))
+* log server error in tracing ([8d0e04c](https://github.com/storipress/leaky-paywall/commit/8d0e04c79bcf85019842184676712d01614a90f5))
+* use global tracer ([3cc86f3](https://github.com/storipress/leaky-paywall/commit/3cc86f3254204ed1d5d4ec91ea64f5fcb3fac460))
+
 ## [1.7.3](https://github.com/storipress/leaky-paywall/compare/v1.7.2...v1.7.3) (2024-04-23)
 
 
