@@ -8,7 +8,7 @@ import { generateScript } from '../generate-script'
 
 vi.mock('esbuild-wasm', () => ({
   default: {
-    transform: (x: unknown) => Promise.resolve(x),
+    transform: (code: string) => Promise.resolve({ code }),
   },
 }))
 
