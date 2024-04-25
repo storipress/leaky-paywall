@@ -224,7 +224,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.14.0, @babel/core@npm:^7.21.4, @babel/core@npm:^7.22.9, @babel/core@npm:^7.23.0, @babel/core@npm:^7.23.7, @babel/core@npm:^7.24.3":
+"@babel/core@npm:^7.14.0, @babel/core@npm:^7.21.4, @babel/core@npm:^7.22.9, @babel/core@npm:^7.23.0, @babel/core@npm:^7.23.7, @babel/core@npm:^7.24.4":
   version: 7.24.4
   resolution: "@babel/core@npm:7.24.4"
   dependencies:
@@ -3394,7 +3394,7 @@ __metadata:
     radix-vue: "npm:^1.6.2"
     remeda: "npm:1.61.0"
     rollup-plugin-visualizer: "npm:5.12.0"
-    shadcn-vue: "npm:0.10.3"
+    shadcn-vue: "npm:0.10.4"
     size-limit: "npm:11.1.2"
     storipress-client: "workspace:^"
     tailwind-merge: "npm:^2.2.2"
@@ -8875,10 +8875,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash._reinterpolate@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "lodash._reinterpolate@npm:3.0.0"
-  checksum: 10c0/cdf592374b5e9eb6d6290a9a07c7d90f6e632cca4949da2a26ae9897ab13f138f3294fd5e81de3e5d997717f6e26c06747a9ad3413c043fd36c0d87504d97da6
+"lodash-es@npm:^4.17.21":
+  version: 4.17.21
+  resolution: "lodash-es@npm:4.17.21"
+  checksum: 10c0/fb407355f7e6cd523a9383e76e6b455321f0f153a6c9625e21a8827d10c54c2a2341bd2ae8d034358b60e07325e1330c14c224ff582d04612a46a4f0479ff2f2
   languageName: node
   linkType: hard
 
@@ -8914,25 +8914,6 @@ __metadata:
   version: 4.7.0
   resolution: "lodash.sortby@npm:4.7.0"
   checksum: 10c0/fc48fb54ff7669f33bb32997cab9460757ee99fafaf72400b261c3e10fde21538e47d8cfcbe6a25a31bcb5b7b727c27d52626386fc2de24eb059a6d64a89cdf5
-  languageName: node
-  linkType: hard
-
-"lodash.template@npm:^4.5.0":
-  version: 4.5.0
-  resolution: "lodash.template@npm:4.5.0"
-  dependencies:
-    lodash._reinterpolate: "npm:^3.0.0"
-    lodash.templatesettings: "npm:^4.0.0"
-  checksum: 10c0/62a02b397f72542fa9a989d9fc1a94fc1cb94ced8009fa5c37956746c0cf460279e844126c2abfbf7e235fe27e8b7ee8e6efbf6eac247a06aa05b05457fda817
-  languageName: node
-  linkType: hard
-
-"lodash.templatesettings@npm:^4.0.0":
-  version: 4.2.0
-  resolution: "lodash.templatesettings@npm:4.2.0"
-  dependencies:
-    lodash._reinterpolate: "npm:^3.0.0"
-  checksum: 10c0/2609fea36ed061114dfed701666540efc978b069b2106cd819b415759ed281419893d40f85825240197f1a38a98e846f2452e2d31c6d5ccee1e006c9de820622
   languageName: node
   linkType: hard
 
@@ -9083,7 +9064,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"magic-string@npm:^0.30.10, magic-string@npm:^0.30.3, magic-string@npm:^0.30.4, magic-string@npm:^0.30.5, magic-string@npm:^0.30.8, magic-string@npm:^0.30.9":
+"magic-string@npm:^0.30.10, magic-string@npm:^0.30.3, magic-string@npm:^0.30.4, magic-string@npm:^0.30.5, magic-string@npm:^0.30.9":
   version: 0.30.10
   resolution: "magic-string@npm:0.30.10"
   dependencies:
@@ -9872,7 +9853,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ofetch@npm:^1.3.3":
+"ofetch@npm:^1.3.4":
   version: 1.3.4
   resolution: "ofetch@npm:1.3.4"
   dependencies:
@@ -10970,7 +10951,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"radix-vue@npm:^1.6.2":
+"radix-vue@npm:^1.6.2, radix-vue@npm:^1.7.2":
   version: 1.7.2
   resolution: "radix-vue@npm:1.7.2"
   dependencies:
@@ -11591,12 +11572,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shadcn-vue@npm:0.10.3":
-  version: 0.10.3
-  resolution: "shadcn-vue@npm:0.10.3"
+"shadcn-vue@npm:0.10.4":
+  version: 0.10.4
+  resolution: "shadcn-vue@npm:0.10.4"
   dependencies:
-    "@babel/core": "npm:^7.24.3"
-    "@babel/parser": "npm:^7.24.1"
+    "@babel/core": "npm:^7.24.4"
+    "@babel/parser": "npm:^7.24.4"
     "@vue/compiler-sfc": "npm:^3.4"
     c12: "npm:^1.10.0"
     commander: "npm:^12.0.0"
@@ -11605,20 +11586,20 @@ __metadata:
     diff: "npm:^5.2.0"
     fs-extra: "npm:^11.2.0"
     https-proxy-agent: "npm:^7.0.4"
-    lodash.template: "npm:^4.5.0"
-    magic-string: "npm:^0.30.8"
+    lodash-es: "npm:^4.17.21"
+    magic-string: "npm:^0.30.10"
     nypm: "npm:^0.3.8"
-    ofetch: "npm:^1.3.3"
+    ofetch: "npm:^1.3.4"
     ora: "npm:^8.0.1"
     pathe: "npm:^1.1.2"
     prompts: "npm:^2.4.2"
-    radix-vue: "npm:^1.6.2"
+    radix-vue: "npm:^1.7.2"
     ts-morph: "npm:^22.0.0"
     tsconfig-paths: "npm:^4.2.0"
-    zod: "npm:^3.22.4"
+    zod: "npm:^3.23.3"
   bin:
     shadcn-vue: dist/index.js
-  checksum: 10c0/4075cd3b131f2b3784bad4b86bb0a43a35fcdd8c1ef145d69f2531df743848f3784c74dcf7c23de8835cf6e1cf0f41aafe23d7c4634eabee50e816c1df2b435b
+  checksum: 10c0/1699ba5e4f8cab857de752c0f1850208a96e08d851f89a7290f9f22c557992b83c6ca9cde4a18e63730687d0865f89ac28073ff3eb49fd8bf94d57f1c89e6ceb
   languageName: node
   linkType: hard
 
@@ -13761,7 +13742,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:3.23.4, zod@npm:^3.20.6, zod@npm:^3.22.4":
+"zod@npm:3.23.4, zod@npm:^3.20.6, zod@npm:^3.22.4, zod@npm:^3.23.3":
   version: 3.23.4
   resolution: "zod@npm:3.23.4"
   checksum: 10c0/7fb99f05bd5b86dcde06e202285a5d102b2e26d46f5119403a17618d0048e488e074cdcdf3fbba2bdcb77ff8141ddd85112b6d86d7a2fbefc9ffc983997b970e
