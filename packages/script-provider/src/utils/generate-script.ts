@@ -1,4 +1,4 @@
-import { Effect, Function, Tuple, pipe } from 'effect'
+import { Effect, Function, pipe } from 'effect'
 import { oneLineTrim } from 'proper-tags'
 import type { Context } from 'hono'
 import esbuild from 'esbuild-wasm'
@@ -11,7 +11,7 @@ const javascript = oneLineTrim
 export function generateScript(c: Context, clientId: string) {
   return pipe(
     initEsbuild,
-    Effect.zipWith(getPaywallConfig(clientId), Function.untupled(Tuple.getSecond), {
+    Effect.zipWith(getPaywallConfig(clientId), Function.SK, {
       concurrent: true,
     }),
     Effect.flatMap((configValues) => {
