@@ -28,6 +28,6 @@
     "@cloudflare/workers-types": "4.20240423.0",
     "msw": "2.2.14",
     "vitest": "1.5.3",
-    "wrangler": "3.52.0"
+    "wrangler": "3.53.0"
   }
 }
