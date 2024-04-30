@@ -94,7 +94,7 @@
     "vite-plugin-vue-devtools": "7.1.3",
     "vitest": "1.5.2",
     "vue-router": "4.3.2",
-    "vue-tsc": "2.0.14",
+    "vue-tsc": "2.0.15",
     "zx": "8.0.2"
   },
   "resolutions": {
