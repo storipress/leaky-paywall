@@ -1049,9 +1049,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@effect/opentelemetry@npm:^0.33.0":
-  version: 0.33.0
-  resolution: "@effect/opentelemetry@npm:0.33.0"
+"@effect/opentelemetry@npm:^0.34.0":
+  version: 0.34.2
+  resolution: "@effect/opentelemetry@npm:0.34.2"
   peerDependencies:
     "@opentelemetry/api": ^1.6
     "@opentelemetry/resources": ^1.22
@@ -1060,7 +1060,7 @@ __metadata:
     "@opentelemetry/sdk-trace-node": ^1.22
     "@opentelemetry/sdk-trace-web": ^1.22
     "@opentelemetry/semantic-conventions": ^1.22
-    effect: ^3.0.3
+    effect: ^3.1.2
   peerDependenciesMeta:
     "@opentelemetry/sdk-metrics":
       optional: true
@@ -1070,7 +1070,7 @@ __metadata:
       optional: true
     "@opentelemetry/sdk-trace-web":
       optional: true
-  checksum: 10c0/53bfad15b0372ea4c8ee7aa9a747038edceb91d5bc70e6d752dfd0639e0d9c1623a635b744c3e022592231b1775a159f7c16b771c34aba03235da448e3a54aa3
+  checksum: 10c0/bfded18b840a86a9567e4a18b947d29408cacb981a02ed195599d2953205263a2e14c449291df311ba21c22611cfe0cb09e8516f627d20de5f9b56961a2a9a2a
   languageName: node
   linkType: hard
 
@@ -11448,7 +11448,7 @@ __metadata:
   resolution: "script-provider@workspace:packages/script-provider"
   dependencies:
     "@cloudflare/workers-types": "npm:4.20240502.0"
-    "@effect/opentelemetry": "npm:^0.33.0"
+    "@effect/opentelemetry": "npm:^0.34.0"
     "@microlabs/otel-cf-workers": "npm:^1.0.0-rc.36"
     "@opentelemetry/api": "npm:~1.6.0"
     "@opentelemetry/resources": "npm:^1.23.0"
