@@ -17,16 +17,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@0no-co/graphqlsp@npm:1.12.1":
-  version: 1.12.1
-  resolution: "@0no-co/graphqlsp@npm:1.12.1"
+"@0no-co/graphqlsp@npm:1.12.2":
+  version: 1.12.2
+  resolution: "@0no-co/graphqlsp@npm:1.12.2"
   dependencies:
     "@gql.tada/internal": "npm:^0.3.0"
-    graphql: "npm:^16.8.1"
+    graphql: "npm:^15.5.0 || ^16.0.0 || ^17.0.0"
     node-fetch: "npm:^2.0.0"
   peerDependencies:
+    graphql: ^15.5.0 || ^16.0.0 || ^17.0.0
     typescript: ^5.0.0
-  checksum: 10c0/2dd7e95a4ef555790ce8ebdae931b9c525538701f66881ec5f1bdc755ee2cf2cc35f26452de48f10f8613c5a7d7fe9cef3638be6dfcba72f167907db7a405b8d
+  checksum: 10c0/fed9078e445a98b83cf3c5784c1e6a5de4d92c277596edefa567f24527afa57df37bb8c7f20a44dedd72fadd8594d724ab9d07ccde9b9d2d5cafba71b078df70
   languageName: node
   linkType: hard
 
@@ -3351,7 +3352,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@storipress/leaky-paywall@workspace:."
   dependencies:
-    "@0no-co/graphqlsp": "npm:1.12.1"
+    "@0no-co/graphqlsp": "npm:1.12.2"
     "@antfu/eslint-config": "npm:2.16.1"
     "@egoist/tailwindcss-icons": "npm:1.7.4"
     "@formkit/auto-animate": "npm:^0.8.1"
@@ -7731,7 +7732,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql@npm:16.8.1, graphql@npm:^16.8.1":
+"graphql@npm:16.8.1, graphql@npm:^15.5.0 || ^16.0.0 || ^17.0.0, graphql@npm:^16.8.1":
   version: 16.8.1
   resolution: "graphql@npm:16.8.1"
   checksum: 10c0/129c318156b466f440914de80dbf7bc67d17f776f2a088a40cb0da611d19a97c224b1c6d2b13cbcbc6e5776e45ed7468b8432f9c3536724e079b44f1a3d57a8a
