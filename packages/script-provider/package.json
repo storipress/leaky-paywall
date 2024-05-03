@@ -6,7 +6,7 @@
     "test": "moon run test"
   },
   "dependencies": {
-    "@effect/opentelemetry": "^0.33.0",
+    "@effect/opentelemetry": "^0.34.0",
     "@microlabs/otel-cf-workers": "^1.0.0-rc.36",
     "@opentelemetry/api": "~1.6.0",
     "@opentelemetry/resources": "^1.23.0",
