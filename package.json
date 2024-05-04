@@ -60,7 +60,7 @@
     "@sindresorhus/slugify": "2.2.1",
     "@size-limit/file": "11.1.2",
     "@tailwindcss/typography": "0.5.13",
-    "@testing-library/jest-dom": "6.4.2",
+    "@testing-library/jest-dom": "6.4.5",
     "@testing-library/vue": "8.0.3",
     "@thedutchcoder/postcss-rem-to-px": "0.0.2",
     "@types/eslint": "8.56.10",
