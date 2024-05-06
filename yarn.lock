@@ -1075,14 +1075,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@egoist/tailwindcss-icons@npm:1.7.4":
-  version: 1.7.4
-  resolution: "@egoist/tailwindcss-icons@npm:1.7.4"
+"@egoist/tailwindcss-icons@npm:1.8.0":
+  version: 1.8.0
+  resolution: "@egoist/tailwindcss-icons@npm:1.8.0"
   dependencies:
-    "@iconify/utils": "npm:^2.1.20"
+    "@iconify/utils": "npm:^2.1.23"
   peerDependencies:
     tailwindcss: "*"
-  checksum: 10c0/5432d3567512b5866a60a40060d694fe096c78c46aabd4065da6d780ba21d8456c80516be115a22186b114b2708b2d1854535633d97309ba77d49c97b1c3581c
+  checksum: 10c0/8d5b908a64c10d8f07f2cd9dc2de0a0ed324cfc5d5ec0461d955bde58a2a3c2c80eaaec02be3c7b93bd4207dd45146769a470b0c44c3614f896aa4685f75504e
   languageName: node
   linkType: hard
 
@@ -2355,7 +2355,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iconify/utils@npm:^2.1.20":
+"@iconify/utils@npm:^2.1.23":
   version: 2.1.23
   resolution: "@iconify/utils@npm:2.1.23"
   dependencies:
@@ -3354,7 +3354,7 @@ __metadata:
   dependencies:
     "@0no-co/graphqlsp": "npm:1.12.2"
     "@antfu/eslint-config": "npm:2.16.1"
-    "@egoist/tailwindcss-icons": "npm:1.7.4"
+    "@egoist/tailwindcss-icons": "npm:1.8.0"
     "@formkit/auto-animate": "npm:^0.8.1"
     "@iconify-json/lucide": "npm:1.1.187"
     "@moonrepo/cli": "npm:1.24.4"
