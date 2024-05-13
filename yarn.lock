@@ -17,17 +17,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@0no-co/graphqlsp@npm:1.12.2":
-  version: 1.12.2
-  resolution: "@0no-co/graphqlsp@npm:1.12.2"
+"@0no-co/graphqlsp@npm:1.12.3":
+  version: 1.12.3
+  resolution: "@0no-co/graphqlsp@npm:1.12.3"
   dependencies:
-    "@gql.tada/internal": "npm:^0.3.0"
+    "@gql.tada/internal": "npm:^1.0.0"
     graphql: "npm:^15.5.0 || ^16.0.0 || ^17.0.0"
-    node-fetch: "npm:^2.0.0"
   peerDependencies:
     graphql: ^15.5.0 || ^16.0.0 || ^17.0.0
     typescript: ^5.0.0
-  checksum: 10c0/fed9078e445a98b83cf3c5784c1e6a5de4d92c277596edefa567f24527afa57df37bb8c7f20a44dedd72fadd8594d724ab9d07ccde9b9d2d5cafba71b078df70
+  checksum: 10c0/a10ce15b8a2927ecb65c28cba27091e78efff391cff040fea0cd998115d1dbcb301ff0a772cb2a41b8647886dc59e2e9ddd8f4c13b14a1a112c8e396258b7382
   languageName: node
   linkType: hard
 
@@ -1865,15 +1864,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gql.tada/internal@npm:^0.3.0":
-  version: 0.3.1
-  resolution: "@gql.tada/internal@npm:0.3.1"
+"@gql.tada/internal@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@gql.tada/internal@npm:1.0.0"
   dependencies:
     "@0no-co/graphql.web": "npm:^1.0.5"
   peerDependencies:
-    graphql: ^16.8.1
+    graphql: ^15.5.0 || ^16.0.0 || ^17.0.0
     typescript: ^5.0.0
-  checksum: 10c0/001b85c68e2b264389c1b3d167bc435d6981da79874bcf2e6a29f2af574a7a065db74d5bd53b66e209276572accf846bcf41c1e9a6240e222ff02823bc1aa551
+  checksum: 10c0/efec8f173fab453a88597b12e2a8b5318a4c56efeae72ba4167f8064639f7566c8b9192608f67a346bc43fac26541e4b3d66340020106560cc563dce7d836339
   languageName: node
   linkType: hard
 
@@ -3525,7 +3524,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@storipress/leaky-paywall@workspace:."
   dependencies:
-    "@0no-co/graphqlsp": "npm:1.12.2"
+    "@0no-co/graphqlsp": "npm:1.12.3"
     "@antfu/eslint-config": "npm:2.17.0"
     "@egoist/tailwindcss-icons": "npm:1.8.0"
     "@formkit/auto-animate": "npm:^0.8.2"
@@ -9847,7 +9846,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.0.0, node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.12":
+"node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.12":
   version: 2.7.0
   resolution: "node-fetch@npm:2.7.0"
   dependencies:
