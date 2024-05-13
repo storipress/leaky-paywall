@@ -2880,6 +2880,55 @@ export type PreviewAppSubscriptionType = {
   total: Scalars['String']['output']
 }
 
+export type ProphetArticleStatistic = {
+  __typename?: 'ProphetArticleStatistic'
+  article: Article
+  data: ProphetArticleStatisticData
+}
+
+export type ProphetArticleStatisticData = {
+  __typename?: 'ProphetArticleStatisticData'
+  avg_scrolled: Scalars['Float']['output']
+  email_collected: Scalars['Int']['output']
+  email_collected_ratio: Scalars['Float']['output']
+  viewed: Scalars['Int']['output']
+}
+
+export enum ProphetArticleStatisticSortBy {
+  /** Email submit % */
+  EmailSubmit = 'email_submit',
+  /** Emails collected */
+  EmailsCollected = 'emails_collected',
+  /** None */
+  None = 'none',
+  /** Reads */
+  Reads = 'reads',
+  /** Scroll Depth */
+  ScrollDepth = 'scroll_depth',
+}
+
+export type ProphetDashboardChart = {
+  __typename?: 'ProphetDashboardChart'
+  data: ProphetDashboardData
+  date: Scalars['Date']['output']
+}
+
+export type ProphetDashboardData = {
+  __typename?: 'ProphetDashboardData'
+  article_avg_scrolled: Scalars['Float']['output']
+  article_unique_viewed: Scalars['Int']['output']
+  article_viewed: Scalars['Int']['output']
+  email_collected: Scalars['Int']['output']
+  email_collected_ratio: Scalars['Float']['output']
+}
+
+export type ProphetMonthOnMonth = {
+  __typename?: 'ProphetMonthOnMonth'
+  data?: Maybe<ProphetDashboardData>
+  month: Scalars['Int']['output']
+  year: Scalars['Int']['output']
+}
+
 /** subset of site(publication) */
 export type Publication = {
   __typename?: 'Publication'
@@ -2992,6 +3041,12 @@ export type Query = {
   page?: Maybe<Page>
   /** fetch pages */
   pages: Array<Page>
+  /** prophet article statistics */
+  prophetArticleStatistics: Array<ProphetArticleStatistic>
+  /** prophet dashboard chart data points */
+  prophetDashboardChart: Array<ProphetDashboardChart>
+  /** prophet month on month info */
+  prophetMonthOnMonth: Array<ProphetMonthOnMonth>
   /** all publications owned by the account */
   publications: Array<Publication>
   /** fetch redirections */
@@ -3176,6 +3231,11 @@ export type QueryMediaArgs = {
 
 export type QueryPageArgs = {
   id: Scalars['ID']['input']
+}
+
+export type QueryProphetArticleStatisticsArgs = {
+  desc?: Scalars['Boolean']['input']
+  sort_by?: ProphetArticleStatisticSortBy
 }
 
 export type QueryReleaseArgs = {
@@ -4204,6 +4264,7 @@ export enum TemplateType {
 }
 
 export type TrackSubscriberActivityInput = {
+  anonymous_id?: InputMaybe<Scalars['String']['input']>
   /** event data */
   data?: InputMaybe<Scalars['JSON']['input']>
   /** event name */
