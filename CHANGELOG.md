@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.8.0](https://github.com/storipress/leaky-paywall/compare/v1.7.7...v1.8.0) (2024-05-14)
+
+
+### Features
+
+* track anonymous reader ([a19067a](https://github.com/storipress/leaky-paywall/commit/a19067a56da31a150e2e66d38e850cd37e90aefc))
+
+
+### Bug Fixes
+
+* add timestamp to all tracking event ([dbc850e](https://github.com/storipress/leaky-paywall/commit/dbc850ead2960f40e92a13be73b6e43118d66c0d))
+* **deps:** update dependency @effect/opentelemetry to ^0.34.0 ([65a011c](https://github.com/storipress/leaky-paywall/commit/65a011c14dd9a04a885c6bd738be043c53b9ea67))
+* **deps:** update dependency hono to v4.2.7 [security] ([b599abb](https://github.com/storipress/leaky-paywall/commit/b599abb2e2edbe852c655995123a68de607b8920))
+* **deps:** update dependency zod to v3.23.4 ([aee1144](https://github.com/storipress/leaky-paywall/commit/aee114468b440dde8b096f71bbb7002755e5dd34))
+* **deps:** update dependency zod to v3.23.7 ([0ba4229](https://github.com/storipress/leaky-paywall/commit/0ba42297153af96879d83cffaac12387f9860925))
+* send sign in event ([464ef76](https://github.com/storipress/leaky-paywall/commit/464ef7652339aeba4302fcc63d00c090aa95cd76))
+
 ## [1.7.7](https://github.com/storipress/leaky-paywall/compare/v1.7.6...v1.7.7) (2024-04-23)
 
 
