@@ -189,6 +189,15 @@ onMounted(() => {
     show: (v = true) => (show.value = v),
   })
 })
+
+function handleSignedIn() {
+  sendTrack('subscriber.signed_in', {
+    pathname: location.value.pathname ?? '',
+    // impossible to be empty
+    article_id: foundArticle.value?.id ?? '',
+    client_id: config.value.clientId,
+  })
+}
 </script>
 
 <template>
@@ -199,7 +208,7 @@ onMounted(() => {
           <!-- for accessibility -->
           <AlertDialogTitle class="invisible">Subscribe</AlertDialogTitle>
         </VisuallyHidden>
-        <LeakyPaywallContent v-model:email="emailInput" :config="config" />
+        <LeakyPaywallContent v-model:email="emailInput" :config="config" @signed-in="handleSignedIn" />
       </AlertDialogContent>
     </AlertDialog>
     <VisuallyHidden>

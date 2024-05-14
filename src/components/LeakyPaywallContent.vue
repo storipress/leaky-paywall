@@ -7,6 +7,8 @@ export interface Props {
 
 const props = defineProps<Props>()
 
+defineEmits<{ signedIn: [] }>()
+
 const themeConfig = computed(() => ({ '--sp-primary': props.config.primaryColor }))
 const email = defineModel('email', {
   default: '',
@@ -34,7 +36,7 @@ const email = defineModel('email', {
         </p>
 
         <!-- email form -->
-        <EmailForm v-model:email="email" />
+        <EmailForm v-model:email="email" @signed-in="$emit('signedIn')" />
       </div>
     </CardContent>
   </Card>
