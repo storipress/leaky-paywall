@@ -29,7 +29,7 @@ export function useTrackManager() {
         input: {
           name: record.e,
           target_id: record.p.article_id ?? config.clientId,
-          data: JSON.stringify(record.p),
+          data: JSON.stringify({ ...record.p, timestamp: record.t }),
           anonymous_id: paywall.value.aid,
         },
       })
