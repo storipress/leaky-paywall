@@ -1,12 +1,15 @@
 import { TrackSubscriberActivity } from 'storipress-client'
+import Mutex from 'p-mutex'
+
+const mutex = new Mutex()
 
 export function useTrackManager() {
   const paywall = useStore($paywall)
 
   const { executeMutation: recordTrack } = useMutation(TrackSubscriberActivity)
 
-  async function flushAll() {
-    if (!paywall.value.token) {
+  async function _flushAll() {
+    if (!paywall.value.aid) {
       return
     }
 
@@ -27,9 +30,14 @@ export function useTrackManager() {
           name: record.e,
           target_id: record.p.article_id ?? config.clientId,
           data: JSON.stringify(record.p),
+          anonymous_id: paywall.value.aid,
         },
       })
     }
+  }
+
+  async function flushAll() {
+    return await mutex.withLock(() => _flushAll())
   }
 
   watch(
@@ -44,9 +52,17 @@ export function useTrackManager() {
   )
 
   whenever(
-    () => paywall.value.token,
+    () => paywall.value.aid,
     () => {
       flushAll()
     },
+    { immediate: true },
   )
+
+  onMounted(() => {
+    if ($paywall.get().aid) {
+      return
+    }
+    $paywall.setKey('aid', crypto.randomUUID())
+  })
 }

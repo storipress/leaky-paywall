@@ -24,6 +24,7 @@ export interface PaywallState {
   records: BufferedEvent[]
   read: string[]
   token: string
+  aid: string
 }
 
 export const $paywall = persistentMap<PaywallState>(
@@ -33,6 +34,7 @@ export const $paywall = persistentMap<PaywallState>(
     records: [] as BufferedEvent[],
     read: [] as string[],
     token: '',
+    aid: '',
   },
   {
     encode: JSON.stringify,

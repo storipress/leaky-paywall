@@ -3579,6 +3579,7 @@ __metadata:
     lorem-ipsum: "npm:2.0.8"
     nanostores: "npm:^0.10.3"
     open-cli: "npm:8.0.0"
+    p-mutex: "npm:0.1.0"
     polished: "npm:4.3.1"
     prettier: "npm:3.2.5"
     prettier-plugin-tailwindcss: "npm:0.5.14"
@@ -10283,6 +10284,15 @@ __metadata:
   dependencies:
     aggregate-error: "npm:^3.0.0"
   checksum: 10c0/592c05bd6262c466ce269ff172bb8de7c6975afca9b50c975135b974e9bdaafbfe80e61aaaf5be6d1200ba08b30ead04b88cfa7e25ff1e3b93ab28c9f62a2c75
+  languageName: node
+  linkType: hard
+
+"p-mutex@npm:0.1.0":
+  version: 0.1.0
+  resolution: "p-mutex@npm:0.1.0"
+  dependencies:
+    yocto-queue: "npm:^1.0.0"
+  checksum: 10c0/178df65ece191a1bd5785c5fc60830264233638bfde0b77aa7d5d276f0f4d11b85a5e638a868c92ec4681de5037bd62c68c37f3b94aed43e05663f511ef28214
   languageName: node
   linkType: hard
 
