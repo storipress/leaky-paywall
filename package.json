@@ -41,6 +41,7 @@
     "effect": "^3.1.4",
     "graphql-web-lite": "^16.6.0-4",
     "nanostores": "^0.10.3",
+    "p-mutex": "0.1.0",
     "radix-vue": "^1.7.4",
     "storipress-client": "workspace:^",
     "tailwind-merge": "^2.3.0",
