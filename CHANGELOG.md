@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/storipress/leaky-paywall/compare/v1.8.0...v1.9.0) (2024-05-15)
+
+
+### Features
+
+* make a loader script to get fixed integrity hash ([82960e8](https://github.com/storipress/leaky-paywall/commit/82960e8d72300f13fa2f002fa0a1963270973ba8))
+
 ## [1.8.0](https://github.com/storipress/leaky-paywall/compare/v1.7.7...v1.8.0) (2024-05-14)
 
 
