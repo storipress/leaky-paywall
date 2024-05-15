@@ -8,6 +8,8 @@ import { secureHeaders } from 'hono/secure-headers'
 import { etag } from 'hono/etag'
 import { Effect, Layer, Logger, pipe } from 'effect'
 import { trace } from '@opentelemetry/api'
+import { zValidator } from '@hono/zod-validator'
+import { z } from 'zod'
 import { GraphqlService } from './services/GraphqlService'
 import { getPaywallConfig } from './utils/get-paywall-config'
 import { generateScript } from './utils/generate-script'
@@ -52,23 +54,53 @@ app.get(
   // https://hono.dev/middleware/builtin/secure-headers
   secureHeaders(),
 
+  zValidator(
+    'query',
+    z.object({
+      full: z.coerce.boolean().optional().default(false),
+    }),
+  ),
+
   (c) => {
     const clientId = c.req.param('clientId')
     const activeSpan = trace.getActiveSpan()
+    const { full } = c.req.valid('query')
 
-    return pipe(
+    const externalSpan =
+      activeSpan &&
+      Tracer.makeExternalSpan({
+        spanId: activeSpan.spanContext().spanId,
+        traceId: activeSpan.spanContext().traceId,
+      })
+
+    const loaderScript = pipe(
+      Effect.sync(() =>
+        c.body('import(import.meta.url+"?full=true")', {
+          headers: {
+            'Content-Type': 'text/javascript',
+          },
+        }),
+      ),
+      Effect.withSpan('generateLoaderScript', {
+        attributes: {
+          clientId,
+        },
+        parent: externalSpan,
+      }),
+    )
+
+    const fullScript = pipe(
       generateScript(c, clientId),
       Effect.withSpan('generateScript', {
         attributes: {
           clientId,
         },
-        parent:
-          activeSpan &&
-          Tracer.makeExternalSpan({
-            spanId: activeSpan.spanContext().spanId,
-            traceId: activeSpan.spanContext().traceId,
-          }),
+        parent: externalSpan,
       }),
+    )
+
+    return pipe(
+      full ? fullScript : loaderScript,
       Effect.provide(TracerLive),
       Effect.catchAllDefect((error) => {
         // eslint-disable-next-line no-console
