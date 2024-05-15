@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "@effect/opentelemetry": "^0.34.4",
+    "@hono/zod-validator": "0.2.1",
     "@microlabs/otel-cf-workers": "^1.0.0-rc.36",
     "@opentelemetry/api": "~1.6.0",
     "@opentelemetry/resources": "^1.23.0",
@@ -22,7 +23,8 @@
     "tiny-invariant": "1.3.3",
     "ts-pattern": "^5.1.1",
     "ufo": "1.5.3",
-    "version-proxy": "workspace:*"
+    "version-proxy": "workspace:*",
+    "zod": "3.23.8"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20240512.0",
