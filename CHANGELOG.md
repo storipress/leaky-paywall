@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.1](https://github.com/storipress/leaky-paywall/compare/v1.9.0...v1.9.1) (2024-05-16)
+
+
+### Bug Fixes
+
+* use legacy script ([a07bd64](https://github.com/storipress/leaky-paywall/commit/a07bd647c12dd44a13c9767f0ad96133691b13a7))
+
 ## [1.9.0](https://github.com/storipress/leaky-paywall/compare/v1.8.0...v1.9.0) (2024-05-15)
 
 
