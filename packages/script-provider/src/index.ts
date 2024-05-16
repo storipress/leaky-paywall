@@ -6,6 +6,7 @@ import * as Tracer from '@effect/opentelemetry/Tracer'
 import * as Resource from '@effect/opentelemetry/Resource'
 import { secureHeaders } from 'hono/secure-headers'
 import { etag } from 'hono/etag'
+import { oneLineTrim } from 'proper-tags'
 import { Effect, Layer, Logger, pipe } from 'effect'
 import { trace } from '@opentelemetry/api'
 import { zValidator } from '@hono/zod-validator'
@@ -18,6 +19,8 @@ import { generateScript } from './utils/generate-script'
 globalThis.performance = Date
 
 const app = new Hono()
+
+const javascript = oneLineTrim
 
 app.get('/', (c) => {
   return c.text('Not found', 404)
@@ -75,11 +78,21 @@ app.get(
 
     const loaderScript = pipe(
       Effect.sync(() =>
-        c.body('import(import.meta.url+"?full=true")', {
-          headers: {
-            'Content-Type': 'text/javascript',
+        c.body(
+          javascript`
+            (() => {
+              let s = document.createElement('script');
+              s.src = document.currentScript.src + '?full=true';
+              s.type = 'module';
+              document.head.append(s);
+            })();
+          `,
+          {
+            headers: {
+              'Content-Type': 'text/javascript',
+            },
           },
-        }),
+        ),
       ),
       Effect.withSpan('generateLoaderScript', {
         attributes: {
