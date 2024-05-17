@@ -37,7 +37,7 @@ jobs:
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
       - name: deploy to CDN
         if: ${{ steps.release.outputs.release_created }}
-        run: moon ci :deploy
+        run: moon run terraform:deploy
         env:
           TF_VAR_aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
           TF_VAR_aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
