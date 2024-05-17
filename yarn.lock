@@ -1053,9 +1053,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@effect/opentelemetry@npm:^0.34.4":
-  version: 0.34.4
-  resolution: "@effect/opentelemetry@npm:0.34.4"
+"@effect/opentelemetry@npm:^0.34.5":
+  version: 0.34.5
+  resolution: "@effect/opentelemetry@npm:0.34.5"
   peerDependencies:
     "@opentelemetry/api": ^1.6
     "@opentelemetry/resources": ^1.22
@@ -1064,7 +1064,7 @@ __metadata:
     "@opentelemetry/sdk-trace-node": ^1.22
     "@opentelemetry/sdk-trace-web": ^1.22
     "@opentelemetry/semantic-conventions": ^1.22
-    effect: ^3.1.4
+    effect: ^3.1.5
   peerDependenciesMeta:
     "@opentelemetry/sdk-metrics":
       optional: true
@@ -1074,7 +1074,7 @@ __metadata:
       optional: true
     "@opentelemetry/sdk-trace-web":
       optional: true
-  checksum: 10c0/586ed042d7b9bdd542947a683f5f4026876921962f600133aa1137a52ae2d704d43b0a7dc0d993ed7431e339307995de8639a2d2935ef47194cdde1733a3d78d
+  checksum: 10c0/f54123ae6c77c6644738e61827a95a58c51561f1310c4e0c8eb9ff4095d81c470eb600985ed33714e6bce95aaabc086e16ea05d9637a78e8096701b5e3a445a9
   languageName: node
   linkType: hard
 
@@ -2965,7 +2965,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@opentelemetry/core@npm:1.23.0, @opentelemetry/core@npm:^1.17.1":
+"@opentelemetry/core@npm:1.23.0":
   version: 1.23.0
   resolution: "@opentelemetry/core@npm:1.23.0"
   dependencies:
@@ -2973,6 +2973,17 @@ __metadata:
   peerDependencies:
     "@opentelemetry/api": ">=1.0.0 <1.9.0"
   checksum: 10c0/b68442034315c182fd5e6c1bcca7b249a4995dc219c6935718fb143d24b13cee5e7884c6750b9f55ae8f4477b7edb9b3140c6663112485b49f2a9bc5a243f5f2
+  languageName: node
+  linkType: hard
+
+"@opentelemetry/core@npm:1.24.1, @opentelemetry/core@npm:^1.17.1":
+  version: 1.24.1
+  resolution: "@opentelemetry/core@npm:1.24.1"
+  dependencies:
+    "@opentelemetry/semantic-conventions": "npm:1.24.1"
+  peerDependencies:
+    "@opentelemetry/api": ">=1.0.0 <1.9.0"
+  checksum: 10c0/e7af32d4253542ee42be74618cef56813ddec878950421d7e51384bde33c5a09f9aeb4391cc9617e1d117091597d1d96a6b80658fb0453a93bcf2d4d316b149d
   languageName: node
   linkType: hard
 
@@ -3030,7 +3041,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@opentelemetry/resources@npm:1.23.0, @opentelemetry/resources@npm:^1.17.1, @opentelemetry/resources@npm:^1.23.0":
+"@opentelemetry/resources@npm:1.23.0":
   version: 1.23.0
   resolution: "@opentelemetry/resources@npm:1.23.0"
   dependencies:
@@ -3039,6 +3050,18 @@ __metadata:
   peerDependencies:
     "@opentelemetry/api": ">=1.0.0 <1.9.0"
   checksum: 10c0/b1abc023f2f32ed6f328f27821ae70b7a936964a19d29246072e11a9abdf588158ba65a1e9f1177933868906d53d836c837304bb98d37231a01e31bc77b38476
+  languageName: node
+  linkType: hard
+
+"@opentelemetry/resources@npm:^1.17.1, @opentelemetry/resources@npm:^1.24.1":
+  version: 1.24.1
+  resolution: "@opentelemetry/resources@npm:1.24.1"
+  dependencies:
+    "@opentelemetry/core": "npm:1.24.1"
+    "@opentelemetry/semantic-conventions": "npm:1.24.1"
+  peerDependencies:
+    "@opentelemetry/api": ">=1.0.0 <1.9.0"
+  checksum: 10c0/b2f68c153231bdca6491d6050d43d84c7679f44783eaca9daa9bdb3381b5bbdb54eb6de472e9177bc1c161b0bc83423af59e5e356cce8f7880fece757a0106b6
   languageName: node
   linkType: hard
 
@@ -3101,10 +3124,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@opentelemetry/semantic-conventions@npm:1.23.0, @opentelemetry/semantic-conventions@npm:^1.17.1, @opentelemetry/semantic-conventions@npm:^1.23.0":
+"@opentelemetry/semantic-conventions@npm:1.23.0":
   version: 1.23.0
   resolution: "@opentelemetry/semantic-conventions@npm:1.23.0"
   checksum: 10c0/2712f3874a45607bc7024e0d1a01c91a7e4671e7b925e2fcc79227f350c16c59a29ba36d8ab5f0842fe003ff464d24ab576033b35390316886bb120477f96ca6
+  languageName: node
+  linkType: hard
+
+"@opentelemetry/semantic-conventions@npm:1.24.1, @opentelemetry/semantic-conventions@npm:^1.17.1, @opentelemetry/semantic-conventions@npm:^1.24.1":
+  version: 1.24.1
+  resolution: "@opentelemetry/semantic-conventions@npm:1.24.1"
+  checksum: 10c0/5a3707860b70df8430745ef4ef99810a6d61d770942c217ac25ef8d6840a6b17b943c1ebe4da4a118dee0e3b1e71da3c16e2790f3c3a7e7e6b171e8d1944f73e
   languageName: node
   linkType: hard
 
@@ -3538,12 +3568,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@size-limit/file@npm:11.1.3":
-  version: 11.1.3
-  resolution: "@size-limit/file@npm:11.1.3"
+"@size-limit/file@npm:11.1.4":
+  version: 11.1.4
+  resolution: "@size-limit/file@npm:11.1.4"
   peerDependencies:
-    size-limit: 11.1.3
-  checksum: 10c0/887f37b2c0000b3ad5e853da2997d22da6003914767d6478c5926b7659411e2134f553a487ad3c3fb3c720242925df729b3e14afeb68a86d40d58941cd009421
+    size-limit: 11.1.4
+  checksum: 10c0/df96a30a8731d942fff1d2ab024de18cac401f053d256ad9d09862e614071a691eac19d8b97901165598539a89039c47c75e204b070105810c7f61d0dd502fc7
   languageName: node
   linkType: hard
 
@@ -3561,7 +3591,7 @@ __metadata:
     "@nanostores/persistent": "npm:^0.10.1"
     "@nanostores/vue": "npm:^0.10.0"
     "@sindresorhus/slugify": "npm:2.2.1"
-    "@size-limit/file": "npm:11.1.3"
+    "@size-limit/file": "npm:11.1.4"
     "@tailwindcss/typography": "npm:0.5.13"
     "@testing-library/jest-dom": "npm:6.4.5"
     "@testing-library/vue": "npm:8.0.3"
@@ -3581,7 +3611,7 @@ __metadata:
     date-fns: "npm:3.6.0"
     defu: "npm:^6.1.4"
     destr: "npm:^2.0.3"
-    effect: "npm:^3.1.4"
+    effect: "npm:^3.1.5"
     esbuild: "npm:0.21.3"
     eslint: "npm:9.2.0"
     graphql-web-lite: "npm:^16.6.0-4"
@@ -3598,7 +3628,7 @@ __metadata:
     remeda: "npm:1.61.0"
     rollup-plugin-visualizer: "npm:5.12.0"
     shadcn-vue: "npm:0.10.4"
-    size-limit: "npm:11.1.3"
+    size-limit: "npm:11.1.4"
     storipress-client: "workspace:^"
     tailwind-merge: "npm:^2.3.0"
     tailwindcss: "npm:3.4.3"
@@ -3617,7 +3647,7 @@ __metadata:
     vue: "npm:^3.4.27"
     vue-router: "npm:4.3.2"
     vue-sonner: "npm:^1.1.2"
-    vue-tsc: "npm:2.0.17"
+    vue-tsc: "npm:2.0.19"
     zod: "npm:^3.23.8"
     zx: "npm:8.1.0"
   languageName: unknown
@@ -4259,31 +4289,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@volar/language-core@npm:2.2.2, @volar/language-core@npm:~2.2.2":
-  version: 2.2.2
-  resolution: "@volar/language-core@npm:2.2.2"
+"@volar/language-core@npm:2.2.4, @volar/language-core@npm:~2.2.4":
+  version: 2.2.4
+  resolution: "@volar/language-core@npm:2.2.4"
   dependencies:
-    "@volar/source-map": "npm:2.2.2"
-  checksum: 10c0/e921772ffbd21f16b6aa48f2ea1b118f8b04af2738bba59e1629de5521bc7b4f543252173dbb6136a98d302b5babab92191a4f07c4a47f553645802e89be833c
+    "@volar/source-map": "npm:2.2.4"
+  checksum: 10c0/2929944dc21e6e9db1942e4903228520cfb90f3cf39bd5c5f49266dfe43527d91f23ca31d94dd0a799eb164ed9856b4355b30f9d2fb26f88eaa873649654fd76
   languageName: node
   linkType: hard
 
-"@volar/source-map@npm:2.2.2":
-  version: 2.2.2
-  resolution: "@volar/source-map@npm:2.2.2"
+"@volar/source-map@npm:2.2.4":
+  version: 2.2.4
+  resolution: "@volar/source-map@npm:2.2.4"
   dependencies:
     muggle-string: "npm:^0.4.0"
-  checksum: 10c0/c827d825f960c56e152fbe26d609f0cbab7ece301e1855f14e6716dc5ef198a732a37f2dfdf0914102c69bf8954d6d79b663d363072e8b01beeaa7f169e477c2
+  checksum: 10c0/8d9c880d354bf20b74fdfdd8ee51a20681338b16196c701fbe07191fbd6f737dbe1cd9c2b4d6d4a478b250c99d4cbe1a34073cc099f2e24645d68c9086629bf4
   languageName: node
   linkType: hard
 
-"@volar/typescript@npm:~2.2.2":
-  version: 2.2.2
-  resolution: "@volar/typescript@npm:2.2.2"
+"@volar/typescript@npm:~2.2.4":
+  version: 2.2.4
+  resolution: "@volar/typescript@npm:2.2.4"
   dependencies:
-    "@volar/language-core": "npm:2.2.2"
+    "@volar/language-core": "npm:2.2.4"
     path-browserify: "npm:^1.0.1"
-  checksum: 10c0/3f558e6ecd2cd7cfbd37bc6bf83f20db6cd33f5ad05c6ad2c4fe6c2e98e3148f8253ff2ce64890ad23c3cbb19135ee5c539b240742d2507d7dc749b0eecbc6fc
+  checksum: 10c0/8b5e3eff64afc614201b4dc4285e52ec37814e1a7d2dee911e65d46d0e79eed376934757d7629490e103653fd4dadcc668bc30392ef1f51a34a273420d473b95
   languageName: node
   linkType: hard
 
@@ -4437,11 +4467,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/language-core@npm:2.0.17":
-  version: 2.0.17
-  resolution: "@vue/language-core@npm:2.0.17"
+"@vue/language-core@npm:2.0.19":
+  version: 2.0.19
+  resolution: "@vue/language-core@npm:2.0.19"
   dependencies:
-    "@volar/language-core": "npm:~2.2.2"
+    "@volar/language-core": "npm:~2.2.4"
     "@vue/compiler-dom": "npm:^3.4.0"
     "@vue/shared": "npm:^3.4.0"
     computeds: "npm:^0.0.1"
@@ -4453,7 +4483,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10c0/fd040d1c7c3c52b88ed607f467beb86ac65b716918c32e1c995017deb00daf4636e616a9a63e8dce23699718bf0011e2327a5873c1ec638dab8e9a7760d70e8c
+  checksum: 10c0/2922c45ba2da13b00f85bf2ac4deaa50396ffa1737e9574ddddcbf411960f7e8b5225ba68dc056ba5b08030dd30ab057d4f7478103e0f44de0d7df14898d595c
   languageName: node
   linkType: hard
 
@@ -6301,10 +6331,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"effect@npm:^3.1.4":
-  version: 3.1.4
-  resolution: "effect@npm:3.1.4"
-  checksum: 10c0/2f2aa2423fc9def519e3a7891fa65c6890c2c6c6cf8cd73c97dc3b6f39113b29c3243f1c73d53cfbfa9b3dbc70a7ea47c34e16acd1559cac3c82e2d20144d9c5
+"effect@npm:^3.1.5":
+  version: 3.1.5
+  resolution: "effect@npm:3.1.5"
+  checksum: 10c0/d03eea4b403cbe057ecc60c60fe9a3ef58e541bd79eaf4e8165db4abf436e7928cdad3553ad325c054457c60b5ce91fb436aa06c6df822dd0943d251c2a77a99
   languageName: node
   linkType: hard
 
@@ -6425,12 +6455,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild-wasm@npm:^0.21.2":
-  version: 0.21.2
-  resolution: "esbuild-wasm@npm:0.21.2"
+"esbuild-wasm@npm:^0.21.3":
+  version: 0.21.3
+  resolution: "esbuild-wasm@npm:0.21.3"
   bin:
     esbuild: bin/esbuild
-  checksum: 10c0/8e75487334ce26abf6098a2e53cd40e25ffbe9c4ab83de4c826b1aab9febe8313eea5a347f98f943c4684355400b18c68a18764d44e831d003f82c4d8f62fed7
+  checksum: 10c0/2afbd5a868cfa73c17aa57cd7756dee021e9013db122ac0d434770376fcbd8daba193d764b9fe38e00e408f5867435df81806e8db947bf55efcad12eaa16b882
   languageName: node
   linkType: hard
 
@@ -8070,10 +8100,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hono@npm:^4.3.6":
-  version: 4.3.6
-  resolution: "hono@npm:4.3.6"
-  checksum: 10c0/2e27eb1e90b392a5884af573179d29e3f717f5e803c2b90f1383488f42bc986810e8e714d5bb1205935fda1d3e9944b3262aed88e852ea44d0e13d799474fa5b
+"hono@npm:^4.3.7":
+  version: 4.3.7
+  resolution: "hono@npm:4.3.7"
+  checksum: 10c0/bd7f982f9f0756f5d0c3e2b0ef92dc124b99d0d1508714d2e7bba5e78cc29dcf975ab4d245440779e263e9f6af533afa03493e2a9070cd81ce61fb1312f7ec81
   languageName: node
   linkType: hard
 
@@ -10520,10 +10550,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"picocolors@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "picocolors@npm:1.0.0"
-  checksum: 10c0/20a5b249e331c14479d94ec6817a182fd7a5680debae82705747b2db7ec50009a5f6648d0621c561b0572703f84dbef0858abcbd5856d3c5511426afcb1961f7
+"picocolors@npm:^1.0.0, picocolors@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "picocolors@npm:1.0.1"
+  checksum: 10c0/c63cdad2bf812ef0d66c8db29583802355d4ca67b9285d846f390cc15c2f6ccb94e8cb7eb6a6e97fc5990a6d3ad4ae42d86c84d3146e667c739a4234ed50d400
   languageName: node
   linkType: hard
 
@@ -11700,17 +11730,17 @@ __metadata:
   resolution: "script-provider@workspace:packages/script-provider"
   dependencies:
     "@cloudflare/workers-types": "npm:4.20240512.0"
-    "@effect/opentelemetry": "npm:^0.34.4"
+    "@effect/opentelemetry": "npm:^0.34.5"
     "@hono/zod-validator": "npm:0.2.1"
     "@microlabs/otel-cf-workers": "npm:^1.0.0-rc.36"
     "@opentelemetry/api": "npm:~1.6.0"
-    "@opentelemetry/resources": "npm:^1.23.0"
-    "@opentelemetry/semantic-conventions": "npm:^1.23.0"
+    "@opentelemetry/resources": "npm:^1.24.1"
+    "@opentelemetry/semantic-conventions": "npm:^1.24.1"
     "@ts-rest/core": "npm:^3.45.2"
     "@urql/core": "npm:^5.0.3"
-    effect: "npm:^3.1.4"
-    esbuild-wasm: "npm:^0.21.2"
-    hono: "npm:^4.3.6"
+    effect: "npm:^3.1.5"
+    esbuild-wasm: "npm:^0.21.3"
+    hono: "npm:^4.3.7"
     msw: "npm:2.3.0"
     proper-tags: "npm:^2.0.2"
     shared: "workspace:*"
@@ -11962,9 +11992,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"size-limit@npm:11.1.3":
-  version: 11.1.3
-  resolution: "size-limit@npm:11.1.3"
+"size-limit@npm:11.1.4":
+  version: 11.1.4
+  resolution: "size-limit@npm:11.1.4"
   dependencies:
     bytes-iec: "npm:^3.1.1"
     chokidar: "npm:^3.6.0"
@@ -11972,10 +12002,10 @@ __metadata:
     jiti: "npm:^1.21.0"
     lilconfig: "npm:^3.1.1"
     nanospinner: "npm:^1.1.0"
-    picocolors: "npm:^1.0.0"
+    picocolors: "npm:^1.0.1"
   bin:
     size-limit: bin.js
-  checksum: 10c0/df4229881008f8e7d2445e967f89aa64655af5e709788ae40d0c3c0ed921825e57ab539112529ee462d139767056ffe5ddb629fd4e38910d2414de24eeac1aba
+  checksum: 10c0/1475db1203ae6433f2bb02dfa1e78f8f47a740617f0e30333b4c0ae5298102847945154af7c544fa8d8761bb55815e255ec1a8c0832222c3694c175889a00def
   languageName: node
   linkType: hard
 
@@ -13546,18 +13576,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-tsc@npm:2.0.17":
-  version: 2.0.17
-  resolution: "vue-tsc@npm:2.0.17"
+"vue-tsc@npm:2.0.19":
+  version: 2.0.19
+  resolution: "vue-tsc@npm:2.0.19"
   dependencies:
-    "@volar/typescript": "npm:~2.2.2"
-    "@vue/language-core": "npm:2.0.17"
+    "@volar/typescript": "npm:~2.2.4"
+    "@vue/language-core": "npm:2.0.19"
     semver: "npm:^7.5.4"
   peerDependencies:
     typescript: "*"
   bin:
     vue-tsc: bin/vue-tsc.js
-  checksum: 10c0/47a327357156a4a6e4e88fcb515eec19f15a5072df615a5a8f2f59ae69aa53ced68a0220bca1751c9929c6a708f698c7d74f009f1cc04bc8510885453d4193f4
+  checksum: 10c0/7f49ab40fbb171fe38f470cde29268c940fd74adb3c5b5200902a6220baa56b152a13622089a55f47cfc2989a34dd5e29ff2e0953f2de8c3697b6d99d6ad3694
   languageName: node
   linkType: hard
 

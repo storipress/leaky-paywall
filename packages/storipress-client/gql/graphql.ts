@@ -1811,6 +1811,8 @@ export type Mutation = {
    * and this will automatically delete the old one
    */
   generateNewstandKey: Scalars['String']['output']
+  /** generate Paragon auth token */
+  generateParagonToken: Scalars['String']['output']
   /** get slack channels list */
   getSlackChannelsList: Array<SlackChannel>
   /** user hide current request publication */
@@ -2920,6 +2922,9 @@ export type ProphetDashboardData = {
   article_viewed: Scalars['Int']['output']
   email_collected: Scalars['Int']['output']
   email_collected_ratio: Scalars['Float']['output']
+  email_replied?: Maybe<Scalars['Int']['output']>
+  email_replied_ratio?: Maybe<Scalars['Float']['output']>
+  email_sent?: Maybe<Scalars['Int']['output']>
 }
 
 export type ProphetMonthOnMonth = {
