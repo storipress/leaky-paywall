@@ -5,5 +5,6 @@ const props = defineProps<AvatarImageProps>()
 </script>
 
 <template>
-  <AvatarImage v-bind="props" class="h-full max-w-32 object-cover md:max-w-48" />
+  <!-- w-full is required for properly style on Safari -->
+  <AvatarImage v-bind="props" class="h-full w-full max-w-32 object-cover md:max-w-48" />
 </template>
