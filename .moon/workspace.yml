@@ -12,9 +12,12 @@
 # path to the project folder as the map value. File paths are relative from the workspace root,
 # and cannot reference projects located outside the workspace boundary.
 projects:
-  - .
-  - terraform
-  - packages/*
+  leaky-paywall: .
+  terraform: terraform
+  script-provider: packages/script-provider
+  shared: packages/shared
+  storipress-client: packages/storipress-client
+  version-proxy: packages/version-proxy
 
 # Configures the version control system to utilize within the workspace. A VCS
 # is required for determining touched (added, modified, etc) files, calculating file hashes,
