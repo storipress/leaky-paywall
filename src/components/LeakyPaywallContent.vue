@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Config } from '~/stores/config'
+import type { Config } from 'shared/schema'
 
 export interface Props {
   config: Pick<Config, 'dismissible' | 'logo' | 'primaryColor' | 'title' | 'description'>

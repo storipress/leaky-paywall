@@ -8,12 +8,11 @@ import { configSchema } from 'shared/schema'
 import { $config } from '~/stores/config'
 
 const open = ref(false)
-const typedSchema = toTypedSchema(
-  configSchema.omit({ freeLimit: true }).extend({
-    freeLimitQuota: z.coerce.number(),
-    freeLimitInterval: z.union([z.literal('inf'), z.coerce.number()]),
-  }),
-)
+const formSchema = configSchema.omit({ freeLimit: true }).extend({
+  freeLimitQuota: z.coerce.number(),
+  freeLimitInterval: z.union([z.literal('inf'), z.coerce.number()]),
+})
+const typedSchema = toTypedSchema(formSchema)
 const initConfig = $config.get()
 const form = useForm({
   initialValues: {
@@ -136,6 +135,15 @@ function resetEvents() {
                 <FormLabel>Days to reset free limit</FormLabel>
                 <FormControl>
                   <Input v-bind="componentField" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            </FormField>
+            <FormField v-slot="{ componentField }" name="paywallTriggerDepth">
+              <FormItem>
+                <FormLabel>Paywall trigger depth</FormLabel>
+                <FormControl>
+                  <Input v-bind="componentField" type="number" step="0.01" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
