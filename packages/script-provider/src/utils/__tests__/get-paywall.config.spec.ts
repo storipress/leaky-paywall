@@ -114,7 +114,7 @@ it('can response config json without new config', async () => {
       quota: 7,
     },
     paywallTrigger: {
-      type: 'viewport',
+      type: 'article',
       value: 0.45,
     },
     description: 'Hit limit cta',
@@ -171,7 +171,7 @@ it('can use title config', async () => {
       quota: 7,
     },
     paywallTrigger: {
-      type: 'viewport',
+      type: 'article',
       value: 0.45,
     },
     description: 'Hit limit cta',

@@ -15,7 +15,7 @@ window.SP_PAYWALL = {
     quota: 3,
   },
   paywallTrigger: {
-    type: 'viewport',
+    type: 'article',
     value: 0.45,
   },
   flags: {

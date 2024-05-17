@@ -23,7 +23,7 @@ export const paywallConfig = z.object({
   brand_color: z.string(),
   logo: z.string().optional().default(''),
   paywall_trigger: paywallTrigger.optional().default(() => ({
-    type: 'viewport' as const,
+    type: 'article' as const,
     offset: 0.45,
   })),
 })

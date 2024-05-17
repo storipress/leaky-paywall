@@ -45,7 +45,7 @@ export const configSchema = z.object({
       .pipe(freeLimitSchema),
   ]),
   paywallTrigger: paywallTriggerSchema.optional().default(() => ({
-    type: 'viewport' as const,
+    type: 'article' as const,
     value: 0.45,
   })),
   clientId: z.string(),

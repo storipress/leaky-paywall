@@ -17,7 +17,7 @@ const DEFAULT_VALUES: Config = {
     quota: 1,
   },
   paywallTrigger: {
-    type: 'viewport',
+    type: 'article',
     value: 0.45,
   },
   pathPattern: null,
