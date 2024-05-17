@@ -2,7 +2,7 @@ import { $ } from 'zx'
 
 $.verbose = true
 
-await $`yarn moon run shared:build`
+await $({ stdio: 'inherit' })`moon run shared:build`
 await $`vite build`
 await $`vite build --mode=lib`
 await $`node esbuild.config.js`

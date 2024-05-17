@@ -120,9 +120,14 @@ tasks:
       - ~:lib-analyze
     platform: node
   deploy:
-    command: noop
+    command: cp lib/leaky-paywall.min.js dist
+    inputs:
+      - lib/leaky-paywall.min.js
+    outputs:
+      - dist/leaky-paywall.min.js
     deps:
       - ~:minify
+      - ~:build
   size:
     command:
       - size-limit

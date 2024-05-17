@@ -5,7 +5,7 @@
   "private": true,
   "packageManager": "yarn@4.2.2",
   "engines": {
-    "node": "20.12.1"
+    "node": "20.13.1"
   },
   "workspaces": [
     ".",
@@ -19,7 +19,7 @@
     "build:lib": "moon run minify",
     "test": "moon run test --",
     "test:coverage": "moon run test-coverage --",
-    "deploy": "tsx scripts/deploy.ts"
+    "deploy": "moon run deploy --"
   },
   "size-limit": [
     {
