@@ -119,7 +119,7 @@ useEventListener(window, 'wheel', (event) => {
 })
 
 const isAllowFree = computed(() => !isOverFreeLimit.value || paywall.value.read.includes(currentReadIdentifier.value))
-const isScrollOverThreshold = computedEager(() => y.value > height.value * 0.45)
+const isScrollOverThreshold = computedEager(() => y.value > height.value * config.value.paywallTriggerDepth)
 
 // We need paywall if meet the follow conditions
 // 1. current page is article

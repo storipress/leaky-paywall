@@ -32,6 +32,7 @@ export const configSchema = z.object({
       }))
       .pipe(freeLimitSchema),
   ]),
+  paywallTriggerDepth: z.number().optional().default(0.45),
   clientId: z.string(),
   dismissible: z.boolean().optional().default(false),
   all: z.boolean().optional().default(false),

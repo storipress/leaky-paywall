@@ -4,8 +4,8 @@ import { toast } from 'vue-sonner'
 import { Field as FormField, useForm } from 'vee-validate'
 import { slugifyWithCounter } from '@sindresorhus/slugify'
 import { z } from 'zod'
-import { values } from 'remeda'
-import { $config, configSchema } from '~/stores/config'
+import { configSchema } from 'shared/schema'
+import { $config } from '~/stores/config'
 
 const open = ref(false)
 const typedSchema = toTypedSchema(
