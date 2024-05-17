@@ -1,4 +1,6 @@
-export function useTrackScrollDepth(articleEl: ComputedRef<HTMLElement | undefined>, threshold = 10) {
+import type { Ref } from 'vue'
+
+export function useTrackScrollDepth(articleEl: Readonly<Ref<HTMLElement | undefined>>, threshold = 10) {
   const maxPercentage = ref(0)
   const percentage = ref<number>()
 
@@ -26,6 +28,7 @@ export function useTrackScrollDepth(articleEl: ComputedRef<HTMLElement | undefin
   })
 
   return {
+    lastPercentage,
     percentage,
   }
 }

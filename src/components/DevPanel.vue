@@ -8,9 +8,11 @@ import { configSchema } from 'shared/schema'
 import { $config } from '~/stores/config'
 
 const open = ref(false)
-const formSchema = configSchema.omit({ freeLimit: true }).extend({
+const formSchema = configSchema.omit({ freeLimit: true, paywallTrigger: true }).extend({
   freeLimitQuota: z.coerce.number(),
   freeLimitInterval: z.union([z.literal('inf'), z.coerce.number()]),
+  paywallTriggerType: z.enum(['viewport', 'article']),
+  paywallTriggerValue: z.number(),
 })
 const typedSchema = toTypedSchema(formSchema)
 const initConfig = $config.get()
@@ -19,6 +21,8 @@ const form = useForm({
     ...initConfig,
     freeLimitInterval: initConfig.freeLimit.interval,
     freeLimitQuota: initConfig.freeLimit.quota,
+    paywallTriggerType: initConfig.paywallTrigger.type,
+    paywallTriggerValue: initConfig.paywallTrigger.value,
   },
   validationSchema: typedSchema,
 })
@@ -30,12 +34,16 @@ whenever(open, () => {
 const onSubmit = form.handleSubmit((values) => {
   // eslint-disable-next-line no-console
   console.log(values)
-  const { freeLimitInterval, freeLimitQuota, ...rest } = values
+  const { freeLimitInterval, freeLimitQuota, paywallTriggerType, paywallTriggerValue, ...rest } = values
   $config.set({
     ...rest,
     freeLimit: {
       quota: freeLimitQuota,
       interval: freeLimitInterval,
+    },
+    paywallTrigger: {
+      type: paywallTriggerType,
+      value: paywallTriggerValue,
     },
   })
   open.value = false
@@ -139,9 +147,28 @@ function resetEvents() {
                 <FormMessage />
               </FormItem>
             </FormField>
-            <FormField v-slot="{ componentField }" name="paywallTriggerDepth">
+            <FormField v-slot="{ componentField }" name="paywallTriggerType">
               <FormItem>
-                <FormLabel>Paywall trigger depth</FormLabel>
+                <FormLabel>Paywall trigger type</FormLabel>
+                <Select v-bind="componentField">
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Paywall trigger type" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectGroup>
+                      <SelectItem value="viewport"> Viewport </SelectItem>
+                      <SelectItem value="article"> Article </SelectItem>
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            </FormField>
+            <FormField v-slot="{ componentField }" name="paywallTriggerValue">
+              <FormItem>
+                <FormLabel>Paywall trigger value</FormLabel>
                 <FormControl>
                   <Input v-bind="componentField" type="number" step="0.01" />
                 </FormControl>

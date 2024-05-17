@@ -11,7 +11,10 @@ export const DEFAULT_CONFIG: Config = {
     quota: 3,
     interval: 7,
   },
-  paywallTriggerDepth: 0.45,
+  paywallTrigger: {
+    type: 'viewport',
+    value: 0.45,
+  },
   pathPattern: null,
   all: false,
   dismissible: false,

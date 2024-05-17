@@ -15,6 +15,18 @@ export const freeLimitSchema = z.object({
 
 export type FreeLimit = z.infer<typeof freeLimitSchema>
 
+const viewportPaywallTrigger = z.object({
+  type: z.literal('viewport'),
+  value: z.number(),
+})
+
+const articlePaywallTrigger = z.object({
+  type: z.literal('article'),
+  value: z.number(),
+})
+
+const paywallTriggerSchema = z.discriminatedUnion('type', [viewportPaywallTrigger, articlePaywallTrigger])
+
 export const configSchema = z.object({
   flags: flagsSchema.optional().default({
     paywall: true,
@@ -32,7 +44,10 @@ export const configSchema = z.object({
       }))
       .pipe(freeLimitSchema),
   ]),
-  paywallTriggerDepth: z.number().optional().default(0.45),
+  paywallTrigger: paywallTriggerSchema.optional().default(() => ({
+    type: 'viewport' as const,
+    value: 0.45,
+  })),
   clientId: z.string(),
   dismissible: z.boolean().optional().default(false),
   all: z.boolean().optional().default(false),

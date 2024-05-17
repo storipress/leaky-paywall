@@ -9,10 +9,16 @@ interface DebugInfo {
    * scroll height
    */
   _y: number
+
   /**
-   * is scroll over threshold
+   * is viewport scroll over threshold
    */
   _s: boolean
+
+  /**
+   * is article scroll over threshold
+   */
+  _b: boolean
 
   /**
    * height
