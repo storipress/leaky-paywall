@@ -16,6 +16,10 @@ const DEFAULT_VALUES: Config = {
     interval: 7,
     quota: 1,
   },
+  paywallTrigger: {
+    type: 'viewport',
+    value: 0.45,
+  },
   pathPattern: null,
   all: false,
   clientId: '',
@@ -44,6 +48,10 @@ function extractPaywallConfigFromAPI(maybePaywallConfig: unknown): Effect.Effect
         freeLimit: {
           interval: values.free_limit.interval,
           quota: values.free_limit.quota,
+        },
+        paywallTrigger: {
+          type: values.paywall_trigger.type,
+          value: values.paywall_trigger.offset,
         },
         logo: values.logo,
         dismissible: values.dismissible,
