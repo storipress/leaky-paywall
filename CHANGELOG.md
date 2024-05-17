@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.2](https://github.com/storipress/leaky-paywall/compare/v1.9.1...v1.9.2) (2024-05-17)
+
+
+### Bug Fixes
+
+* fix safari image issue ([9ef8206](https://github.com/storipress/leaky-paywall/commit/9ef82066580204998c7ddf26cd7a8b12d3e6649c))
+
 ## [1.9.1](https://github.com/storipress/leaky-paywall/compare/v1.9.0...v1.9.1) (2024-05-16)
 
 
