@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.1](https://github.com/storipress/leaky-paywall/compare/v1.10.0...v1.10.1) (2024-05-17)
+
+
+### Bug Fixes
+
+* default related to article ([92ee182](https://github.com/storipress/leaky-paywall/commit/92ee18216014b19755459a5b3feb3da59cf3205c))
+
 ## [1.10.0](https://github.com/storipress/leaky-paywall/compare/v1.9.2...v1.10.0) (2024-05-17)
 
 
