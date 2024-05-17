@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.0](https://github.com/storipress/leaky-paywall/compare/v1.9.2...v1.10.0) (2024-05-17)
+
+
+### Features
+
+* variable trigger depth ([#316](https://github.com/storipress/leaky-paywall/issues/316)) ([66e2920](https://github.com/storipress/leaky-paywall/commit/66e292075e5be687c6ed92b80a9fb2b6c6626baa))
+
 ## [1.9.2](https://github.com/storipress/leaky-paywall/compare/v1.9.1...v1.9.2) (2024-05-17)
 
 
