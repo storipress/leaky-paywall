@@ -5,7 +5,7 @@
   "private": true,
   "packageManager": "yarn@4.2.2",
   "engines": {
-    "node": "20.12.1"
+    "node": "20.13.1"
   },
   "workspaces": [
     ".",
@@ -19,7 +19,7 @@
     "build:lib": "moon run minify",
     "test": "moon run test --",
     "test:coverage": "moon run test-coverage --",
-    "deploy": "tsx scripts/deploy.ts"
+    "deploy": "moon run deploy --"
   },
   "size-limit": [
     {
@@ -31,7 +31,7 @@
     "@nanostores/persistent": "^0.10.1",
     "@nanostores/vue": "^0.10.0",
     "@urql/vue": "^1.2.0",
-    "@vee-validate/zod": "^4.12.8",
+    "@vee-validate/zod": "4.12.8",
     "@vueuse/math": "^10.9.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -40,17 +40,19 @@
     "destr": "^2.0.3",
     "effect": "^3.1.5",
     "graphql-web-lite": "^16.6.0-4",
+    "lucide-vue-next": "0.378.0",
     "nanostores": "^0.10.3",
     "p-mutex": "0.1.0",
     "radix-vue": "^1.7.4",
+    "shared": "workspace:*",
     "storipress-client": "workspace:^",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
     "ts-pattern": "5.1.1",
-    "vee-validate": "^4.12.8",
+    "vee-validate": "4.12.8",
     "vue": "^3.4.27",
     "vue-sonner": "^1.1.2",
-    "zod": "^3.23.8"
+    "zod": "3.23.8"
   },
   "devDependencies": {
     "@0no-co/graphqlsp": "1.12.3",

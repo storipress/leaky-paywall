@@ -7,15 +7,25 @@ const freeLimit = z.object({
   quota: z.number(),
 })
 
+const paywallTrigger = z.object({
+  type: z.enum(['viewport', 'article']),
+  offset: z.number(),
+})
+
 /**
  * schema for `site.paywall_config`
  */
 export const paywallConfig = z.object({
+  hit_limit_title: z.string().optional().default(''),
   hit_limit_cta: z.string(),
   free_limit: freeLimit,
   dismissible: z.boolean(),
   brand_color: z.string(),
   logo: z.string().optional().default(''),
+  paywall_trigger: paywallTrigger.optional().default(() => ({
+    type: 'viewport' as const,
+    offset: 0.45,
+  })),
 })
 
 export type PaywallConfig = z.infer<typeof paywallConfig>

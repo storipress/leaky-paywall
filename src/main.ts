@@ -14,6 +14,10 @@ window.SP_PAYWALL = {
     interval: 7,
     quota: 3,
   },
+  paywallTrigger: {
+    type: 'viewport',
+    value: 0.45,
+  },
   flags: {
     paywall: true,
     tracking: true,

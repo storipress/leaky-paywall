@@ -1,4 +1,5 @@
 import { expect, it } from 'vitest'
+import { configSchema } from 'shared/schema'
 
 it('can parse config', () => {
   const fixture = {

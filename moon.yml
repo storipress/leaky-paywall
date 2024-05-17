@@ -21,6 +21,7 @@ tasks:
     deps:
       - ~:typecheck
       - storipress-client:generate
+      - shared:build
     platform: node
   lib:
     env:
@@ -40,6 +41,7 @@ tasks:
     deps:
       - ~:typecheck
       - storipress-client:generate
+      - shared:build
     platform: node
   debug-lib:
     extends: lib
@@ -118,9 +120,14 @@ tasks:
       - ~:lib-analyze
     platform: node
   deploy:
-    command: noop
+    command: cp lib/leaky-paywall.min.js dist
+    inputs:
+      - lib/leaky-paywall.min.js
+    outputs:
+      - dist/leaky-paywall.min.js
     deps:
       - ~:minify
+      - ~:build
   size:
     command:
       - size-limit
@@ -137,12 +144,14 @@ tasks:
       - yarn.lock
     deps:
       - storipress-client:generate
+      - shared:build
   test:
     command: vitest
     platform: node
     deps:
       - storipress-client:generate
       - version-proxy:build
+      - shared:build
     inputs:
       - '@globs(sources)'
       - vite.config.ts

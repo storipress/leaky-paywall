@@ -40,7 +40,7 @@ useTrackLink(
   }),
 )
 
-const { percentage } = useTrackScrollDepth(computed(() => foundArticle.value?.element as HTMLElement))
+const { percentage, lastPercentage } = useTrackScrollDepth(computed(() => foundArticle.value?.element as HTMLElement))
 
 whenever(percentage, (percentage) => {
   sendTrack('article.read', {
@@ -119,14 +119,31 @@ useEventListener(window, 'wheel', (event) => {
 })
 
 const isAllowFree = computed(() => !isOverFreeLimit.value || paywall.value.read.includes(currentReadIdentifier.value))
-const isScrollOverThreshold = computedEager(() => y.value > height.value * 0.45)
+const isViewportOverThreshold = computedEager(() => {
+  if (config.value.paywallTrigger.type !== 'viewport') {
+    return false
+  }
+
+  return y.value > height.value * config.value.paywallTrigger.value
+})
+const isArticleScrollOverThreshold = computedEager(() => {
+  const scrollPercentage = lastPercentage.value
+  if (config.value.paywallTrigger.type !== 'article' || scrollPercentage == null) {
+    return false
+  }
+
+  // we already times 100 here, need to apply to paywallTrigger config
+  return scrollPercentage > config.value.paywallTrigger.value * 100
+})
 
 // We need paywall if meet the follow conditions
 // 1. current page is article
 // 2. user is run out of free read limit and current article is not read before
-// 3. user scroll over 40%
+// 3. user scroll match trigger condition
 // We need to measure scroll top first, or paywall will not appear because of cache in Vue
-const isNeedPaywall = computed(() => isScrollOverThreshold.value && isArticle.value && !isAllowFree.value)
+const isNeedPaywall = computed(
+  () => (isViewportOverThreshold.value || isArticleScrollOverThreshold.value) && isArticle.value && !isAllowFree.value,
+)
 
 whenever(
   // When user scroll over 40% will open paywall
@@ -158,7 +175,7 @@ whenever(
 
 // Track scroll over threshold
 whenever(
-  isScrollOverThreshold,
+  isViewportOverThreshold,
   () => {
     sendTrack('paywall.reached', {
       pathname: location.value.pathname ?? '',
@@ -174,7 +191,8 @@ onMounted(() => {
   // @ts-expect-error inject global
   window.__spph = reactive({
     _y: y,
-    _s: isScrollOverThreshold,
+    _s: isViewportOverThreshold,
+    _b: isArticleScrollOverThreshold,
     _a: foundArticle,
     _h: height,
     _d: isNeedPaywall,

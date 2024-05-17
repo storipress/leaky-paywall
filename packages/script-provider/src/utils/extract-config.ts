@@ -16,6 +16,10 @@ const DEFAULT_VALUES: Config = {
     interval: 7,
     quota: 1,
   },
+  paywallTrigger: {
+    type: 'viewport',
+    value: 0.45,
+  },
   pathPattern: null,
   all: false,
   clientId: '',
@@ -30,7 +34,12 @@ export function fromAPIFormat(clientId: string, apiValues: RawAPIInput): Effect.
   return pipe(
     Effect.sync(() => destr(apiValues.siteSubscriptionInfo.paywall_config)),
     Effect.flatMap((maybePaywallConfig) => extractPaywallConfigFromAPI(maybePaywallConfig)),
-    Effect.map((values) => ({ ...DEFAULT_VALUES, ...values, title: apiValues.siteSubscriptionInfo.name, clientId })),
+    Effect.map((values) => ({
+      ...DEFAULT_VALUES,
+      ...values,
+      title: values.title || apiValues.siteSubscriptionInfo.name,
+      clientId,
+    })),
   )
 }
 
@@ -45,8 +54,13 @@ function extractPaywallConfigFromAPI(maybePaywallConfig: unknown): Effect.Effect
           interval: values.free_limit.interval,
           quota: values.free_limit.quota,
         },
+        paywallTrigger: {
+          type: values.paywall_trigger.type,
+          value: values.paywall_trigger.offset,
+        },
         logo: values.logo,
         dismissible: values.dismissible,
+        title: values.hit_limit_title,
       }
     }),
     Effect.catchAll(() => Effect.succeed({})),

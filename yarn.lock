@@ -3598,7 +3598,7 @@ __metadata:
     "@thedutchcoder/postcss-rem-to-px": "npm:0.0.2"
     "@types/eslint": "npm:8.56.10"
     "@urql/vue": "npm:^1.2.0"
-    "@vee-validate/zod": "npm:^4.12.8"
+    "@vee-validate/zod": "npm:4.12.8"
     "@vitejs/plugin-vue": "npm:5.0.4"
     "@vitest/coverage-v8": "npm:1.6.0"
     "@vitest/ui": "npm:1.6.0"
@@ -3617,6 +3617,7 @@ __metadata:
     graphql-web-lite: "npm:^16.6.0-4"
     happy-dom: "npm:14.11.0"
     lorem-ipsum: "npm:2.0.8"
+    lucide-vue-next: "npm:0.378.0"
     nanostores: "npm:^0.10.3"
     open-cli: "npm:8.0.0"
     p-mutex: "npm:0.1.0"
@@ -3628,6 +3629,7 @@ __metadata:
     remeda: "npm:1.61.0"
     rollup-plugin-visualizer: "npm:5.12.0"
     shadcn-vue: "npm:0.10.4"
+    shared: "workspace:*"
     size-limit: "npm:11.1.4"
     storipress-client: "workspace:^"
     tailwind-merge: "npm:^2.3.0"
@@ -3639,7 +3641,7 @@ __metadata:
     unplugin-auto-import: "npm:0.17.6"
     unplugin-macros: "npm:0.13.0"
     unplugin-vue-components: "npm:0.27.0"
-    vee-validate: "npm:^4.12.8"
+    vee-validate: "npm:4.12.8"
     vite: "npm:5.2.11"
     vite-plugin-graphql-codegen: "npm:3.3.6"
     vite-plugin-vue-devtools: "npm:7.2.0"
@@ -3648,7 +3650,7 @@ __metadata:
     vue-router: "npm:4.3.2"
     vue-sonner: "npm:^1.1.2"
     vue-tsc: "npm:2.0.19"
-    zod: "npm:^3.23.8"
+    zod: "npm:3.23.8"
     zx: "npm:8.1.0"
   languageName: unknown
   linkType: soft
@@ -4174,7 +4176,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vee-validate/zod@npm:^4.12.8":
+"@vee-validate/zod@npm:4.12.8":
   version: 4.12.8
   resolution: "@vee-validate/zod@npm:4.12.8"
   dependencies:
@@ -9303,6 +9305,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lucide-vue-next@npm:0.378.0":
+  version: 0.378.0
+  resolution: "lucide-vue-next@npm:0.378.0"
+  peerDependencies:
+    vue: ">=3.0.1"
+  checksum: 10c0/92bc54a861282b777f3b8dbc0475ea8a6abe65d9d3c78a782e9725a4bd542b6a103b76acbe55ba2d0ba1b8105a2b829e0770f2ef7ae61fd34672fa613611c4d8
+  languageName: node
+  linkType: hard
+
 "lz-string@npm:^1.5.0":
   version: 1.5.0
   resolution: "lz-string@npm:1.5.0"
@@ -13299,7 +13310,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vee-validate@npm:4.12.8, vee-validate@npm:^4.12.8":
+"vee-validate@npm:4.12.8":
   version: 4.12.8
   resolution: "vee-validate@npm:4.12.8"
   dependencies:
@@ -14047,7 +14058,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:3.23.8, zod@npm:^3.20.6, zod@npm:^3.22.4, zod@npm:^3.23.3, zod@npm:^3.23.8":
+"zod@npm:3.23.8, zod@npm:^3.20.6, zod@npm:^3.22.4, zod@npm:^3.23.3":
   version: 3.23.8
   resolution: "zod@npm:3.23.8"
   checksum: 10c0/8f14c87d6b1b53c944c25ce7a28616896319d95bc46a9660fe441adc0ed0a81253b02b5abdaeffedbeb23bdd25a0bf1c29d2c12dd919aef6447652dd295e3e69
