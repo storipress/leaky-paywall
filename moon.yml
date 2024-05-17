@@ -21,6 +21,7 @@ tasks:
     deps:
       - ~:typecheck
       - storipress-client:generate
+      - shared:build
     platform: node
   lib:
     env:
@@ -40,6 +41,7 @@ tasks:
     deps:
       - ~:typecheck
       - storipress-client:generate
+      - shared:build
     platform: node
   debug-lib:
     extends: lib
@@ -137,12 +139,14 @@ tasks:
       - yarn.lock
     deps:
       - storipress-client:generate
+      - shared:build
   test:
     command: vitest
     platform: node
     deps:
       - storipress-client:generate
       - version-proxy:build
+      - shared:build
     inputs:
       - '@globs(sources)'
       - vite.config.ts
