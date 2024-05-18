@@ -75,7 +75,7 @@
     "@vueuse/core": "10.9.0",
     "autoprefixer": "10.4.19",
     "esbuild": "0.21.3",
-    "eslint": "9.2.0",
+    "eslint": "9.3.0",
     "happy-dom": "14.11.0",
     "lorem-ipsum": "2.0.8",
     "open-cli": "8.0.0",
