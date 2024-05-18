@@ -3577,7 +3577,7 @@ __metadata:
     "@size-limit/file": "npm:11.1.4"
     "@tailwindcss/typography": "npm:0.5.13"
     "@testing-library/jest-dom": "npm:6.4.5"
-    "@testing-library/vue": "npm:8.0.3"
+    "@testing-library/vue": "npm:8.1.0"
     "@thedutchcoder/postcss-rem-to-px": "npm:0.0.2"
     "@types/eslint": "npm:8.56.10"
     "@urql/vue": "npm:^1.2.0"
@@ -3796,9 +3796,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/vue@npm:8.0.3":
-  version: 8.0.3
-  resolution: "@testing-library/vue@npm:8.0.3"
+"@testing-library/vue@npm:8.1.0":
+  version: 8.1.0
+  resolution: "@testing-library/vue@npm:8.1.0"
   dependencies:
     "@babel/runtime": "npm:^7.23.2"
     "@testing-library/dom": "npm:^9.3.3"
@@ -3809,7 +3809,7 @@ __metadata:
   peerDependenciesMeta:
     "@vue/compiler-sfc":
       optional: true
-  checksum: 10c0/cbd6dde83e6704d9fa2b3726138e84885c35a7fba3deacae2ebfb0aa3f9e0877579f15f0e4a5ebcaef90156e5e498b09663b0b2ee73991b832cde68c34461965
+  checksum: 10c0/b7547bae3a957f541174503c8274572b240e9ba58fdeaa20aa1f95decee2a124ff3c90d83c2f11a9c5fb7689f744786e79b553a26f81fe8691b5bd58a74c813e
   languageName: node
   linkType: hard
 
