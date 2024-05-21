@@ -40,7 +40,7 @@
     "destr": "^2.0.3",
     "effect": "^3.1.5",
     "graphql-web-lite": "^16.6.0-4",
-    "lucide-vue-next": "0.378.0",
+    "lucide-vue-next": "0.379.0",
     "nanostores": "^0.10.3",
     "p-mutex": "0.1.0",
     "radix-vue": "^1.7.4",
