@@ -1078,13 +1078,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@effect/vitest@npm:0.5.2":
-  version: 0.5.2
-  resolution: "@effect/vitest@npm:0.5.2"
+"@effect/vitest@npm:0.5.3":
+  version: 0.5.3
+  resolution: "@effect/vitest@npm:0.5.3"
   peerDependencies:
-    effect: ^3.2.2
+    effect: ^3.2.3
     vitest: ^1.4.0
-  checksum: 10c0/a85dadcbbee947a35f96dc86b77f2ac403ff5513669e22f99661f42786933930f3fa3db4070d92ac62aba5e05b78da0bc4de1db3bbf1579e2cb55acecc5f98f3
+  checksum: 10c0/f1835a52dcf00d944264429fb9250e1f8528cc18c22b386eb7d0d6253ff8c06595638e6c240cdf3fe9be18584cdd3239fcc7c6c61438dd916c360a82bc59a5c2
   languageName: node
   linkType: hard
 
@@ -3566,7 +3566,7 @@ __metadata:
   dependencies:
     "@0no-co/graphqlsp": "npm:1.12.3"
     "@antfu/eslint-config": "npm:2.18.1"
-    "@effect/vitest": "npm:0.5.2"
+    "@effect/vitest": "npm:0.5.3"
     "@egoist/tailwindcss-icons": "npm:1.8.0"
     "@formkit/auto-animate": "npm:^0.8.2"
     "@iconify-json/lucide": "npm:1.1.187"
