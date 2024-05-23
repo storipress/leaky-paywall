@@ -59,7 +59,7 @@
     "@antfu/eslint-config": "2.18.1",
     "@effect/vitest": "0.5.4",
     "@egoist/tailwindcss-icons": "1.8.0",
-    "@iconify-json/lucide": "1.1.187",
+    "@iconify-json/lucide": "1.1.188",
     "@moonrepo/cli": "1.24.6",
     "@sindresorhus/slugify": "2.2.1",
     "@size-limit/file": "11.1.4",
