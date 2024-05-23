@@ -3634,7 +3634,7 @@ __metadata:
     vue-sonner: "npm:^1.1.2"
     vue-tsc: "npm:2.0.19"
     zod: "npm:3.23.8"
-    zx: "npm:8.1.0"
+    zx: "npm:8.1.1"
   languageName: unknown
   linkType: soft
 
@@ -3958,12 +3958,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=20.12.11, @types/node@npm:^20.12.7":
-  version: 20.12.11
-  resolution: "@types/node@npm:20.12.11"
+"@types/node@npm:*, @types/node@npm:>=20.12.12, @types/node@npm:^20.12.7":
+  version: 20.12.12
+  resolution: "@types/node@npm:20.12.12"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10c0/efaa7b08c50ba6e6982ac7d531ba08d5935539ba76e954807df1ff9382a319ead7e003ccaca5ad7cf33ecf53f212507f7c1f2794bd2ff52df6365fef21f6e1fb
+  checksum: 10c0/f374b763c744e8f16e4f38cf6e2c0eef31781ec9228c9e43a6f267880fea420fab0a238b59f10a7cb3444e49547c5e3785787e371fc242307310995b21988812
   languageName: node
   linkType: hard
 
@@ -14039,12 +14039,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zx@npm:8.1.0":
-  version: 8.1.0
-  resolution: "zx@npm:8.1.0"
+"zx@npm:8.1.1":
+  version: 8.1.1
+  resolution: "zx@npm:8.1.1"
   dependencies:
     "@types/fs-extra": "npm:^11.0.4"
-    "@types/node": "npm:>=20.12.11"
+    "@types/node": "npm:>=20.12.12"
   dependenciesMeta:
     "@types/fs-extra":
       optional: true
@@ -14052,6 +14052,6 @@ __metadata:
       optional: true
   bin:
     zx: build/cli.js
-  checksum: 10c0/a833ccfb94889c900f127bb89cd537fc3a32eb5c0bda71ddba6e24d5f268926234c48855af8da4550646fa5cff876fe18ca835f24f2d4d8548b3ec21c253d372
+  checksum: 10c0/70a7f6cd8593ef188b51f378c1348ae2bb39dc40ccc96eaf9619b0f1d125ae31266d7116afb0db58d91b50b229fc6ffa697f6f036c8757cbe0c7d46e8bcfe193
   languageName: node
   linkType: hard
