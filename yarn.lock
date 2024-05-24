@@ -1053,7 +1053,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@effect/opentelemetry@npm:^0.34.12":
+"@effect/opentelemetry@npm:0.34.12":
   version: 0.34.12
   resolution: "@effect/opentelemetry@npm:0.34.12"
   peerDependencies:
@@ -1829,7 +1829,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floating-ui/dom@npm:^1.6.1, @floating-ui/dom@npm:^1.6.5":
+"@floating-ui/dom@npm:^1.5.4, @floating-ui/dom@npm:^1.6.1, @floating-ui/dom@npm:^1.6.5":
   version: 1.6.5
   resolution: "@floating-ui/dom@npm:1.6.5"
   dependencies:
@@ -1846,7 +1846,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floating-ui/vue@npm:^1.0.6":
+"@floating-ui/vue@npm:^1.0.4, @floating-ui/vue@npm:^1.0.6":
   version: 1.0.6
   resolution: "@floating-ui/vue@npm:1.0.6"
   dependencies:
@@ -1857,7 +1857,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@formkit/auto-animate@npm:^0.8.2":
+"@formkit/auto-animate@npm:0.8.2":
   version: 0.8.2
   resolution: "@formkit/auto-animate@npm:0.8.2"
   checksum: 10c0/0b24af241c229f37643cd62ea78fd7fddf621c06516cf62452035ea0bf489b6b53068eea47abb40b6bb3653bb91c1efad8b7257014a3559d26ad77b47b5337cb
@@ -2585,7 +2585,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@internationalized/date@npm:^3.5.4":
+"@internationalized/date@npm:^3.5.2, @internationalized/date@npm:^3.5.4":
   version: 3.5.4
   resolution: "@internationalized/date@npm:3.5.4"
   dependencies:
@@ -2704,7 +2704,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microlabs/otel-cf-workers@npm:^1.0.0-rc.36":
+"@microlabs/otel-cf-workers@npm:1.0.0-rc.36":
   version: 1.0.0-rc.36
   resolution: "@microlabs/otel-cf-workers@npm:1.0.0-rc.36"
   dependencies:
@@ -2824,7 +2824,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nanostores/persistent@npm:^0.10.1":
+"@nanostores/persistent@npm:0.10.1":
   version: 0.10.1
   resolution: "@nanostores/persistent@npm:0.10.1"
   peerDependencies:
@@ -2833,7 +2833,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nanostores/vue@npm:^0.10.0":
+"@nanostores/vue@npm:0.10.0":
   version: 0.10.0
   resolution: "@nanostores/vue@npm:0.10.0"
   peerDependencies:
@@ -3045,7 +3045,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@opentelemetry/resources@npm:^1.17.1, @opentelemetry/resources@npm:^1.24.1":
+"@opentelemetry/resources@npm:1.24.1, @opentelemetry/resources@npm:^1.17.1":
   version: 1.24.1
   resolution: "@opentelemetry/resources@npm:1.24.1"
   dependencies:
@@ -3123,7 +3123,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@opentelemetry/semantic-conventions@npm:1.24.1, @opentelemetry/semantic-conventions@npm:^1.17.1, @opentelemetry/semantic-conventions@npm:^1.24.1":
+"@opentelemetry/semantic-conventions@npm:1.24.1, @opentelemetry/semantic-conventions@npm:^1.17.1":
   version: 1.24.1
   resolution: "@opentelemetry/semantic-conventions@npm:1.24.1"
   checksum: 10c0/5a3707860b70df8430745ef4ef99810a6d61d770942c217ac25ef8d6840a6b17b943c1ebe4da4a118dee0e3b1e71da3c16e2790f3c3a7e7e6b171e8d1944f73e
@@ -3577,11 +3577,11 @@ __metadata:
     "@antfu/eslint-config": "npm:2.18.1"
     "@effect/vitest": "npm:0.5.5"
     "@egoist/tailwindcss-icons": "npm:1.8.0"
-    "@formkit/auto-animate": "npm:^0.8.2"
+    "@formkit/auto-animate": "npm:0.8.2"
     "@iconify-json/lucide": "npm:1.1.188"
     "@moonrepo/cli": "npm:1.24.6"
-    "@nanostores/persistent": "npm:^0.10.1"
-    "@nanostores/vue": "npm:^0.10.0"
+    "@nanostores/persistent": "npm:0.10.1"
+    "@nanostores/vue": "npm:0.10.0"
     "@sindresorhus/slugify": "npm:2.2.1"
     "@size-limit/file": "npm:11.1.4"
     "@tailwindcss/typography": "npm:0.5.13"
@@ -3589,44 +3589,44 @@ __metadata:
     "@testing-library/vue": "npm:8.1.0"
     "@thedutchcoder/postcss-rem-to-px": "npm:0.0.2"
     "@types/eslint": "npm:8.56.10"
-    "@urql/vue": "npm:^1.2.0"
+    "@urql/vue": "npm:1.2.0"
     "@vee-validate/zod": "npm:4.12.8"
     "@vitejs/plugin-vue": "npm:5.0.4"
     "@vitest/coverage-v8": "npm:1.6.0"
     "@vitest/ui": "npm:1.6.0"
     "@vue/devtools-api": "npm:7.2.1"
     "@vueuse/core": "npm:10.9.0"
-    "@vueuse/math": "npm:^10.9.0"
+    "@vueuse/math": "npm:10.9.0"
     autoprefixer: "npm:10.4.19"
-    class-variance-authority: "npm:^0.7.0"
-    clsx: "npm:^2.1.1"
+    class-variance-authority: "npm:0.7.0"
+    clsx: "npm:2.1.1"
     date-fns: "npm:3.6.0"
-    defu: "npm:^6.1.4"
-    destr: "npm:^2.0.3"
-    effect: "npm:^3.2.5"
+    defu: "npm:6.1.4"
+    destr: "npm:2.0.3"
+    effect: "npm:3.2.5"
     esbuild: "npm:0.21.3"
     eslint: "npm:9.3.0"
-    graphql-web-lite: "npm:^16.6.0-4"
+    graphql-web-lite: "npm:16.6.0-4"
     happy-dom: "npm:14.11.0"
     lorem-ipsum: "npm:2.0.8"
     lucide-vue-next: "npm:0.379.0"
-    nanostores: "npm:^0.10.3"
+    nanostores: "npm:0.10.3"
     open-cli: "npm:8.0.0"
     p-mutex: "npm:0.1.0"
     polished: "npm:4.3.1"
     prettier: "npm:3.2.5"
     prettier-plugin-tailwindcss: "npm:0.5.14"
     proper-tags: "npm:2.0.2"
-    radix-vue: "npm:^1.8.1"
+    radix-vue: "npm:1.7.4"
     remeda: "npm:1.61.0"
     rollup-plugin-visualizer: "npm:5.12.0"
     shadcn-vue: "npm:0.10.5"
     shared: "workspace:*"
     size-limit: "npm:11.1.4"
-    storipress-client: "workspace:^"
-    tailwind-merge: "npm:^2.3.0"
+    storipress-client: "workspace:*"
+    tailwind-merge: "npm:2.3.0"
     tailwindcss: "npm:3.4.3"
-    tailwindcss-animate: "npm:^1.0.7"
+    tailwindcss-animate: "npm:1.0.7"
     ts-pattern: "npm:5.1.2"
     tsx: "npm:4.11.0"
     typescript: "npm:5.4.5"
@@ -3638,9 +3638,9 @@ __metadata:
     vite-plugin-graphql-codegen: "npm:3.3.6"
     vite-plugin-vue-devtools: "npm:7.2.1"
     vitest: "npm:1.6.0"
-    vue: "npm:^3.4.27"
+    vue: "npm:3.4.27"
     vue-router: "npm:4.3.2"
-    vue-sonner: "npm:^1.1.2"
+    vue-sonner: "npm:1.1.2"
     vue-tsc: "npm:2.0.19"
     zod: "npm:3.23.8"
     zx: "npm:8.1.1"
@@ -3745,7 +3745,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/vue-virtual@npm:^3.5.0":
+"@tanstack/vue-virtual@npm:^3.1.3, @tanstack/vue-virtual@npm:^3.5.0":
   version: 3.5.0
   resolution: "@tanstack/vue-virtual@npm:3.5.0"
   dependencies:
@@ -3857,7 +3857,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ts-rest/core@npm:^3.45.2":
+"@ts-rest/core@npm:3.45.2":
   version: 3.45.2
   resolution: "@ts-rest/core@npm:3.45.2"
   peerDependencies:
@@ -4145,7 +4145,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@urql/core@npm:^5.0.0, @urql/core@npm:^5.0.3":
+"@urql/core@npm:5.0.3, @urql/core@npm:^5.0.0":
   version: 5.0.3
   resolution: "@urql/core@npm:5.0.3"
   dependencies:
@@ -4155,7 +4155,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@urql/vue@npm:^1.2.0":
+"@urql/vue@npm:1.2.0":
   version: 1.2.0
   resolution: "@urql/vue@npm:1.2.0"
   dependencies:
@@ -4561,7 +4561,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/math@npm:^10.9.0":
+"@vueuse/math@npm:10.9.0":
   version: 10.9.0
   resolution: "@vueuse/math@npm:10.9.0"
   dependencies:
@@ -5444,7 +5444,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"class-variance-authority@npm:^0.7.0":
+"class-variance-authority@npm:0.7.0":
   version: 0.7.0
   resolution: "class-variance-authority@npm:0.7.0"
   dependencies:
@@ -5554,7 +5554,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clsx@npm:^2.1.1":
+"clsx@npm:2.1.1":
   version: 2.1.1
   resolution: "clsx@npm:2.1.1"
   checksum: 10c0/c4c8eb865f8c82baab07e71bfa8897c73454881c4f99d6bc81585aecd7c441746c1399d08363dc096c550cceaf97bd4ce1e8854e1771e9998d9f94c4fe075839
@@ -6113,7 +6113,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"defu@npm:^6.1.2, defu@npm:^6.1.3, defu@npm:^6.1.4":
+"defu@npm:6.1.4, defu@npm:^6.1.2, defu@npm:^6.1.3, defu@npm:^6.1.4":
   version: 6.1.4
   resolution: "defu@npm:6.1.4"
   checksum: 10c0/2d6cc366262dc0cb8096e429368e44052fdf43ed48e53ad84cc7c9407f890301aa5fcb80d0995abaaf842b3949f154d060be4160f7a46cb2bc2f7726c81526f5
@@ -6134,7 +6134,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"destr@npm:^2.0.3":
+"destr@npm:2.0.3, destr@npm:^2.0.3":
   version: 2.0.3
   resolution: "destr@npm:2.0.3"
   checksum: 10c0/10e7eff5149e2839a4dd29a1e9617c3c675a3b53608d78d74fc6f4abc31daa977e6de08e0eea78965527a0d5a35467ae2f9624e0a4646d54aa1162caa094473e
@@ -6325,7 +6325,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"effect@npm:^3.2.5":
+"effect@npm:3.2.5":
   version: 3.2.5
   resolution: "effect@npm:3.2.5"
   checksum: 10c0/74ddd0f9fbf6d079f0deca3d659e57983568ba924ea9dfd47692801f76494ab8a02033c1d3cec991792fcb8c6249d4de20eaff4f1906b0b0804e4c76ea198eae
@@ -6449,7 +6449,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild-wasm@npm:^0.21.3":
+"esbuild-wasm@npm:0.21.3":
   version: 0.21.3
   resolution: "esbuild-wasm@npm:0.21.3"
   bin:
@@ -7972,7 +7972,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql-web-lite@npm:^16.6.0-4":
+"graphql-web-lite@npm:16.6.0-4":
   version: 16.6.0-4
   resolution: "graphql-web-lite@npm:16.6.0-4"
   dependencies:
@@ -8096,7 +8096,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hono@npm:^4.3.10":
+"hono@npm:4.3.10":
   version: 4.3.10
   resolution: "hono@npm:4.3.10"
   checksum: 10c0/bc4bef84e88c3435f7f4138ee5fb4fb5d86c23eec796bfc293ef1c344c71e3f4b82369df0541aa8015a778d3a8da7ef8bf073bf0c5e16ecdbfb84cec53f09746
@@ -9852,7 +9852,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanostores@npm:^0.10.3":
+"nanostores@npm:0.10.3":
   version: 0.10.3
   resolution: "nanostores@npm:0.10.3"
   checksum: 10c0/5541f527240f159acfe44b5f1c92366aa50d04d4814d25c685e6443dd43f5437c2c4a9e687378f6af759e90c13547da6b78e1d0042ff246d6ba6c881b65b306b
@@ -11153,7 +11153,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"proper-tags@npm:2.0.2, proper-tags@npm:^2.0.2":
+"proper-tags@npm:2.0.2":
   version: 2.0.2
   resolution: "proper-tags@npm:2.0.2"
   checksum: 10c0/1de8943b3304295fc6bec297b7ff7aa2f9ec40cdb2d6634725a0bd311ad1ae382f9769d7bd188c6ec7f49ca9dfb346fa1c79dd8cbff1453680097c3afbab5d4b
@@ -11204,7 +11204,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"radix-vue@npm:^1.7.3, radix-vue@npm:^1.8.1":
+"radix-vue@npm:1.7.4":
+  version: 1.7.4
+  resolution: "radix-vue@npm:1.7.4"
+  dependencies:
+    "@floating-ui/dom": "npm:^1.5.4"
+    "@floating-ui/vue": "npm:^1.0.4"
+    "@internationalized/date": "npm:^3.5.2"
+    "@tanstack/vue-virtual": "npm:^3.1.3"
+    "@vueuse/core": "npm:^10.5.0"
+    "@vueuse/shared": "npm:^10.5.0"
+    aria-hidden: "npm:^1.2.3"
+    defu: "npm:^6.1.4"
+    fast-deep-equal: "npm:^3.1.3"
+    nanoid: "npm:^5.0.6"
+  peerDependencies:
+    vue: ">= 3.2.0"
+  checksum: 10c0/8f230b9cd2e5cbf80b2ad788062241e9d4a86abfbd976d3aef0c100b092303b744c93189958c99d3b1cfd627a696be29f36cd9bda0ab5cf9a8e44d82d02ebb1d
+  languageName: node
+  linkType: hard
+
+"radix-vue@npm:^1.7.3":
   version: 1.8.1
   resolution: "radix-vue@npm:1.8.1"
   dependencies:
@@ -11718,23 +11738,23 @@ __metadata:
   resolution: "script-provider@workspace:packages/script-provider"
   dependencies:
     "@cloudflare/workers-types": "npm:4.20240512.0"
-    "@effect/opentelemetry": "npm:^0.34.12"
+    "@effect/opentelemetry": "npm:0.34.12"
     "@hono/zod-validator": "npm:0.2.1"
-    "@microlabs/otel-cf-workers": "npm:^1.0.0-rc.36"
+    "@microlabs/otel-cf-workers": "npm:1.0.0-rc.36"
     "@opentelemetry/api": "npm:~1.6.0"
-    "@opentelemetry/resources": "npm:^1.24.1"
-    "@opentelemetry/semantic-conventions": "npm:^1.24.1"
-    "@ts-rest/core": "npm:^3.45.2"
-    "@urql/core": "npm:^5.0.3"
-    effect: "npm:^3.2.5"
-    esbuild-wasm: "npm:^0.21.3"
-    hono: "npm:^4.3.10"
+    "@opentelemetry/resources": "npm:1.24.1"
+    "@opentelemetry/semantic-conventions": "npm:1.24.1"
+    "@ts-rest/core": "npm:3.45.2"
+    "@urql/core": "npm:5.0.3"
+    effect: "npm:3.2.5"
+    esbuild-wasm: "npm:0.21.3"
+    hono: "npm:4.3.10"
     msw: "npm:2.3.0"
-    proper-tags: "npm:^2.0.2"
+    proper-tags: "npm:2.0.2"
     shared: "workspace:*"
     storipress-client: "workspace:*"
     tiny-invariant: "npm:1.3.3"
-    ts-pattern: "npm:^5.1.2"
+    ts-pattern: "npm:5.1.2"
     ufo: "npm:1.5.3"
     version-proxy: "workspace:*"
     vitest: "npm:1.6.0"
@@ -12246,7 +12266,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storipress-client@workspace:*, storipress-client@workspace:^, storipress-client@workspace:packages/storipress-client":
+"storipress-client@workspace:*, storipress-client@workspace:packages/storipress-client":
   version: 0.0.0-use.local
   resolution: "storipress-client@workspace:packages/storipress-client"
   dependencies:
@@ -12507,7 +12527,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwind-merge@npm:^2.3.0":
+"tailwind-merge@npm:2.3.0":
   version: 2.3.0
   resolution: "tailwind-merge@npm:2.3.0"
   dependencies:
@@ -12516,7 +12536,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss-animate@npm:^1.0.7":
+"tailwindcss-animate@npm:1.0.7":
   version: 1.0.7
   resolution: "tailwindcss-animate@npm:1.0.7"
   peerDependencies:
@@ -12794,7 +12814,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-pattern@npm:5.1.2, ts-pattern@npm:^5.1.2":
+"ts-pattern@npm:5.1.2":
   version: 5.1.2
   resolution: "ts-pattern@npm:5.1.2"
   checksum: 10c0/df6e70ebde9eb0aaf1966afd4e135995ff38830b3c4f720e47c10a4d78618ec33bbcc6d55e0d0c4648e2e01408ca3f9bceba34ec7b1ed7a7324a7735e925634b
@@ -13548,7 +13568,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-sonner@npm:^1.1.2":
+"vue-sonner@npm:1.1.2":
   version: 1.1.2
   resolution: "vue-sonner@npm:1.1.2"
   checksum: 10c0/803812c19be0a10a1216222838cecf4090f5a7c1a673597a0d242b322ea4a58cb25576927abac5316d16e6232547baf30dad516e0b0d6f88b3279af73281b60b
@@ -13580,7 +13600,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue@npm:^3.4.27":
+"vue@npm:3.4.27":
   version: 3.4.27
   resolution: "vue@npm:3.4.27"
   dependencies:

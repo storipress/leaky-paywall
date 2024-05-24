@@ -1790,6 +1790,7 @@ export type Mutation = {
   disconnectHubSpot: Scalars['Boolean']['output']
   /** disconnect specific integration */
   disconnectIntegration: Integration
+  disconnectParagon: Scalars['Boolean']['output']
   /** disconnect stripe connect */
   disconnectStripeConnect: Scalars['Boolean']['output']
   /** disconnect Webflow integration */
@@ -3014,6 +3015,8 @@ export type Query = {
   /** get specific email */
   email?: Maybe<Email>
   facebookPages: Array<FacebookSearchPage>
+  /** whether the Gmail OAuth has been completed or not */
+  gmailAuthorized: Scalars['Boolean']['output']
   /** whether the HubSpot OAuth has been completed or not */
   hubSpotAuthorized: Scalars['Boolean']['output']
   /** get HubSpot information */
@@ -4899,6 +4902,8 @@ export type WebflowCollectionField = {
   candidates?: Maybe<Array<WebflowCollectionFieldCandidate>>
   /** text displayed to the user */
   displayName: Scalars['String']['output']
+  /** help text displayed to the user */
+  helpText?: Maybe<Scalars['String']['output']>
   /** Webflow collection field id */
   id: Scalars['ID']['output']
   /** whether the collection field is required or not */
