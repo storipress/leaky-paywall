@@ -6,7 +6,7 @@
     "test": "moon run test"
   },
   "dependencies": {
-    "@effect/opentelemetry": "^0.34.5",
+    "@effect/opentelemetry": "^0.34.12",
     "@hono/zod-validator": "0.2.1",
     "@microlabs/otel-cf-workers": "^1.0.0-rc.36",
     "@opentelemetry/api": "~1.6.0",
@@ -14,14 +14,14 @@
     "@opentelemetry/semantic-conventions": "^1.24.1",
     "@ts-rest/core": "^3.45.2",
     "@urql/core": "^5.0.3",
-    "effect": "^3.1.5",
+    "effect": "^3.2.5",
     "esbuild-wasm": "^0.21.3",
-    "hono": "^4.3.7",
+    "hono": "^4.3.10",
     "proper-tags": "^2.0.2",
     "shared": "workspace:*",
     "storipress-client": "workspace:*",
     "tiny-invariant": "1.3.3",
-    "ts-pattern": "^5.1.1",
+    "ts-pattern": "^5.1.2",
     "ufo": "1.5.3",
     "version-proxy": "workspace:*",
     "zod": "3.23.8"
