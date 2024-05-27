@@ -5,6 +5,7 @@ const mutex = new Mutex()
 
 export function useTrackManager() {
   const paywall = useStore($paywall)
+  const paywallEvents = useStore($paywallEvents)
 
   const { executeMutation: recordTrack } = useMutation(TrackSubscriberActivity)
 
@@ -13,10 +14,10 @@ export function useTrackManager() {
       return
     }
 
-    const records = paywall.value.records
-    const lastSynced = paywall.value.lastSynced
-    $paywall.setKey('lastSynced', Date.now())
-    $paywall.setKey('records', [])
+    const records = paywallEvents.value.records
+    const lastSynced = paywallEvents.value.lastSynced
+    $paywallEvents.setKey('lastSynced', Date.now())
+    $paywallEvents.setKey('records', [])
     const config = $config.get()
 
     for (const record of records) {
@@ -41,9 +42,9 @@ export function useTrackManager() {
   }
 
   watch(
-    () => paywall.value.records,
+    () => paywallEvents.value.records,
     () => {
-      if (paywall.value.records.length === 0) {
+      if (paywallEvents.value.records.length === 0) {
         return
       }
       flushAll()

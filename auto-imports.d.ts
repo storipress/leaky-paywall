@@ -6,7 +6,8 @@
 export {}
 declare global {
   const $config: typeof import('./src/stores/config')['$config']
-  const $paywall: typeof import('./src/stores/paywall-events')['$paywall']
+  const $paywall: typeof import('./src/stores/paywall-state')['$paywall']
+  const $paywallEvents: typeof import('./src/stores/paywall-events')['$paywallEvents']
   const CONFIG_VAR_NAME: typeof import('./src/stores/config')['CONFIG_VAR_NAME']
   const DEFAULT_CONFIG: typeof import('./src/stores/config')['DEFAULT_CONFIG']
   const EffectScope: typeof import('vue')['EffectScope']
@@ -288,7 +289,7 @@ declare global {
   const provideLocal: typeof import('@vueuse/core')['provideLocal']
   const provideRoot: typeof import('./src/composables/portal-root')['provideRoot']
   const pushEvent: typeof import('./src/stores/paywall-events')['pushEvent']
-  const pushRead: typeof import('./src/stores/paywall-events')['pushRead']
+  const pushRead: typeof import('./src/stores/paywall-state')['pushRead']
   const quartersToMonths: typeof import('date-fns')['quartersToMonths']
   const quartersToYears: typeof import('date-fns')['quartersToYears']
   const reactify: typeof import('@vueuse/core')['reactify']
