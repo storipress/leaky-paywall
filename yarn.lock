@@ -3596,7 +3596,7 @@ __metadata:
     "@vitest/ui": "npm:1.6.0"
     "@vue/devtools-api": "npm:7.2.1"
     "@vueuse/core": "npm:10.9.0"
-    "@vueuse/math": "npm:10.9.0"
+    "@vueuse/math": "npm:10.10.0"
     autoprefixer: "npm:10.4.19"
     class-variance-authority: "npm:0.7.0"
     clsx: "npm:2.1.1"
@@ -4561,13 +4561,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/math@npm:10.9.0":
-  version: 10.9.0
-  resolution: "@vueuse/math@npm:10.9.0"
+"@vueuse/math@npm:10.10.0":
+  version: 10.10.0
+  resolution: "@vueuse/math@npm:10.10.0"
   dependencies:
-    "@vueuse/shared": "npm:10.9.0"
+    "@vueuse/shared": "npm:10.10.0"
     vue-demi: "npm:>=0.14.7"
-  checksum: 10c0/9c31be4d99865c7c3af17374b6b2ba2b71068da68696f3d488bc7828376a918a2b57974e3f0de24467199adb3e50e765e0cf2f5564e0ef1c5a28997264e16620
+  checksum: 10c0/581a106dd354954880c773422afa4fd6ae5dd62e043a02eae34e9b0470eb08932f9a24467b9657fb3f1c945d9d170e6da66659b6be7579d5462d3daa07505be3
   languageName: node
   linkType: hard
 
@@ -4578,7 +4578,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/shared@npm:10.9.0, @vueuse/shared@npm:^10.5.0":
+"@vueuse/shared@npm:10.10.0, @vueuse/shared@npm:^10.5.0":
+  version: 10.10.0
+  resolution: "@vueuse/shared@npm:10.10.0"
+  dependencies:
+    vue-demi: "npm:>=0.14.7"
+  checksum: 10c0/6d6d5e7fea32f52d62d36baed6e27936cd4542aff39a986dd47c9cb69a1ef8506dc98b54f2a164892bd49de9e73e4c6439979befca5c4c932846acdd1a5411ac
+  languageName: node
+  linkType: hard
+
+"@vueuse/shared@npm:10.9.0":
   version: 10.9.0
   resolution: "@vueuse/shared@npm:10.9.0"
   dependencies:
