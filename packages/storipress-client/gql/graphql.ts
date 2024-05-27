@@ -4118,7 +4118,7 @@ export type SubscriberEventPaginator = {
   paginatorInfo: PaginatorInfo
 }
 
-export type SubscriberEventTargetUnion = Article | Desk | Email | Page | User
+export type SubscriberEventTargetUnion = Article | Desk | Email | Page | Subscriber | User
 
 /** A paginated list of Subscriber items. */
 export type SubscriberPaginator = {

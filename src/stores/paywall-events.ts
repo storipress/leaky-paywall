@@ -1,5 +1,4 @@
-import { persistentMap } from '@nanostores/persistent'
-import { destr } from 'destr'
+import { map } from 'nanostores'
 import type { TrackEvent } from '../lib/tracking-schema'
 
 export interface BufferedEvent {
@@ -19,42 +18,20 @@ export interface BufferedEvent {
   t: number
 }
 
-export interface PaywallState {
+export interface PaywallEvents {
   lastSynced: number
   records: BufferedEvent[]
-  read: string[]
-  token: string
-  aid: string
 }
 
-export const $paywall = persistentMap<PaywallState>(
-  'storipress-paywall:',
-  {
-    lastSynced: 0,
-    records: [] as BufferedEvent[],
-    read: [] as string[],
-    token: '',
-    aid: '',
-  },
-  {
-    encode: JSON.stringify,
-    decode: destr,
-  },
-)
+export const $paywallEvents = map<PaywallEvents>({
+  lastSynced: 0,
+  records: [] as BufferedEvent[],
+})
 
 export function pushEvent(record: TrackEvent) {
-  const paywall = $paywall.get()
-  $paywall.set({
+  const paywall = $paywallEvents.get()
+  $paywallEvents.set({
     ...paywall,
     records: [...paywall.records, { e: record.event, p: record.properties ?? {}, t: Date.now() }],
-  })
-}
-
-export function pushRead(read: string) {
-  const paywall = $paywall.get()
-
-  $paywall.set({
-    ...paywall,
-    read: [...new Set([...paywall.read, read])],
   })
 }

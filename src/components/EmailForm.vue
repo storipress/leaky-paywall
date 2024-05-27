@@ -4,7 +4,6 @@ import { Field as FormField, useForm } from 'vee-validate'
 import { useAutoAnimate } from '@formkit/auto-animate/vue'
 import * as z from 'zod'
 import { useModel } from 'vue'
-import { sendTrack } from '~/lib/tracking'
 
 const props = defineProps<{
   email: string

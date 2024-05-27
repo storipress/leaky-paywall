@@ -2,7 +2,7 @@ import { Duration, Effect, Option, Schedule, pipe } from 'effect'
 import type { ClientHandle } from '@urql/vue'
 import type { Config } from 'shared/schema'
 import type { FoundedArticle } from '~/composables/find-article'
-import type { PaywallState } from '~/stores/paywall-events'
+import type { PaywallState } from '~/stores/paywall-state'
 
 interface DebugInfo {
   /**

@@ -103,21 +103,6 @@ watch(
 
 const emailInput = ref('')
 
-// Unlock scroll if user scroll up
-useEventListener(window, 'wheel', (event) => {
-  if (event.deltaY <= -5) {
-    if (show.value) {
-      sendTrack('paywall.canceled', {
-        article_id: foundArticle.value?.id ?? null,
-        client_id: config.value.clientId,
-        pathname: location.value.pathname ?? '',
-        type: 'scroll_back',
-      })
-    }
-    show.value = false
-  }
-})
-
 const isAllowFree = computed(() => !isOverFreeLimit.value || paywall.value.read.includes(currentReadIdentifier.value))
 const isViewportOverThreshold = computedEager(() => {
   if (config.value.paywallTrigger.type !== 'viewport') {
@@ -145,23 +130,49 @@ const isNeedPaywall = computed(
   () => (isViewportOverThreshold.value || isArticleScrollOverThreshold.value) && isArticle.value && !isAllowFree.value,
 )
 
+// Unlock scroll if user scroll up
+useEventListener(window, 'wheel', (event) => {
+  if (event.deltaY <= -5) {
+    if (show.value) {
+      sendTrack('paywall.canceled', {
+        article_id: foundArticle.value?.id ?? null,
+        client_id: config.value.clientId,
+        pathname: location.value.pathname ?? '',
+        type: 'scroll_back',
+      })
+    }
+    show.value = false
+  } else if (event.deltaY >= 5 && isNeedPaywall.value) {
+    // if user keep scroll up and down around the threshold, the user may bypass the paywall
+    // this is another check to fix this
+    activatePaywall()
+  }
+})
+
+function activatePaywall() {
+  // Don't show paywall if user is logged in
+  if (paywall.value.token) {
+    return
+  }
+
+  // paywall is already activated, return, or we will send duplicate events
+  if (show.value === true) {
+    return
+  }
+
+  sendTrack('paywall.activated', {
+    pathname: location.value.pathname ?? '',
+    article_id: foundArticle.value?.id ?? null,
+    client_id: config.value.clientId,
+  })
+
+  show.value = true
+}
+
 whenever(
   // When user scroll over 40% will open paywall
   isNeedPaywall,
-  () => {
-    // Don't show paywall if user is logged in
-    if (paywall.value.token) {
-      return
-    }
-
-    sendTrack('paywall.activated', {
-      pathname: location.value.pathname ?? '',
-      article_id: foundArticle.value?.id ?? null,
-      client_id: config.value.clientId,
-    })
-
-    show.value = true
-  },
+  activatePaywall,
   { immediate: true },
 )
 
