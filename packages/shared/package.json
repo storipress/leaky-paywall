@@ -15,7 +15,7 @@
     "zod": "3.23.8"
   },
   "devDependencies": {
-    "@moonrepo/cli": "1.24.6",
+    "@moonrepo/cli": "1.25.0",
     "unbuild": "2.0.0"
   }
 }
