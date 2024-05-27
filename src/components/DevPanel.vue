@@ -91,8 +91,9 @@ function goToArticle() {
 }
 
 const paywall = useStore($paywall)
+const paywallEvents = useStore($paywallEvents)
 
-const events = computed(() => paywall.value.records)
+const events = computed(() => paywallEvents.value.records)
 
 function logout() {
   $paywall.setKey('token', '')
@@ -105,7 +106,7 @@ function resetRead() {
   })
 }
 function resetEvents() {
-  $paywall.setKey('records', [])
+  $paywallEvents.setKey('records', [])
 }
 </script>
 
