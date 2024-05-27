@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.10.2](https://github.com/storipress/leaky-paywall/compare/v1.10.1...v1.10.2) (2024-05-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency lucide-vue-next to v0.379.0 ([d36c51a](https://github.com/storipress/leaky-paywall/commit/d36c51a6df11ab8fd2952cbbedeb0f7ea1501d25))
+* use memory store to buffer events ([#349](https://github.com/storipress/leaky-paywall/issues/349)) ([51ad833](https://github.com/storipress/leaky-paywall/commit/51ad833e42649990c3fe18c0d140afff7a9e4e12))
+
 ## [1.10.1](https://github.com/storipress/leaky-paywall/compare/v1.10.0...v1.10.1) (2024-05-17)
 
 
