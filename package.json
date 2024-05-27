@@ -76,7 +76,7 @@
     "autoprefixer": "10.4.19",
     "esbuild": "0.21.4",
     "eslint": "9.3.0",
-    "happy-dom": "14.11.0",
+    "happy-dom": "14.11.1",
     "lorem-ipsum": "2.0.8",
     "open-cli": "8.0.0",
     "polished": "4.3.1",
