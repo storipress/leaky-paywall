@@ -21,6 +21,14 @@ const apiInfo = computedAsync(async () => {
   }
   return null
 })
+
+const isLogin = computed(() => {
+  if (!debugInfo.value) {
+    return false
+  }
+  const { _p } = debugInfo.value
+  return Boolean(_p.token)
+})
 </script>
 
 <template>
@@ -38,6 +46,10 @@ const apiInfo = computedAsync(async () => {
             <span :class="hasArticle ? 'text-green-500' : 'text-red-500'">{{
               hasArticle ? 'found' : 'not found'
             }}</span>
+          </div>
+          <div>
+            Is login?
+            <span :class="isLogin ? 'text-green-500' : 'text-red-500'">{{ isLogin ? 'yes' : 'no' }}</span>
           </div>
           <div>Read articles/limit/interval {{ readInfo }}</div>
           <div>
