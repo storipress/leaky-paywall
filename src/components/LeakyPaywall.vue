@@ -231,7 +231,7 @@ onMounted(() => {
 function handleSignedIn(source: 'paywall' | 'other' = 'paywall') {
   sendTrack('subscriber.signed_in', {
     pathname: location.value.pathname ?? '',
-    // impossible to be empty
+    // it will be empty if from other email form
     article_id: foundArticle.value?.id ?? '',
     client_id: config.value.clientId,
     source,
