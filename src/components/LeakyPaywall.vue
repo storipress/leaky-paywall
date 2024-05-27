@@ -155,6 +155,11 @@ function activatePaywall() {
     return
   }
 
+  // paywall is already activated, return, or we will send duplicate events
+  if (show.value === true) {
+    return
+  }
+
   sendTrack('paywall.activated', {
     pathname: location.value.pathname ?? '',
     article_id: foundArticle.value?.id ?? null,
