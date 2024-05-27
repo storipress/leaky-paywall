@@ -13,7 +13,16 @@ initConfig()
 const config = useStore($config)
 const paywall = useStore($paywall)
 
+const { login } = useLogin()
 useTrackManager()
+useMonitorFormSubmit(async (email) => {
+  if (paywall.value.token) {
+    return
+  }
+
+  await login({ email })
+  handleSignedIn('other')
+})
 
 const foundArticle = useFindArticle()
 
@@ -219,12 +228,13 @@ onMounted(() => {
   })
 })
 
-function handleSignedIn() {
+function handleSignedIn(source: 'paywall' | 'other' = 'paywall') {
   sendTrack('subscriber.signed_in', {
     pathname: location.value.pathname ?? '',
     // impossible to be empty
     article_id: foundArticle.value?.id ?? '',
     client_id: config.value.clientId,
+    source,
   })
 }
 </script>
@@ -237,7 +247,7 @@ function handleSignedIn() {
           <!-- for accessibility -->
           <AlertDialogTitle class="invisible">Subscribe</AlertDialogTitle>
         </VisuallyHidden>
-        <LeakyPaywallContent v-model:email="emailInput" :config="config" @signed-in="handleSignedIn" />
+        <LeakyPaywallContent v-model:email="emailInput" :config="config" @signed-in="handleSignedIn()" />
       </AlertDialogContent>
     </AlertDialog>
     <VisuallyHidden>

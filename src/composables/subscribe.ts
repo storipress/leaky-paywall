@@ -57,6 +57,20 @@ export function useSubscribe() {
   }
 }
 
+export function useLogin() {
+  const { subscribe } = useSubscribe()
+
+  return {
+    async login(input: SubscribeInput): Promise<SubscribeReturn> {
+      const res = await subscribe(input)
+      if (res.ok && res.token) {
+        $paywall.setKey('token', res.token)
+      }
+      return res
+    },
+  }
+}
+
 function createUnknownError() {
   return new CombinedError({
     networkError: new Error('Unknown error'),
