@@ -49,7 +49,6 @@ const baseConfig = defineConfig({
     }),
     Components({
       dirs: ['src/components', 'src/components/ui'],
-      // @ts-expect-error type incorrect
       resolvers: [RadixVueResolver()],
     }),
     VueDevTools(),

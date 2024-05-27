@@ -13,6 +13,7 @@ setConfig({ all: true })
   <ArticleLayout1 :key="route.path" />
   <LeakyPaywall :key="route.path" />
   <LeakyPaywallDebug />
+  <SubscriptionForm />
   <PortalTarget ref="target" />
   <Sonner />
   <Teleport to="body">
