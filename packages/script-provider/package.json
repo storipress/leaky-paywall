@@ -28,6 +28,8 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20240524.0",
+    "@playwright/test": "1.44.1",
+    "@types/node": "20.12.12",
     "msw": "2.3.0",
     "vitest": "1.6.0",
     "wrangler": "3.57.1"

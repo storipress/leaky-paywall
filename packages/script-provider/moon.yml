@@ -15,6 +15,12 @@ tasks:
     deps:
       - ^:build
       - storipress-client:generate
+  install-playwright:
+    command:
+      - playwright
+      - install
+      - chromium
+    platform: node
   dev:
     command:
       - wrangler
@@ -33,3 +39,4 @@ tasks:
     deps:
       - ^:build
       - storipress-client:generate
+      - install-playwright

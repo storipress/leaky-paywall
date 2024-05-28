@@ -150,6 +150,7 @@ tasks:
     platform: node
     deps:
       - storipress-client:generate
+      - script-provider:install-playwright
       - version-proxy:build
       - shared:build
     inputs:
