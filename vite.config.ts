@@ -62,7 +62,7 @@ const baseConfig = defineConfig({
       provider: 'v8',
       reporter: ['lcov', 'html'],
       include: ['src/**'],
-      exclude: ['src/components/ui/**', '**/*.ce.vue'],
+      exclude: ['src/components/ui/**', 'src/components/dev/**', '**/*.ce.vue'],
     },
   },
 })
