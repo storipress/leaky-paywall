@@ -85,6 +85,5 @@ declare module 'vue' {
     TooltipContent: typeof import('./src/components/ui/tooltip/TooltipContent.vue')['default']
     TooltipProvider: typeof import('./src/components/ui/tooltip/TooltipProvider.vue')['default']
     TooltipTrigger: typeof import('./src/components/ui/tooltip/TooltipTrigger.vue')['default']
-    VisuallyHidden: typeof import('radix-vue')['VisuallyHidden']
   }
 }
