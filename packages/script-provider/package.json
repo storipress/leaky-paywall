@@ -15,8 +15,8 @@
     "@ts-rest/core": "3.45.2",
     "@urql/core": "5.0.3",
     "effect": "3.2.5",
-    "esbuild-wasm": "0.21.3",
-    "hono": "4.3.11",
+    "esbuild-wasm": "0.21.4",
+    "hono": "4.4.0",
     "proper-tags": "2.0.2",
     "shared": "workspace:*",
     "storipress-client": "workspace:*",
@@ -27,7 +27,7 @@
     "zod": "3.23.8"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20240512.0",
+    "@cloudflare/workers-types": "4.20240524.0",
     "msw": "2.3.0",
     "vitest": "1.6.0",
     "wrangler": "3.57.1"

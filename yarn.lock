@@ -1037,10 +1037,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cloudflare/workers-types@npm:4.20240512.0":
-  version: 4.20240512.0
-  resolution: "@cloudflare/workers-types@npm:4.20240512.0"
-  checksum: 10c0/2121867705db9b5e8e44e8d7baf6c3982e7ce41e9e01ea2d2502b7f00c73859a17b23cfcc79c88c5a55c725229d36c5cc6a5d3399ffd62f8be72c2f48ab7c128
+"@cloudflare/workers-types@npm:4.20240524.0":
+  version: 4.20240524.0
+  resolution: "@cloudflare/workers-types@npm:4.20240524.0"
+  checksum: 10c0/44599a914cbee3acb17c6a1f70c6a8c2fd0329b45e39c0ee8d681a85469d70f4efba1b136d5f692105e9bce97b0ef979c623e8d87b14c3acca95d6a87474dbbf
   languageName: node
   linkType: hard
 
@@ -3595,8 +3595,8 @@ __metadata:
     "@vitest/coverage-v8": "npm:1.6.0"
     "@vitest/ui": "npm:1.6.0"
     "@vue/devtools-api": "npm:7.2.1"
-    "@vueuse/core": "npm:10.9.0"
-    "@vueuse/math": "npm:10.9.0"
+    "@vueuse/core": "npm:10.10.0"
+    "@vueuse/math": "npm:10.10.0"
     autoprefixer: "npm:10.4.19"
     class-variance-authority: "npm:0.7.0"
     clsx: "npm:2.1.1"
@@ -4549,41 +4549,41 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/core@npm:10.9.0, @vueuse/core@npm:^10.5.0":
-  version: 10.9.0
-  resolution: "@vueuse/core@npm:10.9.0"
+"@vueuse/core@npm:10.10.0, @vueuse/core@npm:^10.5.0":
+  version: 10.10.0
+  resolution: "@vueuse/core@npm:10.10.0"
   dependencies:
     "@types/web-bluetooth": "npm:^0.0.20"
-    "@vueuse/metadata": "npm:10.9.0"
-    "@vueuse/shared": "npm:10.9.0"
+    "@vueuse/metadata": "npm:10.10.0"
+    "@vueuse/shared": "npm:10.10.0"
     vue-demi: "npm:>=0.14.7"
-  checksum: 10c0/d5c90a5bdd2dc5123a594e6ff9bc96f70f8f062fe9749d1c194d15516acfee7dd2f99ef9d1c6b06a9d18e7a13a0287ff0e5ee8a2565a04810196c90bb13daf91
+  checksum: 10c0/e22a23420d0fb8415a6c37b072b425ba2ec98bb51f3ac23ba9aeee7e11226585a48656e226447a934ae1b335b54b0a266e34addeb96c4466aee0c5be14c365a2
   languageName: node
   linkType: hard
 
-"@vueuse/math@npm:10.9.0":
-  version: 10.9.0
-  resolution: "@vueuse/math@npm:10.9.0"
+"@vueuse/math@npm:10.10.0":
+  version: 10.10.0
+  resolution: "@vueuse/math@npm:10.10.0"
   dependencies:
-    "@vueuse/shared": "npm:10.9.0"
+    "@vueuse/shared": "npm:10.10.0"
     vue-demi: "npm:>=0.14.7"
-  checksum: 10c0/9c31be4d99865c7c3af17374b6b2ba2b71068da68696f3d488bc7828376a918a2b57974e3f0de24467199adb3e50e765e0cf2f5564e0ef1c5a28997264e16620
+  checksum: 10c0/581a106dd354954880c773422afa4fd6ae5dd62e043a02eae34e9b0470eb08932f9a24467b9657fb3f1c945d9d170e6da66659b6be7579d5462d3daa07505be3
   languageName: node
   linkType: hard
 
-"@vueuse/metadata@npm:10.9.0":
-  version: 10.9.0
-  resolution: "@vueuse/metadata@npm:10.9.0"
-  checksum: 10c0/7f647b2ae73ff86c4de658c84a51988f7cdfec1643e1e706d5b29034bd949e240cffacf52505ab8e9223bb245f7bafe7f7bfa5c32702172ba29afc4aef96b475
+"@vueuse/metadata@npm:10.10.0":
+  version: 10.10.0
+  resolution: "@vueuse/metadata@npm:10.10.0"
+  checksum: 10c0/4b1c246f26b92051c865c7a9eab16190ee2e55742e029a7f5c86720a6fc328fa80452d6bf797f96b3b52427add4603ca06be27a16f062982456e9338bfb933df
   languageName: node
   linkType: hard
 
-"@vueuse/shared@npm:10.9.0, @vueuse/shared@npm:^10.5.0":
-  version: 10.9.0
-  resolution: "@vueuse/shared@npm:10.9.0"
+"@vueuse/shared@npm:10.10.0, @vueuse/shared@npm:^10.5.0":
+  version: 10.10.0
+  resolution: "@vueuse/shared@npm:10.10.0"
   dependencies:
     vue-demi: "npm:>=0.14.7"
-  checksum: 10c0/55593c325b9dc15cfe9eaf84ca2a757a0c418491be56760f5560a641dfe2579c72cb55ccd04ead71217a97fc6b17ad7b7b7b9177b376bc6967174121707d1c49
+  checksum: 10c0/6d6d5e7fea32f52d62d36baed6e27936cd4542aff39a986dd47c9cb69a1ef8506dc98b54f2a164892bd49de9e73e4c6439979befca5c4c932846acdd1a5411ac
   languageName: node
   linkType: hard
 
@@ -6449,12 +6449,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild-wasm@npm:0.21.3":
-  version: 0.21.3
-  resolution: "esbuild-wasm@npm:0.21.3"
+"esbuild-wasm@npm:0.21.4":
+  version: 0.21.4
+  resolution: "esbuild-wasm@npm:0.21.4"
   bin:
     esbuild: bin/esbuild
-  checksum: 10c0/2afbd5a868cfa73c17aa57cd7756dee021e9013db122ac0d434770376fcbd8daba193d764b9fe38e00e408f5867435df81806e8db947bf55efcad12eaa16b882
+  checksum: 10c0/8f44bb84e337a0370055e65251efdfd43e92939f4ad6306e720bfc739abb0076d9efd236bb025af7f34e281c3c993ffaa4eff6c05dc8e44a395985678387c84a
   languageName: node
   linkType: hard
 
@@ -8096,10 +8096,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hono@npm:4.3.11":
-  version: 4.3.11
-  resolution: "hono@npm:4.3.11"
-  checksum: 10c0/f31ecb13cba1027b39def05f22449da229aad944771dfa45ebcefda0ade66123b23a0e54e3a567dd4adbc77ff0bcba6026af04b9f5d7be4d629a177a6398a2c0
+"hono@npm:4.4.0":
+  version: 4.4.0
+  resolution: "hono@npm:4.4.0"
+  checksum: 10c0/4bc8695f0bfdf1214d5ff020105199abe4e50fce69d217ca64beec2eec624a2c837521b694570cfbe15ec94b84b2a878f9c8dc64769e43f7eae765c12c714c64
   languageName: node
   linkType: hard
 
@@ -11717,7 +11717,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "script-provider@workspace:packages/script-provider"
   dependencies:
-    "@cloudflare/workers-types": "npm:4.20240512.0"
+    "@cloudflare/workers-types": "npm:4.20240524.0"
     "@effect/opentelemetry": "npm:0.34.12"
     "@hono/zod-validator": "npm:0.2.1"
     "@microlabs/otel-cf-workers": "npm:1.0.0-rc.36"
@@ -11727,8 +11727,8 @@ __metadata:
     "@ts-rest/core": "npm:3.45.2"
     "@urql/core": "npm:5.0.3"
     effect: "npm:3.2.5"
-    esbuild-wasm: "npm:0.21.3"
-    hono: "npm:4.3.11"
+    esbuild-wasm: "npm:0.21.4"
+    hono: "npm:4.4.0"
     msw: "npm:2.3.0"
     proper-tags: "npm:2.0.2"
     shared: "workspace:*"
