@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.11.0](https://github.com/storipress/leaky-paywall/compare/v1.10.2...v1.11.0) (2024-05-28)
+
+
+### Features
+
+* auto collect email from form ([#358](https://github.com/storipress/leaky-paywall/issues/358)) ([4dd4f93](https://github.com/storipress/leaky-paywall/commit/4dd4f93d2cc530f8ebba1f614fef9594413378b1))
+
+
+### Bug Fixes
+
+* show login info ([5c76a3b](https://github.com/storipress/leaky-paywall/commit/5c76a3b9bb22333535a181a6a541dd7ec650b85d))
+
 ## [1.10.2](https://github.com/storipress/leaky-paywall/compare/v1.10.1...v1.10.2) (2024-05-27)
 
 
