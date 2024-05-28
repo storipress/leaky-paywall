@@ -6,5 +6,6 @@ export const subscriberSignedIn = defineTrackEvent({
     pathname: z.string(),
     client_id: z.string(),
     article_id: z.string().nullable(),
+    source: z.enum(['paywall', 'other']),
   },
 })

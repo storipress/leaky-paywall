@@ -32,13 +32,10 @@ const form = useForm({
 })
 
 const emailInput = useModel(props, 'email')
-const { subscribe } = useSubscribe()
+const { login } = useLogin()
 
 const onSubmit = form.handleSubmit(async (values) => {
-  const res = await subscribe(values)
-  if (res.ok && res.token) {
-    $paywall.setKey('token', res.token)
-  }
+  await login(values)
   emit('signedIn')
   // TODO: error handling
 })
@@ -55,7 +52,8 @@ onMounted(async () => {
 </script>
 
 <template>
-  <form class="flex w-full flex-col gap-1" @submit="onSubmit">
+  <!-- The `data-sp-ignore-form` is a marker to be exclude from form monitor -->
+  <form class="flex w-full flex-col gap-1" data-sp-ignore-form @submit="onSubmit">
     <FormField v-slot="{ componentField, meta }" name="email">
       <FormItem ref="formItem">
         <FormControl>

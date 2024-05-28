@@ -4,7 +4,7 @@ import urql from '@urql/vue'
 import { parseToRgb, toColorString } from 'polished'
 import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
-import NoopVue from './components/Noop.vue'
+import NoopVue from './components/dev/Noop.vue'
 
 window.SP_PAYWALL = {
   all: true,
