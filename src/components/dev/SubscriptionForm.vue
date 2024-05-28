@@ -2,7 +2,7 @@
 import { toTypedSchema } from '@vee-validate/zod'
 import { Field as FormField, useForm } from 'vee-validate'
 import { useAutoAnimate } from '@formkit/auto-animate/vue'
-import * as z from 'zod'
+import { z } from 'zod'
 
 const formSchema = toTypedSchema(
   z.object({
@@ -18,7 +18,7 @@ const form = useForm({
   initialTouched: { email: false },
 })
 
-const onSubmit = form.handleSubmit(async (values) => {
+const onSubmit = form.handleSubmit((values) => {
   // eslint-disable-next-line no-console
   console.log('demo form submit', values)
 })
