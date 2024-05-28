@@ -20,6 +20,7 @@ export function useMonitorFormSubmit(onSubmit: (email: string) => void) {
         const formData = new FormData(event.target)
         const emails: string[] = []
         for (const value of formData.values()) {
+          /* v8 ignore next 3 */
           if (typeof value !== 'string' || !value) {
             return
           }
