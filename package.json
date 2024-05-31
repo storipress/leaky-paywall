@@ -30,7 +30,7 @@
     "@formkit/auto-animate": "0.8.2",
     "@nanostores/persistent": "0.10.1",
     "@nanostores/vue": "0.10.0",
-    "@urql/vue": "1.2.0",
+    "@urql/vue": "1.2.1",
     "@vee-validate/zod": "4.12.8",
     "@vueuse/math": "10.10.0",
     "class-variance-authority": "0.7.0",
