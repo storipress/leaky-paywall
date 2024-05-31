@@ -81,7 +81,7 @@
     "open-cli": "8.0.0",
     "polished": "4.3.1",
     "prettier": "3.2.5",
-    "prettier-plugin-tailwindcss": "0.6.0",
+    "prettier-plugin-tailwindcss": "0.6.1",
     "proper-tags": "2.0.2",
     "remeda": "1.61.0",
     "rollup-plugin-visualizer": "5.12.0",
