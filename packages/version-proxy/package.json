@@ -12,8 +12,8 @@
     "build": "moon run build"
   },
   "devDependencies": {
-    "@moonrepo/cli": "1.25.1",
-    "tsup": "8.0.2",
+    "@moonrepo/cli": "1.25.2",
+    "tsup": "8.1.0",
     "unplugin-macros": "0.13.0"
   }
 }
