@@ -32,6 +32,6 @@
     "@types/node": "20.14.1",
     "msw": "2.3.1",
     "vitest": "1.6.0",
-    "wrangler": "3.58.0"
+    "wrangler": "3.59.0"
   }
 }
