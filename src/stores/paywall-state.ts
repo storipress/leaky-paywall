@@ -40,8 +40,5 @@ export const $paywall = persistentMap<PaywallState>(
 export function pushRead(read: string) {
   const paywall = $paywall.get()
 
-  $paywall.set({
-    ...paywall,
-    read: [...new Set([...paywall.read, read])],
-  })
+  $paywall.setKey('read', [...new Set([...paywall.read, read])])
 }

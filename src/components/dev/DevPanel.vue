@@ -100,10 +100,7 @@ function logout() {
 }
 
 function resetRead() {
-  $paywall.set({
-    ...$paywall.get(),
-    read: [],
-  })
+  $paywall.setKey('read', [])
 }
 function resetEvents() {
   $paywallEvents.setKey('records', [])
