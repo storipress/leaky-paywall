@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.1](https://github.com/storipress/leaky-paywall/compare/v1.11.0...v1.11.1) (2024-06-04)
+
+
+### Bug Fixes
+
+* fix possible race condition ([b999716](https://github.com/storipress/leaky-paywall/commit/b9997163d6088453a5bdca5f8c0f95907368b283))
+
 ## [1.11.0](https://github.com/storipress/leaky-paywall/compare/v1.10.2...v1.11.0) (2024-05-28)
 
 
