@@ -162,11 +162,14 @@ tasks:
       --coverage
     outputs:
       - coverage/**/*
-  dev:
+  vite-dev:
     command: vite
     args:
       - --open
     local: true
-    platform: node
+  dev:
+    local: true
+    command: noop
     deps:
       - storipress-client:generate-watch
+      - vite-dev
