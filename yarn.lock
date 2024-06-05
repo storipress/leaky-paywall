@@ -1088,14 +1088,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@egoist/tailwindcss-icons@npm:1.8.0":
-  version: 1.8.0
-  resolution: "@egoist/tailwindcss-icons@npm:1.8.0"
+"@egoist/tailwindcss-icons@npm:1.8.1":
+  version: 1.8.1
+  resolution: "@egoist/tailwindcss-icons@npm:1.8.1"
   dependencies:
-    "@iconify/utils": "npm:^2.1.23"
+    "@iconify/utils": "npm:^2.1.24"
   peerDependencies:
     tailwindcss: "*"
-  checksum: 10c0/8d5b908a64c10d8f07f2cd9dc2de0a0ed324cfc5d5ec0461d955bde58a2a3c2c80eaaec02be3c7b93bd4207dd45146769a470b0c44c3614f896aa4685f75504e
+  checksum: 10c0/5b91e38ea13ea5df944e7aaa714309b58c7d335ec0c5654358fe4ef33fddb1f8abdf9513b7fb81caa6ea91095a3307313c9b0747c07ab3c25561fd6becd5b5a0
   languageName: node
   linkType: hard
 
@@ -2525,9 +2525,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iconify/utils@npm:^2.1.23":
-  version: 2.1.23
-  resolution: "@iconify/utils@npm:2.1.23"
+"@iconify/utils@npm:^2.1.24":
+  version: 2.1.24
+  resolution: "@iconify/utils@npm:2.1.24"
   dependencies:
     "@antfu/install-pkg": "npm:^0.1.1"
     "@antfu/utils": "npm:^0.7.7"
@@ -2536,7 +2536,7 @@ __metadata:
     kolorist: "npm:^1.8.0"
     local-pkg: "npm:^0.5.0"
     mlly: "npm:^1.6.1"
-  checksum: 10c0/754cdfb7c6072fb65d95fac7a3eef3a99fc6a419532f79e54e06f0ec4e5810a09237f58443f40e36aa05fc2e714c5fef9cd474b0c31e9f65244801c8026880c3
+  checksum: 10c0/4ad3f6ecf4e4255c56f3c5355bdba2ce2596ad884cc7c786a6d013101f94743e5297d6afca44ed282c0acd62927ab2c43e500e133a153bc210b27a7b2ec3e2e6
   languageName: node
   linkType: hard
 
@@ -3587,7 +3587,7 @@ __metadata:
     "@0no-co/graphqlsp": "npm:1.12.5"
     "@antfu/eslint-config": "npm:2.20.0"
     "@effect/vitest": "npm:0.5.9"
-    "@egoist/tailwindcss-icons": "npm:1.8.0"
+    "@egoist/tailwindcss-icons": "npm:1.8.1"
     "@formkit/auto-animate": "npm:0.8.2"
     "@iconify-json/lucide": "npm:1.1.189"
     "@moonrepo/cli": "npm:1.25.2"
