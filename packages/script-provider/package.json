@@ -13,7 +13,7 @@
     "@opentelemetry/resources": "1.24.1",
     "@opentelemetry/semantic-conventions": "1.24.1",
     "@ts-rest/core": "3.45.2",
-    "@urql/core": "5.0.3",
+    "@urql/core": "5.0.4",
     "effect": "3.2.8",
     "esbuild-wasm": "0.21.4",
     "hono": "4.4.3",
