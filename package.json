@@ -57,7 +57,7 @@
   "devDependencies": {
     "@0no-co/graphqlsp": "1.12.7",
     "@antfu/eslint-config": "2.21.0",
-    "@effect/vitest": "0.5.10",
+    "@effect/vitest": "0.5.11",
     "@egoist/tailwindcss-icons": "1.8.1",
     "@iconify-json/lucide": "1.1.190",
     "@moonrepo/cli": "1.25.3",
