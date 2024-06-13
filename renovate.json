@@ -3,7 +3,7 @@
   "extends": ["config:js-app"],
   "packageRules": [
     {
-      "matchDepTypes": ["devDependencies"],
+      "matchDepTypes": ["devDependencies", "dependencies"],
       "matchUpdateTypes": ["minor", "patch", "pin", "lockFileMaintenance", "digest"],
       "automerge": true
     }
