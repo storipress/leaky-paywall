@@ -1,7 +1,7 @@
 {
   "name": "version-proxy",
   "type": "module",
-  "packageManager": "yarn@4.2.2",
+  "packageManager": "yarn@4.3.0",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
