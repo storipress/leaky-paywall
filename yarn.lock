@@ -2778,7 +2778,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@opentelemetry/api@npm:~1.6.0":
+"@opentelemetry/api@npm:1.6.0":
   version: 1.6.0
   resolution: "@opentelemetry/api@npm:1.6.0"
   checksum: 10c0/f419853358fdd7d9bad51dfeea5a676d7894e7983633448d1022b867e979bc28083181e000e477ee53efda97895dd6a357e15392ac39ac8dfdc42dd194e0f17e
@@ -11537,7 +11537,7 @@ __metadata:
     "@effect/opentelemetry": "npm:0.34.18"
     "@hono/zod-validator": "npm:0.2.2"
     "@microlabs/otel-cf-workers": "npm:1.0.0-rc.36"
-    "@opentelemetry/api": "npm:~1.6.0"
+    "@opentelemetry/api": "npm:1.6.0"
     "@opentelemetry/resources": "npm:1.25.0"
     "@opentelemetry/semantic-conventions": "npm:1.25.0"
     "@playwright/test": "npm:1.44.1"
