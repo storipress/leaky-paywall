@@ -3478,7 +3478,7 @@ __metadata:
     tailwindcss: "npm:3.4.4"
     tailwindcss-animate: "npm:1.0.7"
     ts-pattern: "npm:5.2.0"
-    tsx: "npm:4.15.4"
+    tsx: "npm:4.15.6"
     typescript: "npm:5.4.5"
     unplugin-auto-import: "npm:0.17.6"
     unplugin-macros: "npm:0.13.0"
@@ -12676,9 +12676,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsx@npm:4.15.4":
-  version: 4.15.4
-  resolution: "tsx@npm:4.15.4"
+"tsx@npm:4.15.6":
+  version: 4.15.6
+  resolution: "tsx@npm:4.15.6"
   dependencies:
     esbuild: "npm:~0.21.4"
     fsevents: "npm:~2.3.3"
@@ -12688,7 +12688,7 @@ __metadata:
       optional: true
   bin:
     tsx: dist/cli.mjs
-  checksum: 10c0/7f18c1f09bedba4ece7476ab56e647d74064a6f94429cd792cc8b38ef3fd2ee023e6fee1a18e42c4a64bb6903c2de497bc0c7ed8f96b74e817b5a23b9cf11263
+  checksum: 10c0/c44e489d35b8b4795d68164572eb9e322a707290aa0786c2aac0f5c7782a884dfec38d557d74471b981a8314b2c7f6612078451d0429db028a23cb54a37e83a0
   languageName: node
   linkType: hard
 
