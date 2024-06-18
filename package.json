@@ -83,7 +83,7 @@
     "prettier": "3.3.2",
     "prettier-plugin-tailwindcss": "0.6.4",
     "proper-tags": "2.0.2",
-    "remeda": "2.0.10",
+    "remeda": "2.2.0",
     "rollup-plugin-visualizer": "5.12.0",
     "shadcn-vue": "0.10.5",
     "size-limit": "11.1.4",
