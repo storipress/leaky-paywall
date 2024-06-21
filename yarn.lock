@@ -1037,10 +1037,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cloudflare/workers-types@npm:4.20240614.0":
-  version: 4.20240614.0
-  resolution: "@cloudflare/workers-types@npm:4.20240614.0"
-  checksum: 10c0/e088ba3df4a54822d53f602b7f362c1e82d7c9b2f5d74e9b1b98006221802093e4830a6c140a8e04a3730916ccf6929598c0d9575761b62a9161a3d242ceb8bf
+"@cloudflare/workers-types@npm:4.20240620.0":
+  version: 4.20240620.0
+  resolution: "@cloudflare/workers-types@npm:4.20240620.0"
+  checksum: 10c0/bd3bd43e4ebf5e66020d6d05ebafd42cefa1d25c7ec047750c88839aecc14f1d544c4dbe7c6f0a27cd40189e823f504b11b6e4620d6989e5afecbf7ac33baaad
   languageName: node
   linkType: hard
 
@@ -1053,9 +1053,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@effect/opentelemetry@npm:0.34.21":
-  version: 0.34.21
-  resolution: "@effect/opentelemetry@npm:0.34.21"
+"@effect/opentelemetry@npm:0.34.23":
+  version: 0.34.23
+  resolution: "@effect/opentelemetry@npm:0.34.23"
   peerDependencies:
     "@opentelemetry/api": ^1.6
     "@opentelemetry/resources": ^1.22
@@ -1064,7 +1064,7 @@ __metadata:
     "@opentelemetry/sdk-trace-node": ^1.22
     "@opentelemetry/sdk-trace-web": ^1.22
     "@opentelemetry/semantic-conventions": ^1.24.1
-    effect: ^3.3.4
+    effect: ^3.4.0
   peerDependenciesMeta:
     "@opentelemetry/sdk-metrics":
       optional: true
@@ -1074,17 +1074,17 @@ __metadata:
       optional: true
     "@opentelemetry/sdk-trace-web":
       optional: true
-  checksum: 10c0/15e3c00b6db3bb19fcafb572b247ee5aa3793167c672a8ce696f6ecaa08a2dcfc4ecccfb77ce74c9ef04a60b5c770538f4a4bfc72e515840e993b84a3faae8e1
+  checksum: 10c0/ea70bb4391f35ca6ab5de4944bd8a5b932c3f51b312ebfa8c5b697267cb571d00ec432024f4c7873ee1e0003e7882a7dae9670759ca7a5208ca1543c140c992c
   languageName: node
   linkType: hard
 
-"@effect/vitest@npm:0.5.14":
-  version: 0.5.14
-  resolution: "@effect/vitest@npm:0.5.14"
+"@effect/vitest@npm:0.5.16":
+  version: 0.5.16
+  resolution: "@effect/vitest@npm:0.5.16"
   peerDependencies:
-    effect: ^3.3.4
+    effect: ^3.4.0
     vitest: ^1.4.0
-  checksum: 10c0/3dc573a5fb4951077a39acf0ae7bb11f7afeca33aab37cdd3a1c2e5888b372afa73b00e31a6f8f0538b611583112c2ce61ec4b47fb90c14ec8044020d2667400
+  checksum: 10c0/63d65b043e570688066a20fafd19345f30c580a3e3823755023d3ecef94372308133b557ba2950c9a738bdd8dcfbd6891072931cffe7c0f47d533b23d9f46480
   languageName: node
   linkType: hard
 
@@ -2348,12 +2348,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iconify-json/lucide@npm:1.1.193":
-  version: 1.1.193
-  resolution: "@iconify-json/lucide@npm:1.1.193"
+"@iconify-json/lucide@npm:1.1.194":
+  version: 1.1.194
+  resolution: "@iconify-json/lucide@npm:1.1.194"
   dependencies:
     "@iconify/types": "npm:*"
-  checksum: 10c0/3ed3120c01973884c7e1f35f9522aadffcb0611661802e6084e61481c9be06b7af14670fc49f842efd408fc8fa68785129d9a5adcac76614fcbd4fbf603c7343
+  checksum: 10c0/cfdc35667ec933920a8dd7fb033f5a778e81cfc81175f8e6d70c6b3f96c0b110d88c6d2826d2c9c72cb099125cd864f59efa5266c35bb6cf42b02ba04d3254ed
   languageName: node
   linkType: hard
 
@@ -2818,6 +2818,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@opentelemetry/core@npm:1.25.1":
+  version: 1.25.1
+  resolution: "@opentelemetry/core@npm:1.25.1"
+  dependencies:
+    "@opentelemetry/semantic-conventions": "npm:1.25.1"
+  peerDependencies:
+    "@opentelemetry/api": ">=1.0.0 <1.10.0"
+  checksum: 10c0/37270396fe3546e454f5a6e8cab0e5777e49a8e4e56ef05644c4e458b3ba7c662f57ad1ba2dd936ddaef54cbe985abd7cee0d3e9188dfdc0e3b3d446c3484337
+  languageName: node
+  linkType: hard
+
 "@opentelemetry/exporter-trace-otlp-http@npm:^0.43.0":
   version: 0.43.0
   resolution: "@opentelemetry/exporter-trace-otlp-http@npm:0.43.0"
@@ -2884,7 +2895,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@opentelemetry/resources@npm:1.25.0, @opentelemetry/resources@npm:^1.17.1":
+"@opentelemetry/resources@npm:1.25.1":
+  version: 1.25.1
+  resolution: "@opentelemetry/resources@npm:1.25.1"
+  dependencies:
+    "@opentelemetry/core": "npm:1.25.1"
+    "@opentelemetry/semantic-conventions": "npm:1.25.1"
+  peerDependencies:
+    "@opentelemetry/api": ">=1.0.0 <1.10.0"
+  checksum: 10c0/4edbf04945c7647b9af847f2f8abccabb54f4f8935fd75c199dc22879f8b7927ac50fac8e877ef48e81c586a08d63bbfe41c345caf94a8ce2c623fa99bb8e999
+  languageName: node
+  linkType: hard
+
+"@opentelemetry/resources@npm:^1.17.1":
   version: 1.25.0
   resolution: "@opentelemetry/resources@npm:1.25.0"
   dependencies:
@@ -2966,6 +2989,13 @@ __metadata:
   version: 1.25.0
   resolution: "@opentelemetry/semantic-conventions@npm:1.25.0"
   checksum: 10c0/e4add5dff8e80edbae0821cd925203f1403fe38a3159eec7eb395484dd23b79f5b7c7f804829e9a28465be4ec2f0e2a20f307621c395471f9e36a2b07d189e90
+  languageName: node
+  linkType: hard
+
+"@opentelemetry/semantic-conventions@npm:1.25.1":
+  version: 1.25.1
+  resolution: "@opentelemetry/semantic-conventions@npm:1.25.1"
+  checksum: 10c0/fb1d6349e91f142c82931e89e0242215be8248e77919b6faa7e259757e499183546c9b4046de72b053b5222453bc74fff70280d2b4d1229484ba7b2c07f16a3a
   languageName: node
   linkType: hard
 
@@ -3425,10 +3455,10 @@ __metadata:
   dependencies:
     "@0no-co/graphqlsp": "npm:1.12.8"
     "@antfu/eslint-config": "npm:2.21.1"
-    "@effect/vitest": "npm:0.5.14"
+    "@effect/vitest": "npm:0.5.16"
     "@egoist/tailwindcss-icons": "npm:1.8.1"
     "@formkit/auto-animate": "npm:0.8.2"
-    "@iconify-json/lucide": "npm:1.1.193"
+    "@iconify-json/lucide": "npm:1.1.194"
     "@moonrepo/cli": "npm:1.25.6"
     "@nanostores/persistent": "npm:0.10.1"
     "@nanostores/vue": "npm:0.10.0"
@@ -3453,11 +3483,11 @@ __metadata:
     date-fns: "npm:3.6.0"
     defu: "npm:6.1.4"
     destr: "npm:2.0.3"
-    effect: "npm:3.3.4"
+    effect: "npm:3.4.0"
     esbuild: "npm:0.21.5"
     eslint: "npm:9.5.0"
     graphql-web-lite: "npm:16.6.0-4"
-    happy-dom: "npm:14.12.0"
+    happy-dom: "npm:14.12.3"
     lorem-ipsum: "npm:2.0.8"
     lucide-vue-next: "npm:0.395.0"
     nanostores: "npm:0.10.3"
@@ -3478,22 +3508,22 @@ __metadata:
     tailwindcss: "npm:3.4.4"
     tailwindcss-animate: "npm:1.0.7"
     ts-pattern: "npm:5.2.0"
-    tsx: "npm:4.15.6"
-    typescript: "npm:5.4.5"
+    tsx: "npm:4.15.7"
+    typescript: "npm:5.5.2"
     unplugin-auto-import: "npm:0.17.6"
     unplugin-macros: "npm:0.13.0"
     unplugin-vue-components: "npm:0.27.0"
     vee-validate: "npm:4.13.1"
     vite: "npm:5.3.1"
     vite-plugin-graphql-codegen: "npm:3.3.8"
-    vite-plugin-vue-devtools: "npm:7.3.1"
+    vite-plugin-vue-devtools: "npm:7.3.2"
     vitest: "npm:1.6.0"
     vue: "npm:3.4.29"
     vue-router: "npm:4.3.3"
-    vue-sonner: "npm:1.1.2"
+    vue-sonner: "npm:1.1.3"
     vue-tsc: "npm:2.0.21"
     zod: "npm:3.23.8"
-    zx: "npm:8.1.2"
+    zx: "npm:8.1.3"
   languageName: unknown
   linkType: soft
 
@@ -3750,7 +3780,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/fs-extra@npm:^11.0.4":
+"@types/fs-extra@npm:>=11":
   version: 11.0.4
   resolution: "@types/fs-extra@npm:11.0.4"
   dependencies:
@@ -3817,12 +3847,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:20.14.5, @types/node@npm:>=20.12.12, @types/node@npm:^20.12.7":
+"@types/node@npm:*, @types/node@npm:^20.12.7":
   version: 20.14.5
   resolution: "@types/node@npm:20.14.5"
   dependencies:
     undici-types: "npm:~5.26.4"
   checksum: 10c0/06a8c304b5f7f190d4497807dc67ad09ee7b14ea2996bfdc823553c624698d8cab1ef9d16f8b764f20cb9eb11caa0e832787741e9ef70e1c89d620797ab28436
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:20.14.7, @types/node@npm:>=20":
+  version: 20.14.7
+  resolution: "@types/node@npm:20.14.7"
+  dependencies:
+    undici-types: "npm:~5.26.4"
+  checksum: 10c0/6211ffe86f769a58617e3bdca58610256021ef54bd99d2c442ee6109196cd6ee8e0bcd1cfac0e39bf4bb353f8900fa5fae540485a03816bd91ad1f86a0e18512
   languageName: node
   linkType: hard
 
@@ -4274,17 +4313,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/devtools-core@npm:^7.3.1":
-  version: 7.3.1
-  resolution: "@vue/devtools-core@npm:7.3.1"
+"@vue/devtools-core@npm:^7.3.2":
+  version: 7.3.2
+  resolution: "@vue/devtools-core@npm:7.3.2"
   dependencies:
-    "@vue/devtools-kit": "npm:^7.3.1"
-    "@vue/devtools-shared": "npm:^7.3.1"
+    "@vue/devtools-kit": "npm:^7.3.2"
+    "@vue/devtools-shared": "npm:^7.3.2"
     mitt: "npm:^3.0.1"
     nanoid: "npm:^3.3.4"
     pathe: "npm:^1.1.2"
     vite-hot-client: "npm:^0.2.3"
-  checksum: 10c0/f33ca304fbd08dcad68f17c6ee8e3cd0158c785c11f0d7e1f3fa614e08fbc02662cf75ff4311702735712fa7b56ceb66bf40e03b5e213199b8739f457be0c193
+  checksum: 10c0/73786890401ab44405a925b97a257f7d22b5de6e13a26fb3c5634caf8e17d461c57aec4899bbb369135c0a5cf1c69546fe09babcc48e64dff2f5da0ce7a59f9f
   languageName: node
   linkType: hard
 
@@ -4305,12 +4344,36 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vue/devtools-kit@npm:^7.3.2":
+  version: 7.3.2
+  resolution: "@vue/devtools-kit@npm:7.3.2"
+  dependencies:
+    "@vue/devtools-shared": "npm:^7.3.2"
+    birpc: "npm:^0.2.17"
+    hookable: "npm:^5.5.3"
+    mitt: "npm:^3.0.1"
+    perfect-debounce: "npm:^1.0.0"
+    speakingurl: "npm:^14.0.1"
+    superjson: "npm:^2.2.1"
+  checksum: 10c0/b492f76423122f503cc67317a52cefb635ce77d4130169d45b359675468f92f2de449f4feea3134e0370dac73b7c5d1fc9646898e0a89be485dafd348088cfe3
+  languageName: node
+  linkType: hard
+
 "@vue/devtools-shared@npm:^7.3.1":
   version: 7.3.1
   resolution: "@vue/devtools-shared@npm:7.3.1"
   dependencies:
     rfdc: "npm:^1.3.1"
   checksum: 10c0/51e4a73da62cd9f28c46d1162b36d38e290e2954a570eaa7282bba74a78681e0baaa197eef63c3cd2a8bb698880a1d36d6c52ba90dd086c243a3235f1136aa54
+  languageName: node
+  linkType: hard
+
+"@vue/devtools-shared@npm:^7.3.2":
+  version: 7.3.2
+  resolution: "@vue/devtools-shared@npm:7.3.2"
+  dependencies:
+    rfdc: "npm:^1.4.1"
+  checksum: 10c0/2674c299ee284fc6b70a37ff0c63974e6f04ac6e5a1a712a89bd9ff7f3d00ebec92234c9153675ae5f5a90cb15b08de00b9323e944c2b148ec0fa3ca9c92b27e
   languageName: node
   linkType: hard
 
@@ -6195,10 +6258,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"effect@npm:3.3.4":
-  version: 3.3.4
-  resolution: "effect@npm:3.3.4"
-  checksum: 10c0/abdeea92d591fbc490538a4aeea11c43775baca9885e7c74b799212260c134a4861ad88833a0d3335a93f00b1c0e52491e2a1cda1f680c67394b7bc995f4b04f
+"effect@npm:3.4.0":
+  version: 3.4.0
+  resolution: "effect@npm:3.4.0"
+  checksum: 10c0/d5d550c5c43facada7860716cfb3b7a04694998a2ce9e418abdad6fec880c2701e64bf1b253028599fb674671bac210a75b336cb0505e2fab8570ffddeda1579
   languageName: node
   linkType: hard
 
@@ -7806,14 +7869,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"happy-dom@npm:14.12.0":
-  version: 14.12.0
-  resolution: "happy-dom@npm:14.12.0"
+"happy-dom@npm:14.12.3":
+  version: 14.12.3
+  resolution: "happy-dom@npm:14.12.3"
   dependencies:
     entities: "npm:^4.5.0"
     webidl-conversions: "npm:^7.0.0"
     whatwg-mimetype: "npm:^3.0.0"
-  checksum: 10c0/b844d7f3f16d2657a8650e0968ddd9272f152cfd9660e0dd4378215f153fc940509981d387e1e855f117baf0cf432918ff084f10c9b557192db5d7743d78302e
+  checksum: 10c0/72e817bc9d03c4c0dbb794f8fb5b69aac4b4dbe0ee789a6b6a02a60298a9aa99bac766967a5c642153e5c95c02489437f878de5641ed64fd13b2271c56805df5
   languageName: node
   linkType: hard
 
@@ -7905,10 +7968,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hono@npm:4.4.6":
-  version: 4.4.6
-  resolution: "hono@npm:4.4.6"
-  checksum: 10c0/065318f3fe021320b59f3daddacf7d74bfc3303de55f415a999b6967a9f09714e136528bc86cc880a45633cd85dec5428e41e902b5e3a3809f3cd17204302668
+"hono@npm:4.4.7":
+  version: 4.4.7
+  resolution: "hono@npm:4.4.7"
+  checksum: 10c0/df91661deb050a2b57cd811a58e9709a7bb6b85fe9f10ab17a83e8da3a4b58fc044254f90f601af95ad4b6c03c00dd59b5e0f5ccef447cd48e17db85b780123e
   languageName: node
   linkType: hard
 
@@ -11368,6 +11431,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rfdc@npm:^1.4.1":
+  version: 1.4.1
+  resolution: "rfdc@npm:1.4.1"
+  checksum: 10c0/4614e4292356cafade0b6031527eea9bc90f2372a22c012313be1dcc69a3b90c7338158b414539be863fa95bfcb2ddcd0587be696841af4e6679d85e62c060c7
+  languageName: node
+  linkType: hard
+
 "rollup-plugin-dts@npm:^6.0.0":
   version: 6.1.0
   resolution: "rollup-plugin-dts@npm:6.1.0"
@@ -11559,20 +11629,20 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "script-provider@workspace:packages/script-provider"
   dependencies:
-    "@cloudflare/workers-types": "npm:4.20240614.0"
-    "@effect/opentelemetry": "npm:0.34.21"
+    "@cloudflare/workers-types": "npm:4.20240620.0"
+    "@effect/opentelemetry": "npm:0.34.23"
     "@hono/zod-validator": "npm:0.2.2"
     "@microlabs/otel-cf-workers": "npm:1.0.0-rc.36"
     "@opentelemetry/api": "npm:1.6.0"
-    "@opentelemetry/resources": "npm:1.25.0"
-    "@opentelemetry/semantic-conventions": "npm:1.25.0"
+    "@opentelemetry/resources": "npm:1.25.1"
+    "@opentelemetry/semantic-conventions": "npm:1.25.1"
     "@playwright/test": "npm:1.44.1"
     "@ts-rest/core": "npm:3.45.2"
-    "@types/node": "npm:20.14.5"
+    "@types/node": "npm:20.14.7"
     "@urql/core": "npm:5.0.4"
-    effect: "npm:3.3.4"
+    effect: "npm:3.4.0"
     esbuild-wasm: "npm:0.21.5"
-    hono: "npm:4.4.6"
+    hono: "npm:4.4.7"
     msw: "npm:2.3.1"
     proper-tags: "npm:2.0.2"
     shared: "workspace:*"
@@ -12711,9 +12781,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsx@npm:4.15.6":
-  version: 4.15.6
-  resolution: "tsx@npm:4.15.6"
+"tsx@npm:4.15.7":
+  version: 4.15.7
+  resolution: "tsx@npm:4.15.7"
   dependencies:
     esbuild: "npm:~0.21.4"
     fsevents: "npm:~2.3.3"
@@ -12723,7 +12793,7 @@ __metadata:
       optional: true
   bin:
     tsx: dist/cli.mjs
-  checksum: 10c0/c44e489d35b8b4795d68164572eb9e322a707290aa0786c2aac0f5c7782a884dfec38d557d74471b981a8314b2c7f6612078451d0429db028a23cb54a37e83a0
+  checksum: 10c0/e960f4ee084b48cd3183e65946725fd9b0de4afae32a0fd9cd47416a41259fb2c72838b7aeba26adaecc2d89d70e976add9722e72ea5c876b3b493f137cbbf12
   languageName: node
   linkType: hard
 
@@ -12792,7 +12862,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:5.4.5, typescript@npm:^5.4.5":
+"typescript@npm:5.5.2":
+  version: 5.5.2
+  resolution: "typescript@npm:5.5.2"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10c0/8ca39b27b5f9bd7f32db795045933ab5247897660627251e8254180b792a395bf061ea7231947d5d7ffa5cb4cc771970fd4ef543275f9b559f08c9325cccfce3
+  languageName: node
+  linkType: hard
+
+"typescript@npm:^5.4.5":
   version: 5.4.5
   resolution: "typescript@npm:5.4.5"
   bin:
@@ -12802,7 +12882,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.4.5#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A5.5.2#optional!builtin<compat/typescript>":
+  version: 5.5.2
+  resolution: "typescript@patch:typescript@npm%3A5.5.2#optional!builtin<compat/typescript>::version=5.5.2&hash=379a07"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10c0/a7b7ede75dc7fc32a76d0d0af6b91f5fbd8620890d84c906f663d8783bf3de6d7bd50f0430b8bb55eac88a38934af847ff709e7156e5138b95ae94cbd5f73e5b
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A^5.4.5#optional!builtin<compat/typescript>":
   version: 5.4.5
   resolution: "typescript@patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>::version=5.4.5&hash=5adc0c"
   bin:
@@ -13238,20 +13328,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-vue-devtools@npm:7.3.1":
-  version: 7.3.1
-  resolution: "vite-plugin-vue-devtools@npm:7.3.1"
+"vite-plugin-vue-devtools@npm:7.3.2":
+  version: 7.3.2
+  resolution: "vite-plugin-vue-devtools@npm:7.3.2"
   dependencies:
-    "@vue/devtools-core": "npm:^7.3.1"
-    "@vue/devtools-kit": "npm:^7.3.1"
-    "@vue/devtools-shared": "npm:^7.3.1"
+    "@vue/devtools-core": "npm:^7.3.2"
+    "@vue/devtools-kit": "npm:^7.3.2"
+    "@vue/devtools-shared": "npm:^7.3.2"
     execa: "npm:^8.0.1"
     sirv: "npm:^2.0.4"
     vite-plugin-inspect: "npm:^0.8.4"
     vite-plugin-vue-inspector: "npm:^5.1.2"
   peerDependencies:
     vite: ^3.1.0 || ^4.0.0-0 || ^5.0.0-0
-  checksum: 10c0/9c46c8b6cf5dff65f44ca05a8d2cc1551ed98b6e1db213a46bb08f23edaed5583a38db24979a4979de8f4c47eb631cc40dc29decf4581d9b1becd1fbdb671489
+  checksum: 10c0/f1d2c0d33cbd442969143f8df7eb75c319bac95aec5b47098395d945ae40dd116047ab6ba3ff485796684d5646ea14d8dc5e17502b32aef52e0160275d3304ce
   languageName: node
   linkType: hard
 
@@ -13422,10 +13512,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-sonner@npm:1.1.2":
-  version: 1.1.2
-  resolution: "vue-sonner@npm:1.1.2"
-  checksum: 10c0/803812c19be0a10a1216222838cecf4090f5a7c1a673597a0d242b322ea4a58cb25576927abac5316d16e6232547baf30dad516e0b0d6f88b3279af73281b60b
+"vue-sonner@npm:1.1.3":
+  version: 1.1.3
+  resolution: "vue-sonner@npm:1.1.3"
+  checksum: 10c0/9450038c89402a4d5f564093bf204510d8bc5b0829d5a54bce2439abd83102a8c7fd18672eed62d50e49d5e3e5fcb5d110b830b8423ed660815fbdf035b2f0ac
   languageName: node
   linkType: hard
 
@@ -13918,12 +14008,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zx@npm:8.1.2":
-  version: 8.1.2
-  resolution: "zx@npm:8.1.2"
+"zx@npm:8.1.3":
+  version: 8.1.3
+  resolution: "zx@npm:8.1.3"
   dependencies:
-    "@types/fs-extra": "npm:^11.0.4"
-    "@types/node": "npm:>=20.12.12"
+    "@types/fs-extra": "npm:>=11"
+    "@types/node": "npm:>=20"
   dependenciesMeta:
     "@types/fs-extra":
       optional: true
@@ -13931,6 +14021,6 @@ __metadata:
       optional: true
   bin:
     zx: build/cli.js
-  checksum: 10c0/731fb4f944ee20df122f53ed9176f8aac10ef4bbb7287ba894d5cd03b3db3fa005bc96a6035923cbce0d738a524b9c29dca4f5e6f5e5652c47c771ecb57855c1
+  checksum: 10c0/47b2d84c8b6b69a3a8ae4c961a11906785dc552b0f7992cef3ae32b008df8e955b72e3d5d9f9021b454b36ca0f2e71b4551facf6e4d4372cc8d17d6121a836f9
   languageName: node
   linkType: hard

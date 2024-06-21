@@ -6,17 +6,17 @@
     "test": "moon run test"
   },
   "dependencies": {
-    "@effect/opentelemetry": "0.34.21",
+    "@effect/opentelemetry": "0.34.23",
     "@hono/zod-validator": "0.2.2",
     "@microlabs/otel-cf-workers": "1.0.0-rc.36",
     "@opentelemetry/api": "1.6.0",
-    "@opentelemetry/resources": "1.25.0",
-    "@opentelemetry/semantic-conventions": "1.25.0",
+    "@opentelemetry/resources": "1.25.1",
+    "@opentelemetry/semantic-conventions": "1.25.1",
     "@ts-rest/core": "3.45.2",
     "@urql/core": "5.0.4",
-    "effect": "3.3.4",
+    "effect": "3.4.0",
     "esbuild-wasm": "0.21.5",
-    "hono": "4.4.6",
+    "hono": "4.4.7",
     "proper-tags": "2.0.2",
     "shared": "workspace:*",
     "storipress-client": "workspace:*",
@@ -27,9 +27,9 @@
     "zod": "3.23.8"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20240614.0",
+    "@cloudflare/workers-types": "4.20240620.0",
     "@playwright/test": "1.44.1",
-    "@types/node": "20.14.5",
+    "@types/node": "20.14.7",
     "msw": "2.3.1",
     "vitest": "1.6.0",
     "wrangler": "3.61.0"
