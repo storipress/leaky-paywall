@@ -8,7 +8,7 @@
   "dependencies": {
     "@effect/opentelemetry": "0.34.23",
     "@hono/zod-validator": "0.2.2",
-    "@microlabs/otel-cf-workers": "1.0.0-rc.36",
+    "@microlabs/otel-cf-workers": "1.0.0-rc.40",
     "@opentelemetry/api": "1.6.0",
     "@opentelemetry/resources": "1.25.1",
     "@opentelemetry/semantic-conventions": "1.25.1",
