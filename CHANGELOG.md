@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.2](https://github.com/storipress/leaky-paywall/compare/v1.11.1...v1.11.2) (2024-06-21)
+
+
+### Bug Fixes
+
+* **deps:** pin dependency @opentelemetry/api to 1.6.0 ([785a758](https://github.com/storipress/leaky-paywall/commit/785a758ce43c27f4caddb5b7fcf8b363b15caa61))
+
 ## [1.11.1](https://github.com/storipress/leaky-paywall/compare/v1.11.0...v1.11.1) (2024-06-04)
 
 
