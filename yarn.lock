@@ -2348,12 +2348,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iconify-json/lucide@npm:1.1.194":
-  version: 1.1.194
-  resolution: "@iconify-json/lucide@npm:1.1.194"
+"@iconify-json/lucide@npm:1.1.195":
+  version: 1.1.195
+  resolution: "@iconify-json/lucide@npm:1.1.195"
   dependencies:
     "@iconify/types": "npm:*"
-  checksum: 10c0/cfdc35667ec933920a8dd7fb033f5a778e81cfc81175f8e6d70c6b3f96c0b110d88c6d2826d2c9c72cb099125cd864f59efa5266c35bb6cf42b02ba04d3254ed
+  checksum: 10c0/219849edf2769241cbf7efbf5b6645bb352e7212676b4ee0d7457e23e150e73ce81b35889ed050dfd5c9557087229b3c2e799131ba4faf632cec6fcb072d8068
   languageName: node
   linkType: hard
 
@@ -3428,7 +3428,7 @@ __metadata:
     "@effect/vitest": "npm:0.5.16"
     "@egoist/tailwindcss-icons": "npm:1.8.1"
     "@formkit/auto-animate": "npm:0.8.2"
-    "@iconify-json/lucide": "npm:1.1.194"
+    "@iconify-json/lucide": "npm:1.1.195"
     "@moonrepo/cli": "npm:1.25.6"
     "@nanostores/persistent": "npm:0.10.1"
     "@nanostores/vue": "npm:0.10.0"
