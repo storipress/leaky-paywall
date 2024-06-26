@@ -14,7 +14,7 @@
     "@opentelemetry/semantic-conventions": "1.25.1",
     "@ts-rest/core": "3.45.2",
     "@urql/core": "5.0.4",
-    "effect": "3.4.0",
+    "effect": "3.4.4",
     "esbuild-wasm": "0.21.5",
     "hono": "4.4.7",
     "proper-tags": "2.0.2",

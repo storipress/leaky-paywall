@@ -38,7 +38,7 @@
     "date-fns": "3.6.0",
     "defu": "6.1.4",
     "destr": "2.0.3",
-    "effect": "3.4.0",
+    "effect": "3.4.4",
     "graphql-web-lite": "16.6.0-4",
     "lucide-vue-next": "0.395.0",
     "nanostores": "0.10.3",

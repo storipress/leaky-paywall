@@ -3453,7 +3453,7 @@ __metadata:
     date-fns: "npm:3.6.0"
     defu: "npm:6.1.4"
     destr: "npm:2.0.3"
-    effect: "npm:3.4.0"
+    effect: "npm:3.4.4"
     esbuild: "npm:0.21.5"
     eslint: "npm:9.5.0"
     graphql-web-lite: "npm:16.6.0-4"
@@ -6193,10 +6193,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"effect@npm:3.4.0":
-  version: 3.4.0
-  resolution: "effect@npm:3.4.0"
-  checksum: 10c0/d5d550c5c43facada7860716cfb3b7a04694998a2ce9e418abdad6fec880c2701e64bf1b253028599fb674671bac210a75b336cb0505e2fab8570ffddeda1579
+"effect@npm:3.4.4":
+  version: 3.4.4
+  resolution: "effect@npm:3.4.4"
+  checksum: 10c0/60e396d970be3e4d80a56f8fdfcd270c8eb8769e90d0b760567872579aeb35437a9b28f303c1c353e15cc5c5b14ef8662acfc6620b1c9532479edb3ba16f889b
   languageName: node
   linkType: hard
 
@@ -11568,7 +11568,7 @@ __metadata:
     "@ts-rest/core": "npm:3.45.2"
     "@types/node": "npm:20.14.7"
     "@urql/core": "npm:5.0.4"
-    effect: "npm:3.4.0"
+    effect: "npm:3.4.4"
     esbuild-wasm: "npm:0.21.5"
     hono: "npm:4.4.7"
     msw: "npm:2.3.1"
