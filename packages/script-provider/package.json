@@ -6,7 +6,7 @@
     "test": "moon run test"
   },
   "dependencies": {
-    "@effect/opentelemetry": "0.34.23",
+    "@effect/opentelemetry": "0.34.27",
     "@hono/zod-validator": "0.2.2",
     "@microlabs/otel-cf-workers": "1.0.0-rc.36",
     "@opentelemetry/api": "1.6.0",
