@@ -3459,7 +3459,7 @@ __metadata:
     graphql-web-lite: "npm:16.6.0-4"
     happy-dom: "npm:14.12.3"
     lorem-ipsum: "npm:2.0.8"
-    lucide-vue-next: "npm:0.395.0"
+    lucide-vue-next: "npm:0.397.0"
     nanostores: "npm:0.10.3"
     open-cli: "npm:8.0.0"
     p-mutex: "npm:0.1.0"
@@ -9104,12 +9104,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lucide-vue-next@npm:0.395.0":
-  version: 0.395.0
-  resolution: "lucide-vue-next@npm:0.395.0"
+"lucide-vue-next@npm:0.397.0":
+  version: 0.397.0
+  resolution: "lucide-vue-next@npm:0.397.0"
   peerDependencies:
     vue: ">=3.0.1"
-  checksum: 10c0/db82fa9c0d5bed7f17041396686716a7edf5acfb7aedc5e410ea5089096d73dab6c58739135859a9336da7627a68b3bcff361d960c0fbcbd3b35b9c4bf48dc70
+  checksum: 10c0/5ab59e792ec69b844997d8870c097774aa186d86d4d14c968e0f22a5bcfc76111f20c505be059f7bdf5e9ff67f367c2b8bb92b8c84f9e00101b6bfe49b613a95
   languageName: node
   linkType: hard
 
