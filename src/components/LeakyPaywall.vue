@@ -29,6 +29,11 @@ const foundArticle = useFindArticle()
 const paywallEnabled = usePaywallEnabled()
 const location = useBrowserLocation()
 const isArticle = logicAnd(() => config.value.flags.paywall, logicOr(foundArticle, paywallEnabled))
+const isDismiss = ref(false)
+
+watch(foundArticle, () => {
+  isDismiss.value = false
+})
 
 const now = Date.now()
 const currentReadIdentifier = computed(() => `${location.value.pathname ?? ''}:${now}`)
@@ -169,6 +174,10 @@ function activatePaywall() {
     return
   }
 
+  if (isDismiss.value) {
+    return
+  }
+
   sendTrack('paywall.activated', {
     pathname: location.value.pathname ?? '',
     article_id: foundArticle.value?.id ?? null,
@@ -247,7 +256,12 @@ function handleSignedIn(source: 'paywall' | 'other' = 'paywall') {
           <!-- for accessibility -->
           <AlertDialogTitle class="invisible">Subscribe</AlertDialogTitle>
         </VisuallyHidden>
-        <LeakyPaywallContent v-model:email="emailInput" :config="config" @signed-in="handleSignedIn()" />
+        <LeakyPaywallContent
+          v-model:email="emailInput"
+          :config="config"
+          @signed-in="handleSignedIn()"
+          @dismiss="isDismiss = true"
+        />
       </AlertDialogContent>
     </AlertDialog>
     <VisuallyHidden>
