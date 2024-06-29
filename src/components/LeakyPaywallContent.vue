@@ -7,7 +7,7 @@ export interface Props {
 
 const props = defineProps<Props>()
 
-defineEmits<{ signedIn: [] }>()
+defineEmits<{ signedIn: []; dismiss: [] }>()
 
 const themeConfig = computed(() => ({ '--sp-primary': props.config.primaryColor }))
 const email = defineModel('email', {
@@ -20,7 +20,7 @@ const email = defineModel('email', {
   <Card class="w-full pb-4 pt-4" :style="themeConfig">
     <CardContent>
       <div v-if="config.dismissible" class="flex justify-end">
-        <AlertDialogClose><span class="i-lucide-x" /></AlertDialogClose>
+        <AlertDialogClose @click="$emit('dismiss')"><span class="i-lucide-x" /></AlertDialogClose>
       </div>
       <div class="flex flex-col items-center gap-1">
         <Avatar class="relative mb-3 mt-2 items-center justify-center p-1" size="md">
