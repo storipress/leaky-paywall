@@ -7,7 +7,7 @@ on:
 
 jobs:
   unit-test:
-    runs-on: [self-hosted]
+    runs-on: ubuntu-22.04
     name: Baseline Unit Test
     steps:
       - uses: actions/checkout@v4

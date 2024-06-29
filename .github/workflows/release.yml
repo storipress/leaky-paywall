@@ -11,7 +11,7 @@ permissions:
 name: release
 jobs:
   release-please:
-    runs-on: [self-hosted]
+    runs-on: ubuntu-22.04
     env:
       GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
     steps:

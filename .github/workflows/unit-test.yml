@@ -4,7 +4,7 @@ on: [pull_request]
 
 jobs:
   unit-test:
-    runs-on: [self-hosted]
+    runs-on: ubuntu-22.04
     name: Test
     env:
       GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
