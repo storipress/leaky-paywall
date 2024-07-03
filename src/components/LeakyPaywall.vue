@@ -13,16 +13,7 @@ initConfig()
 const config = useStore($config)
 const paywall = useStore($paywall)
 
-const { login } = useLogin()
 useTrackManager()
-useMonitorFormSubmit(async (email) => {
-  if (paywall.value.token) {
-    return
-  }
-
-  await login({ email })
-  handleSignedIn('other')
-})
 
 const foundArticle = useFindArticle()
 
