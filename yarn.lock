@@ -8171,10 +8171,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hono@npm:4.4.11":
-  version: 4.4.11
-  resolution: "hono@npm:4.4.11"
-  checksum: 10c0/d18c07be51f14b069c9b0a71309dca4c571de3aaeef790abaf48265ad20a88c73d1837c4bbe12cf41328f8d827d071513a3486079ef9d28f5cad8da8a7a1682c
+"hono@npm:4.5.8":
+  version: 4.5.8
+  resolution: "hono@npm:4.5.8"
+  checksum: 10c0/873f9d901d6df7bc482997fc60d99261b566756be80146d1f901b71d64c89379b31e145ff4ea19b57ddca026730249c64a3ef641e4c29019eebcb9aa9f8c9cfc
   languageName: node
   linkType: hard
 
@@ -11848,7 +11848,7 @@ __metadata:
     "@urql/core": "npm:5.0.4"
     effect: "npm:3.4.6"
     esbuild-wasm: "npm:0.23.0"
-    hono: "npm:4.4.11"
+    hono: "npm:4.5.8"
     msw: "npm:2.3.1"
     proper-tags: "npm:2.0.2"
     shared: "workspace:*"
